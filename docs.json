@@ -274,5 +274,22 @@
     "options": [
       "copy"
     ]
+  },
+  "seo": {
+    "indexing": "navigable",
+    "metatags": {
+      "og:site_name": "OnlineSurvey Help",
+      "og:type": "website",
+      "og:locale": "en_US",
+      "og:image": "https://ik.imagekit.io/somanshu/onlinesurvey.ai/assets/og/default.png",
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "og:image:alt": "onlinesurvey.ai, the AI-native survey platform",
+      "twitter:card": "summary_large_image",
+      "twitter:site": "@onlinesurveyai",
+      "twitter:image": "https://ik.imagekit.io/somanshu/onlinesurvey.ai/assets/og/default.png",
+      "robots": "index, follow",
+      "author": "onlinesurvey.ai"
+    }
   }
 }
