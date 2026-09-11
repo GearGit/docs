@@ -1,80 +1,76 @@
 ---
-title: 'Screen-Out Respondents Who Do Not Qualify for Your Study'
-sidebarTitle: 'Screen-Outs'
-description: 'Learn how to add screener questions and screen-out rules that remove unqualified respondents before they reach your main survey content.'
+title: "Screen-outs"
+description: "End a response early when someone is not right for the study."
+icon: "door-open"
 ---
 
-A screen-out is a routing rule that sends a respondent to a **Screened Out** ending when their answer shows they do not qualify for your study. This page explains how screen-outs work, how to write an effective screener question, and how to wire up the rule.
+A screen-out is [branching](/logic/branching) whose destination is an ending you tagged **Screened out**. The respondent finishes on a screen you wrote, and your numbers keep them apart from the people who qualified.
 
-## What Happens When a Respondent Is Screened Out
+<Frame caption="End at an ending, picked by the name you gave it.">
+  <img src="/images/logic/screen-outs/picker.png" alt="The destination picker showing End at an ending" />
+</Frame>
 
-When a screen-out rule fires, the respondent is immediately routed to a Screened Out ending screen. They see a short message letting them know they are not eligible for this survey. The response is recorded in your data as a screened-out disposition, separate from completed and partial responses, so your analysis only includes qualified respondents.
+## What it does
 
-<Note>
-  You can customize the message shown on the Screened Out ending screen. Go to the **Endings** section of the builder, select the Screened Out ending, and edit the copy in the panel on the right.
-</Note>
+There is one way for logic to end a survey: **End at**, naming an ending. The outcome is read off that ending, not off the rule, so a rule and its outcome can never say different things.
 
-## Step 1: Add a Screener Question
+Every ending carries one of four outcomes, and each one does something different to your numbers:
 
-Place your qualifying question near the top of the survey, before any substantive questions. A screener is typically a single-select or multi-select question that identifies whether the respondent fits your target audience.
+| Outcome | Counts toward your plan | Counts toward the survey's response cap | Fills a quota cell | Answers kept |
+|---|---|---|---|---|
+| Completed | Yes | Yes | Yes | Yes |
+| Screened out | Yes | No | No | Yes |
+| Quota full | Yes | Yes | Yes | Yes |
+| Quality reject | No | No | No | Yes |
 
-For example: "Which of the following products have you purchased in the last 12 months?" with a list of relevant categories and a "None of the above" option.
+So a screen-out keeps the answers the respondent did give, and holds them back from the cap you set and from every quota cell. Someone holding a reserved [quota](/logic/quotas) slot gives it up when they screen out, so the slot goes to the next person who qualifies.
 
-![A single-select screener question at the top of the builder canvas](/images/placeholder.png)
+**Screened out and Quality reject are not the same thing.** Screened out means they never qualified. Quality reject means they did qualify and you are setting the response aside anyway. Keeping them apart is what keeps an incidence rate honest.
 
-## Setting Up a Screen-Out Rule
+A survey can have as many endings as it has outcomes, and several can share one. Write "Sorry, this study is looking for drivers" for one screener and "Thanks all the same" for another, and both can be tagged Screened out.
+
+## Example
+
+<Frame caption="Four endings, one per outcome, each with a name of its own.">
+  <img src="/images/logic/screen-outs/endings.png" alt="The End screens list in the builder rail" />
+</Frame>
+
+The logic showcase screens people out twice, both times at the ending named **Not this time**:
+
+- On "Which of these have you used in the last month?", if they include **Phone support**, then **End at Not this time**
+- As the **Screening** block ends, if "Which of these best describes you?" is **Just browsing**, then **End at Not this time**
+
+## Set it up
 
 <Steps>
-  <Step title="Select the screener question">
-    In the survey builder, click the screener question to select it. Open the **Logic** tab in the right-hand panel.
-
-    ![The screener question selected in the builder with the Logic tab highlighted](/images/placeholder.png)
+  <Step title="Write the ending first">
+    In the rail, open **Endings**, click **Add an end screen** and **Pick an outcome**, then choose **Screened out**. Name it and write what these respondents should read.
   </Step>
-
-  <Step title="Add a new rule">
-    Click **Add rule**. A blank if-then row appears.
+  <Step title="Point a rule at it">
+    Open **Skip from here** on the screening question, or **When this block ends** on the screening block. Add the condition, then set the destination to **End at** your new ending.
   </Step>
-
-  <Step title="Define the disqualifying condition">
-    In the **If** dropdown, confirm the screener question is selected. In the **Condition** dropdown, choose the comparison that identifies an unqualified respondent. For example, choose **is equal to** and then select "None of the above" as the value.
-
-    ![The condition row showing If = screener question, Condition = is equal to, Value = None of the above](/images/placeholder.png)
-  </Step>
-
-  <Step title="Route to the Screened Out ending">
-    In the **Then go to** dropdown, scroll to the **Endings** section and select **Screened Out**. This is the built-in ending type reserved for screen-outs.
-
-    ![The Then go to dropdown open with the Screened Out ending highlighted](/images/placeholder.png)
-  </Step>
-
-  <Step title="Set the Else destination">
-    In the **Else** row, leave the destination as **Next question** so that respondents who do qualify continue to the rest of the survey.
-  </Step>
-
-  <Step title="Save and preview">
-    Save the survey and open **Preview**. Select the disqualifying answer to confirm the Screened Out ending appears, then go back and select a qualifying answer to confirm the survey continues normally.
-
-    ![The Screened Out ending screen as seen by a respondent](/images/placeholder.png)
+  <Step title="Check the counts">
+    Take the screened-out path in a [preview](/design/preview), then look at [Responses](/survey/responses-and-sessions). The row is there, marked Screened out.
   </Step>
 </Steps>
 
-## Using Multiple Screener Questions
+## Works with
 
-You can add screen-out rules on more than one question. Each question can have its own rule that routes to the Screened Out ending. Respondents are evaluated against each rule as they reach that question, so a respondent who passes the first screener can still be screened out by a second one.
+[Branching](/logic/branching) · [Quotas](/logic/quotas) · [Scoring](/logic/scoring) · [Variables](/logic/variables) · [Endings](/survey/endings)
 
-<Tip>
-  Keep screener questions short and place them all together at the start of the survey. Screening respondents early saves their time and keeps your qualified-response count clean.
-</Tip>
+## Good to know
 
-## Reviewing Screened-Out Responses
+Screen out as early as you can. A respondent who answers eight screens before being screened out still counts toward your plan allowance, because you keep their answers.
 
-In the **Responses** tab, you can filter by disposition to view only screened-out entries. The record shows which question triggered the screen-out and which answer was given, helping you audit your screener logic and understand the size of your disqualified population.
+Respondents are never told which outcome they landed on. They read the ending you wrote, and every ending looks the same to them.
+
+Deleting an ending does not break the rules pointing at it. The builder counts them for you first and tells you what happens: those rules send people to the default end screen instead, where they are counted as Completed.
+
+## Related
 
 <CardGroup cols={2}>
-  <Card title="Custom screened-out message" icon="message">
-    Edit the Screened Out ending text to be respectful and clear. A brief, friendly message reduces frustration for respondents who do not qualify.
-  </Card>
-  <Card title="Screened-out vs. quota full" icon="circle-xmark">
-    Screen-outs remove respondents who do not qualify at all. Quota full endings remove respondents who qualify but whose segment is already full. These are separate ending types with separate dispositions in your data.
-  </Card>
+  <Card title="Branching" icon="code-branch" href="/logic/branching" />
+  <Card title="Endings" icon="flag-checkered" href="/survey/endings" />
+  <Card title="Quotas" icon="gauge-high" href="/logic/quotas" />
+  <Card title="Responses and sessions" icon="table" href="/survey/responses-and-sessions" />
 </CardGroup>

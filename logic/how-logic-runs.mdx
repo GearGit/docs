@@ -1,0 +1,78 @@
+---
+title: "How logic runs"
+description: "See when your rules run and which screens they are allowed to look at."
+icon: "diagram-project"
+---
+
+Every rule in a survey follows the same three rules. Learn them once and every logic dialog in the builder reads the same way.
+
+<Frame caption="A question's logic, listed in the panel: one row per rule it carries.">
+  <img src="/images/logic/how-logic-runs/panel.png" alt="The question logic rows in the scope panel" />
+</Frame>
+
+## What it does
+
+**1. Every rule is if, then.** You pick a source, an operator and a value: "if **Which of these best describes you?** is **Just browsing**". Add a second line and one control at the top of the condition says **Match all of these** or **Match any of these**, for every line at once. There are no brackets and no nested groups, and nothing is typed as code.
+
+Which operators you are offered comes from the answer itself. A [Likert](/questions/ratings/likert) answer is one of its own points, so you pick the point; a [Star rating](/questions/ratings/star-rating) answer is a number, so you get "is more than"; a [Multiple choice](/questions/choice/multiple-choice) answer is a list, so you get "includes".
+
+**2. There are two moments.** What a respondent sees is worked out as the screen is built. Where they go next is decided when they press Next.
+
+| Worked out as the screen is built | Decided when the screen is submitted |
+|---|---|
+| [Show and hide](/logic/show-and-hide) | [Branching](/logic/branching) and [screen-outs](/logic/screen-outs) |
+| [Piping](/logic/piping) | [Variables](/logic/variables) |
+| [Carry-forward](/logic/carry-forward) | [Scoring](/logic/scoring) |
+| [Answer order](/logic/randomization) | [Quotas](/logic/quotas) |
+
+In the logic showcase survey the **Grids** block opens only for people who answered "Yes, often" to "Do you shop with us more than once a month?", which is settled before its first screen is drawn. The **Screening** block ends the survey for anyone who said "Just browsing", which is settled as they leave it.
+
+**3. A rule may only read a screen the respondent has already seen.** When a screen is being built the respondent has typed nothing on it yet, so there is nothing there to read. This is why a question and the rule that reads it usually sit on different screens, and why the builder adds a [page break](/survey/page-breaks) for you when a rule needs one.
+
+Rules that run on the way out are looser. Branching, variables and scoring fire once the screen's own answers are in, so reading the screen you are leaving is the ordinary case. Only a later screen is out of reach.
+
+## Example
+
+<Frame caption="One condition, read back in plain English on the canvas.">
+  <img src="/images/logic/how-logic-runs/badges.png" alt="Logic badges under a question on the canvas" />
+</Frame>
+
+The Screening block in the logic showcase ends with one rule and one Otherwise:
+
+- If **Which of these best describes you?** is **Just browsing**, then **End at Not this time**
+- Otherwise, **Continue**
+
+## Set it up
+
+<Steps>
+  <Step title="Find the rules you already have">
+    The builder names them in three places: a badge under the question on the canvas, a row in the scope panel, and a small mark in the margin beside an option or a grid row that carries one. Only what is set is drawn, so a question with no badges carries no logic.
+  </Step>
+  <Step title="Open the one you want">
+    Click the badge or the panel row. Each opens its own dialog: **Show/hide question**, **Skip from here**, **Carry forward**, **Answer order**, **Scoring** or **Set a variable**.
+  </Step>
+  <Step title="Walk your own survey">
+    Open a [preview](/design/preview) and answer as a respondent would. Preview runs the same engine a real respondent runs.
+  </Step>
+</Steps>
+
+## Works with
+
+[Branching](/logic/branching) · [Show and hide](/logic/show-and-hide) · [Carry-forward](/logic/carry-forward) · [Piping](/logic/piping) · [Variables](/logic/variables) · [Scoring](/logic/scoring) · [Quotas](/logic/quotas) · [Loops](/logic/loops)
+
+## Good to know
+
+Where rules are listed, they are read top to bottom and the first match decides. The dialog says so: "Rules are read top to bottom; the first match decides."
+
+A screen where everything is hidden is skipped in silence, and a skipped screen never runs its exit rules. If you need a rule to fire, the screen it sits on has to be shown.
+
+A rule pointing at something you later deleted never matches. It does not fire for everybody, and it does not end anyone's survey early.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Branching" icon="code-branch" href="/logic/branching" />
+  <Card title="Screen-outs" icon="door-open" href="/logic/screen-outs" />
+  <Card title="Blocks and screens" icon="layer-group" href="/survey/blocks-and-screens" />
+  <Card title="Page breaks" icon="scissors" href="/survey/page-breaks" />
+</CardGroup>

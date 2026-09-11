@@ -1,0 +1,88 @@
+---
+title: "Scoring"
+description: "Give points to answers and add them up."
+icon: "medal"
+---
+
+Put a number next to an answer and the survey is scored. There is no switch to find: the points you typed are the scoring.
+
+<Frame caption="Scoring on a choice question: one row per answer, one number each.">
+  <img src="/images/logic/scoring/dialog.png" alt="The Scoring dialog with a points column" />
+</Frame>
+
+## What it does
+
+A survey has exactly one score, and every point you award lands in it. The **Scoring** dialog is where you award them, and what it shows depends on the question:
+
+| How it scores | Questions | Rows come from |
+|---|---|---|
+| A number per answer | [Single choice](/questions/choice/single-choice), [Multiple choice](/questions/choice/multiple-choice), [Dropdown](/questions/choice/dropdown), the image choices, [Likert](/questions/ratings/likert), and the ready-made choice questions | The options you wrote |
+| A number per scale point | [Star rating](/questions/ratings/star-rating), [Smiley rating](/questions/ratings/smiley-rating), [Thumbs up or down](/questions/ratings/thumbs-up-down), [NPS](/questions/ratings/nps), [Opinion scale](/questions/ratings/opinion-scale), [Yes or no](/questions/choice/yes-or-no) | The scale itself |
+| A number per column | [Radio grid](/questions/grids/radio-grid), [Checkbox grid](/questions/grids/checkbox-grid), [Dropdown grid](/questions/grids/dropdown-grid), [Rating grid](/questions/grids/rating-grid) | The columns, applied to every row |
+| Points per unit | [Numeric slider](/questions/ratings/numeric-slider) | One weight, multiplied by the value they chose |
+| An answer key | Every text question | Accepted answers you type in the dialog |
+
+Nothing is filled in for you, on any of them. What a 7 is worth is a decision about your study, not a property of the question, so every row starts blank. Blank is zero, negatives are allowed, and points are whole numbers.
+
+On a grid, the columns are scored once and apply to every row. A row that is worded the other way round can take its own numbers with **Score this row differently**.
+
+An answer key is compared without regard to capitals or spaces at the ends, so "Delivered On Time " matches "delivered on time".
+
+The score is worked out afresh from all of the respondent's answers every time they submit a screen, so it is always in step with what they have said.
+
+Questions whose answer is an order, an allocation, a date or a pin on an image cannot be scored. Their dialog says so rather than showing an empty table.
+
+## Example
+
+<Frame caption="A scale generates its own rows: one per point.">
+  <img src="/images/logic/scoring/scale.png" alt="The Scoring dialog on an NPS question" />
+</Frame>
+
+In the logic showcase:
+
+- "Which of these best describes you?" gives **Regular shopper** 5, **Occasional shopper** 2, **First visit** 1 and **Just browsing** -3
+- "How likely are you to recommend us to a colleague?" gives **10** four points, **9** three, and **0** minus two
+- "How much would you pay for this feature?" scores **1 point per unit** of the number they chose
+- "What happened on this visit?" has an answer key: "delivered on time" is worth 3 and "late" is worth -1
+
+The **Profile** block then opens only for respondents whose score is 5 or more.
+
+## Set it up
+
+<Steps>
+  <Step title="Open the dialog">
+    Select the question and click **Scoring** in the panel.
+  </Step>
+  <Step title="Type the numbers">
+    Fill in the points for the answers that are worth something and leave the rest blank. On a long list, the **Filter** box narrows the rows.
+  </Step>
+  <Step title="Use the score">
+    The score is available as a condition source, a [branching](/logic/branching) source, a [quota](/logic/quotas) condition and an `@` [pipe](/logic/piping), under the name **score**.
+  </Step>
+  <Step title="Decide whether respondents see it">
+    In the rail, open **Survey** and switch **Show points to respondents** on to draw a points chip on scored questions. It is off unless you turn it on.
+  </Step>
+</Steps>
+
+## Works with
+
+[Branching](/logic/branching) · [Show and hide](/logic/show-and-hide) · [Variables](/logic/variables) · [Quotas](/logic/quotas) · [Carry-forward](/logic/carry-forward) · [Piping](/logic/piping)
+
+## Good to know
+
+A question whose options are [carried forward](/logic/carry-forward) scores normally. The points belong to the source question's options, so they follow wherever those options land.
+
+The score is a column in the Responses grid and in every [export](/results/exports).
+
+Editing an answer after a response is in does not move the score. The number stays as the respondent earned it.
+
+For a second number that is not the score, such as a count you build up yourself, use a number [variable](/logic/variables).
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Variables" icon="square-root-variable" href="/logic/variables" />
+  <Card title="Branching" icon="code-branch" href="/logic/branching" />
+  <Card title="Quotas" icon="gauge-high" href="/logic/quotas" />
+  <Card title="Carry-forward" icon="arrow-right-arrow-left" href="/logic/carry-forward" />
+</CardGroup>

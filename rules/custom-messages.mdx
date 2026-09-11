@@ -1,0 +1,56 @@
+---
+title: "Custom messages"
+description: "Write your own wording for the message a respondent sees."
+icon: "message"
+---
+
+**Custom error** replaces the sentence a respondent reads when their answer is refused. It is the last field in the **Validation** dialog, under **message**.
+
+<Frame caption="Custom error sits at the bottom of the Validation dialog, across its full width.">
+  <img src="/images/rules/custom-messages/dialog.png" alt="The Custom error field in the Validation dialog" />
+</Frame>
+
+## What it does
+
+Leave it blank and each rule uses its own default: "This field is required.", "Must be at least 20 characters.", "Please select at least 2 options.", and so on.
+
+Type something and that sentence is used instead, for whichever rule the answer broke.
+
+**There is one message per question, not one per rule.** A question with a minimum length, a pattern and a required toggle has three ways to fail and one sentence to explain them, so write a sentence that covers the question as a whole. "Enter a whole number of visits, up to 60." works for a number question with a range and a whole-number rule. "Must be at least 20 characters." does not, if the question can also fail for being blank.
+
+**It replaces the wording and nothing else.** The rule itself is unchanged, and so is the reason recorded behind the scenes, so a custom sentence never affects what your results say about why an answer was refused.
+
+**It covers the question, not the individual fields of a composite.** A ready-made question that collects several fields, such as [Name](/questions/ready-made/name) or [Address](/questions/ready-made/address), keeps the per-field defaults on its own fields.
+
+The rest of what a respondent reads is fixed: the Next and Back buttons, the progress bar, and the message shown when a page cannot be loaded. Those are not editable.
+
+## Set it up
+
+<Steps>
+  <Step title="Open Validation">
+    Select the question, then click the **Validation** row in the panel.
+  </Step>
+  <Step title="Write the sentence">
+    In **Custom error**, type the wording you want. The field is a full-width box, because a sentence needs the room. Its placeholder reads "Shown when this answer is invalid".
+  </Step>
+  <Step title="Break the question on purpose">
+    In a preview, give the question an answer it must refuse, and read your own sentence back.
+  </Step>
+</Steps>
+
+## Which questions have it
+
+Every question with at least one rule to fail, which is every question that takes an answer. The field is in the same **Validation** dialog whatever the family: text, numbers, choice, grids, dates, ranking and images.
+
+[Text block](/questions/content/text-block), [Image banner](/questions/content/image-banner), [Video](/questions/content/video) and [Instructions](/questions/content/instructions) take no answer, so they have no Validation dialog and no message.
+
+[Consent](/questions/content/consent) always reads "You must agree to continue."
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Required" icon="asterisk" href="/rules/required" />
+  <Card title="Text limits" icon="text-width" href="/rules/text-limits" />
+  <Card title="Patterns" icon="spell-check" href="/rules/patterns" />
+  <Card title="Selection counts" icon="list-ol" href="/rules/selection-counts" />
+</CardGroup>

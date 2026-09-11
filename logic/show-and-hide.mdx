@@ -1,0 +1,69 @@
+---
+title: "Show and hide"
+description: "Show a question only to the people it applies to."
+icon: "eye"
+---
+
+Three dialogs decide what is on screen: **Show/hide question**, **Show/hide option**, and **Show block if** for a whole block at once.
+
+<Frame caption="Show/hide question: a default, then the condition that changes it.">
+  <img src="/images/logic/show-and-hide/dialog.png" alt="The Show/hide question dialog" />
+</Frame>
+
+## What it does
+
+**A question.** You set what it does by default, **Shown** or **Hidden**, and then the condition that flips it: **Hide it when** or **Show it when**. **Always show it** clears the rule, because a question with no rule is a question everybody gets.
+
+**An option.** The same editor, one item at a time, over a choice list or a grid's **Rows** and **Columns**. An option hidden by a condition is not offered, and it does not hold a place in the list. **Use this rule for every option** applies what you built to the whole list at once.
+
+**A block.** **Show block if** reads "Enter this block only when", and it covers the whole block, including its later screens. **Always enter it** removes the gate.
+
+All three are settled as the screen is built, before the respondent sees it, which is why their conditions have to read a screen the respondent has already passed. See [how logic runs](/logic/how-logic-runs).
+
+A hidden question is out of the survey for that respondent, not merely invisible. It is not validated, so a hidden question that is [Required](/rules/required) never stops anyone. If everything on a screen is hidden, the screen itself is skipped, in silence, and its exit rules do not run.
+
+## Example
+
+<Frame caption="Show block if, on a whole block.">
+  <img src="/images/logic/show-and-hide/block.png" alt="The Show block if dialog on a block" />
+</Frame>
+
+The logic showcase gates two blocks:
+
+- The **Grids** block: enter it only when "Do you shop with us more than once a month?" is **Yes, often**
+- The **Profile** block: enter it only when the [score](/logic/scoring) is **5 or more**
+
+## Set it up
+
+<Steps>
+  <Step title="Pick what you are hiding">
+    A question: select it and click **Show/hide question** in the panel. An option, a grid row or a grid column: click **Show/hide option**. A block: select the block and click **Show block if**.
+  </Step>
+  <Step title="Set the default and the condition">
+    Choose **Shown** or **Hidden** by default, then build the condition that flips it. The source list offers only questions from earlier screens, plus your [variables](/logic/variables) and the score.
+  </Step>
+  <Step title="Preview both ways">
+    Take the path where it should appear, then the path where it should not.
+  </Step>
+</Steps>
+
+## Works with
+
+[How logic runs](/logic/how-logic-runs) · [Branching](/logic/branching) · [Carry-forward](/logic/carry-forward) · [Variables](/logic/variables) · [Quotas](/logic/quotas) · [Blocks and screens](/survey/blocks-and-screens)
+
+## Good to know
+
+An option carrying a condition wears a small eye in the margin beside it, reading "Shown only when a condition is met". Click it to open the rule.
+
+Hiding options changes what a percentage is out of. Results divide each option by the people who were shown it, not by everyone who answered the question.
+
+Hiding is not the only way to shorten a question. To show a fixed number of options drawn at random, use "Only some" in [answer order](/logic/randomization). To build the list out of an earlier answer, use [carry-forward](/logic/carry-forward).
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Carry-forward" icon="arrow-right-arrow-left" href="/logic/carry-forward" />
+  <Card title="Piping" icon="quote-left" href="/logic/piping" />
+  <Card title="How logic runs" icon="diagram-project" href="/logic/how-logic-runs" />
+  <Card title="Blocks and screens" icon="layer-group" href="/survey/blocks-and-screens" />
+</CardGroup>

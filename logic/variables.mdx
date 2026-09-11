@@ -1,0 +1,77 @@
+---
+title: "Variables"
+description: "Store a value as people answer, and use it later."
+icon: "square-root-variable"
+---
+
+A variable remembers something about a respondent as they go: which segment they fall into, how many visits they reported, whether they should be flagged.
+
+<Frame caption="The Variables list: a name and a type for each one.">
+  <img src="/images/logic/variables/drawer.png" alt="The Variables dialog listing a survey's variables" />
+</Frame>
+
+## What it does
+
+Variables come in two halves. You declare them once for the survey, then set them with rules on individual screens.
+
+**Declaring** happens in **Variables**, reached from **Survey** in the rail. A variable has a name and a type: **Text**, **Number**, **Yes/no** or **List of text**. Two variables cannot share a name, because the pickers everywhere else show names.
+
+**Setting** happens in **Set a variable**, on the question people are leaving. A rule reads "Set **Segment** to **Gold**", with an optional **Only when** condition and an **Otherwise set** value for everyone else. A screen can carry several rules, and they run in the order they are listed, so a later rule can build on what an earlier one just set.
+
+Rules fire when the screen is submitted. A screen the respondent never saw never sets anything.
+
+An empty **Only when** means the rule fires for everyone. That is the opposite of what an empty condition means for [show and hide](/logic/show-and-hide), where no condition means always shown, and it is deliberate: an unconditional assignment is a normal thing to want.
+
+Once set, a variable is available everywhere a value is: in conditions, in [branching](/logic/branching) destinations, in [quota](/logic/quotas) conditions, as a [loop](/logic/loops) driver, as a [pipe](/logic/piping), and as its own column in the Responses grid and in [exports](/results/exports).
+
+The survey's score is a variable too, named **score**. It is the platform's, so you cannot name one of yours over it, and it appears on its own once any question awards points. See [Scoring](/logic/scoring).
+
+## Example
+
+<Frame caption="Set a variable, with a condition and an Otherwise.">
+  <img src="/images/logic/variables/rule.png" alt="The Set a variable dialog" />
+</Frame>
+
+The logic showcase carries five variables: **Segment**, **Visits**, **Flagged**, **Band** and **Topics**.
+
+On leaving "Which of these best describes you?":
+
+- Set **Segment** to **Gold**, only when the answer is **Regular shopper**
+- Otherwise set **Segment** to **Standard**
+
+On leaving "How many visits did you make last month?", two rules run in order: **Visits** takes the number they typed, and **Flagged** is set to yes when that number is more than 20.
+
+## Set it up
+
+<Steps>
+  <Step title="Declare the variable">
+    In the rail, open **Survey**, click **Variables**, then **Add a variable**. Give it a name and a type.
+  </Step>
+  <Step title="Set it on a screen">
+    Select the question people are leaving, click **Set a variable**, and build the rule: the variable, the value, and an **Only when** if it should not apply to everybody.
+  </Step>
+  <Step title="Use it">
+    The variable now appears in every source list: conditions, quotas, loop drivers and the `@` pipe menu.
+  </Step>
+</Steps>
+
+## Works with
+
+[Branching](/logic/branching) · [Show and hide](/logic/show-and-hide) · [Quotas](/logic/quotas) · [Loops](/logic/loops) · [Piping](/logic/piping) · [Scoring](/logic/scoring)
+
+## Good to know
+
+A variable with no name is not saved, and the dialog says so before you close it.
+
+A rule can set a variable from an answer rather than a fixed value, which is how "Visits" above carries a typed number forward into conditions and exports.
+
+A **List of text** variable is what a [loop](/logic/loops) driven by a variable iterates over.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Scoring" icon="medal" href="/logic/scoring" />
+  <Card title="Quotas" icon="gauge-high" href="/logic/quotas" />
+  <Card title="Piping" icon="quote-left" href="/logic/piping" />
+  <Card title="How logic runs" icon="diagram-project" href="/logic/how-logic-runs" />
+</CardGroup>

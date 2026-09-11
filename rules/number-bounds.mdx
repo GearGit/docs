@@ -1,0 +1,68 @@
+---
+title: "Number bounds"
+description: "Set the smallest and largest number you will accept."
+icon: "arrow-down-1-9"
+---
+
+Where an answer is a number, a date or a count, the **Validation** dialog holds the bounds it has to fall inside.
+
+<Frame caption="Minimum, Maximum and the numeral rules on a number question.">
+  <img src="/images/rules/number-bounds/dialog.png" alt="Minimum, Maximum, Whole number only and Max decimal places in the Validation dialog" />
+</Frame>
+
+## What it does
+
+Which fields you get depends on what the question collects.
+
+**A typed number** takes **Minimum** and **Maximum**, plus two rules about the shape of the numeral: **Whole number only**, and **Max decimal places**. An answer outside the range reads "Must be 0 or more." or "Must be 60 or less."; a decimal on a whole-number question reads "Enter a whole number."
+
+**A slider** takes **Minimum** and **Maximum**. On a slider these are the two ends of the track, so they are also the bound: a respondent cannot drag past them, and a submitted value outside them is refused.
+
+**A date** takes **Earliest**, **Latest** and **Allowed dates**. Allowed dates is **Any date**, **Future only** or **Past only**, judged against the day the respondent answers. A range question also checks that the start is not after the end.
+
+**Date of birth** takes **Minimum age** and **Maximum age** instead of calendar dates, because that is what an author actually means. The age is worked out on the day they answer, so an 18 or over screener stays right for the whole fieldwork period.
+
+**Constant sum** takes **Must total**. Allocations that do not add up read "Values must add up to 100."
+
+**Image questions** take **Min pins** and **Max pins**.
+
+**Grids** take **Min rows answered**, a floor that is separate from [Required](/rules/required). Required means every row; a floor of 2 means any two.
+
+Two bounds adjust themselves rather than trapping anyone. A row floor higher than the number of rows a respondent is actually shown drops to that number, and the message names the number they can see.
+
+Every one of these is checked on our servers on every submit.
+
+## Set it up
+
+<Steps>
+  <Step title="Open Validation">
+    Select the question, then click the **Validation** row in the panel.
+  </Step>
+  <Step title="Set the bounds">
+    Fill in the fields under **range**, **age**, **total**, **pins** or **rows**, whichever the question offers. Clear a field to remove that rule.
+  </Step>
+  <Step title="Preview an answer that breaks it">
+    Type a value outside the bound in a preview and read the message back.
+  </Step>
+</Steps>
+
+## Which questions have it
+
+- Minimum and Maximum: [Number](/questions/text/number), [Numeric slider](/questions/ratings/numeric-slider), [Range slider](/questions/ratings/range-slider), [Slider grid](/questions/grids/slider-grid)
+- Whole number only and Max decimal places: [Number](/questions/text/number)
+- Earliest, Latest and Allowed dates: [Date](/questions/dates/date), [Date range](/questions/dates/date-range), [Date and time](/questions/dates/date-and-time)
+- Minimum age and Maximum age: [Date of birth](/questions/dates/date-of-birth)
+- Must total: [Constant sum](/questions/ranking/constant-sum)
+- Min pins and Max pins: [Image hotspot](/questions/images/image-hotspot), [Click heatmap](/questions/images/click-heatmap)
+- Min rows answered: every grid, from [Radio grid](/questions/grids/radio-grid) to [Rating grid](/questions/grids/rating-grid)
+
+[Time](/questions/dates/time) and [Time range](/questions/dates/time-range) carry no calendar bound. A time range still checks that its start comes before its end.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Text limits" icon="text-width" href="/rules/text-limits" />
+  <Card title="Selection counts" icon="list-ol" href="/rules/selection-counts" />
+  <Card title="Custom messages" icon="message" href="/rules/custom-messages" />
+  <Card title="Required" icon="asterisk" href="/rules/required" />
+</CardGroup>

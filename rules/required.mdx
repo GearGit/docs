@@ -1,0 +1,62 @@
+---
+title: "Required"
+description: "Make people answer a question before they can move on."
+icon: "asterisk"
+---
+
+**Required** is a single toggle on the question. Turn it on and a respondent cannot leave the screen until that question is answered.
+
+<Frame caption="Required sits in the question panel, above the row that opens Validation.">
+  <img src="/images/rules/required/toggle.png" alt="The Required toggle in the question panel" />
+</Frame>
+
+## What it does
+
+A required question has to be answered before the screen is submitted. The check runs on our servers on every submit, so it holds however the answer arrives.
+
+What counts as answered depends on the question:
+
+- A grid needs every row answered. A [Dropdown grid](/questions/grids/dropdown-grid) needs every cell.
+- A ranking question needs every item placed, and [Match pairs](/questions/ranking/match-pairs) needs every item on the left paired.
+- An "Other" option needs the text box beside it filled in. Picking Other and typing nothing reads as a half answer, because the text is the answer.
+- Everything else needs a value that is not blank.
+
+Two cases where a required question does not block anyone, both on purpose:
+
+- A question hidden by [show and hide](/logic/show-and-hide), or sitting in a block nobody entered, is not validated at all. A hidden required question must never stop a respondent.
+- A question whose options are [carried forward](/logic/carry-forward) and has nothing to carry is not required. There is nothing on screen to pick.
+
+Leave a question optional and respondents can also un-answer it. Clicking a selected rating again clears it, and they can move on with it blank.
+
+The default message is "This field is required." To write your own, see [Custom messages](/rules/custom-messages).
+
+## Set it up
+
+<Steps>
+  <Step title="Select the question">
+    Click the question on the canvas. The scope panel opens on the right.
+  </Step>
+  <Step title="Turn on Required">
+    Under **validation**, switch **Required** on. The canvas marks the question straight away.
+  </Step>
+  <Step title="Try it">
+    Open a preview and press Next without answering. The message appears under the question, and the screen does not advance.
+  </Step>
+</Steps>
+
+## Which questions have it
+
+Every question takes it, whatever family it belongs to: text, choice, ratings, grids, ranking, images, dates and the ready-made questions.
+
+Content blocks take no answer, so they have no toggle: [Text block](/questions/content/text-block), [Image banner](/questions/content/image-banner), [Video](/questions/content/video) and [Instructions](/questions/content/instructions).
+
+[Consent](/questions/content/consent) is the exception in the other direction. It is always required, and on a welcome screen it gates the Start button. A respondent who has not ticked it sees "You must agree to continue."
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Text limits" icon="text-width" href="/rules/text-limits" />
+  <Card title="Number bounds" icon="arrow-down-1-9" href="/rules/number-bounds" />
+  <Card title="Custom messages" icon="message" href="/rules/custom-messages" />
+  <Card title="Show and hide" icon="eye" href="/logic/show-and-hide" />
+</CardGroup>

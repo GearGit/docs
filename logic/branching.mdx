@@ -1,0 +1,80 @@
+---
+title: "Branching"
+description: "Send people to a different screen based on what they answered."
+icon: "code-branch"
+---
+
+Branching decides where a respondent goes when they leave a screen. Two dialogs write it: **Skip from here** on a screen, and **When this block ends** on a block.
+
+<Frame caption="Skip from here, drawn as one row per answer on a single-choice question.">
+  <img src="/images/logic/branching/dialog.png" alt="The Skip from here dialog with a row per option and an Otherwise row" />
+</Frame>
+
+## What it does
+
+A rule is a condition and a destination. You pick the destination in your own words, from three rows:
+
+| Destination | What happens |
+|---|---|
+| **Continue** | On to the next screen, the way an unrouted screen already goes |
+| **Skip to a screen** | Straight to a screen further on, chosen from a list |
+| **End at an ending** | The survey finishes on the ending you name. See [screen-outs](/logic/screen-outs) and [endings](/survey/endings) |
+
+Branching runs when the screen is submitted, never while it is being drawn. Rules are read top to bottom and the first match decides; everything that matched nothing falls to the **Otherwise** row at the bottom, which every rule list has.
+
+Jumps only go forward. A destination list offers screens after this one, and a jump that ends up pointing backward, because you later moved its target earlier, quietly continues to the next screen instead.
+
+When the question is a [Single choice](/questions/choice/single-choice) or a [Dropdown](/questions/choice/dropdown), the dialog draws one row per answer and reads "If they choose". On a [Multiple choice](/questions/choice/multiple-choice) it reads "If they include". On a grid it offers the grid's own rows, because a grid answer is one answer per row.
+
+## Example
+
+<Frame caption="The panel reads the rule back in one line.">
+  <img src="/images/logic/branching/readback.png" alt="The Skip from here row in the scope panel" />
+</Frame>
+
+In the logic showcase, "Which of these best describes you?" routes four ways:
+
+- If they choose **Regular shopper**, then **Continue**
+- If they choose **Occasional shopper**, then **Continue**
+- If they choose **First visit**, then **Skip to** "Do you shop with us more than once a month?"
+- Otherwise, **End at Not this time**
+
+The **Screening** block carries a rule of its own: anyone who said "Just browsing" ends at **Not this time** as the block finishes.
+
+## Set it up
+
+<Steps>
+  <Step title="Open the dialog">
+    Select the question people are branching on and click **Skip from here** in the panel. To branch on the way out of a whole block, select the block and click **When this block ends**.
+  </Step>
+  <Step title="Say when each rule applies">
+    On a choice question you get a row per answer already. Otherwise click **Add rule** and build a condition: source, operator, value. Drag rules to reorder them, because the first match decides.
+  </Step>
+  <Step title="Pick the destinations, including Otherwise">
+    Set each rule's destination, then set the **Otherwise** row for everyone the rules did not catch.
+  </Step>
+  <Step title="Walk it">
+    Open a [preview](/design/preview) and take each path. The screens you should not see should not appear.
+  </Step>
+</Steps>
+
+## Works with
+
+[Screen-outs](/logic/screen-outs) · [Show and hide](/logic/show-and-hide) · [Variables](/logic/variables) · [Scoring](/logic/scoring) · [Quotas](/logic/quotas) · [Loops](/logic/loops)
+
+## Good to know
+
+A screen that is skipped, because everything on it was hidden, never branches. Its rules belong to a screen the respondent never reached.
+
+Saving a rule can add a [page break](/survey/page-breaks). A rule reads the answer on the way out of a screen, so the question it reads has to be the last thing on that screen.
+
+Branching on a [variable](/logic/variables) or on the score works the same way, and both are offered as sources in the condition editor.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="How logic runs" icon="diagram-project" href="/logic/how-logic-runs" />
+  <Card title="Screen-outs" icon="door-open" href="/logic/screen-outs" />
+  <Card title="Endings" icon="flag-checkered" href="/survey/endings" />
+  <Card title="Show and hide" icon="eye" href="/logic/show-and-hide" />
+</CardGroup>

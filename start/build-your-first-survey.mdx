@@ -1,0 +1,61 @@
+---
+title: "Build your first survey"
+description: "Create a survey, add your first questions, and get it ready to send."
+icon: "pen-to-square"
+---
+
+You build a survey on the canvas, which draws the questions exactly as a respondent will see them. There is no separate editor to keep in step with the preview: what is on screen is the survey.
+
+<Frame caption="A selected question on the canvas: the title is an input, and each option has a grip and a delete.">
+  <img src="/images/start/build-your-first-survey/canvas.png" alt="A single choice question selected on the builder canvas" />
+</Frame>
+
+## What it does
+
+The **Build** tab has three columns. On the left, an icon rail switches surface: **Survey**, **Questions**, **Endings**, **Theme** and **Settings**. Next to it, a panel shows the settings for whatever you have selected. The rest is the canvas.
+
+Above all of it runs the lifecycle strip: **Overview**, **1 Build**, **2 Publish**, **3 Distribute**, **4 Responses**, **5 Analytics**, **6 Reports**, plus **Settings** and **AI Insights**. **Back** at the head of the top bar returns you to your surveys.
+
+## Set it up
+
+<Steps>
+  <Step title="Create the survey">
+    In a workspace, click **New survey**. The **Create a survey** dialog asks for a title, which you can change later. Click **Create survey** and the Build tab opens.
+  </Step>
+  <Step title="Add a question">
+    Hover any gap on the canvas, above the first question, between two of them, or after the last. Two controls appear, **Add** and **Page break**. Click **Add** and pick a type from the list that opens.
+
+    <Frame caption="Add opens a searchable list of every type you can place.">
+      <img src="/images/start/build-your-first-survey/add.png" alt="The add element dialog, listing the question types you can place" />
+    </Frame>
+  </Step>
+  <Step title="Write the question">
+    Click the title and type. Options, rows and columns are edited in place: each grows a grip for reordering and a delete, and a trailing **Add option** appears. To edit a long list as text instead, use **Bulk edit** beside it.
+  </Step>
+  <Step title="Pipe in an earlier answer">
+    Type `@` in a title or description to insert what the respondent said earlier. The chip shows the wording they saw. See [Piping](/logic/piping).
+  </Step>
+  <Step title="Split the screen">
+    Click **Page break** in a gap to end one screen and start the next. See [Page breaks](/survey/page-breaks).
+  </Step>
+  <Step title="Check it as a respondent">
+    Use the preview to walk the survey with the same engine a respondent runs.
+  </Step>
+</Steps>
+
+## Good to know
+
+**Nothing to save.** Edits commit as you make them, and the toolbar says **All changes saved**. Two people can work on the same survey at once, down to two carets in the same question title.
+
+**Question numbers are the ones you authored.** Every question takes the next number in document order. Content blocks such as a text block or an image banner are not numbered, and a block that repeats in a loop shows one number however many times it runs.
+
+**Switching type keeps your options.** **Switch type** converts a question to a related type and preserves the option identities, so rules, scoring and collected answers keep pointing at the right answer. The dialog names anything the new type cannot carry before it converts.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Blocks and screens" icon="layer-group" href="/survey/blocks-and-screens" />
+  <Card title="Page breaks" icon="grip-lines" href="/survey/page-breaks" />
+  <Card title="Publish and share" icon="paper-plane" href="/start/publish-and-share" />
+  <Card title="How logic runs" icon="diagram-project" href="/logic/how-logic-runs" />
+</CardGroup>

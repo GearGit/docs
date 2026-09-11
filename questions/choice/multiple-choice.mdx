@@ -1,0 +1,91 @@
+---
+title: "Multiple choice"
+description: "Pick any number of options from a list you write."
+icon: "square-check"
+---
+
+Multiple choice gives respondents a list you write and lets them pick any number of options from it. Reach for it whenever more than one answer can be true at once.
+
+<Frame caption="A multiple choice question as a respondent sees it. The line above the options states the rule before anyone picks.">
+  <img src="/images/questions/choice/multiple-choice/respondent.png" alt="A multiple choice question with five options and the line Select 1 to 3 options above them." />
+</Frame>
+
+## When to use it
+
+- Several answers can be true at the same time: which channels they used, which brands they know, which features they want.
+- You want to count how many things a respondent picked, not only which ones.
+- You want to feed a later question, a loop or a quota from the set they chose.
+
+**Consider instead:** [Single choice](/questions/choice/single-choice) when exactly one answer is right, [Dropdown](/questions/choice/dropdown) when the list is long, [Image multi select](/questions/choice/image-multi-select) when the options are pictures, [Drag to rank](/questions/ranking/drag-to-rank) when the order they put them in is the answer.
+
+## Add it
+
+<Steps>
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
+
+    <Frame caption="The multiple choice question on the builder canvas, edited in place.">
+      <img src="/images/questions/choice/multiple-choice/canvas.png" alt="The question and its five options on the builder canvas, with the add-row beneath them." />
+    </Frame>
+  </Step>
+  <Step title="Pick Multiple Choice">
+    **Add to survey** opens with a search box. Type to filter, then click **Multiple Choice**. The question lands where the gap was, with one empty option.
+  </Step>
+  <Step title="Write the question and the options">
+    The canvas is the real survey, so you type the question and the options straight onto it. Click the last row to add another option, or open **Bulk edit** and paste a list, one per line.
+  </Step>
+</Steps>
+
+## Settings
+
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
+| Setting | What it does |
+| --- | --- |
+| Options | The list they pick from. Edited on the canvas, or in **Bulk edit** as plain text, one per line. |
+| **"Other" with a text box** | Adds an **Other** option with a text box beside it, so a respondent can write an answer you did not list. It always shows last. |
+| **"None of these" option** | Adds an option that stands for none of the rest. Picking it clears everything else they had picked. It always shows last. |
+| **Answer order** | **As written**, **Shuffled** or **Reversed**. Shuffled draws a fresh order for each respondent; reversed turns the list around for about half of them. Either way the same person sees the same order every time they come back to the screen. |
+| **How many each respondent sees** | Inside the **Answer order** dialog. **All of them**, or **Only some**, which draws that many options for each respondent. Pinned options, **Other** and **None of these** are outside the draw and show to everyone. |
+
+<Frame caption="The question panel, with the option list settings, the answer order row and the rules row.">
+  <img src="/images/questions/choice/multiple-choice/panel.png" alt="The builder question panel showing Required, Validation, Answer order, Scoring and the Other and None of these toggles." />
+</Frame>
+
+## Rules you can set
+
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
+| Rule | What it does |
+| --- | --- |
+| [Required](/rules/required) | They cannot move on until they pick at least one option. |
+| [Min answers and Max answers](/rules/selection-counts) | **How many they can choose**: **Any number**, **At least**, **At most**, **Exactly** or **Between**. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+The count rule is printed above the options before anyone picks, as "Select all that apply", "Select up to 3 options", "Select at least 2 options", "Select exactly 3 options" or "Select 1 to 3 options". Picking **None of these** is a complete answer on its own, so it satisfies a minimum.
+
+<Frame caption="How many they can choose, in the Validation dialog.">
+  <img src="/images/questions/choice/multiple-choice/validation.png" alt="The Validation dialog with the answers group set to Between, one and three, and a custom error message." />
+</Frame>
+
+## Logic that works with it
+
+The answer is the set of options they picked, stored as the options themselves rather than as their wording, so renaming an option never moves a rule that points at it. Conditions read the set with **includes**, **does not include**, **includes any of**, **includes none of**, **is answered** and **is not answered**, and they read the size of it with **number chosen is**, **number chosen is at least** and **number chosen is at most**. It is a [carry-forward](/logic/carry-forward) source, so a later question can offer the options they chose, the ones they left, or all of them, and it takes a carried list into its own options in the same way. It can [drive a loop](/logic/loops), repeating a block once per option they picked, once per option they left, or once per option on the list, and it can set the number of passes from how many they picked. It [scores](/logic/scoring) points per option, and a point can be negative, which is how you take marks off for a wrong pick when several answers are allowed. [Piping](/logic/piping) it into later wording prints the labels they saw, in the order they picked them.
+
+## How it shows in results
+
+Per question the default is a **Bar chart**, one bar per option, counting the respondents who picked it. **Pie chart** and **Values list** are the other two entries in **Chart type**. Percentages divide by the number of people who were shown the option, which is what keeps them honest when you show only some of the list.
+
+In every export the question becomes one column per option, holding 1 when that option was picked and 0 when it was not, grouped together as one multiple response set.
+
+<Frame caption="The multiple choice question on the Analytics tab, charted as a bar chart.">
+  <img src="/images/questions/choice/multiple-choice/results.png" alt="A bar chart of the five options with counts and percentages beside them." />
+</Frame>
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Choice questions" icon="list-check" href="/questions/choice/overview" />
+  <Card title="Yes or no" icon="toggle-on" href="/questions/choice/yes-or-no" />
+  <Card title="Dropdown" icon="square-caret-down" href="/questions/choice/dropdown" />
+</CardGroup>

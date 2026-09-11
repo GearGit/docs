@@ -1,0 +1,40 @@
+---
+title: "Blocks and screens"
+description: "Understand how blocks group your questions and how screens are worked out from them."
+icon: "layer-group"
+---
+
+A **block** is the unit you build in. A **screen** is what a respondent sees at one time. You author blocks, and screens are worked out from them.
+
+<Frame caption="A block selected on the canvas, drawn as its own band with its name on the chip.">
+  <img src="/images/survey/blocks-and-screens/blocks.png" alt="The builder canvas with a named block selected, drawn as its own band" />
+</Frame>
+
+## What it is
+
+Every question in a survey lives in a block. A block has a name, it is drawn on the canvas as its own band, and it always starts and ends a screen: nothing from the block before it and nothing from the block after it can share a screen with it.
+
+A block holds one screen by default. Add a [page break](/survey/page-breaks) inside it and it holds two. A block with three breaks in it holds four screens.
+
+Screens are not things you create and name. They are worked out from your blocks and your breaks every time the survey is drawn, which is why you never see a "Page 3" you did not make. Move a question across a break and it is on the other screen, with nothing to tidy up afterwards.
+
+## Why it matters
+
+**Logic is written across screens, not within them.** A rule can read an answer from an earlier screen: a previous block, or an earlier screen of the same block. It cannot read an answer given on the screen it is deciding, and it cannot read one from a screen that has not happened yet. Putting a screener question in its own block, ahead of the block it gates, is what makes a rule on it legal.
+
+**A block is the thing logic attaches to.** **Show block if** decides whether the whole block is offered. **When this block ends** decides where the respondent goes next. **Loop this block** repeats it once per item in a list. All three are block controls, and all three are reasons to split a long run of questions into named blocks rather than one.
+
+## See it in the builder
+
+Click a block band on the canvas and the panel on the left shows its settings: **Name**, **Show block if**, **When this block ends**, **Loop this block**, **Merge with the block above**, **Preview this block** and **Delete block**. Typing in **Name** updates the chip on the canvas as you type.
+
+**Merge with the block above** joins two adjacent blocks into one. The dialog says what it is about to do: the questions from both become one block in the same order, and a page break is kept where the two blocks met, so no question changes screen and the logic you wrote keeps working. You can remove that break afterwards. If a loop lives inside the span being merged, the dialog names it first, because one block cannot repeat two different sets of questions and the loop cannot come with it. There is no undo for a merge.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Page breaks" icon="grip-lines" href="/survey/page-breaks" />
+  <Card title="Endings" icon="flag-checkered" href="/survey/endings" />
+  <Card title="How logic runs" icon="diagram-project" href="/logic/how-logic-runs" />
+  <Card title="Loops" icon="rotate" href="/logic/loops" />
+</CardGroup>

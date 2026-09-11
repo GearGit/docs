@@ -1,135 +1,302 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "name": "OnlineSurvey Help Center",
-  "theme": "willow",
+  "theme": "mint",
+  "name": "OnlineSurvey Help",
+  "description": "How to build, share and read research surveys with OnlineSurvey. One page for every question type and every logic rule.",
   "colors": {
     "primary": "#BB6440",
-    "light": "#17171F",
-    "dark": "#cdcccc"
+    "light": "#D9896A",
+    "dark": "#A5563A"
   },
   "logo": {
     "light": "https://media.brand.dev/e84668e1-d458-48e4-abde-a597af7b6082.svg",
     "dark": "https://media.brand.dev/e84668e1-d458-48e4-abde-a597af7b6082.svg"
   },
   "favicon": "/favicon.svg",
-  "font": {
-    "headings": { "family": "Geist" },
-    "body": { "family": "Geist" }
+  "appearance": {
+    "default": "light",
+    "strict": false
+  },
+  "background": {
+    "color": {
+      "light": "#F7F5F2",
+      "dark": "#17171F"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Geist",
+      "weight": 600
+    },
+    "body": {
+      "family": "Geist",
+      "weight": 400
+    }
   },
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Create a survey",
-      "href": "https://onlinesurvey.ai"
+      "label": "Open OnlineSurvey",
+      "href": "https://app.onlinesurvey.ai"
     }
   },
-  "appearance": {
-    "default": "light"
+  "footer": {
+    "links": [
+      {
+        "header": "Help",
+        "items": [
+          {
+            "label": "Contact support",
+            "href": "/help/contact-support"
+          },
+          {
+            "label": "What's new",
+            "href": "/help/whats-new"
+          }
+        ]
+      },
+      {
+        "header": "OnlineSurvey",
+        "items": [
+          {
+            "label": "Website",
+            "href": "https://onlinesurvey.ai"
+          },
+          {
+            "label": "Pricing",
+            "href": "https://onlinesurvey.ai/pricing"
+          },
+          {
+            "label": "Open the app",
+            "href": "https://app.onlinesurvey.ai"
+          }
+        ]
+      }
+    ]
   },
   "navigation": {
-    "groups": [
+    "tabs": [
       {
-        "group": "Getting Started",
-        "pages": [
-          "getting-started/what-is-onlinesurvey",
-          "getting-started/build-your-first-survey",
-          "getting-started/publish-and-share",
-          "getting-started/read-your-first-responses"
-        ]
-      },
-      {
-        "group": "Concepts",
-        "pages": [
-          "concepts/elements-and-kinds",
-          "concepts/blocks-and-screens",
-          "concepts/page-breaks",
-          "concepts/endings-and-dispositions",
-          "concepts/published-versions",
-          "concepts/responses-and-sessions"
-        ]
-      },
-      {
-        "group": "Building Surveys",
-        "pages": [
-          "building/builder-and-editing",
-          "building/question-types",
-          "building/validation-and-required",
-          "building/themes-and-branding",
-          "building/media-library",
-          "building/collaboration",
-          "building/preview"
-        ]
-      },
-      {
-        "group": "Logic",
-        "pages": [
-          "logic/branching-and-routing",
-          "logic/screen-outs",
-          "logic/conditional-visibility",
-          "logic/looping",
-          "logic/carry-forward-and-piping",
-          "logic/variables-and-scoring",
-          "logic/randomization",
-          "logic/quotas"
-        ]
-      },
-      {
-        "group": "Publishing",
-        "pages": [
-          "publishing/publish-and-versions",
-          "publishing/editing-a-live-survey",
-          "publishing/respondent-experience"
-        ]
-      },
-      {
-        "group": "Distributing",
-        "pages": [
-          "distributing/share-links",
-          "distributing/embeds",
-          "distributing/email-campaigns",
-          "distributing/contact-lists-and-mail-merge",
-          "distributing/delivery-tracking"
-        ]
-      },
-      {
-        "group": "Responses and Data",
-        "pages": [
-          "responses/responses-grid",
-          "responses/editing-an-answer",
-          "responses/exports"
-        ]
-      },
-      {
-        "group": "Analysis",
-        "pages": [
-          "analysis/per-question-analytics",
-          "analysis/reports",
-          "analysis/ai-insights"
-        ]
-      },
-      {
-        "group": "AI",
-        "pages": [
-          "ai/generate-from-brief",
-          "ai/inline-question-editing",
-          "ai/how-credits-work"
-        ]
-      },
-      {
-        "group": "Account and Team",
-        "pages": [
-          "account/organizations-and-workspaces",
-          "account/roles-and-seats",
-          "account/plans-and-limits",
-          "account/billing"
-        ]
-      },
-      {
-        "group": "Troubleshooting",
-        "pages": [
-          "troubleshooting/common-issues",
-          "troubleshooting/response-quality",
-          "troubleshooting/contact-support"
+        "tab": "Help Center",
+        "groups": [
+          {
+            "group": "Start here",
+            "pages": [
+              "start/what-is-onlinesurvey",
+              "start/build-your-first-survey",
+              "start/publish-and-share",
+              "start/read-your-first-responses"
+            ]
+          },
+          {
+            "group": "How a survey is built",
+            "pages": [
+              "survey/blocks-and-screens",
+              "survey/page-breaks",
+              "survey/endings",
+              "survey/published-versions",
+              "survey/responses-and-sessions"
+            ]
+          },
+          {
+            "group": "Questions",
+            "pages": [
+              {
+                "group": "Text",
+                "pages": [
+                  "questions/text/overview",
+                  "questions/text/short-text",
+                  "questions/text/long-text",
+                  "questions/text/email",
+                  "questions/text/phone",
+                  "questions/text/url",
+                  "questions/text/number"
+                ]
+              },
+              {
+                "group": "Choice",
+                "pages": [
+                  "questions/choice/overview",
+                  "questions/choice/single-choice",
+                  "questions/choice/multiple-choice",
+                  "questions/choice/yes-or-no",
+                  "questions/choice/dropdown",
+                  "questions/choice/image-single-select",
+                  "questions/choice/image-multi-select"
+                ]
+              },
+              {
+                "group": "Ratings and scales",
+                "pages": [
+                  "questions/ratings/overview",
+                  "questions/ratings/thumbs-up-down",
+                  "questions/ratings/nps",
+                  "questions/ratings/likert",
+                  "questions/ratings/opinion-scale",
+                  "questions/ratings/smiley-rating",
+                  "questions/ratings/star-rating",
+                  "questions/ratings/text-slider",
+                  "questions/ratings/numeric-slider",
+                  "questions/ratings/range-slider"
+                ]
+              },
+              {
+                "group": "Grids",
+                "pages": [
+                  "questions/grids/overview",
+                  "questions/grids/radio-grid",
+                  "questions/grids/checkbox-grid",
+                  "questions/grids/open-grid",
+                  "questions/grids/slider-grid",
+                  "questions/grids/dropdown-grid",
+                  "questions/grids/rating-grid"
+                ]
+              },
+              {
+                "group": "Ranking and allocation",
+                "pages": [
+                  "questions/ranking/overview",
+                  "questions/ranking/drag-to-rank",
+                  "questions/ranking/click-to-rank",
+                  "questions/ranking/constant-sum",
+                  "questions/ranking/match-pairs"
+                ]
+              },
+              {
+                "group": "Images",
+                "pages": [
+                  "questions/images/overview",
+                  "questions/images/image-hotspot",
+                  "questions/images/click-heatmap"
+                ]
+              },
+              {
+                "group": "Dates and times",
+                "pages": [
+                  "questions/dates/overview",
+                  "questions/dates/date",
+                  "questions/dates/date-range",
+                  "questions/dates/date-and-time",
+                  "questions/dates/time",
+                  "questions/dates/time-range",
+                  "questions/dates/date-of-birth"
+                ]
+              },
+              {
+                "group": "Ready-made",
+                "pages": [
+                  "questions/ready-made/overview",
+                  "questions/ready-made/name",
+                  "questions/ready-made/gender",
+                  "questions/ready-made/age-group",
+                  "questions/ready-made/mobile-phone",
+                  "questions/ready-made/email-address",
+                  "questions/ready-made/education-level",
+                  "questions/ready-made/marital-status",
+                  "questions/ready-made/occupation",
+                  "questions/ready-made/country-or-region",
+                  "questions/ready-made/address"
+                ]
+              },
+              {
+                "group": "Content",
+                "pages": [
+                  "questions/content/overview",
+                  "questions/content/text-block",
+                  "questions/content/image-banner",
+                  "questions/content/video",
+                  "questions/content/instructions",
+                  "questions/content/consent"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Rules on answers",
+            "pages": [
+              "rules/required",
+              "rules/text-limits",
+              "rules/number-bounds",
+              "rules/patterns",
+              "rules/selection-counts",
+              "rules/custom-messages"
+            ]
+          },
+          {
+            "group": "Logic",
+            "pages": [
+              "logic/how-logic-runs",
+              "logic/branching",
+              "logic/screen-outs",
+              "logic/show-and-hide",
+              "logic/carry-forward",
+              "logic/piping",
+              "logic/randomization",
+              "logic/variables",
+              "logic/scoring",
+              "logic/quotas",
+              "logic/loops"
+            ]
+          },
+          {
+            "group": "Look and feel",
+            "pages": [
+              "design/themes",
+              "design/logo-and-branding",
+              "design/media-library",
+              "design/preview"
+            ]
+          },
+          {
+            "group": "Publish and share",
+            "pages": [
+              "share/publish-and-versions",
+              "share/editing-a-live-survey",
+              "share/share-links",
+              "share/embeds",
+              "share/email-campaigns",
+              "share/contact-lists",
+              "share/delivery-tracking",
+              "share/what-respondents-see"
+            ]
+          },
+          {
+            "group": "Responses and results",
+            "pages": [
+              "results/responses-grid",
+              "results/editing-an-answer",
+              "results/exports",
+              "results/per-question-results",
+              "results/reports",
+              "results/ai-insights"
+            ]
+          },
+          {
+            "group": "AI",
+            "pages": [
+              "ai/generate-from-a-brief",
+              "ai/edit-with-instructions",
+              "ai/credits"
+            ]
+          },
+          {
+            "group": "Account",
+            "pages": [
+              "account/organizations-and-workspaces",
+              "account/roles-and-seats",
+              "account/plans-and-limits",
+              "account/billing"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "help/common-issues",
+              "help/response-quality",
+              "help/contact-support",
+              "help/whats-new"
+            ]
+          }
         ]
       }
     ]

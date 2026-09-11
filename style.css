@@ -1,0 +1,38 @@
+/*
+ * Help-center theme overrides.
+ *
+ * The selectors below are the ones Mintlify documents for custom CSS
+ * (https://mintlify.com/docs/themes/custom-css). They are part of Mintlify's
+ * rendered markup rather than a public API, so they are subject to change:
+ * if the sidebar or navbar stops picking these up after a Mintlify release,
+ * re-check the current selector names before editing anything else.
+ */
+
+#sidebar,
+#sidebar-content {
+  background-color: #F4F1EC;
+}
+
+#navbar {
+  border-bottom-color: #E4DED5;
+}
+
+#sidebar .sidebar-group-header,
+#sidebar h5 {
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #6F6A63;
+}
+
+:root {
+  --font-family-mono-custom: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* The docs assistant is turned off for this site. */
+#assistant-entry,
+#assistant-entry-mobile,
+#chat-assistant-sheet,
+.chat-assistant-floating-input {
+  display: none !important;
+}

@@ -1,0 +1,77 @@
+---
+title: "Carry-forward"
+description: "Reuse the options someone picked earlier in a later question."
+icon: "arrow-right-arrow-left"
+---
+
+**Carry forward** builds a question's answers out of an earlier answer: the options they chose, the ones they did not, or all of them.
+
+<Frame caption="Carry forward: the question to read from, and which of its choices to take.">
+  <img src="/images/logic/carry-forward/dialog.png" alt="The Carry forward dialog" />
+</Frame>
+
+## What it does
+
+You name a question to carry **From**, then say whether to carry the choices that were **Chosen**, **Not chosen** or **All**. On a grid you also say where they land, its **Rows** or its **Columns**.
+
+The carried list replaces the question's own, so on the canvas it is read-only and carries a link back: **Edit these on Q2**. Edit the wording where it was written, and every question carrying it follows.
+
+The items keep their identity as they travel, so anything already pointing at them keeps working. [Scoring](/logic/scoring) on a carried list is keyed to the source question's options, a [pipe](/logic/piping) into a carried option shows the wording the respondent read, and a condition on the later question compares the same answers.
+
+A chain is allowed. A question can carry from a question that itself carries from a third.
+
+If nothing carries, for example because the respondent chose nothing to carry, the question asks for nothing and is not [Required](/rules/required). A [selection count](/rules/selection-counts) drops to the number that actually arrived, so "at least 3" never traps somebody who only carried two.
+
+## Example
+
+<Frame caption="A carried list on the canvas, read-only, with a link back to where it is written.">
+  <img src="/images/logic/carry-forward/canvas.png" alt="Carried options on the canvas with an Edit these on link" />
+</Frame>
+
+In the logic showcase, "Which of these have you used in the last month?" feeds three later questions:
+
+- "And which of those do you use most?" takes the ones they **chose** as its options
+- "Which of these applied to each channel?" takes the ones they **chose** as its grid **rows**
+- "Tell us one thing about each of these" takes the ones they **did not choose** as its grid **columns**
+
+A fourth carries **all** of the items from "Put these in order, most important first".
+
+## Set it up
+
+<Steps>
+  <Step title="Open the dialog">
+    Select the later question and click **Carry forward** in the panel.
+  </Step>
+  <Step title="Choose the source and the mode">
+    Pick the question under **From**, then **Chosen**, **Not chosen** or **All**. On a grid, choose **Rows** or **Columns** under **Into**.
+  </Step>
+  <Step title="Save">
+    Saving adds a [page break](/survey/page-breaks) after the source question if there is not one already, because the answer has to be in before the later screen is built. The dialog tells you before you save.
+  </Step>
+  <Step title="Preview with a real answer">
+    Pick two or three options upstream and watch them arrive downstream.
+  </Step>
+</Steps>
+
+## Works with
+
+[Show and hide](/logic/show-and-hide) · [Randomization](/logic/randomization) · [Scoring](/logic/scoring) · [Piping](/logic/piping) · [Loops](/logic/loops) · [Selection counts](/rules/selection-counts)
+
+## Good to know
+
+The questions that can be carried **from** are the ones whose answer is a set of choices: [Single choice](/questions/choice/single-choice), [Multiple choice](/questions/choice/multiple-choice), [Dropdown](/questions/choice/dropdown), the image choices, both ranking questions and the ready-made choice questions such as [Gender](/questions/ready-made/gender) and [Age group](/questions/ready-made/age-group).
+
+Lists can be carried **into** those same questions, plus [Constant sum](/questions/ranking/constant-sum), and into a grid's rows or columns.
+
+A scale is a measurement rather than a set of choices, so [Likert](/questions/ratings/likert), the ratings, [NPS](/questions/ratings/nps) and [Yes or no](/questions/choice/yes-or-no) carry nothing in either direction.
+
+Order still applies on top. A carried list can be shuffled, and "Only some" counts up to what carried.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Piping" icon="quote-left" href="/logic/piping" />
+  <Card title="Randomization" icon="shuffle" href="/logic/randomization" />
+  <Card title="Loops" icon="rotate" href="/logic/loops" />
+  <Card title="Show and hide" icon="eye" href="/logic/show-and-hide" />
+</CardGroup>
