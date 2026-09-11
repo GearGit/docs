@@ -1,0 +1,42 @@
+---
+title: "Page breaks"
+description: "Split a block into more than one screen so people answer a few questions at a time."
+icon: "grip-lines"
+---
+
+A page break ends one screen and starts the next. It is how a block of ten questions becomes five screens of two instead of one long scroll.
+
+<Frame caption="A page break inside a block, drawn as a dashed line labelled page break.">
+  <img src="/images/survey/page-breaks/break.png" alt="A dashed page break line between two questions on the builder canvas" />
+</Frame>
+
+## What it is
+
+A break sits between two questions inside a [block](/survey/blocks-and-screens). The arithmetic is simple: one break makes two screens, two breaks make three, and a block with no breaks is one screen. The edges of a block are already screen boundaries, so you never need a break to separate one block from the next.
+
+On the canvas a break is a quiet dashed line with the words **page break** on it. Click the cross on the label to remove it, which joins the two screens back together.
+
+## Why it matters
+
+**It sets the pace.** Everything on one screen is answered and submitted together, so a break is the difference between one page of twenty questions and ten pages of two.
+
+**It makes logic possible.** A rule may only read an answer from an earlier screen. If you want to show question 4 only to people who picked something in question 3, there has to be a screen boundary between them. When you write a rule like that, the break is put in for you rather than the rule being refused: the dialog says so before you save, for example *Saving adds a page break after Q3*.
+
+A break placed for you is drawn with a lock instead of a cross, and the label reads **page break, held by** whatever holds it. Click it and a short list, **What holds this break**, names every rule that needs it, with each one opening the rule that put it there. Remove that rule and the break stays where it is as an ordinary break you can delete, so your screens do not rearrange themselves behind you.
+
+## See it in the builder
+
+Hover the gap between two questions and click **Page break**. Breaks can only split after a question, so the gap at the top of a block offers only **Add**.
+
+Two breaks in a row are left alone rather than collapsed, because that is how you make a deliberately empty screen.
+
+A screen where every question is hidden by a rule is skipped: the respondent never sees it, and nothing attached to the end of that screen runs, including the branching and variable rules you wrote there. If a rule on a screen is not firing, check whether anything on the screen was visible.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Blocks and screens" icon="layer-group" href="/survey/blocks-and-screens" />
+  <Card title="Show and hide" icon="eye" href="/logic/show-and-hide" />
+  <Card title="Branching" icon="code-branch" href="/logic/branching" />
+  <Card title="Carry-forward" icon="arrow-right-arrow-left" href="/logic/carry-forward" />
+</CardGroup>

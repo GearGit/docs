@@ -1,0 +1,65 @@
+---
+title: "Text limits"
+description: "Set how short or how long a typed answer can be."
+icon: "text-width"
+---
+
+Four rules bound the length of a typed answer: **Min characters**, **Max characters**, **Min words** and **Max words**. They live in the **Validation** dialog, under **length**.
+
+<Frame caption="The length rules on a long text question, in the Validation dialog.">
+  <img src="/images/rules/text-limits/dialog.png" alt="Min characters, Max characters, Min words and Max words in the Validation dialog" />
+</Frame>
+
+## What it does
+
+Each of the four is its own rule, and each has its own message:
+
+| Rule | What a respondent sees when it fails |
+|---|---|
+| Min characters | Must be at least 20 characters. |
+| Max characters | Must be at most 500 characters. |
+| Min words | Enter at least 3 words. |
+| Max words | Enter at most 5 words. |
+
+Set any one of them on its own, or combine them. A question with a minimum but no maximum is fine.
+
+Counting follows what the respondent can see. Spaces at the start and end of the answer are ignored, and invisible characters do not count toward a minimum. Words are whatever is separated by spaces, so "New York" is two words.
+
+Characters are checked before words, and one message shows at a time. If an answer is both too short and one word, the character message is the one they read.
+
+The rules are checked on our servers on every submit, not only in the browser.
+
+Nothing else shortens the answer. It is stored in full, shows in full in the Responses grid, and comes out in full in CSV and Excel [exports](/results/exports). The one exception is the SPSS `.sav` format, which cannot hold more than 255 bytes in a text column and shortens anything longer.
+
+## Set it up
+
+<Steps>
+  <Step title="Open Validation">
+    Select the question, then click the **Validation** row in the panel.
+  </Step>
+  <Step title="Type the bounds you want">
+    Fill in any of **Min characters**, **Max characters**, **Min words** or **Max words**. Clear a field to remove that rule.
+  </Step>
+  <Step title="Give it your own wording, if you want one">
+    **Custom error** at the bottom of the dialog replaces the default sentence. See [Custom messages](/rules/custom-messages).
+  </Step>
+</Steps>
+
+## Which questions have it
+
+Every question whose answer is typed text:
+
+- [Short text](/questions/text/short-text) and [Long text](/questions/text/long-text)
+- [Email](/questions/text/email), [Phone](/questions/text/phone) and [URL](/questions/text/url)
+- The ready-made text questions: [Name](/questions/ready-made/name), [Mobile phone](/questions/ready-made/mobile-phone), [Email address](/questions/ready-made/email-address), [Occupation](/questions/ready-made/occupation), [Country or region](/questions/ready-made/country-or-region) and [Address](/questions/ready-made/address)
+
+[Number](/questions/text/number) is not one of them. A typed number is bounded by its value, not its length, so it takes [number bounds](/rules/number-bounds) instead.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Patterns" icon="spell-check" href="/rules/patterns" />
+  <Card title="Number bounds" icon="arrow-down-1-9" href="/rules/number-bounds" />
+  <Card title="Custom messages" icon="message" href="/rules/custom-messages" />
+  <Card title="Required" icon="asterisk" href="/rules/required" />
+</CardGroup>

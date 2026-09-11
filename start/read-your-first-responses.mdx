@@ -1,0 +1,66 @@
+---
+title: "Read your first responses"
+description: "Find your responses and see what people answered."
+icon: "chart-simple"
+---
+
+Responses arrive as they are collected. **4 Responses** is the raw data, **5 Analytics** is what it adds up to, and clicking any response ID replays that one person's run through the survey.
+
+<Frame caption="The Responses grid: one row per session, one column per question.">
+  <img src="/images/start/read-your-first-responses/grid.png" alt="The Responses grid with a row per session and a column per question" />
+</Frame>
+
+## What it does
+
+**Responses** is a spreadsheet. One row is one session. The scrollable columns are your questions in order, then any variables you set (a score is one of these), then session data such as **Status**, **Started**, **Duration**, **LOI**, **Device**, **Browser**, **OS**, **Location** and **Timezone**. Turn the session columns on and off with **Session data**.
+
+**Status** is the one word for what happened to that person:
+
+| Status | What it means |
+|---|---|
+| **Completed** | They qualified and reached a Completed ending. |
+| **Screened out** | Your own logic ended their run early. |
+| **Quota full** | They qualified, but their group was already full. |
+| **Quality reject** | Their answers came in too fast to keep. |
+| **Partial** | They started, answered, and left without finishing. |
+| **In progress** | They are still filling it in. |
+
+The filter above the grid offers **All** and each of those, with the count beside it.
+
+**Analytics** is one page in two halves. **Fieldwork** is who arrived, how far they got, where they dropped off and what devices they came from. **Results** is a chart per question, with the base count under each. **Variables** follows if you have any.
+
+## Set it up
+
+<Steps>
+  <Step title="Open Responses">
+    Click **4 Responses**. Rows appear as sessions finish.
+  </Step>
+  <Step title="Narrow it down">
+    Use **Filters** to pick an outcome, a date range or a response type. **Showing X of Y responses** tells you what the numbers cover.
+  </Step>
+  <Step title="Open one response">
+    Click an ID. The page rebuilds that session screen by screen: what was shown, what was skipped and why, what they answered, and which rule ended their run.
+  </Step>
+  <Step title="Look at the totals">
+    Click **5 Analytics** for the funnel and a chart per question.
+  </Step>
+</Steps>
+
+## Good to know
+
+**Answers are written when a respondent reaches an ending.** Someone who drops off part way has a row, with a status of **Partial**, and no answers in it. That is why a partial row looks empty.
+
+**Test responses are real traffic, not made-up rows.** **Generate test responses** walks your actual logic and writes real sessions, kept apart from your live data and from your plan allowance.
+
+**Preview never creates a response.** Walking your own survey from the builder records nothing at all.
+
+**Date filters run on the start time.** Both ends are included, and the dates are read in UTC.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Responses and sessions" icon="table-list" href="/survey/responses-and-sessions" />
+  <Card title="The responses grid" icon="table" href="/results/responses-grid" />
+  <Card title="Per-question results" icon="chart-column" href="/results/per-question-results" />
+  <Card title="Exports" icon="file-export" href="/results/exports" />
+</CardGroup>

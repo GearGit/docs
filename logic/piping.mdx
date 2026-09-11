@@ -1,0 +1,72 @@
+---
+title: "Piping"
+description: "Put an earlier answer into the wording of a later question."
+icon: "quote-left"
+---
+
+Type `@` anywhere a respondent will read, and a menu offers the answers, variables and loop value you can drop into the sentence.
+
+<Frame caption="Every title and description takes an @: the description placeholder says so before you type.">
+  <img src="/images/logic/piping/menu.png" alt="A question on the canvas whose description placeholder reads: Add a description, or type @ to pipe an answer" />
+</Frame>
+
+## What it does
+
+A pipe becomes a chip in the text. It holds a reference, not a copy, so the wording behind it stays live: rename the question and the chip re-reads, and the respondent always sees what they themselves answered.
+
+You can pipe into a question title or description, the welcome screen, an ending, and an option label.
+
+The menu offers three kinds of thing:
+
+- **Earlier questions**, listed by their authored number: "Q2 Which of these have you used in the last month?". Only questions before this one appear, because a later answer does not exist yet.
+- **Variables**, under their own heading, including the survey's score when any question awards points.
+- **The loop value**, pinned at the top when the screen sits inside a [loop](/logic/loops), with a caption saying what it will be: "An answer picked on Q6", "An item from your list", or "1, 2, 3, one per pass".
+
+What a respondent reads is the wording, never an internal reference. Piping a choice question shows the option label they picked, and piping a question they skipped shows nothing rather than a gap full of symbols. A pipe that points at a question you later deleted also renders as nothing.
+
+## Example
+
+<Frame caption="The chip on the canvas, showing the question it points at.">
+  <img src="/images/logic/piping/chip.png" alt="A pipe chip inside a question title on the canvas" />
+</Frame>
+
+In the logic showcase, the long text question is titled:
+
+> You told us you are a **Q1 Which of these best describes you?**
+
+A respondent who picked "Regular shopper" on Q1 reads "You told us you are a Regular shopper".
+
+## Set it up
+
+<Steps>
+  <Step title="Put the caret where the answer should go">
+    Click into the title, description, option label or ending copy on the canvas and type `@`.
+  </Step>
+  <Step title="Pick the source">
+    Keep typing to narrow the list, by question number or by words in the title, then press Enter. A chip drops in where the caret was.
+  </Step>
+  <Step title="Read it as a respondent">
+    Open a [preview](/design/preview), answer the earlier question, and read the later screen back. Delete a chip like any other character.
+  </Step>
+</Steps>
+
+## Works with
+
+[Carry-forward](/logic/carry-forward) · [Variables](/logic/variables) · [Scoring](/logic/scoring) · [Loops](/logic/loops) · [Endings](/survey/endings)
+
+## Good to know
+
+A pipe can only read a screen the respondent has already seen. That is the same rule every condition follows, and it is why the menu offers earlier questions only. See [how logic runs](/logic/how-logic-runs).
+
+A question with several fields, such as [Address](/questions/ready-made/address), offers each field as its own row, numbered Q7.1, Q7.2 and so on.
+
+Writing the answer into an ending is the usual way to end a scored survey with a result: pipe the score into the ending copy.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Carry-forward" icon="arrow-right-arrow-left" href="/logic/carry-forward" />
+  <Card title="Variables" icon="square-root-variable" href="/logic/variables" />
+  <Card title="Loops" icon="rotate" href="/logic/loops" />
+  <Card title="Endings" icon="flag-checkered" href="/survey/endings" />
+</CardGroup>

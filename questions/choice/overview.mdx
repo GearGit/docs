@@ -1,0 +1,51 @@
+---
+title: "Choice questions"
+description: "Choose between the choice questions and see how they compare."
+icon: "list-check"
+---
+
+A choice question hands respondents a list you wrote and asks them to pick from it. Two things tell you which one to use. First, whether one answer is enough or several can be true at once: [Single choice](/questions/choice/single-choice), [Yes or no](/questions/choice/yes-or-no) and [Dropdown](/questions/choice/dropdown) take one answer, [Multiple choice](/questions/choice/multiple-choice) takes any number. Second, whether the options read better as words or as pictures: [Image single select](/questions/choice/image-single-select) and [Image multi select](/questions/choice/image-multi-select) are the same two questions with a tile in place of each label. A long list is easier to face collapsed, which is what a dropdown is for.
+
+<CardGroup cols={3}>
+  <Card title="Single choice" icon="circle-dot" href="/questions/choice/single-choice" />
+  <Card title="Multiple choice" icon="square-check" href="/questions/choice/multiple-choice" />
+  <Card title="Yes or no" icon="toggle-on" href="/questions/choice/yes-or-no" />
+  <Card title="Dropdown" icon="square-caret-down" href="/questions/choice/dropdown" />
+  <Card title="Image single select" icon="image" href="/questions/choice/image-single-select" />
+  <Card title="Image multi select" icon="images" href="/questions/choice/image-multi-select" />
+</CardGroup>
+
+<Frame caption="Every question type is added from one dialog, Add to survey, opened from any gap on the canvas.">
+  <img src="/images/questions/choice/overview/add.png" alt="The Add to survey dialog with a search box and the choice question types in the list." />
+</Frame>
+
+## Compare
+
+| | Answers with | Can be required | Drives a loop | Scorable |
+| --- | --- | --- | --- | --- |
+| [Single choice](/questions/choice/single-choice) | One option | Yes | Yes | Points per option |
+| [Multiple choice](/questions/choice/multiple-choice) | Any number of options, in the order picked | Yes | Yes | Points per option |
+| [Yes or no](/questions/choice/yes-or-no) | Yes or No, in your wording | Yes | Yes | Points per answer |
+| [Dropdown](/questions/choice/dropdown) | One option | Yes | Yes | Points per option |
+| [Image single select](/questions/choice/image-single-select) | One option | Yes | Yes | Points per option |
+| [Image multi select](/questions/choice/image-multi-select) | Any number of options, in the order picked | Yes | Yes | Points per option |
+
+Only the two that take several answers carry a count rule. On [Multiple choice](/questions/choice/multiple-choice) and [Image multi select](/questions/choice/image-multi-select) the panel offers **How many they can choose**, covered in [Selection counts](/rules/selection-counts).
+
+## Other and None of these
+
+Every choice question except [Yes or no](/questions/choice/yes-or-no) offers two extra options in the panel, and both are worth knowing before you write your list.
+
+**"Other" with a text box** adds an **Other** option with a box beside it, so a respondent can give an answer you did not think of. If the question is required, so is the text they type into it.
+
+**"None of these" option** adds an option that stands for none of the rest. Picking it clears everything else they had picked, and it counts as a complete answer, so it satisfies a minimum count on its own.
+
+Both always show last, and neither is ever shuffled or dropped from a partial draw. A Yes or no question has no option list to add them to: its two answers are fixed, and you set their wording with **Yes label** and **No label**.
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Selection counts" icon="asterisk" href="/rules/selection-counts" />
+  <Card title="Carry-forward" icon="diagram-project" href="/logic/carry-forward" />
+  <Card title="Randomization" icon="shuffle" href="/logic/randomization" />
+</CardGroup>

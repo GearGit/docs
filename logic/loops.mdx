@@ -1,0 +1,85 @@
+---
+title: "Loops"
+description: "Ask the same questions once for each thing someone picked."
+icon: "rotate"
+---
+
+A loop repeats a whole block, once per item. Ask about each brand they named, each visit they made, or each of three channels you chose yourself.
+
+<Frame caption="Loop this block: what to repeat for, and how many times.">
+  <img src="/images/logic/loops/dialog.png" alt="The Loop this block dialog" />
+</Frame>
+
+## What it does
+
+A loop belongs to a block, so the block is the body: everything inside it runs again on every pass.
+
+**Repeat this block for each** offers five drivers:
+
+| Driver | One pass for |
+|---|---|
+| **For each answer** | Each of an earlier question's answers. **Which of its answers** takes **chosen**, **all** or **not chosen** |
+| **Repeat N times** | A number that comes from an earlier question: a number they typed, or the count of choices they picked |
+| **A list** | Each item of a list you type, one per line |
+| **A variable** | Each item of a **List of text** [variable](/logic/variables) |
+| **A number** | A fixed number of passes |
+
+**Loop value** is what one pass is on, and the dialog names it along with what it will be: "An answer picked on Q6", "An item from your list", "1, 2, 3, one per pass". Its help line reads "Changes on every pass". Use it in a [pipe](/logic/piping) to title a question with the thing being asked about, and as a condition source inside the body.
+
+**Stop early when** is an optional condition, checked between passes.
+
+The items are worked out and frozen as the respondent enters the loop. Changing the answer that drives it afterwards, by going back, does not reshape a loop already running.
+
+Question numbers do not multiply. A looped question keeps the number it was authored with, and shows it on every pass.
+
+## Example
+
+<Frame caption="A looped block is marked as one on the canvas.">
+  <img src="/images/logic/loops/canvas.png" alt="A block on the canvas carrying a loop badge" />
+</Frame>
+
+The logic showcase loops five blocks, one per driver:
+
+- **Per screen** repeats for each screen they chose on "Which screens would you use?", and stops early once the [score](/logic/scoring) reaches 40
+- **Per visit** repeats as many times as they ranked items on "Put these in order, most important first"
+- **Per channel** repeats over a typed list: Email, Chat, Phone
+- **Per topic** repeats over the **Topics** variable
+- **Per feature** repeats a fixed three times
+
+## Set it up
+
+<Steps>
+  <Step title="Put the questions in a block of their own">
+    Everything that should repeat goes in one block. See [blocks and screens](/survey/blocks-and-screens).
+  </Step>
+  <Step title="Open Loop this block">
+    Select the block and click **Loop this block** in the panel.
+  </Step>
+  <Step title="Choose the driver">
+    Pick one of the five, then fill in what it needs: a question, a list, a variable or a number.
+  </Step>
+  <Step title="Name each pass in the questions">
+    Inside the body, type `@` in a question title and choose **Loop value**, so every pass says what it is about.
+  </Step>
+</Steps>
+
+## Works with
+
+[Piping](/logic/piping) · [Carry-forward](/logic/carry-forward) · [Variables](/logic/variables) · [Show and hide](/logic/show-and-hide) · [Blocks and screens](/survey/blocks-and-screens)
+
+## Good to know
+
+The questions offered as a driver are the ones whose answer is something a respondent can read back: a choice, a number, a rating, a piece of text. A grid, a [Range slider](/questions/ratings/range-slider), a [Constant sum](/questions/ranking/constant-sum), [Match pairs](/questions/ranking/match-pairs) and the image questions answer with a structure rather than an item, so they are not offered.
+
+**Repeat N times** needs a question that answers with a number or with a list of choices. The dialog says so when there is not one yet: "Add a question that answers with a number, or with a list of choices, before this block."
+
+Looped answers come out of an [export](/results/exports) either way. **Looped questions** offers **Wide (columns)**, a column per pass, and **Long (rows)**, a row per pass.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Piping" icon="quote-left" href="/logic/piping" />
+  <Card title="Carry-forward" icon="arrow-right-arrow-left" href="/logic/carry-forward" />
+  <Card title="Blocks and screens" icon="layer-group" href="/survey/blocks-and-screens" />
+  <Card title="How logic runs" icon="diagram-project" href="/logic/how-logic-runs" />
+</CardGroup>

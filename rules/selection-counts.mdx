@@ -1,0 +1,74 @@
+---
+title: "Selection counts"
+description: "Set how many options someone has to pick."
+icon: "list-ol"
+---
+
+On a question where more than one answer can be picked, **How many they can choose** sets the floor, the ceiling, or both.
+
+<Frame caption="The count modes in the Validation dialog: Any number, At least, At most, Exactly, Between.">
+  <img src="/images/rules/selection-counts/dialog.png" alt="How many they can choose, with the five modes across a segmented control" />
+</Frame>
+
+## What it does
+
+You pick a mode rather than typing two numbers:
+
+| Mode | What it means |
+|---|---|
+| Any number | No count rule at all |
+| At least | A floor, with no ceiling |
+| At most | A ceiling, with no floor |
+| Exactly | The floor and the ceiling are the same number |
+| Between | A floor and a ceiling, set separately |
+
+The two numbers are stored as **Min answers** and **Max answers**, which is how the panel reads them back.
+
+**Respondents are told before they touch anything.** A line above the options says what they are allowed to do: "Select up to 3 options", "Select at least 2 options", "Select exactly 3 options", "Select 1 to 3 options", or "Select all that apply" when there is no rule. A single-answer question always reads "Select one".
+
+**The ceiling is enforced as they pick.** Once they are at the maximum, the remaining options stop responding, so the rule never arrives as a surprise at the bottom of the screen. Submitting more anyway reads "Please select at most 3 options."
+
+**The floor is checked on submit**, and reads "Please select at least 2 options."
+
+Three things the floor does on its own, so nobody gets stuck:
+
+- It does not apply to a question left blank when the question is not [Required](/rules/required). Answering nothing stays a valid way to skip an optional question.
+- It drops to the number of options a respondent is actually shown. [Carry-forward](/logic/carry-forward), a retired option and "show only some" in [answer order](/logic/randomization) can all leave fewer options on screen than the number you typed.
+- Picking a "None of these" option satisfies it. That option is the whole answer, so it is never held to a count.
+
+While you author, the number fields stop at the count of options the question has, so a floor of 5 cannot be set on a list of three. When the options are carried forward there is no count to stop at, because the real list is built while the respondent is filling the survey.
+
+"Other" and "None of these" always render last, whatever order the rest are in.
+
+## Set it up
+
+<Steps>
+  <Step title="Open Validation">
+    Select the question, then click the **Validation** row in the panel.
+  </Step>
+  <Step title="Choose a mode">
+    Under **answers**, pick **At least**, **At most**, **Exactly** or **Between**, and type the numbers.
+  </Step>
+  <Step title="Check the line respondents read">
+    Open a preview. The sentence above the options should say what you meant.
+  </Step>
+</Steps>
+
+## Which questions have it
+
+The control appears where a respondent can pick more than one answer:
+
+- [Multiple choice](/questions/choice/multiple-choice)
+- [Image multi select](/questions/choice/image-multi-select)
+- [Dropdown](/questions/choice/dropdown), when it is set to accept more than one answer
+
+A single-answer question offers exactly one answer already, so it has nothing to count. To ask for a number of rows in a grid, use **Min rows answered** in [number bounds](/rules/number-bounds).
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Required" icon="asterisk" href="/rules/required" />
+  <Card title="Custom messages" icon="message" href="/rules/custom-messages" />
+  <Card title="Carry-forward" icon="arrow-right-arrow-left" href="/logic/carry-forward" />
+  <Card title="Randomization" icon="shuffle" href="/logic/randomization" />
+</CardGroup>

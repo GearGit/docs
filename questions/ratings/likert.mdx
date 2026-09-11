@@ -1,0 +1,87 @@
+---
+title: "Likert"
+description: "Say how much you agree with a statement, on a labeled scale."
+icon: "bars-staggered"
+---
+
+Likert puts a statement in front of a respondent and asks how far they agree with it, on a scale you label yourself. The points are the options: you write one option per point, so there is no scale size to set and no wording supplied for you.
+
+<Frame caption="A Likert question as a respondent sees it, one row per scale point.">
+  <img src="/images/questions/ratings/likert/respondent.png" alt="The statement The site is easy to use above five scale points from Strongly disagree to Strongly agree." />
+</Frame>
+
+## When to use it
+
+- You are measuring an attitude to one statement, in the words your field uses for it.
+- You want a conventional 5 or 7 point agreement scale you can compare against other studies.
+- You want the answer charted point by point rather than averaged into a number.
+
+**Consider instead:** [Radio grid](/questions/grids/radio-grid) when several statements share one scale, [Opinion scale](/questions/ratings/opinion-scale) when you want a 0 to 10 number, [Star rating](/questions/ratings/star-rating) when respondents are rating rather than agreeing, [Single choice](/questions/choice/single-choice) when the answers are not a scale at all.
+
+## Add it
+
+<Steps>
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**.
+  </Step>
+  <Step title="Pick Likert">
+    In **Add to survey**, type to filter and click **Likert**. It arrives with five points already written: Strongly Disagree, Disagree, Neutral, Agree, Strongly Agree.
+
+    <Frame caption="A Likert question on the builder canvas, its five points edited in place.">
+      <img src="/images/questions/ratings/likert/canvas.png" alt="The statement and its five scale points on the builder canvas." />
+    </Frame>
+  </Step>
+  <Step title="Write the statement and set the points">
+    Type the statement on the canvas. Edit the points in place, add or remove one to change the length of the scale, or replace the whole set with **Use a standard scale**.
+  </Step>
+</Steps>
+
+## Settings
+
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
+| Setting | What it does |
+| --- | --- |
+| Options | The scale points, one option per point. Edited on the canvas, or in **Bulk edit** as plain text, one per line. Their order is the scale, so write them from one end to the other. |
+| **Standard scale** | **Use a standard scale** replaces the points with **Agreement, 5 points** or **Agreement, 7 points**. They become ordinary options once applied, so you can reword any of them afterward. |
+| **Answer order** | **As written** or **Reversed**. Reversed shows the scale the other way round to about half of respondents, which is how you balance out the habit of picking the first thing on the list. |
+
+<Frame caption="The question panel for a Likert, with the standard scale row and the answer order row.">
+  <img src="/images/questions/ratings/likert/panel.png" alt="The builder question panel showing Required, Standard scale, Answer order and Scoring." />
+</Frame>
+
+There is no shuffle. A scale is measured by its order, so scrambling the points would change what the question measures, and the **Answer order** dialog says so in place of the control.
+
+<Frame caption="Answer order on a scale: as written or reversed, and no shuffle.">
+  <img src="/images/questions/ratings/likert/answer-order.png" alt="The Answer order dialog offering As written and Reversed, with a line explaining why a scale is never shuffled." />
+</Frame>
+
+## Rules you can set
+
+| Rule | What it does |
+| --- | --- |
+| [Required](/rules/required) | They cannot move on until they pick a point. |
+
+Required is the whole of it. A scale point is either chosen or it is not, so a Likert has no **Validation** row in the panel and nothing else to constrain.
+
+## Logic that works with it
+
+The answer is one scale point, stored as that option rather than as a number, so conditions compare it by label and you pick the point from a list of the ones you wrote: **is**, **is not**, **is one of**, **is not one of**, **is answered**, **is not answered**. It [scores](/logic/scoring) points per scale point, and a point can be negative, so a disagree end can cost marks. It can [drive a loop](/logic/loops), which gives one pass for the point they chose. It cannot be a [carry-forward](/logic/carry-forward) source, because one scale point is a measurement of something rather than a list of things worth asking about again, and nothing carries into it either, because a carried list would append points to the scale and change what it measures. It cannot be shuffled, for the same reason the scale has an order in the first place. [Piping](/logic/piping) it into later wording prints the point they saw, in the wording they saw.
+
+## How it shows in results
+
+Per question the default is a **Bar chart**, one bar per scale point, counting the respondents who picked it. **Histogram** and **Pie chart** are the other two entries in **Chart type**.
+
+In every export the question becomes one column, holding a code for the point they picked with your wording attached to it. Each answer keeps the wording it was shown, so rewording a point later never rewrites the answers already given.
+
+<Frame caption="The Likert question on the Analytics tab, charted point by point.">
+  <img src="/images/questions/ratings/likert/results.png" alt="A bar chart of the five scale points with counts and percentages beside them." />
+</Frame>
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Ratings and scales" icon="star-half-stroke" href="/questions/ratings/overview" />
+  <Card title="Opinion scale" icon="arrows-left-right" href="/questions/ratings/opinion-scale" />
+  <Card title="Smiley rating" icon="face-smile" href="/questions/ratings/smiley-rating" />
+</CardGroup>

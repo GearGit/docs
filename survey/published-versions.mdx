@@ -1,0 +1,44 @@
+---
+title: "Published versions"
+description: "See how publishing freezes a copy of your survey that respondents answer."
+icon: "code-commit"
+---
+
+A survey exists in two forms at once. The **draft** is what you edit. A **published version** is a numbered, frozen copy of that draft, and it is the only thing a respondent ever sees.
+
+<Frame caption="Publish history: every version, with the date it was published.">
+  <img src="/images/survey/published-versions/history.png" alt="The publish history popover listing every published version with its date" />
+</Frame>
+
+## What it is
+
+Publishing takes the draft as it stands, numbers it (v1, then v2, and so on) and locks it. Nothing about that version changes again. You go on editing the draft, and the next publish makes the next version.
+
+Versions are kept, all of them. On **2 Publish**, **History** lists every version with the date it went out and marks the current one.
+
+## Why it matters
+
+**A respondent finishes the version they started.** Their run is pinned to it when they open the link, so publishing an update never changes a survey underneath someone who is part way through. New links get the new version; people already inside keep the old one.
+
+**Your data stays attached to the version it was collected on.** The publish dialog says as much: responses already collected stay attached to their versions.
+
+**Column names in your exports are allocated at publish and carried forward.** A question keeps the same export variable name and the same numeric codes in the next version, so waves of the same tracker stack instead of drifting apart.
+
+**Content people have answered is carried forward.** Delete an option that respondents have already picked, and publish keeps it in the frozen version as a retired option: nobody is offered it again, and the answers that used it still mean what they meant. You get the deletion you asked for and the collected data keeps its meaning.
+
+## See it in the builder
+
+The **Publish** step in the lifecycle strip reads **Publish** while an update is owed and **Published** once the live version matches your editor. It only re-arms when something a respondent would notice has changed: the questions, the logic, the theme, a setting they feel. Renaming the survey or editing your internal notes leaves it quiet.
+
+**Restore** on the Settings tab copies an older version back over your draft. The dialog is exact about it: your current draft is checkpointed first, then replaced with that version's content. Restoring changes nothing about what is live and un-publishes nothing. Publish again to make the restored content the version people answer.
+
+Publishing is never blocked by how you built your survey. A question with no options, a rule that can never match, a screen nobody reaches: all of them publish. The only thing that stops a publish is something on our side, and the dialog says so plainly, along with a count of what needs our help to clear.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Publish and share" icon="paper-plane" href="/start/publish-and-share" />
+  <Card title="Editing a live survey" icon="pen-ruler" href="/share/editing-a-live-survey" />
+  <Card title="Responses and sessions" icon="table-list" href="/survey/responses-and-sessions" />
+  <Card title="Exports" icon="file-export" href="/results/exports" />
+</CardGroup>

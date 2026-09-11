@@ -1,0 +1,58 @@
+---
+title: "Endings"
+description: "Write one ending for every way a response can finish."
+icon: "flag-checkered"
+---
+
+An ending is a screen a respondent lands on when their run is over. A survey has as many of them as it has ways to finish, each one named by you and tagged with an outcome.
+
+<Frame caption="The End screens panel, listing this survey's four endings and their outcomes.">
+  <img src="/images/survey/endings/panel.png" alt="The End screens panel in the builder, listing four endings with their outcome tags" />
+</Frame>
+
+## What it is
+
+Click **Endings** in the rail and the panel reads **End screens**. **Add an end screen** then **Pick an outcome** creates one. Each ending carries a **Name**, which is yours to write, and an **Outcome**, which is one of four:
+
+- **Completed**, they qualified and you have what you need.
+- **Screened out**, they never qualified.
+- **Quota full**, they did qualify, but their group was already full.
+- **Quality reject**, their answers came in too fast to keep.
+
+Several endings can share one outcome. A study with three different reasons for screening someone out can have three screened-out endings, each with its own wording, and the grid still tells you which one a respondent hit.
+
+One ending per outcome can be marked **Default**. The default is where people go when something ends the survey with that outcome without naming a screen.
+
+## Why it matters
+
+**The outcome is what counts, not the wording.** It decides what a finished respondent does to your numbers:
+
+| Outcome | Uses a plan response | Counts toward your response limit | Fills a quota cell | Answers kept |
+|---|---|---|---|---|
+| Completed | Yes | Yes | Yes | Yes |
+| Screened out | Yes | No | No | Yes |
+| Quota full | Yes | Yes | Yes | Yes |
+| Quality reject | No | No | No | Yes |
+
+Someone turned away mid-survey because their cell was already full is the one exception to the middle two columns: they land on a Quota full ending and their answers are kept, but they do not use up your response limit and they do not fill the cell that turned them away.
+
+Every outcome keeps the answers the respondent gave, which is why a screened-out response still uses one of your plan's responses: you keep the data, so you pay for it.
+
+## See it in the builder
+
+Logic ends a survey one way. In any branching dialog, the destination **End at an ending** lists your endings by name, so a rule reads **End at Not this time** rather than naming an outcome. See [Branching](/logic/branching) and [Screen-outs](/logic/screen-outs).
+
+Deleting an ending tells you first how many rules point at it, and sends those rules to the default ending for that outcome instead of breaking them. One ending cannot be deleted at all: every survey needs somewhere to finish, and anything pointing at a deleted ending lands there.
+
+The ending's copy is written on the canvas like any other screen. What happens after it is in the **Button** panel beside it: **Stay here**, a **Button** with your own text and destination, or **Auto redirect** with a destination URL and a delay. A redirect URL may carry `{disposition}` for the outcome and `{sessionId}` for the response, and any parameter that came in on the respondent's own link by name.
+
+To a respondent, a screen-out and a quality reject look like any other ending. Nothing tells them they were turned away.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Screen-outs" icon="door-open" href="/logic/screen-outs" />
+  <Card title="Quotas" icon="gauge-high" href="/logic/quotas" />
+  <Card title="Branching" icon="code-branch" href="/logic/branching" />
+  <Card title="Responses and sessions" icon="table-list" href="/survey/responses-and-sessions" />
+</CardGroup>

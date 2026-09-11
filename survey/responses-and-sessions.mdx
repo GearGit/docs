@@ -1,0 +1,44 @@
+---
+title: "Responses and sessions"
+description: "Tell the difference between a session someone is filling in and a response you can analyze."
+icon: "table-list"
+---
+
+A **session** is one person's run through one published version of your survey. A **response** is what that run leaves behind for you to read.
+
+<Frame caption="One session replayed: every screen it saw, every screen it skipped, and where it ended.">
+  <img src="/images/survey/responses-and-sessions/journey.png" alt="A single response replayed screen by screen, with outcome and respondent details beside it" />
+</Frame>
+
+## What it is
+
+A session starts when someone opens your link. It pins the published version it started on and stays on it for the whole run, whatever you publish in the meantime. Every screen they submit is checked and routed on the server, so what they end up seeing never depends on what their browser believed.
+
+The session ends when they reach an ending, and that ending decides the response's outcome: **Completed**, **Screened out**, **Quota full** or **Quality reject**. A session that is abandoned part way reads as **Partial**, and one still open reads as **In progress**.
+
+## Why it matters
+
+**Answers are written when the session reaches an ending.** A person who leaves half way through has a row in the grid and nothing in its answer columns. That is not a fault in the row; those answers are not part of your dataset.
+
+**A response keeps the wording that was on screen.** Each answer stores both what was chosen and the label as the respondent read it. Renaming an option later changes what new respondents are offered and leaves every answer already collected saying what it said.
+
+**Going back rewrites what follows.** Respondents can return to an earlier screen when you allow it. Committing that screen again drops everything they answered after it, and they walk forward from there, which is the only way an edited answer can be trusted to still fit the path it sent them down.
+
+**Editing an answer is yours, not theirs.** Changing a cell in the grid updates what analytics and exports read, and leaves the respondent's own submission intact. It does not recompute a score.
+
+## See it in the builder
+
+Click any response ID in **4 Responses** and the page replays that session: every screen in order, marked as shown or skipped with the reason, the answers as given, the loop passes grouped, and, beside them, the outcome, the rule that ended the run, the quota cell it counted toward, and the device, location and timezone it came from.
+
+On **5 Analytics**, the funnel counts **Screened** as the whole set of people who were turned away: screened out, quota full and quality reject together. The grid tells them apart; the funnel bar does not.
+
+Date filters read the time the session started. Both ends of the range are included, and the dates are read in UTC.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Endings" icon="flag-checkered" href="/survey/endings" />
+  <Card title="Published versions" icon="code-commit" href="/survey/published-versions" />
+  <Card title="The responses grid" icon="table" href="/results/responses-grid" />
+  <Card title="Editing an answer" icon="pen" href="/results/editing-an-answer" />
+</CardGroup>

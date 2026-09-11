@@ -1,0 +1,62 @@
+---
+title: "Patterns"
+description: "Accept only answers that match a shape you set."
+icon: "spell-check"
+---
+
+**Pattern** accepts a typed answer only when it has the shape you picked: a ZIP code, a 24 hour time, letters and nothing else. It lives in the **Validation** dialog, under **format**.
+
+<Frame caption="Pattern is a list of named shapes, with a custom option at the bottom.">
+  <img src="/images/rules/patterns/dialog.png" alt="The Pattern picker in the Validation dialog" />
+</Frame>
+
+## What it does
+
+Pattern is a picker, not a box you have to write code into. The named shapes are:
+
+**Email**, **US phone**, **US ZIP (5)**, **US ZIP (5+4)**, **Currency (USD)**, **Whole number**, **Number (2 decimals or fewer)**, **Date mm/dd/yyyy**, **Time HH:MM (24h)**, **Letters only**, **Alphanumeric** and **URL**.
+
+Below them sits **Custom pattern**, which opens a field for a regular expression of your own, for example `^[A-Z]{2}\d{4}$` for two letters and four digits.
+
+An answer that does not match reads "Invalid format." Write your own wording with [Custom messages](/rules/custom-messages).
+
+The pattern reads the answer with its leading and trailing spaces removed, and it runs on our servers on every submit.
+
+Three things worth knowing before you reach for one:
+
+- **[Email](/questions/text/email), [Phone](/questions/text/phone) and [URL](/questions/text/url) already check their own format.** A pattern on top of one of those is for narrowing it further, such as accepting only addresses at your own domain.
+- **A pattern and a length rule can both apply.** Characters are checked first, then the pattern, then the question's own format check. One message shows at a time.
+- **Nothing checks the pattern against real answers for you.** A shape nothing can match still publishes, so type a real answer into a [preview](/design/preview) before you send the survey out.
+
+## Set it up
+
+<Steps>
+  <Step title="Open Validation">
+    Select the question, then click the **Validation** row in the panel.
+  </Step>
+  <Step title="Pick a shape">
+    Under **format**, open **Pattern** and choose one of the named shapes, or **Custom pattern** to write your own.
+  </Step>
+  <Step title="Test it both ways">
+    In a preview, type an answer that should pass and one that should fail. The second should stop on the screen.
+  </Step>
+</Steps>
+
+## Which questions have it
+
+Every question whose answer is typed text:
+
+- [Short text](/questions/text/short-text) and [Long text](/questions/text/long-text)
+- [Email](/questions/text/email), [Phone](/questions/text/phone) and [URL](/questions/text/url)
+- The ready-made text questions: [Name](/questions/ready-made/name), [Mobile phone](/questions/ready-made/mobile-phone), [Email address](/questions/ready-made/email-address), [Occupation](/questions/ready-made/occupation), [Country or region](/questions/ready-made/country-or-region) and [Address](/questions/ready-made/address)
+
+A question whose answer is picked rather than typed has nothing to match, so it has no Pattern field. To bound a [Number](/questions/text/number), use [number bounds](/rules/number-bounds).
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Text limits" icon="text-width" href="/rules/text-limits" />
+  <Card title="Custom messages" icon="message" href="/rules/custom-messages" />
+  <Card title="Number bounds" icon="arrow-down-1-9" href="/rules/number-bounds" />
+  <Card title="Required" icon="asterisk" href="/rules/required" />
+</CardGroup>
