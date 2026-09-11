@@ -4,50 +4,67 @@ description: "Ask about marital status."
 icon: "ring"
 ---
 
-_To write._
+Marital status is a single choice question that arrives with six answers already written, from Single to Widowed, plus an option for people who would rather not say. Respondents pick one.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A Marital status question as a respondent sees it, six options with one to pick. */}
 
 ## When to use it
 
-_To write._
+- You are profiling a sample and want household situation as one of the breaks in your results.
+- You are screening for a study about a household rather than an individual.
+- You want wording that already includes living with a partner, which a list drafted quickly often leaves out.
 
-**Consider instead:** _To write_
+**Consider instead:** [Single choice](/questions/choice/single-choice) when you want a list of your own, [Age group](/questions/ready-made/age-group) and [Gender](/questions/ready-made/gender) for the other profiling questions that come with their answers written, [Yes or no](/questions/choice/yes-or-no) when one plain question, such as whether they live with children, is what you are actually after.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Marital status">
-    _To write._
+  <Step title="Pick Marital Status">
+    In **Add to survey**, type to filter and click **Marital Status**. It arrives with six options written: Single, Married, Living with partner, Divorced, Widowed, Prefer not to say.
+
+    {/* screenshot: A Marital status question on the builder canvas, its six options edited in place. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question and edit the options">
+    Type the question on the canvas. The options are ordinary options: reword one in place, click **Add option** at the end of the list to add another, or open **Bulk edit** from the chip beside it and paste a list, one per line. Adding Separated or a civil partnership is a common edit.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Options | The list they pick from. Edited on the canvas, or in **Bulk edit** as plain text, one per line. |
+| **"Other" with a text box** | Adds an **Other** option with a text box beside it, so somebody can describe a situation your list does not cover. It always shows last. |
+| **"None of these" option** | Adds an option that stands for none of the rest. Picking it clears anything else they had picked. It always shows last. |
+| **Answer order** | **As written**, **Shuffled** or **Reversed**. Shuffled draws a fresh order for each respondent; reversed turns the list around for about half of them. The same person sees the same order every time they come back to the screen. |
+| **How many each respondent sees** | Inside the **Answer order** dialog. **All of them**, or **Only some**, which draws that many options for each respondent. Pinned options, **Other** and **None of these** are outside the draw and show to everyone. |
+
+{/* screenshot: The question panel for a Marital status question, with the option list settings and the answer order row. */}
 
 ## Rules you can set
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they pick an option. |
+
+Required is the whole of it. One option is either chosen or it is not, so a Marital status question has no **Validation** row in the panel and nothing else to constrain.
 
 ## Logic that works with it
 
-_To write._
+The answer is one option, stored as the option itself rather than as its wording, so rewording an option never moves a rule that points at it. Conditions read it with **is**, **is not**, **is one of**, **is not one of**, **is answered** and **is not answered**, and you pick the value from the list you wrote. **is one of** groups several answers into one branch, such as anyone living with a partner, married or not. It is a [carry-forward](/logic/carry-forward) source, and a carried list can land in its options. It can [drive a loop](/logic/loops), over the option they chose, the ones they left, or the whole list. It [scores](/logic/scoring) points per option, and a point can be negative. Individual options can be shown or hidden by a rule with [Show/hide option](/logic/show-and-hide). [Piping](/logic/piping) it into later wording prints the option in the wording they saw.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, one bar per option, counting the respondents who picked it. **Pie chart** and **Values list** are the other two entries in **Chart type**.
+
+In every export the question becomes one coded column, holding a code for the option they picked with your wording attached to it. Each answer keeps the wording it was shown, so rewording an option later never rewrites the answers already given.
+
+{/* screenshot: The Marital status question on the Analytics tab, charted as a bar chart. */}
 
 ## Related
 

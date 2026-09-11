@@ -4,50 +4,68 @@ description: "Pick a point on a numbered scale between two labels."
 icon: "arrows-left-right"
 ---
 
-_To write._
+Opinion scale puts eleven numbered buttons in front of a respondent, 0 to 10, with a caption at each end that you write. It is the same instrument as [NPS](/questions/ratings/nps) without the recommendation framing, so use it whenever you want a wide numbered scale for something else entirely.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: An opinion scale question as a respondent sees it, eleven numbered buttons between two captions. */}
 
 ## When to use it
 
-_To write._
+- You want a wide scale for a judgment that is not about recommending: value for money, ease, confidence, likelihood of returning.
+- You want the answer as a number you can average, threshold and branch on, rather than as a named point.
+- You are writing both ends yourself and the standard recommendation wording would be wrong.
 
-**Consider instead:** _To write_
+**Consider instead:** [NPS](/questions/ratings/nps) when the question really is about recommending and you want the score reported as one, [Star rating](/questions/ratings/star-rating) when a shorter 3, 5, 7 or 10 point scale reads better, [Likert](/questions/ratings/likert) when the points are words rather than numbers, [Numeric slider](/questions/ratings/numeric-slider) when the range is wider than a row of buttons can hold.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Opinion scale">
-    _To write._
+  <Step title="Pick Opinion Scale">
+    In **Add to survey**, type to filter and click **Opinion Scale**, under **Rating**. The question lands where the gap was with the full 0 to 10 scale drawn and both end captions filled in.
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question and the two ends">
+    Type the question on the canvas, then write the two captions in the panel so the ends say what your scale measures.
+
+    {/* screenshot: The opinion scale question on the builder canvas, edited in place. */}
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **High label** | The caption under the right end of the scale. Until you write one it reads **Extremely likely**, which is what respondents see. |
+| **Low label** | The caption under the left end. Until you write one it reads **Not at all likely**. |
+
+The wording it starts with is the recommendation question's, and it stays until you write your own, so the two captions are part of setting the question up.
+
+The scale is fixed at eleven points, 0 to 10, and there is no control that changes it. The **Type** row at the top of the panel switches this question to [NPS](/questions/ratings/nps) and back, which is the same scale under the name your reporting uses.
+
+{/* screenshot: The question panel for an opinion scale, with the high and low label rows. */}
 
 ## Rules you can set
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they pick a number. |
+
+Required is the whole of it. Every answer the scale offers is already inside its range, so there is nothing left to bound and the panel has no **Validation** row.
 
 ## Logic that works with it
 
-_To write._
+The answer is a number, so conditions compare it as one: **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most**, **is between**, **is answered** and **is not answered**. It [scores](/logic/scoring) points per scale point, one row per point from 0 to 10, and a point can be negative. It can [drive a loop](/logic/loops), either one pass for the answer they gave or as many passes as the number they chose. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it, because a rating is a measurement rather than a list of things worth asking about again. [Piping](/logic/piping) it into later wording prints the number they picked.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, one bar per point from 0 to 10, counting the respondents who picked it. **Histogram** and **Pie chart** are the other two entries in **Chart type**.
+
+In every export the question becomes one column holding the number that respondent picked.
+
+{/* screenshot: The opinion scale question on the Analytics tab, charted as one bar per point. */}
 
 ## Related
 

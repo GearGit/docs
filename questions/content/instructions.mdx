@@ -4,33 +4,45 @@ description: "Tell respondents what to do before they answer."
 icon: "circle-info"
 ---
 
-_To write._
+An instruction block puts a note on a screen and asks for nothing back. Use it to say how a question wants to be answered, to warn people that a section is about to change subject, or to hand them a rule they need to hold in mind for the questions that follow.
 
-{/* screenshot or short video: the block as a respondent sees it */}
+{/* screenshot: An instruction block as a respondent sees it, above the questions it applies to. */}
 
 ## What it is
 
-_To write._
+The same rich text area a [text block](/questions/content/text-block) is, under a different name. A respondent sees the two identically, and they take the same formatting, the same images and dividers, and the same piped answers.
+
+The difference is what you reach for them for, and that matters when you come back to a long survey and read the canvas. A text block carries the prose of the study: the introduction, the section headers, the explanations. An instruction carries a direction to the person filling it in. Naming the two apart keeps a survey readable to whoever edits it after you.
+
+Like a text block it takes no answer, so it has no **Required** toggle, no **Validation** row and no logic of its own, and it never becomes a column in your results.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**.
   </Step>
-  <Step title="Choose Instructions">
-    _To write._
+  <Step title="Pick Instructional">
+    In **Add to survey**, type to filter and click **Instructional**, in the **Content** group. It arrives empty, with the placeholder **Write something…**.
+
+    {/* screenshot: An instruction block on the builder canvas, with the formatting toolbar docked above it. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the instructions">
+    Click the block and type. The toolbar appears above it while you are writing.
   </Step>
 </Steps>
 
 ## Settings
 
+The panel beside the rail names the block, offers **Preview this instructional** and **Delete**, and sets nothing else. Everything is on the toolbar above the text, and on the `/` menu you get by typing a slash at the start of an empty line.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Text style | **Heading**, **Paragraph**, **Bullet list** and **Numbered list**. A numbered list is the usual shape for a set of steps. |
+| **Bold**, **Italic**, **Underline**, **Link** | The three marks and a link, applied to the selection. |
+| Alignment | **Align left**, **Align centre** and **Align right**, per paragraph. |
+| **Insert** | The **+** button adds an **Image**, picked from your [media library](/design/media-library), or a **Divider**. |
+| **@** | Prints an answer from an earlier screen, so an instruction can name what they told you. See [Piping](/logic/piping). |
 
 ## Related
 

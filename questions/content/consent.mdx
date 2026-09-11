@@ -4,33 +4,46 @@ description: "Ask respondents to agree before they go on."
 icon: "file-signature"
 ---
 
-_To write._
+Consent is a checkbox with a sentence beside it, on the welcome screen. A respondent ticks it, or they do not start. Use it where your study needs a record that people agreed to take part before they saw a single question.
 
-{/* screenshot or short video: the block as a respondent sees it */}
+{/* screenshot: The consent checkbox as a respondent sees it, under the welcome text and above the Start button. */}
 
 ## What it is
 
-_To write._
+The one content block that asks for something. It lives on the welcome screen and nowhere else, which is why it is not in the **Add to survey** dialog, and a survey holds at most one.
+
+It is always required, and there is no toggle for that: the panel says so in as many words, **Consent is always required: people tick it, or they do not start.** The tick gates the welcome screen's button, the one labeled **Start** until you click it on the canvas and change **Button text**. Somebody who clicks it without ticking sees "You must agree to continue." and stays where they are. [Required](/rules/required) covers what the same rule means on an ordinary question.
+
+The tick is a gate rather than a question, so it does not become a column in your results, and no rule reads it.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open the welcome screen">
+    On the **Build** tab, the welcome screen is the band near the top of the canvas tagged **welcome screen**, under the survey header and above the first block.
   </Step>
-  <Step title="Choose Consent">
-    _To write._
+  <Step title="Click Add consent">
+    The consent strip sits under the welcome text. Click **Add consent** and the checkbox appears, already carrying the sentence **I agree to participate.**
+
+    {/* screenshot: The welcome screen on the builder canvas, with the consent strip and its Add consent button. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the consent text">
+    Click the sentence and type your own. It takes as many lines as your wording needs, and the canvas updates as you type.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the checkbox on the canvas and the panel beside the rail shows what you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Wording | The sentence beside the checkbox, edited on the screen rather than in the panel. |
+| **Alignment** | Where the checkbox and its sentence sit: **Left**, **Centre** or **Right**. |
+| **Preview this informed consent** | Opens the gate on its own, the way a respondent meets it. |
+| **Delete consent** | Removes it. The welcome screen keeps its text, and the button stops being gated. |
+
+{/* screenshot: The panel for the consent gate, with the alignment row and the delete row. */}
 
 ## Related
 

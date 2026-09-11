@@ -4,50 +4,72 @@ description: "Slide to a number on a scale."
 icon: "slider"
 ---
 
-_To write._
+Numeric slider is a track between two numbers you set, and a respondent drags the handle to the one they mean. The number they land on is shown as they move, and it is what gets stored, so the answer behaves like any other number in rules, scores and exports.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A numeric slider question as a respondent sees it, the handle part way along the track with the value shown. */}
 
 ## When to use it
 
-_To write._
+- You want a number but typing one feels like work: a price, a percentage, an hour count, a temperature.
+- The range matters as much as the answer, and showing both ends tells respondents what you consider reasonable.
+- You want to average the answers, or branch on how high they are.
 
-**Consider instead:** _To write_
+**Consider instead:** [Range slider](/questions/ratings/range-slider) when the answer is a band rather than a point, [Text slider](/questions/ratings/text-slider) when the stops should be words, [Number](/questions/text/number) when respondents know the exact figure and would rather type it, [Opinion scale](/questions/ratings/opinion-scale) when a row of eleven buttons reads better than a track.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Numeric slider">
-    _To write._
+  <Step title="Pick Slider Numeric">
+    In **Add to survey**, type to filter and click **Slider Numeric**, under **Rating**. It arrives as a track from 0 to 100, moving in steps of 1, with both end numbers drawn.
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question and set the track">
+    Type the question on the canvas, set the step and the units in the panel, and set the two ends of the track under **Validation**.
+
+    {/* screenshot: The numeric slider question on the builder canvas, edited in place. */}
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **Step** | How far the handle moves at a time. It arrives on 1, so a track from 0 to 100 offers a hundred stops. Raise it to 5 or 10 for a coarser answer. |
+| **Show min/max labels** | Draws the two end numbers at either side of the track. It starts on. |
+| **Unit before** | Text printed in front of the number, such as a currency symbol. |
+| **Unit after** | Text printed after the number, such as a weight or a percent sign. |
+
+Units are a caption on the number. The answer stored is the bare figure, so nothing in your rules, charts or exports has to know they are there.
+
+{/* screenshot: The question panel for a numeric slider, with the step, labels and unit rows. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. The two ends of the track are behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they move the handle. A slider nobody has touched draws a hollow handle on an empty track, so an untouched question never looks answered. |
+| [Minimum and Maximum](/rules/number-bounds) | The two ends of the track, which are also the bound. A respondent cannot drag past them, and a value outside them is refused. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when a rule on this question stops them. |
+
+{/* screenshot: Minimum and Maximum in the Validation dialog, the two ends of the track. */}
 
 ## Logic that works with it
 
-_To write._
+The answer is a number, so conditions compare it as one: **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most**, **is between**, **is answered** and **is not answered**. It [scores](/logic/scoring) points per unit: you give one weight and it is multiplied by the value they chose, so a slider at 8 with a weight of 2 is worth 16. It can [drive a loop](/logic/loops), either one pass for the value they gave or as many passes as that value. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it, because a number is not a list of things worth asking about again. [Piping](/logic/piping) it into later wording prints the number they chose.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Histogram**, which bins the answers rather than drawing a bar for every distinct value. **Bar chart** is the other entry in **Chart type**.
+
+In every export the question becomes one column holding the number that respondent chose.
+
+{/* screenshot: The numeric slider question on the Analytics tab, charted as a histogram. */}
 
 ## Related
 

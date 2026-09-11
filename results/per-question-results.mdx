@@ -4,21 +4,48 @@ description: "See the chart and the numbers for one question."
 icon: "chart-column"
 ---
 
-_To write._
+**5 Analytics** turns the grid into charts: the funnel and the fieldwork facts at the top, then one card per question with its numbers underneath.
 
-{/* screenshot: per-question results in the app */}
+{/* screenshot: A question card in the Results section: the Chart type control, the base line and the Add to report button. */}
 
 ## What it does
 
-_To write._
+The page is titled **Analytics** and runs in two sections, **Fieldwork** and **Results**, with **Variables** after them when your survey sets any. The **Filters** popover at the top is the same one as on **4 Responses**: **Response status** and **Response type**. It narrows the whole page at once, and the header reads "Showing 8 of 12 responses" while it does.
+
+**Fieldwork** is who arrived and what happened to them. The **Response funnel** counts **Started**, **Completed**, **Screened out**, **Quota full**, **Quality reject** and **Dropped off**. **Completions over time** plots finished sessions across the fieldwork period. **Where respondents are** lists **Countries** and **Cities**. **By device** and **By browser** follow. **Top drop-off questions** ranks where people left. When the filter you set cannot apply to it, that panel reads "Drop-off counts people who left before finishing, so this filter does not apply."
+
+**Results** is one card per question, in survey order. Under the title, a quiet line gives the base, "Answered by 42 people", and where timing was recorded, "took 12s on average". The **Chart type** dropdown offers the forms that fit the question: **Bar chart**, **Pie chart**, **Histogram**, **Word cloud**, **Values list**, **Heatmap**, **Timeline** or **NPS gauge**. An NPS card splits **Detractors**, **Passives** and **Promoters**. An image question with pins reads "18 pins from 9 responses. Click a pin to isolate a respondent." **Raw data** opens the individual answers beneath the chart. **+ Add to report** places the chart in your report document.
+
+A card in **Variables** reads "Set for 30 respondents" and charts the values your rules assigned.
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Open Analytics">
+    Click **5 Analytics**. Before any data it reads "No responses yet. Analytics appear once data arrives."
+  </Step>
+  <Step title="Choose who counts">
+    Open **Filters**. Pick **Completed** to read finished responses only, or a **Response type** to keep test data out.
+  </Step>
+  <Step title="Change a chart">
+    On a card, open **Chart type** and pick another form.
+  </Step>
+  <Step title="Send a chart to a report">
+    Click **+ Add to report**. If you have no report yet, the page says "Create a report first, then add charts from Analytics." See [Reports](/results/reports).
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**Percentages divide by the people who were shown the question or the option.** The base line under each card is that denominator, so a question behind a display rule reports on the people who saw it, not on everyone who started. On a multiple choice the bars add to more than 100 for the same reason.
+
+**A chart shows the wording the respondent saw.** If you rename an option after fieldwork starts, earlier answers keep their original label in the chart, the grid and every export. See [Responses and sessions](/survey/responses-and-sessions).
+
+**Filters scope the whole page.** The funnel, the fieldwork panels and every question card read from the same filtered set, so the numbers on one screen agree with each other.
+
+**Test responses are counted when Test is in the filter.** Keep **Response type** on **Live** to read your real fieldwork.
+
+**Analytics and the responses grid read the same edited values.** Correcting a cell on **4 Responses** changes the chart as well. See [Editing an answer](/results/editing-an-answer).
 
 ## Related
 

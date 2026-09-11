@@ -4,21 +4,55 @@ description: "Set the colors, fonts, and spacing respondents see."
 icon: "palette"
 ---
 
-_To write._
+The theme is how your survey looks to a respondent: its fonts, colors, spacing, background, and buttons. One theme covers the whole survey, and the canvas shows every change the moment you make it.
 
-{/* screenshot: themes in the app */}
+{/* screenshot: The Customize panel open beside the canvas, with the Type & colour section expanded. */}
 
 ## What it does
 
-_To write._
+Click **Theme** in the rail and the panel reads **Customize**. Open a section, change a control, and the canvas behind the panel redraws as the live preview. **Reset** at the top puts the whole theme back to the default.
+
+**Type & colour** sets **Body font** and **Heading font** (**System default** uses whatever the respondent's device has), then **Base font size**, which the panel describes with "Everything scales from this." Below it are sizes for **Content heading (H1)**, **Question title** and **Answer text**, plus **Line height** and **Letter spacing**. **Text colour** is the ink. **Accent colour** is the color of "Selected choices, the focus ring, the progress bar."
+
+**Layout** has two switches. **Page width** is **Narrow**, **Regular** or **Wide**. **Density** is **Compact**, **Regular** or **Roomy**, and it is "Spacing only, no font size changes."
+
+**Background** is one backdrop for every screen. **Type** is **Solid**, **Gradient** or **Image**. A solid background has one **Colour**. A gradient has a **Style** of **Linear** or **Radial**, a **From** and a **To** color, and an **Angle** for linear (the panel notes "A radial gradient has no angle."). An image background is picked from your [media library](/design/media-library), then fitted with **Fit** (**Cover**, **Contain** or **Tile**) and adjusted with **Brightness**, **Blur** and **Overlay**, "A dark wash over the backdrop."
+
+**Inputs & choices** styles what respondents type into and click on: **Input fill**, **Input text colour**, **Input border**, **Input height** and **Border width**. **Shape** is **Square**, **Rounded**, **Pill** or **Custom**, and applies to "Inputs and choice tiles." **Custom** adds a **Corner radius** slider. **Link radius across every surface** gives cards and choice tiles the same radius as the inputs; switch it off and **Card radius** appears on its own. **Width mode** (**Full width** or **Fit content**), **Gap between questions** and **Input padding** set the spacing. **Choice marker** puts **Default**, **A B C**, **1 2 3** or **None** beside each option, colored by **Marker fill** and **Marker text**. **Error colour** and **Success colour** are the two feedback colors.
+
+**Buttons** covers **Button fill** and **Button text**, a **Shape** of its own (with a **Corner radius** when it is **Custom**), **Height**, **Font size** and **Side padding**, a **Full-width button** switch, and an **Alignment** of **Left**, **Centre** or **Right**.
+
+**Footer** has **Show footer**, which is "The “Powered by” strip." On a paid plan a second switch appears, **Show “Powered by”**, and turning it off "removes our badge from every screen." See [Logo and branding](/design/logo-and-branding).
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Open the theme">
+    In the builder, click **Theme** in the rail. The **Customize** panel opens and the canvas becomes the preview.
+  </Step>
+  <Step title="Pick fonts and colors">
+    Expand **Type & colour**. Set **Body font**, **Heading font**, **Text colour** and **Accent colour** first. The accent is what respondents see most, on every selected choice and the progress bar.
+  </Step>
+  <Step title="Choose a background">
+    Expand **Background** and set **Type**. For an image, pick one from the library and use **Overlay** to keep text readable over it.
+  </Step>
+  <Step title="Shape the inputs and buttons">
+    Use **Shape** in **Inputs & choices** and in **Buttons** to match your brand. **Link radius across every surface** keeps inputs, cards and choice tiles consistent with one setting.
+  </Step>
+  <Step title="Check it as a respondent">
+    Open [Preview](/design/preview), then click **Republish** on **2 Publish** so live respondents see the change.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**The theme is survey-wide.** Every screen shares one background, one font set and one accent. A single question cannot carry its own look.
+
+**Four respondent-facing switches live outside the theme.** **Show question numbers** and **Show points to respondents** are on the **Survey** surface in the rail. **Allow back navigation** and **Show score points** are on the survey's **Settings** tab.
+
+**The logo is not a theme setting.** It is the **Survey header** band at the top of the canvas. See [Logo and branding](/design/logo-and-branding).
+
+**A theme change is a publishable edit.** Respondents see the new look after you **Republish**.
 
 ## Related
 

@@ -1,53 +1,77 @@
 ---
 title: "Image multi select"
-description: "Pick any number of images from a set you upload."
+description: "Pick any number of pictures from a set of tiles you choose."
 icon: "images"
 ---
 
-_To write._
+Image multi select lays the options out as picture tiles and lets respondents pick as many as they want. It is [Image single select](/questions/choice/image-single-select) with the ceiling lifted, plus a count rule.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: An image multi select question as a respondent sees it, a grid of picture tiles with three selected. */}
 
 ## When to use it
 
-_To write._
+- Several pictures can be true at once: which packs they recognize, which ads they recall.
+- You want a shortlist rather than a winner: the three designs worth testing further.
+- You want to know how many they picked, not only which ones.
 
-**Consider instead:** _To write_
+**Consider instead:** [Image single select](/questions/choice/image-single-select) when one picture is the answer, [Multiple choice](/questions/choice/multiple-choice) when words describe the options well enough, [Drag to rank](/questions/ranking/drag-to-rank) when the order they put them in is the answer, [Image hotspot](/questions/images/image-hotspot) when the answer is a place on one picture rather than a choice between several.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Image multi select">
-    _To write._
+  <Step title="Pick Image Multi Select">
+    In **Add to survey**, type to filter and click **Image Multi Select**, under the **Choice** heading. It arrives with one empty tile whose picture slot reads **Add image**.
+
+    {/* screenshot: The image multi select question on the builder canvas, with several tiles filled. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question and fill the tiles">
+    Type the question on the canvas. Click **Add image** on a tile and the media picker opens on three tabs: **Library**, what your organization has uploaded; **Upload**, which adds a file on a paid plan; and **Link**, for a picture already on the web. Confirm with **Use image**. Captions are typed in place, **Add tile** appends a tile, and **Crop this picture** sets **Cover** or **Contain** and the **Focus point**.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Options | The tiles they pick from, each a picture and a caption. Edited on the canvas, or in **Bulk edit** as plain text, one caption per line. A line you leave alone keeps its image. |
+| **Columns** | How many tiles sit in a row: **2**, **3** or **4**. |
+| **Aspect ratio** | The shape every tile is drawn at: **4:3**, **1:1 (Square)** or **16:9**. |
+| **Show labels** | Whether the caption shows under each tile. |
+| **"Other" with a text box** | Adds an **Other** option with a text box beside it. It always shows last. |
+| **"None of these" option** | Adds an option that stands for none of the rest. Picking it clears everything else they had picked. It always shows last. |
+| **Answer order** | **As written**, **Shuffled** or **Reversed**. Shuffle earns its keep here: the top left tile is picked more often than it deserves. |
+| **How many each respondent sees** | Inside the **Answer order** dialog. **All of them**, or **Only some**, which draws that many tiles for each respondent. |
+
+{/* screenshot: The question panel for an image multi select, with the columns, aspect ratio and answer order rows. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. The count rule is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they pick at least one tile. |
+| [Min answers and Max answers](/rules/selection-counts) | **How many they can choose**: **Any number**, **At least**, **At most**, **Exactly** or **Between**. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when a rule on this question stops them. |
+
+The count is printed above the tiles before anyone picks, and at the maximum the remaining tiles stop responding. **None of these** is a complete answer on its own, so it satisfies a minimum.
 
 ## Logic that works with it
 
-_To write._
+The answer is the set of tiles they picked, stored as the options themselves, so changing a caption or a picture never moves a rule that points at it. Conditions read the set with **includes**, **does not include**, **includes any of**, **includes none of**, **is answered** and **is not answered**, and its size with **number chosen is**, **number chosen is at least** and **number chosen is at most**. It is a [carry-forward](/logic/carry-forward) source, so a later question can offer the tiles they chose, the ones they left, or all of them, and it takes a carried list into its own tiles in the same way. It can [drive a loop](/logic/loops), repeating a block once per tile they picked, once per tile they left, or once per tile in the set, and it can set the number of passes from how many they picked. It [scores](/logic/scoring) points per option, and a point can be negative. [Piping](/logic/piping) it prints the captions they saw, in the order they picked them.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, one bar per tile, counting the respondents who picked it. **Pie chart** and **Values list** are the other two entries in **Chart type**. The bars add to more than 100 percent, since a respondent counts once per tile they chose.
+
+In every export the question becomes one column per tile, holding 1 when that tile was picked and 0 when it was not, grouped as one multiple response set.
+
+{/* screenshot: The image multi select question on the Analytics tab, charted as a bar chart. */}
 
 ## Related
 

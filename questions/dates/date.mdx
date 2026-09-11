@@ -4,50 +4,70 @@ description: "Pick a single date."
 icon: "calendar-day"
 ---
 
-_To write._
+Date asks a respondent for one calendar day. They type it into a field of month, day and year boxes, or open the calendar beside it and click the day they want. What comes back is a real date, which conditions compare as a date and the Analytics tab lays out along a timeline.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A date question as a respondent sees it, a typed field with a calendar beside it. */}
 
 ## When to use it
 
-_To write._
+- You need the exact day something happened: a purchase, a visit, a claim, a delivery.
+- You are asking for a day ahead, such as an appointment, a start date or a booking.
+- You want to branch or screen on how recent the answer is, which needs a date rather than words.
 
-**Consider instead:** _To write_
+**Consider instead:** [Date range](/questions/dates/date-range) when the answer is a span with two ends, [Date and time](/questions/dates/date-and-time) when the hour matters as much as the day, [Date of birth](/questions/dates/date-of-birth) when what you want is an age, [Age group](/questions/ready-made/age-group) when a band is enough.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Date">
-    _To write._
+  <Step title="Pick Date">
+    In **Add to survey**, type to filter and click **Date**, under the **Date & Time** heading. The question lands where the gap was, carrying an empty date field and no content to clear out first.
+
+    {/* screenshot: A date question on the builder canvas, edited in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    The canvas is the real survey, so you type the question and its description straight onto it. There is no option list to write here: the field is the answer.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set. A date has no display settings of its own. The wording is typed on the canvas and everything else it carries is a rule, so the panel is short.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **Type** | Switches the question to another kind. The other five date and time questions are in the list, so a date can become a range, a date and time, or a date of birth without being rebuilt. A switch that would drop something asks first. |
+
+Below **Type** the panel holds **Required**, **Validation**, and the three logic rows every question has: **Show/hide question**, **Skip from here** and **Set a variable**.
+
+{/* screenshot: The question panel for a date, with the type row, Required and Validation. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. The calendar rules are behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they give a date. |
+| [Earliest and Latest](/rules/number-bounds) | The first and last day you accept, typed as YYYY-MM-DD. An answer before **Earliest** reads "Must be on or after 2026-01-01."; one after **Latest** reads "Must be on or before 2026-12-31." |
+| [Allowed dates](/rules/number-bounds) | **Any date**, **Future only** or **Past only**, judged against the day the respondent answers. Today itself counts as neither past nor future. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+The calendar shows the rules rather than only enforcing them: days outside **Earliest**, **Latest** or **Allowed dates** cannot be clicked. Every bound is checked again on our servers when the screen is submitted, so a date that reaches us by another route is refused the same way.
 
 ## Logic that works with it
 
-_To write._
+The answer is one date, so conditions read it as a date rather than as text: **is**, **is not**, **is after**, **is before**, **is between**, **is answered** and **is not answered**, with a date field for the value you compare against. It cannot be a [carry-forward](/logic/carry-forward) source or target, because there is no list of answers to hand on. It can [drive a loop](/logic/loops), which gives one pass for the date they gave. It does not [score](/logic/scoring): points are typed next to an answer you wrote, and a date has no answers to write them against, so a date question has no **Scoring** row. [Piping](/logic/piping) it into later wording prints it the way a person reads a date, as 24 Aug 2026, and never as the stored string. Because it is a [condition](/logic/how-logic-runs) source like any other, it has to sit on an earlier screen than the rule that reads it.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Timeline**, which puts the answers in date order rather than in size order. It groups by day while they sit inside about six weeks, by month over a longer fieldwork period, and by year once they span more than about eighteen months. **Bar chart** and **Values list** are the other two entries in **Chart type**.
+
+In every export the question becomes one column holding the date that was given.
+
+{/* screenshot: The date question on the Analytics tab, charted as a timeline. */}
 
 ## Related
 

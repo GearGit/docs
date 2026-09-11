@@ -4,21 +4,46 @@ description: "Invite people and set what each of them can do."
 icon: "user-group"
 ---
 
-_To write._
+A person in your organization is an **owner**, an **admin** or a **member**. Each active person and each pending invite takes one **seat** on your plan.
 
-{/* screenshot: roles and seats in the app */}
+{/* screenshot: The Members page: seats used of the cap, the roster with a Can do sentence per person, and the pending invites beneath. */}
 
 ## What it does
 
-_To write._
+**Owner.** Exactly one person. The owner holds billing, members and settings, cannot be suspended or removed, and keeps a seat whatever the plan changes to. The organization changes hands only through **Transfer ownership**.
+
+**Admin.** As many as you like. An admin's **Can do** column reads "Everything, including billing and people". Admins manage people, workspaces, settings and the plan.
+
+**Member.** Works in every workspace: building, publishing, reading responses, exporting and sharing reports. A member's **Can do** column reads, for example, "Builds and publishes in all 2 workspaces". A member manages nothing about the organization.
+
+**Seats.** The **Members** page opens on a **Seats** tile reading, say, "4 of 10" with "6 seats left". Free has 1 seat, Basic 3 and Pro 10. A Custom agreement sets its own number. A plan with no cap reads **No seat limit**. A pending invite holds a seat until it is accepted, declined, revoked or expired.
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Invite people">
+    Open **Members** and click **Invite people**. In **Email addresses**, type an address and press Enter for each person. The dialog says what they will be able to do and how many seats stay open. Click **Send invites**. Or click **Copy invite link** to create one link you pass on yourself. The dialog notes: "If the email does not arrive, share the link."
+  </Step>
+  <Step title="Follow an invite up">
+    **Pending invites** lists each **Invited person**, when they were **Invited** and by whom, and when the invite **Expires**. Each row offers **Copy link**, **Resend** and **Revoke**. Revoking says: "The invite link will stop working immediately and the seat it holds is freed."
+  </Step>
+  <Step title="Change what someone can do">
+    Open a row's menu. It offers **Make admin** or **Make member**, **Suspend** or **Reactivate**, **Remove from organization** and **Copy email address**. Removing someone states that they lose access straight away, that the surveys they own stay with the organization, and how many seats will be open. On another person's row, the owner also sees **Transfer ownership**: the dialog says the new owner keeps a seat whatever the plan changes to, and that you stay an admin with the access you have now.
+  </Step>
+  <Step title="Accept an invite">
+    The invited person opens the link and reads who invited them and as what role. They click **Accept invite**, or **Log in to accept** or **Create an account** first, or **Decline**. Signed in as someone else, they read: "This invite is for {invited}, but you’re signed in as {current}. Sign out and use the invited email to accept." and click **Sign out and switch account**.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**At the cap, the invite button becomes Add seats.** It leads to **Plan & billing**. A banner reads: "All {count} seats are in use. Add seats on a larger plan, or free one by removing a member." A suspended colleague's row reads **Reactivate, no seats left** until a seat opens.
+
+**A downgrade never removes anyone.** When a plan has fewer seats than people, the page says "# people do not fit on your plan". The people without a seat carry a **Suspended by plan** badge, and **Choose who stays** takes you to the roster to decide. Seats are kept in one order: the owner first, then admins by the date they joined, then members by the date they joined.
+
+**Members see the roster too**, without the seat tile, the row menus or any suspended colleague, plus a card naming the **Organization admin** to ask. Everyone has **Leave organization** at the foot of the page.
+
+**Invite messages.** A revoked link reads "This invite link isn’t valid. It may have been revoked. Ask the organization admin for a new one." One that ran out reads "This invite has expired." One opened with the wrong account reads "This invite is for a different email address." In each case an admin sends a new one from **Members**.
 
 ## Related
 

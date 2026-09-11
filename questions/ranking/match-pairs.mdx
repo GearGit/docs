@@ -4,50 +4,68 @@ description: "Match each item on the left to one on the right."
 icon: "link"
 ---
 
-_To write._
+Match pairs puts two lists side by side and asks respondents to join them up. Clicking an item on the left selects it, a line of help appears under the columns reading "Click a term on the right to match it.", and clicking a right-hand item joins the pair. Both sides then take the same number, counted from the left item's position in your list.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A match pairs question as a respondent sees it, two columns with the matched rows numbered. */}
 
 ## When to use it
 
-_To write._
+- The answer is a correspondence: each product with its price band, each quote with the brand that said it, each term with its definition.
+- You want to test recognition without giving the answer away in a dropdown beside every row.
+- Both lists are short enough to read side by side, which in practice means a handful of items each.
 
-**Consider instead:** _To write_
+**Consider instead:** [Dropdown grid](/questions/grids/dropdown-grid) when the right-hand list is long or when several items may share an answer, [Radio grid](/questions/grids/radio-grid) when every row picks from the same short set, [Drag to rank](/questions/ranking/drag-to-rank) when there is one list and its order is the answer, [Single choice](/questions/choice/single-choice) when there is only one thing to match.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**.
   </Step>
-  <Step title="Choose Match pairs">
-    _To write._
+  <Step title="Pick Match Pairs">
+    In **Add to survey**, type to filter and click **Match Pairs**, under **Rank**. It arrives with three empty items on each side, under the headings Left column and Right column.
+
+    {/* screenshot: The match pairs question on the builder canvas, both columns edited in place. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question and both lists">
+    The canvas is the real survey, so you type the question and both columns straight onto it. **Add item** extends either side, and the **Bulk edit** chip opens the two lists as two panes, **Left items** and **Right items**, each taking plain text one per line.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Left items | The items respondents match from. Edited on the canvas, or in **Bulk edit** as plain text, one per line. |
+| Right items | The items they match to. Edited the same two ways. Write as many as there are on the left, since each one can only be used once. |
+
+There is no **Answer order** row on this question. Both columns are shown as you wrote them, to every respondent.
+
+{/* screenshot: The question panel for a match pairs, with Required and the logic rows. */}
 
 ## Rules you can set
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | Every item on the left has to be paired, and to a different item on the right. The message reads "Please match all items." |
+
+Required is the whole of it. A pairing is either complete or it is not, so match pairs has no **Validation** row in the panel and nothing else to constrain. Left optional, a partial set of pairs is accepted as given.
+
+The matching is one to one in both directions. Giving a right-hand item to a second left-hand item takes it away from the first, and pairing a left item again replaces the pair it had, so a respondent corrects an answer by redoing it rather than by undoing it first. Clicking a selected left-hand item again deselects it and changes nothing.
 
 ## Logic that works with it
 
-_To write._
+The answer is a set of pairs, which no comparison can read as a single value, so the question is offered with **is answered** and **is not answered** and nothing else. Its rows are not offered separately. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it, because neither of its two lists is a selection somebody made. It cannot [drive a loop](/logic/loops), and it cannot be [scored](/logic/scoring), since a pairing has no fixed set of answers to put a number against. [Piping](/logic/piping) it into later wording prints each matched pair as "Left item: right item", in the order you wrote the left column, with unmatched items left out.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Values list**, and it is the only entry in **Chart type**. Pairings are read rather than counted, and **Raw data** under the card opens them one respondent at a time.
+
+In every export the question becomes one coded column per left-hand item, holding the right-hand item it was matched with.
+
+{/* screenshot: The match pairs question on the Analytics tab, shown as a values list. */}
 
 ## Related
 

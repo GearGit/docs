@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "maple",
   "name": "OnlineSurvey Help",
   "description": "How to build, share and read research surveys with OnlineSurvey. One page for every question type and every logic rule.",
   "colors": {
@@ -34,45 +34,17 @@
     }
   },
   "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Open OnlineSurvey",
-      "href": "https://app.onlinesurvey.ai"
-    }
-  },
-  "footer": {
     "links": [
       {
-        "header": "Help",
-        "items": [
-          {
-            "label": "Contact support",
-            "href": "/help/contact-support"
-          },
-          {
-            "label": "What's new",
-            "href": "/help/whats-new"
-          }
-        ]
-      },
-      {
-        "header": "OnlineSurvey",
-        "items": [
-          {
-            "label": "Website",
-            "href": "https://onlinesurvey.ai"
-          },
-          {
-            "label": "Pricing",
-            "href": "https://onlinesurvey.ai/pricing"
-          },
-          {
-            "label": "Open the app",
-            "href": "https://app.onlinesurvey.ai"
-          }
-        ]
+        "label": "Log in",
+        "href": "https://app.onlinesurvey.ai/login"
       }
-    ]
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Sign up",
+      "href": "https://app.onlinesurvey.ai/signup"
+    }
   },
   "navigation": {
     "tabs": [
@@ -166,8 +138,7 @@
                 "group": "Images",
                 "pages": [
                   "questions/images/overview",
-                  "questions/images/image-hotspot",
-                  "questions/images/click-heatmap"
+                  "questions/images/image-hotspot"
                 ]
               },
               {
@@ -275,7 +246,6 @@
             "group": "AI",
             "pages": [
               "ai/generate-from-a-brief",
-              "ai/edit-with-instructions",
               "ai/credits"
             ]
           },
@@ -293,12 +263,16 @@
             "pages": [
               "help/common-issues",
               "help/response-quality",
-              "help/contact-support",
-              "help/whats-new"
+              "help/contact-support"
             ]
           }
         ]
       }
+    ]
+  },
+  "contextual": {
+    "options": [
+      "copy"
     ]
   }
 }

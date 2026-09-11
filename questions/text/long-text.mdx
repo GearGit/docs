@@ -4,50 +4,69 @@ description: "Collect a longer piece of typed text."
 icon: "align-left"
 ---
 
-_To write._
+Long text gives a respondent a box with room in it, several lines deep, and lets them write as much as they want to. Use it for the open question in a survey: the reason behind a rating, the thing they would change, the story a closed list cannot hold.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A long text question as a respondent sees it, a box several lines deep. */}
 
 ## When to use it
 
-_To write._
+- You are asking why, and the answer is a sentence or a paragraph rather than a word.
+- You want verbatim comments to read and to quote, alongside the numbers from the rest of the survey.
+- You are following up a rating or a choice and want the reasoning behind it in the respondent's own words.
 
-**Consider instead:** _To write_
+**Consider instead:** [Short text](/questions/text/short-text) when one line is the whole answer, [Single choice](/questions/choice/single-choice) when you already know the answers and want them counted, [Multiple choice](/questions/choice/multiple-choice) when several of those answers can be true at once, [Open grid](/questions/grids/open-grid) when the same open question is asked about several things.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Long text">
-    _To write._
+  <Step title="Pick Long Text">
+    In **Add to survey**, type to filter and click **Long Text**, under the **Text** heading. The question lands where the gap was, as a tall empty box with "Type your answer here…" printed inside it.
+
+    {/* screenshot: The long text question on the builder canvas, edited in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    The canvas is the real survey, so you type the question straight onto it. A description under the title is worth writing here more than anywhere else, because an open question is answered better when people know how much detail you want.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **Placeholder** | The grey wording inside the empty box. A new question starts with "Type your answer here…". Clear the field and the box falls back to a standard hint. |
+
+{/* screenshot: The question panel for a long text question, with the placeholder row and the row that opens Validation. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until the box holds something that is not blank. |
+| [Min characters and Max characters](/rules/text-limits) | The fewest and the most characters the answer may run to. |
+| [Min words and Max words](/rules/text-limits) | The same bounds counted in words. A minimum of three words asks for a sentence rather than a shrug. |
+| [Pattern](/rules/patterns) | Accepts the answer only when it has the shape you picked, or one you write yourself. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+A minimum length is the rule worth thinking about twice. It raises the effort on every respondent, including the ones who had nothing to add, so a floor that is too high buys padding rather than detail.
 
 ## Logic that works with it
 
-_To write._
+The answer is the text they typed, so conditions read it as text: **is**, **is not**, **contains**, **does not contain**, **starts with**, **ends with**, **is answered** and **is not answered**. You type the text you are matching against, since there is no list behind the question to pick from. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it. It can [drive a loop](/logic/loops), which gives one pass, on the answer they typed. It [scores](/logic/scoring) through an answer key: you type the accepted answers and what each is worth, compared without regard to capitals or spaces at the ends. [Piping](/logic/piping) it into later wording prints what they wrote, in full.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Word cloud**, sized by how often a word comes up across the answers. **Values list** and **Bar chart** are the other entries in **Chart type**. **Raw data** under the card opens the answers one by one, which is how a long text question is actually read.
+
+In every export the question becomes one text column, holding the answer in full. CSV and Excel never shorten it, and SPSS shortens a value past 255 characters and names the columns it shortened.
+
+{/* screenshot: The long text question on the Analytics tab, charted as a word cloud with the raw answers beneath. */}
 
 ## Related
 

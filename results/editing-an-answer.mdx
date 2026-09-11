@@ -4,21 +4,48 @@ description: "Correct an answer after it was submitted."
 icon: "pen"
 ---
 
-_To write._
+You can correct a single answer in the grid. The correction changes what your analytics and exports read and leaves the respondent's own submission untouched.
 
-{/* screenshot: editing an answer in the app */}
+{/* screenshot: The Edit answer dialog on a single-choice question, with the option picker open. */}
 
 ## What it does
 
-_To write._
+Click any answer cell in **4 Responses** and the **Edit answer** dialog opens on that one question for that one response.
+
+The input matches the question. A single choice, a dropdown or an image choice gets a picker of the options the respondent was offered. A multiple choice gets one checkbox per option. A rating gets a picker of its scale points, with **N/A** added when the question allows it. A number, an NPS, a Likert, an opinion scale or a numeric slider gets a number box. A date, a time or a date and time gets the matching control. A text question gets a text box. Every picker starts with **No answer**, so you can clear an answer as well as change one. A question with an "Other" option keeps the respondent's written text beside the pick. A grid, a ranking, a constant sum, an image question or a file upload has no editor of its own and shows a **Raw value (JSON)** box instead.
+
+Under the input the dialog says: "This updates analytics only. The respondent's original submission is preserved." **Save** writes the change and confirms with "Answer updated". **Cancel** leaves the response as it was.
+
+From then on the grid, **5 Analytics** and every export read the edited value. The Response Journey still shows what the respondent submitted, because it replays the session rather than reading the grid.
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Find the response">
+    Open **4 Responses**. Use **Filters** or **Search by ID…** to bring the row into view.
+  </Step>
+  <Step title="Open the cell">
+    Click the answer cell you want to change. The **Edit answer** dialog opens on that question alone.
+  </Step>
+  <Step title="Pick or type the new answer">
+    Choose from the picker, tick or untick options, or type into the box. Choose **No answer** to clear it.
+  </Step>
+  <Step title="Save">
+    Click **Save**. The toast "Answer updated" confirms it, and the cell redraws with the new value.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**A closed question can only be edited to one of its own options.** The picker offers the options that respondent was shown, so you cannot enter a value the question could not hold.
+
+**A score is not recomputed after an edit.** If the answer you changed carried points, the score column still holds the total the respondent earned. Reconciling it is yours to do.
+
+**A variable cell cannot be edited.** Its header tooltip says so: "Calculated from the answers, not editable". A variable is derived from the answers around it, so change those instead.
+
+**Editing does not move the session.** The outcome, the ending reached and the path replayed in the Response Journey stay as they were.
+
+**Deleting is a separate action.** Tick one or more rows and click **Delete**. A deleted response leaves analytics and exports. See [The responses grid](/results/responses-grid).
 
 ## Related
 

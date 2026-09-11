@@ -4,50 +4,70 @@ description: "Pick any number of columns for each row."
 icon: "table-cells-large"
 ---
 
-_To write._
+A checkbox grid puts your items down the left and a shared set of columns across the top, and a respondent ticks as many columns as apply in each row. It is the multiple-answer version of a battery: one row can be true of everything on the list, or of nothing.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A checkbox grid question as a respondent sees it, with several boxes ticked in one row. */}
 
 ## When to use it
 
-_To write._
+- Several columns can be true of the same row: which of these channels you used for each brand, which of these problems you hit with each product.
+- You want a "tick all that apply" question asked about several things at once instead of repeated.
+- You want to count how many columns a respondent ticked in one particular row.
 
-**Consider instead:** _To write_
+**Consider instead:** [Radio grid](/questions/grids/radio-grid) when exactly one column is right per row, [Multiple choice](/questions/choice/multiple-choice) when there is only one item to ask about, [Dropdown grid](/questions/grids/dropdown-grid) when each column needs a menu of its own, [Open grid](/questions/grids/open-grid) when the cells should be typed rather than ticked.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**.
   </Step>
-  <Step title="Choose Checkbox grid">
-    _To write._
+  <Step title="Pick Matrix (Checkbox)">
+    In **Add to survey**, type to filter and click **Matrix (Checkbox)**, under **Matrix**. It arrives with three rows, Row 1 to Row 3, and three columns, Column 1 to Column 3.
+
+    {/* screenshot: The checkbox grid question on the builder canvas, edited in place. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question, the rows and the columns">
+    The canvas is the real survey, so you type on it. Click a row label or a column heading to retype it, **Add row** and **Add column** extend either axis, and the **Bulk edit** chip beside the add row opens both lists as plain text, one per line.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Rows | The items down the left. Edited on the canvas, or in **Bulk edit** as plain text, one per line. |
+| Columns | The answers across the top, shared by every row. Edited the same two ways. |
+| **Answer order** | Two sections, **rows** and **columns**. Rows take **As written**, **Shuffled** or **Reversed**; columns take **As written** or **Reversed** only, because they are the scale. |
+| **How many each respondent sees** | Inside **Answer order**, on the rows. **All of them**, or **Only some**, which draws that many rows for each respondent. Pinned rows are outside the draw and show to everyone. |
+
+{/* screenshot: The question panel for a checkbox grid, with the answer order row and the rules row. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | Every row needs at least one column ticked before they can move on. |
+| [Min rows answered](/rules/number-bounds) | A floor rather than all of them. Two of five rows clears it whichever two they pick, and the message reads "Answer at least 2 rows." |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+There is no per-row count rule. A row takes anything from one tick to all of them, and the floor counts rows rather than ticks.
 
 ## Logic that works with it
 
-_To write._
+The answer is a map, one set of ticked columns per row, which no single comparison can read. So the question as a whole is offered with **is answered** and **is not answered**, and each row is offered as its own source underneath it. A row holds a list, so it reads with **includes**, **does not include**, **includes any of** and **includes none of** against the columns, and with **number chosen is**, **number chosen is at least** and **number chosen is at most** against how many columns were ticked in that row. It is not a [carry-forward](/logic/carry-forward) source, because a map of rows is not a list of things worth asking about again, but it takes a carried list into its **Rows** or its **Columns**. It cannot [drive a loop](/logic/loops) for the same reason. It [scores](/logic/scoring) a number per column: the columns are scored once and apply to every row, every ticked column that carries points counts, and a row worded the other way round takes its own numbers with **Score this row differently**. [Piping](/logic/piping) it into later wording prints each answered row as "Row: the columns they ticked", in the order you wrote the rows, with unanswered rows left out.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Values list**, and it is the only entry in **Chart type**. The list shows the answers as they were given.
+
+In every export the question becomes one column per row and column pair, holding 1 when that box was ticked and 0 when it was not, grouped as one multiple response set for each row.
+
+{/* screenshot: The checkbox grid question on the Analytics tab, shown as a values list. */}
 
 ## Related
 

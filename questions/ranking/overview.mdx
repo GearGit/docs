@@ -5,7 +5,7 @@ description: "Choose between the ranking and allocation questions and see how th
 icon: "arrow-down-short-wide"
 ---
 
-Choose between the ranking and allocation questions and see how they compare.
+These four questions ask about a list as a whole rather than about one item at a time. Ranking is the right tool when what you want is relative order: which of these matters most, and after that, and after that. A rating gives you an absolute score for each item and lets a respondent call all five of them important, which is what happens when everything on the list sounds good. [Drag to rank](/questions/ranking/drag-to-rank) and [Click to rank](/questions/ranking/click-to-rank) are the same question with two gestures, and they force the comparison a scale lets people avoid. [Constant sum](/questions/ranking/constant-sum) is the one to reach for when the trade-off is the point: a fixed budget of points, percent or money, split across the items, so saying more about one means saying less about another. [Match pairs](/questions/ranking/match-pairs) is a different job again, pairing each item on the left with one on the right.
 
 <CardGroup cols={3}>
   <Card title="Drag to rank" icon="grip-vertical" href="/questions/ranking/drag-to-rank" />
@@ -14,11 +14,27 @@ Choose between the ranking and allocation questions and see how they compare.
   <Card title="Match pairs" icon="link" href="/questions/ranking/match-pairs" />
 </CardGroup>
 
+{/* screenshot: The four ranking and allocation questions in the Add to survey dialog, under the Rank heading. */}
+
 ## Compare
 
 | | Answers with | Can be required | Drives a loop | Scorable |
 | --- | --- | --- | --- | --- |
-| [Drag to rank](/questions/ranking/drag-to-rank) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Click to rank](/questions/ranking/click-to-rank) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Constant sum](/questions/ranking/constant-sum) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Match pairs](/questions/ranking/match-pairs) | _To write_ | _To write_ | _To write_ | _To write_ |
+| [Drag to rank](/questions/ranking/drag-to-rank) | The options in the order they put them | Yes | Yes | No |
+| [Click to rank](/questions/ranking/click-to-rank) | The options in the order they clicked them | Yes | Yes | No |
+| [Constant sum](/questions/ranking/constant-sum) | An amount per option, adding up to the total | Yes | No | No |
+| [Match pairs](/questions/ranking/match-pairs) | One right-hand item per left-hand item | Yes | No | No |
+
+## Why none of them scores
+
+An order and an allocation both refuse points, for the same reason: there is nothing to put a number against that is not already the answer. Every respondent ranks every item, so a number beside each option would award the identical total to everyone and the ranking itself would change nothing. A constant sum is already a number per option, and a threshold on an amount is a condition, written against the amounts themselves. A pairing has no fixed set of answers to price. See [Scoring](/logic/scoring) for the kinds that do take points.
+
+Both ranking questions are [carry-forward](/logic/carry-forward) sources and both [drive a loop](/logic/loops), so the items somebody ranked can become a later question's list or a block that repeats once per item. A constant sum takes a carried list into its own options but is neither a source nor a driver, and match pairs is neither.
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Carry-forward" icon="arrow-right-arrow-left" href="/logic/carry-forward" />
+  <Card title="Loops" icon="repeat" href="/logic/loops" />
+  <Card title="Randomization" icon="shuffle" href="/logic/randomization" />
+</CardGroup>

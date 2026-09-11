@@ -4,50 +4,74 @@ description: "Slide two handles to pick a low and a high number."
 icon: "arrows-left-right-to-line"
 ---
 
-_To write._
+Range slider is a track with two handles on it, and the answer is the band between them. A respondent drags one handle to their low figure and the other to their high one, and both numbers are shown once the band is set.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A range slider question as a respondent sees it, two handles with the band between them filled in. */}
 
 ## When to use it
 
-_To write._
+- The honest answer is a range rather than a figure: what they would pay, how long a job takes, how many hours a week.
+- You want to know how wide their band is, not only where it sits.
+- A single number would force a false precision that makes the data worse.
 
-**Consider instead:** _To write_
+**Consider instead:** [Numeric slider](/questions/ratings/numeric-slider) when one number is the answer and you want to average it, score it or compare it, [Text slider](/questions/ratings/text-slider) when the stops should be words, [Number](/questions/text/number) when they know the figure and would rather type it, [Date range](/questions/dates/date-range) when the band is a span of days.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Range slider">
-    _To write._
+  <Step title="Pick Slider Range">
+    In **Add to survey**, type to filter and click **Slider Range**, under **Rating**. It arrives as a track from 0 to 100, moving in steps of 1, with both end numbers drawn.
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question and set the track">
+    Type the question on the canvas, set the step and the units in the panel, and set the two ends of the track under **Validation**.
+
+    {/* screenshot: The range slider question on the builder canvas, edited in place. */}
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **Step** | How far a handle moves at a time. It arrives on 1, so a track from 0 to 100 offers a hundred stops. Raise it to 5 or 10 for a coarser band. |
+| **Show min/max labels** | Draws the two end numbers at either side of the track. It starts on. |
+| **Unit before** | Text printed in front of a number, such as a currency symbol. It captions both handles. |
+| **Unit after** | Text printed after a number, such as a weight or a percent sign. |
+
+Units are a caption on the numbers. The answer stored is the two bare figures, so nothing in your charts or exports has to know they are there.
+
+{/* screenshot: The question panel for a range slider, with the step, labels and unit rows. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. The two ends of the track are behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they set the band. A slider nobody has touched draws two hollow handles on an empty track rather than a full bar, so an untouched question never looks answered. |
+| [Minimum and Maximum](/rules/number-bounds) | The two ends of the track, which are also the bound. A respondent cannot drag past them, and a value outside them is refused. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when a rule on this question stops them. |
+
+{/* screenshot: Minimum and Maximum in the Validation dialog, the two ends of the track. */}
 
 ## Logic that works with it
 
-_To write._
+The answer is two numbers, a low and a high, rather than one value, so there is nothing for a comparison to put on one side of it. Conditions can ask whether the band was set at all, **is answered** and **is not answered**, and that is the whole list. For a rule that turns on how much somebody would pay, ask for the figure with a [Numeric slider](/questions/ratings/numeric-slider) or a [Number](/questions/text/number) and compare that.
+
+For the same reason it does not [score](/logic/scoring), so the panel has no **Scoring** row: there is no single value to weight. It cannot [drive a loop](/logic/loops), and the loop dialog leaves it out of the list of drivers. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it. [Piping](/logic/piping) it into later wording prints the band they chose, the low and the high together.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**. **Histogram** and **Pie chart** are the other two entries in **Chart type**, and **Raw data** under the card lists the bands one respondent at a time.
+
+In every export the question becomes one column holding both numbers of that respondent's band.
+
+{/* screenshot: The range slider question on the Analytics tab, with the raw answers listed under the chart. */}
 
 ## Related
 

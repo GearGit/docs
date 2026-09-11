@@ -5,7 +5,7 @@ description: "Choose between the text questions and see how they compare."
 icon: "font"
 ---
 
-Choose between the text questions and see how they compare.
+A text question gives respondents an empty box and lets them answer in their own words. Two things tell you which one to use. First, how much room the answer needs: [Short text](/questions/text/short-text) is one line for a word or a phrase, [Long text](/questions/text/long-text) is a box with room for a paragraph. Second, whether the answer has a known shape that is worth checking on the screen: [Email](/questions/text/email), [Phone](/questions/text/phone) and [URL](/questions/text/url) check their own format and refuse an answer that does not have it, and [Number](/questions/text/number) collects a number rather than text, which is what lets you compare it, average it and count with it.
 
 <CardGroup cols={3}>
   <Card title="Short text" icon="minus" href="/questions/text/short-text" />
@@ -16,13 +16,25 @@ Choose between the text questions and see how they compare.
   <Card title="Number" icon="hashtag" href="/questions/text/number" />
 </CardGroup>
 
+{/* screenshot: The Text heading in the Add to survey dialog, with the six text questions under it. */}
+
 ## Compare
 
 | | Answers with | Can be required | Drives a loop | Scorable |
 | --- | --- | --- | --- | --- |
-| [Short text](/questions/text/short-text) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Long text](/questions/text/long-text) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Email](/questions/text/email) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Phone](/questions/text/phone) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [URL](/questions/text/url) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Number](/questions/text/number) | _To write_ | _To write_ | _To write_ | _To write_ |
+| [Short text](/questions/text/short-text) | A line of typed text | Yes | Yes, one pass | An answer key |
+| [Long text](/questions/text/long-text) | A block of typed text | Yes | Yes, one pass | An answer key |
+| [Email](/questions/text/email) | An email address | Yes | Yes, one pass | An answer key |
+| [Phone](/questions/text/phone) | A phone number, stored in international form | Yes | Yes, one pass | An answer key |
+| [URL](/questions/text/url) | A web address | Yes | Yes, one pass | An answer key |
+| [Number](/questions/text/number) | A number | Yes | Yes, one pass or that many passes | No |
+
+All six take the same length rules, **Min characters**, **Max characters**, **Min words** and **Max words**, except [Number](/questions/text/number), which takes **Minimum**, **Maximum**, **Whole number only** and **Max decimal places** instead. The five that collect text also take a [Pattern](/rules/patterns).
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Text limits" icon="text-width" href="/rules/text-limits" />
+  <Card title="Patterns" icon="spell-check" href="/rules/patterns" />
+  <Card title="Number bounds" icon="arrow-down-1-9" href="/rules/number-bounds" />
+</CardGroup>

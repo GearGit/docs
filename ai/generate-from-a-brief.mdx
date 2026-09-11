@@ -4,25 +4,57 @@ description: "Describe your study and get a draft survey you can edit."
 icon: "wand-magic-sparkles"
 ---
 
-_To write._
+**Create with AI** turns a written brief into a complete draft survey, logic included, that you then edit like any other.
 
-{/* screenshot: generate from a brief in the app */}
+{/* screenshot: The build screen mid-run: the rail on the left listing what was understood from the brief, the draft growing on the canvas. */}
 
 ## What it does
 
-_To write._
+On the surveys list, beside **New survey**, sits **Create with AI**, a tinted button with the sparkles mark. It opens the **Create with AI** dialog with one field, **Describe the survey you want**. Its placeholder reads "Describe the survey you want, in your own words." and the hint under it says "This becomes the survey's name until the AI renames it." A counter shows how much of the 8,000 characters you have used. **Draft the survey** starts the run, and the dialog says "Taking you to the build."
+
+The build screen has a rail on the left and the canvas on the right. The rail's **What I understood** lists what it took from your brief before any writing starts, then counts progress as "6 of 14 elements". The canvas shows the stage it is in: **Reading your brief**, **Writing the questionnaire**, **Checking every route through the survey**, **Fixing 2 problems it found** when the check turns something up, and **Assembling the pages**. The questionnaire is written in one pass, so nothing appears until it lands, and the screen says a couple of minutes is normal. Then the draft grows on the canvas, marked **Read-only** until you accept it.
+
+You can leave. The bar says "You can leave this page, the build carries on without you." and "It stays on the Surveys list while it runs." A card on the surveys list tracks the run and reads "ready to review" when it finishes.
+
+When the run ends the bar offers **Use this survey**, **Discard** and **Start again**, with "7 credits used" beside them. While it runs, **Stop** is there; stopping after questions have landed offers **Keep these 9**. If the brief asked for something it could not build, the rail says "2 things cannot be built" and names each with a reason: **Not on your plan**, **Not supported yet** or **Not allowed**. **Brief** reopens what you wrote.
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Open the dialog">
+    On the surveys list, click **Create with AI**.
+  </Step>
+  <Step title="Write the brief">
+    Say who you are asking, what you need to learn, and any rules it must follow, such as who is screened out. Plain sentences work.
+  </Step>
+  <Step title="Draft it">
+    Click **Draft the survey**. Watch the build, or go back to your list and return when the card reads "ready to review".
+  </Step>
+  <Step title="Decide">
+    Read the draft on the canvas. Click **Use this survey** to keep it, **Start again** to run the same brief afresh, or **Discard** to drop it.
+  </Step>
+  <Step title="Edit as usual">
+    The accepted survey is an ordinary draft. Open **1 Build** and change anything. See [Build your first survey](/start/build-your-first-survey).
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**The result is a draft, and nothing is published.** You review, edit and publish it yourself, exactly as you would a survey you typed. See [Publish and versions](/share/publish-and-versions).
+
+**It builds only what your plan allows.** A construct outside your plan is listed under "things cannot be built" as **Not on your plan** and left out. The rest of the survey is built as asked.
+
+**It costs credits.** The bar reports the number afterwards as "7 credits used". **Start again** costs credits again; the confirmation says so. Free has no credits, so this needs Basic or above. See [Credits](/ai/credits).
+
+**Stopping while it writes keeps nothing.** A stop during the writing stage leaves no survey. Your brief is saved and **Start again** uses it as it is.
+
+**The brief stays with the survey.** **Brief** on the build screen shows it again. It is not part of the questionnaire respondents see.
+
+When a run cannot start, the dialog says why. Out of credits: "Your organisation has no AI credits left." with "A survey of this size usually costs 5 to 8 credits." and **Add credits**. Not on your plan: "Your plan does not include AI survey generation." with "You can still build this survey by hand." and **Compare plans**. Paused on our side: "AI generation is paused across the platform." with "This is on our side, not yours. Nothing is lost, and your brief is kept." Too many starts: "You have started several runs in the last minute." with "This one can start in 20 seconds."
 
 ## Related
 
 <CardGroup cols={2}>
-  <Card title="Edit with instructions" icon="comment-dots" href="/ai/edit-with-instructions" />
+  <Card title="AI insights" icon="sparkles" href="/results/ai-insights" />
   <Card title="Credits" icon="coins" href="/ai/credits" />
 </CardGroup>

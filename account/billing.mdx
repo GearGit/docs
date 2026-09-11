@@ -4,21 +4,48 @@ description: "Manage your payment details, invoices, and plan changes."
 icon: "credit-card"
 ---
 
-_To write._
+**Plan and billing** is one page for what your organization is on, how much of it this period has used, and what you pay for it. Card, invoices and receipts live in the payment portal it opens.
 
-{/* screenshot: billing in the app */}
+{/* screenshot: Plan and billing on a Pro plan: the plan, the renewal date, the responses meter, and Usage this period beneath. */}
 
 ## What it does
 
-_To write._
+**The head states the facts.** **Plan** with its price, **Renews** with the date and "in # days", **Responses this period** as a meter with what is left, and on Free a **Seats** count. When a charge has failed, a **Payment** tile reading **On hold** takes the place of **Renews**.
+
+**Usage this period** lists each metered feature as used "of {cap}", with "{amount} left" or "none left", and a tick showing where the period lands at the current pace, labeled "projected {amount} by {date}". When that pace runs past a cap, a banner says so: "At this rate you run out of {feature} around {date}."
+
+**Payments** shows the **Next charge** as "{amount} on {date}" and points **Card, invoices and receipts** to "in the payment portal". **Open payment portal** takes you there. There is no invoice list, card form or cancel control in the app; all three are in the portal.
+
+**Admins only.** A member who opens the page sees **Admins only**: "You don't have access to this area. Ask an organization admin if you need it."
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Open Plan and billing">
+    Click **Plan & billing** in the sidebar. The head, the meters and **Included in {plan}** read your organization's own usage, so the numbers are live.
+  </Step>
+  <Step title="Compare plans">
+    Click **Compare plans**. A drawer lists each plan as a column with its price. Your column reads **What you have now**. A cell that differs from yours carries an arrow, and where fewer seats would leave people out, the **People** cell says "# people lose access". On Free, the same columns sit on the page under **Choose a plan**.
+  </Step>
+  <Step title="Change plan">
+    Under the column you want, click **Talk to us**. It opens an email to us with the plan's name as the subject, and we move the organization. **Talk to us about Enterprise**, at the foot of the drawer, does the same for a Custom agreement. See [Plans and limits](/account/plans-and-limits).
+  </Step>
+  <Step title="Update the card or download a receipt">
+    Click **Open payment portal** under **Payments**, or **Billing portal** in the page head. Everything about the payment itself happens there.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**When a charge is declined**, the head shows **Payment** **On hold** and a banner reads "The last charge was declined." Click **Fix payment**. The dialog shows the **Amount due** and the **Billing period**, and **Open payment portal**. The banner's own sentence is the important one: "Update the card in the payment portal and the charge is retried straight away. Surveys keep collecting in the meantime."
+
+**When a subscription has ended**, the banner reads "The subscription has ended." and "The organization is on the Free plan until a new plan is chosen." The head's one action is **Choose a plan**.
+
+**A managed agreement** shows a **Managed** badge beside the plan and a **Your agreement** card: **Billing** reads "Managed by your account manager" and **Limits** reads "Set in your agreement". There are no self-serve controls. **Email support** opens an email to support@onlinesurvey.ai.
+
+**Moving to a plan with fewer seats than people** suspends the people who do not fit and removes nobody. The **Members** page names them with **Suspended by plan** and offers **Choose who stays**. See [Roles and seats](/account/roles-and-seats).
+
+**A plan change leaves a trail.** A checkout started and a plan change requested both appear in **Audit**, named by the plan.
 
 ## Related
 

@@ -4,50 +4,68 @@ description: "Pick one option from a list that opens when you click it."
 icon: "square-caret-down"
 ---
 
-_To write._
+A dropdown keeps the list closed until a respondent opens it, then takes one answer from it. Use it where the list is long enough that printing every option on the screen would push the rest of the question out of sight. A dropdown takes one answer; for several, use [Multiple choice](/questions/choice/multiple-choice).
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A dropdown question as a respondent sees it, closed, with the list open beneath it. */}
 
 ## When to use it
 
-_To write._
+- The list runs past about ten options: a country, a state, a job title, a model number.
+- The options are familiar enough that people know what they are looking for before they open the menu.
+- You want the screen to stay short, so the question after it is still visible.
 
-**Consider instead:** _To write_
+**Consider instead:** [Single choice](/questions/choice/single-choice) when the list is short enough to read at a glance, which is easier to answer, [Multiple choice](/questions/choice/multiple-choice) when more than one answer can be true, [Country or region](/questions/ready-made/country-or-region) when the long list you were about to type is a list of countries, [Dropdown grid](/questions/grids/dropdown-grid) when the same menu is asked about several things.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Dropdown">
-    _To write._
+  <Step title="Pick Dropdown">
+    In **Add to survey**, type to filter and click **Dropdown**, under the **Choice** heading. The question lands where the gap was as a closed menu reading "Choose an option…", with one empty option behind it.
+
+    {/* screenshot: The dropdown question on the builder canvas, with its option count and Bulk edit beneath the closed menu. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question and the options">
+    Type the question straight onto the canvas. A dropdown's list is written as text rather than a row at a time: beneath the closed menu is a line counting the options with **Bulk edit** beside it, and clicking either opens the list as a plain text box, one option per line. Paste a long list straight in.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Options | The list in the menu, written in **Bulk edit** as plain text, one per line. A line you leave alone keeps any show or hide rule on it. |
+| **"Other" with a text box** | Adds an **Other** option with a text box beside it, so a respondent can write an answer you did not list. It always shows last. |
+| **"None of these" option** | Adds an option that stands for none of the rest. It always shows last. |
+| **Answer order** | **As written**, **Shuffled** or **Reversed**. A long list is usually left as written, because people are looking for their own answer and expect to find it in the order they would guess. |
+| **Placeholder** | What the closed menu reads before they pick. It starts as "Choose an option…". |
+| **Searchable** | Puts a filter box at the top of the open menu, so typing narrows the list. Worth turning on for anything past about twenty options. |
+
+{/* screenshot: The question panel for a dropdown, with the placeholder row, the searchable toggle and the answer order row. */}
 
 ## Rules you can set
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they pick an option. If they pick **Other**, the box beside it has to be filled in too. |
+
+Required is the whole of it. One answer is either chosen or it is not, so a dropdown has no **Validation** row in the panel.
 
 ## Logic that works with it
 
-_To write._
+The answer is the one option they picked, stored as the option itself rather than as its wording, so renaming an option later never moves a rule that points at it. Conditions read it with **is**, **is not**, **is one of**, **is not one of**, **is answered** and **is not answered**, and you pick the option from a list of the ones you wrote. **is one of** is the one that earns its keep here, since a long list usually groups into a handful of things you care about. It is a [carry-forward](/logic/carry-forward) source, so a later question can offer the option they chose, the ones they left, or all of them, and it takes a carried list into its own menu in the same way. It can [drive a loop](/logic/loops), repeating a block once for the option they picked, once per option they left, or once per option on the list. It [scores](/logic/scoring) points per option. [Piping](/logic/piping) it into later wording prints the label they saw.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, one bar per option. **Pie chart** and **Values list** are the other two entries in **Chart type**, and a **Values list** reads better than a chart once the list runs to fifty options.
+
+In every export the question becomes one coded column: a number for the option they picked, with the wording they saw attached to it.
+
+{/* screenshot: The dropdown question on the Analytics tab, charted as a bar chart. */}
 
 ## Related
 

@@ -4,50 +4,69 @@ description: "Collect a short line of typed text."
 icon: "minus"
 ---
 
-_To write._
+Short text gives a respondent one line to type into. Use it where the answer is a word or a short phrase and you want it in their own words rather than picked off a list. You get the text exactly as they wrote it, and you can hold it to a length or a shape.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A short text question as a respondent sees it, one line to type into. */}
 
 ## When to use it
 
-_To write._
+- The answer is a name, a place, a code or a short phrase, and no list you could write would cover it.
+- You are opening a topic and want people's own wording before you turn it into closed options.
+- You need a value with a shape you can check, such as a reference number or a ZIP code.
 
-**Consider instead:** _To write_
+**Consider instead:** [Long text](/questions/text/long-text) when they need room to explain themselves, [Number](/questions/text/number) when the answer is counted or compared, [Single choice](/questions/choice/single-choice) when a list would cover the answers, [Email](/questions/text/email) when the answer is an address and you want its format checked.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Short text">
-    _To write._
+  <Step title="Pick Short Text">
+    In **Add to survey**, type to filter and click **Short Text**, under the **Text** heading. The question lands where the gap was, as one empty box with "Type your answer here…" printed inside it.
+
+    {/* screenshot: The short text question on the builder canvas, edited in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    The canvas is the real survey, so you type the question straight onto it, and a description under it if the question needs one. There is no list to write: the box is the whole question.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **Placeholder** | The grey wording inside the empty box. A new question starts with "Type your answer here…". Clear the field and the box falls back to a standard hint. |
+
+{/* screenshot: The question panel for a short text question, with the placeholder row and the row that opens Validation. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until the box holds something that is not blank. |
+| [Min characters and Max characters](/rules/text-limits) | The fewest and the most characters the answer may run to. |
+| [Min words and Max words](/rules/text-limits) | The same bounds counted in words, which are whatever spaces separate. |
+| [Pattern](/rules/patterns) | Accepts the answer only when it has the shape you picked, such as **US ZIP (5)** or **Letters only**, or a pattern of your own. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+Characters are checked before words, and one message shows at a time, so an answer that is both too short and one word reads the character message.
 
 ## Logic that works with it
 
-_To write._
+The answer is the text they typed, so conditions read it as text: **is**, **is not**, **contains**, **does not contain**, **starts with**, **ends with**, **is answered** and **is not answered**. There is no list of values to pick from in the condition, so you type the text you are matching against. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it, because a line of typed text is not a list of choices. It can [drive a loop](/logic/loops), which gives one pass, on the answer they typed, so a block can ask about the one thing they named. It [scores](/logic/scoring) through an answer key: you type the accepted answers and what each is worth, and they are compared without regard to capitals or spaces at the ends. [Piping](/logic/piping) it into later wording prints what they wrote, as they wrote it.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Word cloud**, sized by how often a word comes up across the answers. **Values list** and **Bar chart** are the other entries in **Chart type**, and **Raw data** under the card opens the individual answers.
+
+In every export the question becomes one text column, holding the answer in full. CSV and Excel never shorten it.
+
+{/* screenshot: The short text question on the Analytics tab, charted as a word cloud. */}
 
 ## Related
 

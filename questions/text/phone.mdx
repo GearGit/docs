@@ -4,50 +4,71 @@ description: "Collect a phone number."
 icon: "phone"
 ---
 
-_To write._
+Phone is a one-line question built for numbers: a country picker sits at the front of the field, and the digits group themselves as they are typed. The answer is stored in full international form, so a number collected in one country still reads correctly next to one from another.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A phone question as a respondent sees it, the country picker at the front of the field. */}
 
 ## When to use it
 
-_To write._
+- You will be calling or texting the respondent, for recruitment, an interview or a reminder.
+- You are collecting contact details from more than one country and want them in one consistent form.
+- The number is the point of the question, so a mistyped one is worth refusing on the screen.
 
-**Consider instead:** _To write_
+**Consider instead:** [Mobile phone](/questions/ready-made/mobile-phone) when you want the same box with its hint fixed and no **Type** row to switch by accident, [Email](/questions/text/email) when writing is the way you will follow up, [Short text](/questions/text/short-text) when the answer is a reference or an extension rather than a dialable number.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Phone">
-    _To write._
+  <Step title="Pick Phone">
+    In **Add to survey**, type to filter and click **Phone**, under the **Text** heading. The question lands where the gap was, as one empty box with "+1 (555) 000-0000" printed inside it.
+
+    {/* screenshot: The phone question on the builder canvas, edited in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    Type the question straight onto the canvas. Say in the description who will call and why, since a number is the detail people give most reluctantly.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **Placeholder** | The grey wording inside the empty box. A new question starts with "+1 (555) 000-0000". Clear the field and the box takes its hint from the country the respondent has selected. |
+
+The country picker is part of the question and is always there. A respondent can search it by country name or by dialing code, and pasting a number that starts with a plus and a dialing code moves the picker to that country on its own.
+
+{/* screenshot: The question panel for a phone question, with the placeholder row and the row that opens Validation. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until the box holds a number. |
+| [Min characters and Max characters](/rules/text-limits) | The fewest and the most characters the answer may run to. |
+| [Min words and Max words](/rules/text-limits) | The same bounds counted in words. A number is one word, so these are rarely what you want here. |
+| [Pattern](/rules/patterns) | Narrows the shape further with a pattern you write against the stored international number. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+The question already checks that the stored number is a valid international number, so a [pattern](/rules/patterns) here is for narrowing that check rather than for making it.
 
 ## Logic that works with it
 
-_To write._
+The answer is the number as text, so conditions read it as text: **is**, **is not**, **contains**, **does not contain**, **starts with**, **ends with**, **is answered** and **is not answered**. **starts with** reads the dialing code, which is how you route by country without asking a second question. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it. It can [drive a loop](/logic/loops), which gives one pass, on the number they gave. It [scores](/logic/scoring) through an answer key, which is rarely what a number question is for. [Piping](/logic/piping) it into later wording prints the number back for them to check.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Values list**, one row per answer. **Word cloud** is the other entry in **Chart type**.
+
+In every export the question becomes one text column, holding the number in the international form it was stored in.
+
+{/* screenshot: The phone question on the Analytics tab, listed value by value. */}
 
 ## Related
 

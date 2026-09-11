@@ -4,50 +4,67 @@ description: "Ask which age band someone falls into."
 icon: "people-group"
 ---
 
-_To write._
+Age group is a single choice question that arrives with seven bands already written, from Under 18 to 65 or over. Respondents pick the band they fall into rather than typing a number, which is quicker for them and gives you groups you can chart without binning anything yourself.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: An Age group question as a respondent sees it, seven bands with one to pick. */}
 
 ## When to use it
 
-_To write._
+- You want age as a category to cross-tabulate the rest of the study by, not as an exact number.
+- You are screening on age, for example sending anyone who picks Under 18 to an ending.
+- You are filling [quotas](/logic/quotas) that are written in bands.
 
-**Consider instead:** _To write_
+**Consider instead:** [Date of birth](/questions/dates/date-of-birth) when you need an exact age and want the **Minimum age** and **Maximum age** rules that come with it, [Number](/questions/text/number) when you want the age typed as a figure, [Single choice](/questions/choice/single-choice) when you want bands of your own from scratch.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Age group">
-    _To write._
+  <Step title="Pick Age Group">
+    In **Add to survey**, type to filter and click **Age Group**. It arrives with seven bands written: Under 18, 18-24, 25-34, 35-44, 45-54, 55-64, 65 or over.
+
+    {/* screenshot: An Age group question on the builder canvas, its seven bands edited in place. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question and edit the bands">
+    Type the question on the canvas. The bands are ordinary options: reword one in place, click **Add option** at the end of the list to add another, or open **Bulk edit** from the chip beside it and paste your own bands, one per line. Bands that match the ones your other studies use are what make the results comparable.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Options | The bands they pick from. Edited on the canvas, or in **Bulk edit** as plain text, one per line. Write them in order, because the order is what a reader expects to see them in. |
+| **"Other" with a text box** | Adds an **Other** option with a text box beside it, so somebody can write an answer the bands do not cover. It always shows last. |
+| **"None of these" option** | Adds an option that stands for none of the rest. Picking it clears anything else they had picked. It always shows last. |
+| **Answer order** | **As written**, **Shuffled** or **Reversed**. Bands read as a sequence, so **As written** is the usual choice here. |
+| **How many each respondent sees** | Inside the **Answer order** dialog. **All of them**, or **Only some**, which draws that many options for each respondent. |
+
+{/* screenshot: The question panel for an Age group question, with the option list settings and the answer order row. */}
 
 ## Rules you can set
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they pick a band. |
+
+Required is the whole of it. One band is either chosen or it is not, so an Age group question has no **Validation** row in the panel and nothing else to constrain.
 
 ## Logic that works with it
 
-_To write._
+The answer is one band, stored as the option itself rather than as its wording, so rewording a band never moves a rule that points at it. Conditions read it with **is**, **is not**, **is one of**, **is not one of**, **is answered** and **is not answered**, and you pick the band from the list you wrote. **is one of** is what a screener wants: pick the two or three bands you are recruiting and let everyone else take the other path. It is a [carry-forward](/logic/carry-forward) source, and a carried list can land in its options. It can [drive a loop](/logic/loops), over the band they chose, the ones they left, or the whole list. It [scores](/logic/scoring) points per option, and a point can be negative. Individual bands can be shown or hidden by a rule with [Show/hide option](/logic/show-and-hide). [Piping](/logic/piping) it into later wording prints the band in the wording they saw.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, one bar per band, counting the respondents in it. **Histogram** and **Pie chart** are the other two entries in **Chart type**, and the histogram is the one that reads as an age distribution.
+
+In every export the question becomes one coded column, holding a code for the band they picked with your wording attached to it. Each answer keeps the wording it was shown, so rewording a band later never rewrites the answers already given.
+
+{/* screenshot: The Age group question on the Analytics tab, charted as a bar chart. */}
 
 ## Related
 

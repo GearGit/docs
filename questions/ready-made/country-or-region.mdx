@@ -4,50 +4,66 @@ description: "Ask which country or region someone is in."
 icon: "earth-americas"
 ---
 
-_To write._
+Country or region is a text box for where somebody is, tagged so results treat the answers as categories rather than as prose. Respondents type the name of their country or region. Results chart it as bars, one per answer as typed, so the top few show up without any coding on your part.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A Country or region question as a respondent sees it, one box with Country / Region written in it. */}
 
 ## When to use it
 
-_To write._
+- You are running in many markets and do not want to maintain a list of every one of them.
+- You want a distribution by country in your results, without turning the answers into codes first.
+- You expect a handful of countries to dominate, and the long tail is worth reading rather than forcing into buckets.
 
-**Consider instead:** _To write_
+**Consider instead:** [Single choice](/questions/choice/single-choice) or [Dropdown](/questions/choice/dropdown) when you are fielding in a known set of markets and want everyone in one of them, [Address](/questions/ready-made/address) when you need the full postal address, [Short text](/questions/text/short-text) for a region name that is not a country, or when a word cloud is the view you want.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Country or region">
-    _To write._
+  <Step title="Pick Country Region">
+    In **Add to survey**, type to filter and click **Country Region**. It arrives as one box with "Country / Region" as the hint inside it, and no question wording of its own.
+
+    {/* screenshot: A Country or region question on the builder canvas, its wording typed in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    The canvas is the real survey, so you type the question and its description straight onto it. Because the answer is typed rather than picked, a description that asks for the country name in full is what keeps "UK" and "United Kingdom" from splitting one country into two bars.
   </Step>
 </Steps>
 
 ## Settings
 
-| Setting | What it does |
-| --- | --- |
-| _To write_ | _To write_ |
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
+A Country or region question has nothing to configure. The panel shows **Type**, fixed at **Country Region**, then **Required** and **Validation**, then the logic rows. The box is a plain one: there is no country list to pick from and no flag beside it, and the hint inside it comes with the question type and stays as it is.
+
+{/* screenshot: The question panel for a Country or region question, with Type fixed and Required under it. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until the box has something in it. |
+| [Text limits](/rules/text-limits) | **Min characters**, **Max characters**, **Min words** and **Max words**. A minimum of three characters rules out two-letter codes if you want the name written out. |
+| [Pattern](/rules/patterns) | Accepts the answer only when it matches a shape you pick, such as **Letters only**, or one you write yourself. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
 
 ## Logic that works with it
 
-_To write._
+The answer is the text they typed, so conditions read it as text: **is**, **is not**, **contains**, **does not contain**, **starts with**, **ends with**, **is answered** and **is not answered**. A screening rule on a typed country has to allow for the ways people write it, so **contains** usually beats **is**. It is not a [carry-forward](/logic/carry-forward) source, and nothing carries into it, because there is no list of choices to pass along. It can [drive a loop](/logic/loops), which gives one pass for the place they named. It [scores](/logic/scoring) against an answer key, the accepted answers you type in the **Scoring** dialog, compared without regard to capitals or spaces at the ends, so one row of the key can hold each spelling you expect. [Piping](/logic/piping) it into later wording prints the place back to them in the words they used.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, one bar per distinct answer as typed, counting the respondents who gave it. **Pie chart** and **Values list** are the other two entries in **Chart type**. This is the one ready-made text question charted as a distribution by default, because a country is a category even when it is typed.
+
+In every export the question becomes one text column, holding the answer as it was typed.
+
+Country or region is not a contact detail, so it appears on a shared [report](/results/reports) like any other question.
+
+{/* screenshot: The Country or region question on the Analytics tab, charted as a bar chart. */}
 
 ## Related
 

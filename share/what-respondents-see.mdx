@@ -4,21 +4,50 @@ description: "See the survey from the respondent side, start to finish."
 icon: "users"
 ---
 
-_To write._
+A respondent opens your link and sees one column on your theme: a welcome screen, then question screens with a progress rail, then an ending. No account, no app, nothing to install.
 
-{/* screenshot: what respondents see in the app */}
+{/* screenshot: A question screen as a respondent sees it: the logo band, the progress rail, one question, and the button. */}
 
 ## What it does
 
-_To write._
+**The welcome screen** is the first thing they see, with your text and a button. Its label is your call on a paid plan, **Start** by default; on the free plan it is our button. Once they pass it, there is no going back to it.
+
+**Question screens** follow, one screen at a time. A thin progress rail runs across the top of every question screen, and it is worked out from the screens this respondent actually passes through, so a skipped block does not count against them. If you added a logo, it sits in a band above the content on the screens you chose. Everything is one scrolling column; on a phone the button and the "Powered by" credit move into a bar pinned to the bottom.
+
+**Back** appears when **Allow back navigation** is on. A respondent can change an earlier answer, and an optional question they had answered can be cleared again. A rating that offers a decline option stores that choice as a real answer, distinct from leaving it blank.
+
+**Checking happens on submit.** When they press the button, the screen is checked and anything missing or out of range is named beside the question, in your own words where you set a **Custom error**. See [Custom messages](/rules/custom-messages).
+
+**The ending** is your copy on the same theme. It can stay put, offer a button to a destination, or redirect after a countdown. A respondent who is screened out, or whose response ends as a quality reject, sees an ending like any other; nothing tells them they were turned away. See [Endings](/survey/endings).
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Walk it yourself">
+    Click **Preview** in the builder to take the draft as a respondent. See [Preview](/design/preview).
+  </Step>
+  <Step title="Decide on Back">
+    On the survey's **Settings**, switch **Allow back navigation** on or off. "Respondents can return to earlier questions."
+  </Step>
+  <Step title="Choose what they see of the numbers">
+    On the **Survey** surface in the rail, **Show question numbers** and **Show points to respondents** are both switches.
+  </Step>
+  <Step title="Write the closed screens">
+    Each ending is written on the canvas. Open the **Button** panel beside it to set **Stay here**, a **Button**, or **Auto redirect**.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**Reloading keeps their place; a new tab does not.** A respondent who reloads the same tab returns to the screen they were on with their answers filled in. Opening the link in a new tab, another browser or another device starts a fresh response. There is no resume link to send them.
+
+**Each respondent finishes the version they started.** Publishing an update while they are mid-survey changes nothing for them. See [Published versions](/survey/published-versions).
+
+**A closed door is a themed message.** A closed survey shows "Survey closed" with "This survey is no longer accepting responses." A survey that has reached **Total responses** shows "Survey full" and "This survey has reached its response limit." A respondent whose group is already full sees "This survey has all the responses it needs for your group. Thanks for your interest!" All of them are drawn on the survey's own theme.
+
+**The survey speaks English around your content.** Your questions and endings appear exactly as you wrote them. The words around them, the loading message, "Powered by", and the like, are in English.
+
+**Motion respects the device.** Screens slide as the respondent moves forward and back. On a device set to reduce motion, the slide becomes a short crossfade.
 
 ## Related
 

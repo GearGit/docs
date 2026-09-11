@@ -5,16 +5,30 @@ description: "Choose between the image questions and see how they compare."
 icon: "image"
 ---
 
-Choose between the image questions and see how they compare.
+An image question asks respondents to answer by marking a picture rather than by picking from a list. There is one of them, [Image hotspot](/questions/images/image-hotspot): you give it a picture, and a respondent taps the part of it that answers the question. Each tap drops a numbered pin where they touched, and the answer is the set of positions they marked. Reach for it when the places on the picture have no agreed names, or when naming them in a list would give the answer away: a pack design, a web page, a diagram, a map, a shelf.
+
+How many marks you want is a rule. **Min pins** sets the fewest you accept, **Max pins** the most, and until you set a maximum the picture takes three. The picture itself tells respondents where they stand as they work, counting down what is still needed and then what is left, and a **Clear pins** button lets anyone start the marking again.
+
+If whole pictures are the options rather than places inside one, the question you want is a choice question with tiles: [Image single select](/questions/choice/image-single-select) when one wins, [Image multi select](/questions/choice/image-multi-select) when several can.
 
 <CardGroup cols={3}>
   <Card title="Image hotspot" icon="location-dot" href="/questions/images/image-hotspot" />
-  <Card title="Click heatmap" icon="fire" href="/questions/images/click-heatmap" />
 </CardGroup>
+
+{/* screenshot: The Image Hotspot entry in the Add to survey dialog, under the Media heading. */}
 
 ## Compare
 
 | | Answers with | Can be required | Drives a loop | Scorable |
 | --- | --- | --- | --- | --- |
-| [Image hotspot](/questions/images/image-hotspot) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Click heatmap](/questions/images/click-heatmap) | _To write_ | _To write_ | _To write_ | _To write_ |
+| [Image hotspot](/questions/images/image-hotspot) | Pins on a picture | Yes | No | No |
+
+Pins are positions, not words, so a rule can read whether the question was answered but cannot read what was marked. The marks are a result to read: per question they are charted as a heatmap over the same picture.
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Image single select" icon="image" href="/questions/choice/image-single-select" />
+  <Card title="Media library" icon="photo-film" href="/design/media-library" />
+  <Card title="Number bounds" icon="arrow-down-1-9" href="/rules/number-bounds" />
+</CardGroup>

@@ -5,7 +5,7 @@ description: "Choose between the date and time questions and see how they compar
 icon: "calendar"
 ---
 
-Choose between the date and time questions and see how they compare.
+A date or time question gives respondents a picker instead of a text box, so what you collect back is a real date rather than a string somebody typed in their own format. Three questions decide which one to use. First, calendar or clock: [Date](/questions/dates/date) and [Date range](/questions/dates/date-range) ask for days, [Time](/questions/dates/time) and [Time range](/questions/dates/time-range) ask for a time of day, and [Date and time](/questions/dates/date-and-time) asks for one moment made of both. Second, a point or a span: the two range questions keep a start and an end together as one answer and check that the start comes first, which two separate questions cannot do. Third, whether the answer is a birth date. [Date of birth](/questions/dates/date-of-birth) is the one to reach for there, because it also gives you the age on the day each person answers, which is what keeps an age screener right for the whole of fieldwork.
 
 <CardGroup cols={3}>
   <Card title="Date" icon="calendar-day" href="/questions/dates/date" />
@@ -16,13 +16,29 @@ Choose between the date and time questions and see how they compare.
   <Card title="Date of birth" icon="cake-candles" href="/questions/dates/date-of-birth" />
 </CardGroup>
 
+{/* screenshot: The six date and time questions in the Add to survey dialog, under the Date & Time heading. */}
+
 ## Compare
 
 | | Answers with | Can be required | Drives a loop | Scorable |
 | --- | --- | --- | --- | --- |
-| [Date](/questions/dates/date) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Date range](/questions/dates/date-range) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Date and time](/questions/dates/date-and-time) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Time](/questions/dates/time) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Time range](/questions/dates/time-range) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Date of birth](/questions/dates/date-of-birth) | _To write_ | _To write_ | _To write_ | _To write_ |
+| [Date](/questions/dates/date) | One calendar day | Yes | Yes, one pass | No |
+| [Date range](/questions/dates/date-range) | A start date and an end date | Yes | Yes, one pass | No |
+| [Date and time](/questions/dates/date-and-time) | One day with a time on it | Yes | Yes, one pass | No |
+| [Time](/questions/dates/time) | One time of day | Yes | Yes, one pass | No |
+| [Time range](/questions/dates/time-range) | A start time and an end time | Yes | Yes, one pass | No |
+| [Date of birth](/questions/dates/date-of-birth) | A birth date, and the age it gives | Yes | Yes, one pass | No |
+
+None of the six scores, and none of them carries answers forward, because there is no list of options to hand on. [Date](/questions/dates/date), [Date and time](/questions/dates/date-and-time) and [Date of birth](/questions/dates/date-of-birth) compare as dates in a rule, with **is after**, **is before** and **is between**, and a [Date range](/questions/dates/date-range) compares by its start date. The two time questions tell a rule whether they were answered.
+
+## What bounds each one
+
+The three calendar questions take **Earliest**, **Latest** and **Allowed dates**, covered in [Number bounds](/rules/number-bounds). [Date of birth](/questions/dates/date-of-birth) takes **Minimum age** and **Maximum age** instead, worked out on the day the respondent answers. The two time questions take no bound at all: their pickers can only produce real times, and **Minute step** does the narrowing a rule would otherwise do. Both range questions check themselves whatever else you set, refusing a start that comes after its end.
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Number bounds" icon="arrow-down-1-9" href="/rules/number-bounds" />
+  <Card title="Required" icon="asterisk" href="/rules/required" />
+  <Card title="Screen-outs" icon="user-xmark" href="/logic/screen-outs" />
+</CardGroup>

@@ -4,21 +4,49 @@ description: "See how your organization and its workspaces hold your surveys."
 icon: "building"
 ---
 
-_To write._
+Everything you build sits in three layers. An **organization** is the team, its plan and its people. A **workspace** is a folder inside it. A **survey** lives in exactly one workspace.
 
-{/* screenshot: organizations and workspaces in the app */}
+{/* screenshot: The Workspaces page: each workspace with its surveys, people and last activity, and the Default badge on one of them. */}
 
 ## What it does
 
-_To write._
+**The organization is the sidebar's header.** Your role sits under its name. Click the header to switch organization, or to open **Organization settings** if you are an admin and **Organization members** if you are not. Everything the sidebar lists belongs to that organization: **Surveys**, **Media**, **Members**, **Workspaces** and, for admins, **Plan & billing**, **Audit** and **Settings**.
+
+**The workspace is the first breadcrumb.** Click it to switch workspace. Inside a survey the sidebar goes and **Back** is the one way out. The crumb stops opening there, because a survey's workspace is fixed.
+
+**Every member reaches every workspace.** Inviting someone to the organization gives them all of its workspaces at once. A workspace's detail page says so: "People you invite to the organization reach this workspace." No plan caps how many workspaces you create.
+
+**One workspace is the default.** It carries a **Default** badge. It is where people land the first time, before they pick one.
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Create a workspace">
+    Open **Workspaces** and click **New workspace**. Type a **Name**. Tick **Make this the default workspace** if people should land there first. Click **Create workspace**.
+  </Step>
+  <Step title="Look inside one">
+    Click a row. The detail page counts **Surveys**, **People**, **Last activity** and **Created**, and lists **People with access** in a **Person** and **Can do** table. **Open workspace** takes you to its surveys. An admin renames it by clicking its heading and typing.
+  </Step>
+  <Step title="Rename, set as default or delete">
+    Each row's menu holds **Open workspace**, **Rename**, **Set as default** and **Delete workspace**. The delete dialog states how many surveys go with the workspace and how many of them are live, that they can be restored for 30 days, and how many people lose this workspace and keep their other access. Type the workspace name to confirm.
+  </Step>
+  <Step title="Set the organization up">
+    Admins open **Settings**. The **Organization** card holds the **Name**, the **Slug** with **Copy the slug** (an identifier, not an address), and the **Default workspace**. Choosing a default saves at once. Click **Save** to store the name; the page confirms with "Settings saved."
+  </Step>
+  <Step title="Look after your own account">
+    Open the account menu and choose **Account settings**. Your name is the heading. **Change name** opens a **Display name** box with **Save name**. The **Sign in** card states whether a **Password** is **Set** and whether **Google** is **Linked**, and offers **Change password** or, on a Google-only account, **Set password**. **Organizations** lists each one with **Your role**, a **Current** badge, **Switch** and **Leave**. **Active sessions** lists every signed-in device with **Last renewed**, a **This device** badge, **Sign out** on each row and **Sign out other sessions**.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**Leaving an organization** shows what changes first: "You lose access to # workspaces", "The surveys you own stay with the organization", "An admin can invite you back". If you own the organization, the dialog is **Hand the organization on and leave**, and you pick a **New owner** from the other admins. With no other admin, the row reads "Make someone an admin before you can leave" instead of a button.
+
+**Transferring ownership** is a card on **Settings**. Pick the **New admin** from your active members. The dialog says they become the owner, with billing, members and settings, and that you keep your access to every workspace.
+
+**Deleting an organization** is the last card on **Settings**. The dialog says how many surveys are deleted and how many of them are live, that the responses stay with the surveys, and how many people lose access and how many invites are revoked. Type the organization name to confirm. Members lose access at once.
+
+**Audit**, for admins, lists every change in the organization by day. Filter it by **Range**, **Person** and **Action**. **Export range** downloads the filtered log as a CSV. The log runs from the day the organization was created.
 
 ## Related
 

@@ -5,7 +5,7 @@ description: "Choose between the rating and scale questions and see how they com
 icon: "star-half-stroke"
 ---
 
-Choose between the rating and scale questions and see how they compare.
+A rating question asks how much, how good or how likely, and hands back a point on a scale. Three things tell you which one to use. First, what a point should be: a picture on [Thumbs up or down](/questions/ratings/thumbs-up-down), [Smiley rating](/questions/ratings/smiley-rating) and [Star rating](/questions/ratings/star-rating), a number on [NPS](/questions/ratings/nps), [Opinion scale](/questions/ratings/opinion-scale) and [Numeric slider](/questions/ratings/numeric-slider), a word you wrote on [Likert](/questions/ratings/likert) and [Text slider](/questions/ratings/text-slider). Second, how long the scale is and who decides: NPS and Opinion scale are fixed at 0 to 10 so scores stay comparable, Smiley and Star offer a choice of lengths, and Likert and Text slider are exactly as long as the list you write. Third, one handle or two: every one of them takes a single point except [Range slider](/questions/ratings/range-slider), whose answer is a band between a low number and a high number, which is why it is the one a rule cannot compare, a score cannot weight and a loop cannot run over.
 
 <CardGroup cols={3}>
   <Card title="Thumbs up or down" icon="thumbs-up" href="/questions/ratings/thumbs-up-down" />
@@ -19,16 +19,32 @@ Choose between the rating and scale questions and see how they compare.
   <Card title="Range slider" icon="arrows-left-right-to-line" href="/questions/ratings/range-slider" />
 </CardGroup>
 
+{/* screenshot: Every rating question is added from one dialog, Add to survey, under the Rating heading. */}
+
 ## Compare
 
 | | Answers with | Can be required | Drives a loop | Scorable |
 | --- | --- | --- | --- | --- |
-| [Thumbs up or down](/questions/ratings/thumbs-up-down) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [NPS](/questions/ratings/nps) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Likert](/questions/ratings/likert) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Opinion scale](/questions/ratings/opinion-scale) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Smiley rating](/questions/ratings/smiley-rating) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Star rating](/questions/ratings/star-rating) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Text slider](/questions/ratings/text-slider) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Numeric slider](/questions/ratings/numeric-slider) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Range slider](/questions/ratings/range-slider) | _To write_ | _To write_ | _To write_ | _To write_ |
+| [Thumbs up or down](/questions/ratings/thumbs-up-down) | A thumb up or a thumb down | Yes | Yes | Points per scale point |
+| [NPS](/questions/ratings/nps) | A number from 0 to 10 | Yes | Yes | Points per scale point |
+| [Likert](/questions/ratings/likert) | One scale point, in your wording | Yes | Yes | Points per scale point |
+| [Opinion scale](/questions/ratings/opinion-scale) | A number from 0 to 10 | Yes | Yes | Points per scale point |
+| [Smiley rating](/questions/ratings/smiley-rating) | A number, which face they picked | Yes | Yes | Points per scale point |
+| [Star rating](/questions/ratings/star-rating) | A number, how far along the row | Yes | Yes | Points per scale point |
+| [Text slider](/questions/ratings/text-slider) | One named stop | Yes | Yes | No |
+| [Numeric slider](/questions/ratings/numeric-slider) | A number on the track | Yes | Yes | Points per unit |
+| [Range slider](/questions/ratings/range-slider) | A low number and a high number | Yes | No | No |
+
+## Naming the ends, and choosing the length
+
+Five of them take a caption at each end. [Thumbs up or down](/questions/ratings/thumbs-up-down), [NPS](/questions/ratings/nps), [Opinion scale](/questions/ratings/opinion-scale), [Smiley rating](/questions/ratings/smiley-rating) and [Star rating](/questions/ratings/star-rating) each have a **High label** and a **Low label** row in the panel. On a scale of five points or fewer the caption sits under the point it belongs to; on a longer one it sits at the end of the row. NPS and Opinion scale start with **Not at all likely** and **Extremely likely** in place and keep them until you write your own. The other three start with no captions and draw none until you type one.
+
+Length is set differently in each one. NPS and Opinion scale are fixed at eleven points. Smiley rating takes **Scale** 3 or 5, Star rating **Scale** 3, 5, 7 or 10. Likert and Text slider are as long as the list you write. The two numeric sliders take their ends from **Minimum** and **Maximum** in the **Validation** dialog, which are also the bound a respondent cannot drag past.
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Scoring" icon="medal" href="/logic/scoring" />
+  <Card title="Branching" icon="code-branch" href="/logic/branching" />
+  <Card title="Per-question results" icon="chart-column" href="/results/per-question-results" />
+</CardGroup>

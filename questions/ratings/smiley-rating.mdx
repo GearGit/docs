@@ -4,50 +4,69 @@ description: "Pick the face that matches how you feel."
 icon: "face-smile"
 ---
 
-_To write._
+Smiley rating draws a row of faces, from the unhappiest on the left to the happiest on the right, and a respondent picks the one that matches how they feel. The answer is stored as a number, so a row of faces still gives you something you can average and branch on.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A smiley rating question as a respondent sees it, five faces in a row with a caption under each end. */}
 
 ## When to use it
 
-_To write._
+- You are asking about feeling rather than judgment: how a visit went, how a message landed, how they feel about a change.
+- Your respondents are not all reading the same language well, or are answering on a phone, and a face is quicker to read than a sentence.
+- You want a short scale on purpose, because three or five steps is as fine a distinction as the question deserves.
 
-**Consider instead:** _To write_
+**Consider instead:** [Star rating](/questions/ratings/star-rating) when quality is being judged and you want up to ten points, [Thumbs up or down](/questions/ratings/thumbs-up-down) when two answers are enough, [Likert](/questions/ratings/likert) when you want the points named in words, [NPS](/questions/ratings/nps) when you want the standard 0 to 10 recommendation score.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Smiley rating">
-    _To write._
+  <Step title="Pick Smiley Rating">
+    In **Add to survey**, type to filter and click **Smiley Rating**, under **Rating**. The question lands where the gap was with five faces already drawn and no end captions.
   </Step>
   <Step title="Write the question">
-    _To write._
+    Type the question on the canvas. Choose the scale and write the end captions in the panel beside it.
+
+    {/* screenshot: The smiley rating question on the builder canvas, edited in place. */}
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **Scale** | How many faces the row holds, **3** or **5**. It arrives on 5. The faces change with the count, so a three point scale is an unhappy face, a neutral one and a happy one. |
+| **High label** | A caption for the happiest face. On a scale this short the caption sits under the face it belongs to rather than at the end of the row. |
+| **Low label** | A caption for the unhappiest face, under the other end. |
+
+Both captions start empty, so a question with nothing typed into them shows faces and no words.
+
+Responses already collected stay attached to the version they were given on, so changing **Scale** later does not rewrite them. See [editing a live survey](/share/editing-a-live-survey).
+
+{/* screenshot: The question panel for a smiley rating, with the scale row and the two end label rows. */}
 
 ## Rules you can set
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they pick a face. |
+
+Required is the whole of it. Every answer the scale offers is already inside its range, so there is nothing left to bound and the panel has no **Validation** row. Left optional, a respondent can clear the answer by clicking the face they already picked.
 
 ## Logic that works with it
 
-_To write._
+The answer is a number, counting from 1 at the unhappy end, so conditions compare it as one: **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most**, **is between**, **is answered** and **is not answered**. It [scores](/logic/scoring) points per scale point, one row per face, and a point can be negative, so an unhappy answer can cost marks. It can [drive a loop](/logic/loops), either one pass for the answer they gave or as many passes as the number they chose. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it, because a rating is a measurement rather than a list of things worth asking about again. [Piping](/logic/piping) it into later wording prints the number they picked.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, one bar per face, counting the respondents who picked it. **Histogram** and **Pie chart** are the other two entries in **Chart type**.
+
+In every export the question becomes one column holding the number that respondent picked.
+
+{/* screenshot: The smiley rating question on the Analytics tab, charted as one bar per face. */}
 
 ## Related
 

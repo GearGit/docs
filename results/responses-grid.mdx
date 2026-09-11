@@ -4,21 +4,59 @@ description: "Read every response in one table and filter it."
 icon: "table"
 ---
 
-_To write._
+**4 Responses** is the raw data behind your survey: one row for every session, one column for every question, and a replay of any single run one click away.
 
-{/* screenshot: the responses grid in the app */}
+{/* screenshot: The Responses grid with Session data switched on and the Filters popover open. */}
 
 ## What it does
 
-_To write._
+The header counts what you are looking at. It reads "12 sessions" on the full set and "Showing 8 of 12 responses" once a filter or a search narrows it.
+
+**ID** and **Status** stay fixed on the left while the rest scrolls. **Status** is the one word for how that session ended: **Completed**, **Screened out**, **Quota full**, **Quality reject**, **Partial**, **In progress** or **Started**. A **Speeder** badge beside the status means the answers came in faster than the survey's minimum page time.
+
+Every question follows as a **Q1**, **Q2**, **Q3** column, in survey order, then one **Var** column per variable. A variable is calculated from the answers, so its cells cannot be edited. When live, test and preview responses share the page, a **Type** column says which is which.
+
+**Session data** adds a second band of columns: **Country**, **City**, **Device**, **Browser**, **OS**, **Timezone**, **Started** and **Duration**.
+
+The **Filters** popover has two parts. **Response status** offers **All** and each of the outcomes above, one pick at a time, with a count beside each. **Response type** is a set of checkboxes for **Live**, **Test** and **Preview**, so you can show any mix. **Clear** appears once a filter is on and returns to everything. **Search by ID…** finds one session.
+
+The legend under the grid says what it can do: click an ID to open a response, click a cell to edit it, select a block of cells and copy them, drag a column edge to resize it.
+
+Tick rows and the header changes to "3 selected" with a **Delete** button. It asks "Delete 3 responses?" before it acts.
+
+Clicking an ID opens the Response Journey, a replay of that session screen by screen. **Prev** and **Next** step through the list. **Flag** marks the response for review. Beside the replay sit **Outcome**, **Ended by**, **Quota cell** and **Response type**, then **Device**, **Location**, **Timezone** and **IP**, and each page shows the time spent on it. A screen the respondent did not see says why, such as "hidden by a display rule", "skipped by a branch" or "not reached, ended earlier". **view logic** takes you to the rule that decided it.
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Open Responses">
+    Click **4 Responses**. Rows arrive as sessions end.
+  </Step>
+  <Step title="Narrow the table">
+    Open **Filters** and pick a **Response status**, a **Response type**, or both. Type an ID into **Search by ID…** to find one person.
+  </Step>
+  <Step title="Show where people came from">
+    Click **Session data** to add the location, device and timing columns.
+  </Step>
+  <Step title="Replay one response">
+    Click an ID. Use **Prev** and **Next** to walk the list without going back to the grid.
+  </Step>
+  <Step title="Generate test data">
+    Click **Generate test responses**. The dialog describes itself as "Test data that walks your logic, never mixed with your live responses." Set **How many responses**, switch on **Also generate quota-full responses** if you have quotas, and open **Coverage details** to see which paths the set reaches. Later, **Generate 10 more** adds to the set and **Regenerate** rebuilds it.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**Answers are written when a respondent reaches an ending.** A session marked **In progress**, **Partial** or **Started** has a row and no answer cells. That is the data, not a display fault.
+
+**Every row keeps the wording the respondent saw.** Renaming an option later changes what new respondents read and leaves collected rows as they were. See [Responses and sessions](/survey/responses-and-sessions).
+
+**There is no date filter on this tab.** The grid narrows by outcome, type and ID. A report's filters narrow by date; see [Reports](/results/reports).
+
+**A deleted response leaves analytics and exports.** Its row drops out of every count and every download.
+
+Before the first response, the tab reads "No responses yet" with "Share your survey to start collecting responses. Grab a link or channel from Distribute." and a **Go to Distribute** button. Start at [Share links](/share/share-links).
 
 ## Related
 

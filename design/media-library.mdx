@@ -4,21 +4,54 @@ description: "Upload and reuse the images and video in your surveys."
 icon: "images"
 ---
 
-_To write._
+Every image and video you upload lands in your organization's library, and you can pick it again in any survey you build.
 
-{/* screenshot: media library in the app */}
+{/* screenshot: The Media page: the grid of uploaded files, the storage meter, and the Upload button. */}
 
 ## What it does
 
-_To write._
+**Media** in the sidebar opens the library. The heading counts what is there and how much of your storage it uses. **Upload** opens the **Upload media** dialog: "Drop files or browse", with the limits stated beneath, "Images up to 10 MB, everything else up to 500 MB". You can also drag files straight onto the page.
+
+The grid can be searched with **Search media** and filtered by **Kind**: **All kinds**, **Image**, **Video**, **Audio** or **File**. Click a file to open its detail drawer, which shows **Metadata** (**Size**, **Dimensions**, **Kind**, **Uploaded by**, **Date**), a **Description** you can edit and **Save**, the **Media URL** with **Copy media URL**, **Used in surveys**, and **Download** and **Delete**.
+
+Inside the builder, anywhere a picture or a video belongs opens the same library as a picker with three tabs. **Library** lists what is already uploaded, with a search and a **Storage used** meter. **Upload** adds a new file, which is saved to the library as well as placed in the survey. **Link** takes a URL instead; for a video block that can be a YouTube or Vimeo link. Confirm with **Use image** or **Use video**. **Open media library** jumps to the full page.
+
+Media is used in these places:
+
+- The theme's **Background**, when **Type** is **Image**. See [Themes](/design/themes).
+- The logo in the **Survey header** band. See [Logo and branding](/design/logo-and-branding).
+- An image banner block and a video block.
+- The options of an image choice question, single or multiple.
+- The base image of an image hotspot question.
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Open Media">
+    Click **Media** in the sidebar. An admin sees every file in the organization; a member sees the files they uploaded.
+  </Step>
+  <Step title="Upload files">
+    Click **Upload**, then drop files or browse for them. Images are limited to 10 MB each and video to 500 MB. The dialog shows each file's progress and your storage after it lands.
+  </Step>
+  <Step title="Describe a file">
+    Click it, write a **Description**, and click **Save**. The description helps you find it later with **Search media**.
+  </Step>
+  <Step title="Use it in a survey">
+    In the builder, click **Add image** or **Add video** where the picture belongs, choose the **Library** tab, pick the file, and click **Use image** or **Use video**.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**Uploads are a paid feature.** On the free plan the Media page reads "Media uploads are on a paid plan." with a **View plans** button, and the builder's picker refuses an upload with "Media uploads are a paid feature. Upgrade your plan to add media." Linking to a picture by URL still works.
+
+**Storage comes with the plan.** Basic includes 5 GB and Pro includes 50 GB. On every paid plan a single image is capped at 10 MB and a single video at 500 MB. When the meter is full, an upload from the builder fails with "Your storage is full. Free up space or upgrade."
+
+**A file's address never changes.** Once uploaded, a file keeps one permanent URL, which is why it can be reused in every survey. To swap a picture, upload the new one and pick it; the old file stays in the library until you delete it.
+
+**Deleting is immediate and reaches live surveys.** Before you delete, the dialog tells you how many surveys use the file. Confirm and the URL stops working right away, in every survey that shows it, published versions included.
+
+**Linked media is not stored.** A picture or video added from the **Link** tab stays on the site it came from. If that site removes it, the survey has nothing to show.
 
 ## Related
 

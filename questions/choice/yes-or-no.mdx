@@ -4,50 +4,67 @@ description: "Answer yes or no."
 icon: "toggle-on"
 ---
 
-_To write._
+Yes or no puts two answers on the screen and asks respondents to pick one. The two are fixed, so there is no list to write: you set the wording with **Yes label** and **No label**, and everything downstream still reads the same two answers underneath.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A yes or no question as a respondent sees it, two answers side by side. */}
 
 ## When to use it
 
-_To write._
+- The question has exactly two answers and no third one is honest: did they buy it, have they used it, do they agree to be contacted.
+- You are screening, and one of the two answers ends the survey at an ending you wrote.
+- You want a clean split to filter your results by later.
 
-**Consider instead:** _To write_
+**Consider instead:** [Single choice](/questions/choice/single-choice) when a third answer such as "Not sure" belongs on the list, [Thumbs up or down](/questions/ratings/thumbs-up-down) when they are reacting to something rather than answering a question of fact, [Likert](/questions/ratings/likert) when the real answer is a degree of agreement, [Consent](/questions/content/consent) when agreement is a condition of taking part rather than data you are collecting.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Yes or no">
-    _To write._
+  <Step title="Pick Yes / No">
+    In **Add to survey**, type to filter and click **Yes / No**, under the **Choice** heading. The question lands where the gap was with both its answers already there, worded **Yes** and **No**.
+
+    {/* screenshot: The yes or no question on the builder canvas, edited in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    Type the question straight onto the canvas. There are no options to write. If **Yes** and **No** are not the words your question wants, change them in the panel.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **Yes label** | The wording of the first answer. It starts as **Yes**, and "I agree", "Keep going" or "Buy it" are all ordinary things to put there. |
+| **No label** | The wording of the second answer, starting as **No**. |
+| **Layout** | **Horizontal** puts the two answers side by side, **Vertical** stacks them. Stacked reads better on a phone when the wording is long. |
+
+Rewording an answer changes what respondents read and nothing else. The two answers underneath stay the same, so a rule, a chart or an export column written against **Yes** keeps working after it becomes "I agree".
+
+{/* screenshot: The question panel for a yes or no question, with the two label rows and the layout row. */}
 
 ## Rules you can set
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they pick one of the two. |
+
+Required is the whole of it. There are two answers and one of them is either picked or it is not, so there is no count to bound and no format to check, and a yes or no question has no **Validation** row in the panel.
 
 ## Logic that works with it
 
-_To write._
+The answer is one of the two fixed answers, so conditions read it with **is**, **is not**, **is one of**, **is not one of**, **is answered** and **is not answered**, and you pick the answer from a list of the two rather than typing it. This is the question most screeners are built on: one condition, one [screen-out](/logic/screen-outs). It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it, because it owns no option list to hand on or to replace. It can [drive a loop](/logic/loops), which gives one pass, on the answer they gave. It [scores](/logic/scoring) a number per answer, one row for each of the two, and a point can be negative. [Piping](/logic/piping) it into later wording prints the wording they saw, so a question reworded to "I agree" pipes as "I agree".
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, one bar for each of the two answers. **Pie chart** and **Values list** are the other two entries in **Chart type**, and a pie is worth a look here, since two slices is the one case where it reads at a glance.
+
+In every export the question becomes one text column, holding the answer in the wording that respondent saw.
+
+{/* screenshot: The yes or no question on the Analytics tab, charted as a bar chart. */}
 
 ## Related
 

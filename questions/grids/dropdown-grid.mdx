@@ -4,50 +4,68 @@ description: "Pick from a dropdown for each row."
 icon: "square-caret-down"
 ---
 
-_To write._
+A dropdown grid puts a menu in every cell. The rows are your items, the columns are the things you want to know about each one, and every column carries its own list of choices, so one column can offer months while the next offers price bands.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A dropdown grid question as a respondent sees it, a menu in every cell. */}
 
 ## When to use it
 
-_To write._
+- Each column asks a different thing about the same rows: when, how often, how much, all in one table.
+- The lists are long enough that a set of radio columns would take more room than the question deserves.
+- You want a closed answer in every cell rather than typed text, so the results are countable.
 
-**Consider instead:** _To write_
+**Consider instead:** [Radio grid](/questions/grids/radio-grid) when one shared scale answers every column, [Open grid](/questions/grids/open-grid) when the cells cannot be listed in advance, [Checkbox grid](/questions/grids/checkbox-grid) when a row takes several answers at once, [Dropdown](/questions/choice/dropdown) when there is only one item to ask about.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**.
   </Step>
-  <Step title="Choose Dropdown grid">
-    _To write._
+  <Step title="Pick Matrix (Dropdown)">
+    In **Add to survey**, type to filter and click **Matrix (Dropdown)**, under **Matrix**. It arrives with three rows, Row 1 to Row 3, and three columns, Column 1 to Column 3, and every column starts with the same three choices: Choice 1, Choice 2, Choice 3.
+
+    {/* screenshot: The dropdown grid question on the builder canvas, edited in place. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question, the rows, the columns and each menu">
+    The canvas is the real survey, so you type on it. Click a row label or a column heading to retype it, and use **Add row** and **Add column** to extend either axis. A column's menu has its own **Bulk edit**, opened from the column heading, which takes the choices for that column as plain text, one per line.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Rows | The items down the left. Edited on the canvas, or in **Bulk edit** as plain text, one per line. |
+| Columns | The headings across the top. Each one owns its own menu of choices, edited from the heading. |
+| **Answer order** | Two sections, **rows** and **columns**. Rows take **As written**, **Shuffled** or **Reversed**; columns take **As written** or **Reversed** only. |
+| **How many each respondent sees** | Inside **Answer order**, on the rows. **All of them**, or **Only some**, which draws that many rows for each respondent. Pinned rows are outside the draw and show to everyone. |
+
+{/* screenshot: The question panel for a dropdown grid, with the answer order row and the rules row. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | Every cell has to be answered, not every row. A dropdown grid is the one grid that counts cells. |
+| [Min rows answered](/rules/number-bounds) | A floor rather than all of them. Two of five rows clears it whichever two they fill in, and the message reads "Answer at least 2 rows." |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
 
 ## Logic that works with it
 
-_To write._
+The answer is a map of maps, one choice per cell, which no single comparison can read. The question is offered with **is answered** and **is not answered**, and its rows are not offered separately: a row here holds a value per column rather than one value. It is not a [carry-forward](/logic/carry-forward) source, but it takes a carried list into its **Rows** or its **Columns**. It cannot [drive a loop](/logic/loops). It [scores](/logic/scoring) a number per column, set once and applied to every row: whichever choice a respondent picks from a column's menu earns that column's points, so the points tell columns apart rather than choices. A row that needs different numbers takes them with **Score this row differently**. [Piping](/logic/piping) it into later wording prints each answered row as "Row: the choices they made", in the order you wrote the rows, with unanswered rows left out.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Values list**, and it is the only entry in **Chart type**. **Raw data** under the card opens the answers one respondent at a time.
+
+In every export the question becomes one coded column per cell, one for each row and column pair, holding the choice picked from that column's own menu.
+
+{/* screenshot: The dropdown grid question on the Analytics tab, shown as a values list. */}
 
 ## Related
 

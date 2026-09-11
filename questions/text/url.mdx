@@ -4,50 +4,69 @@ description: "Collect a web address."
 icon: "globe"
 ---
 
-_To write._
+URL is a one-line question that checks what it collects: an answer that is not a web address is refused on the screen. Use it where the answer is a link, such as a profile, a portfolio or the page someone is talking about.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A URL question as a respondent sees it, one line with a web address in it. */}
 
 ## When to use it
 
-_To write._
+- You are asking for a link you intend to open: a site, a profile, a listing, a piece of work.
+- You are collecting the page a comment is about, so a verbatim can be read next to the thing it describes.
+- The answer has to be a working address, so a typo is worth refusing while they are still on the screen.
 
-**Consider instead:** _To write_
+**Consider instead:** [Short text](/questions/text/short-text) when a company name or a handle would do and the link is not the point, [Long text](/questions/text/long-text) when you want the link and the story around it, [Email](/questions/text/email) when the address you want is an inbox rather than a page.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose URL">
-    _To write._
+  <Step title="Pick URL">
+    In **Add to survey**, type to filter and click **URL**, under the **Text** heading. The question lands where the gap was, as one empty box with nothing printed inside it.
+
+    {/* screenshot: The URL question on the builder canvas, edited in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    Type the question straight onto the canvas. Say in the description which page you want, because "your website" and "the page you bought it from" are different answers to the same question.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **Placeholder** | The grey wording inside the empty box. A new question starts with nothing there, so write your own if an example would help. |
+
+{/* screenshot: The question panel for a URL question, with the placeholder row and the row that opens Validation. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until the box holds an address. |
+| [Min characters and Max characters](/rules/text-limits) | The fewest and the most characters the answer may run to. |
+| [Min words and Max words](/rules/text-limits) | The same bounds counted in words. An address is one word, so these are rarely what you want here. |
+| [Pattern](/rules/patterns) | Narrows the shape further, which is how you accept links on one site and nothing else. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+The question already checks that the answer is a web address, so a [pattern](/rules/patterns) here is for narrowing that check rather than for making it. Nothing opens the link to see whether the page is really there.
 
 ## Logic that works with it
 
-_To write._
+The answer is the address they typed, so conditions read it as text: **is**, **is not**, **contains**, **does not contain**, **starts with**, **ends with**, **is answered** and **is not answered**. **contains** is the one to reach for, since the domain is the part of a link that tells you anything. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it. It can [drive a loop](/logic/loops), which gives one pass, on the link they gave. It [scores](/logic/scoring) through an answer key, which is rarely what a link question is for. [Piping](/logic/piping) it into later wording prints the address back as they typed it.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Values list**, one row per answer, which is how a question with a different answer every time reads. **Word cloud** is the other entry in **Chart type**.
+
+In every export the question becomes one text column, holding the address in full.
+
+{/* screenshot: The URL question on the Analytics tab, listed value by value. */}
 
 ## Related
 

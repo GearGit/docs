@@ -4,50 +4,67 @@ description: "Pick one option from a list you write."
 icon: "circle-dot"
 ---
 
-_To write._
+Single choice shows respondents a list you wrote and lets them pick exactly one of it. It is the question most surveys are mostly made of: one answer, counted cleanly, ready to branch on.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A single choice question as a respondent sees it, one option selectable at a time. */}
 
 ## When to use it
 
-_To write._
+- Only one answer can be true: which one they bought, where they heard about you, which of four descriptions fits them.
+- You want to route people on the answer, since one answer per respondent is what a clean branch is built on.
+- You want a percentage that adds up to 100 across the options.
 
-**Consider instead:** _To write_
+**Consider instead:** [Multiple choice](/questions/choice/multiple-choice) when more than one answer can be true at once, [Dropdown](/questions/choice/dropdown) when the list is long enough to sprawl down the screen, [Yes or no](/questions/choice/yes-or-no) when there are only two answers, [Likert](/questions/ratings/likert) when the options are a scale from one end to the other rather than a set of choices.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Single choice">
-    _To write._
+  <Step title="Pick Single Choice">
+    In **Add to survey**, type to filter and click **Single Choice**, under the **Choice** heading. The question lands where the gap was, with one empty option waiting to be typed into.
+
+    {/* screenshot: The single choice question on the builder canvas, edited in place. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question and the options">
+    The canvas is the real survey, so you type the question and the options straight onto it. Click **Add option** at the end of the list for another one, drag a row by its grip to reorder, or open **Bulk edit** beside the last row and paste a list, one per line.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Options | The list they pick from. Edited on the canvas, or in **Bulk edit** as plain text, one per line. |
+| **"Other" with a text box** | Adds an **Other** option with a text box beside it, so a respondent can write an answer you did not list. It always shows last. |
+| **"None of these" option** | Adds an option that stands for none of the rest. It always shows last. |
+| **Answer order** | **As written**, **Shuffled** or **Reversed**. Shuffled draws a fresh order for each respondent; reversed turns the list around for about half of them. The same person sees the same order every time they come back to the screen. |
+| **How many each respondent sees** | Inside the **Answer order** dialog. **All of them**, or **Only some**, which draws that many options for each respondent. Pinned options, **Other** and **None of these** are outside the draw and show to everyone. |
+
+{/* screenshot: The question panel for a single choice question, with the option rows, the two extra options and the answer order row. */}
 
 ## Rules you can set
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they pick an option. If they pick **Other**, the box beside it has to be filled in too. |
+
+Required is the whole of it. One answer is either chosen or it is not, so there is no count to bound and no format to check, and a single choice question has no **Validation** row in the panel.
 
 ## Logic that works with it
 
-_To write._
+The answer is the one option they picked, stored as the option itself rather than as its wording, so renaming an option later never moves a rule that points at it. Conditions read it with **is**, **is not**, **is one of**, **is not one of**, **is answered** and **is not answered**, and you pick the option from a list of the ones you wrote rather than typing it. It is a [carry-forward](/logic/carry-forward) source, so a later question can offer the option they chose, the ones they left, or all of them, and it takes a carried list into its own options in the same way. It can [drive a loop](/logic/loops), repeating a block once for the option they picked, once per option they left, or once per option on the list. It [scores](/logic/scoring) points per option, and a point can be negative. [Piping](/logic/piping) it into later wording prints the label they saw.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, one bar per option, counting the respondents who picked it. **Pie chart** and **Values list** are the other two entries in **Chart type**. Percentages divide by the number of people who were shown the option, which keeps them honest when you show only some of the list.
+
+In every export the question becomes one coded column: a number for the option they picked, with the wording they saw attached to it.
+
+{/* screenshot: The single choice question on the Analytics tab, charted as a bar chart. */}
 
 ## Related
 
