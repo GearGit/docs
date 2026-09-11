@@ -20,7 +20,7 @@ A rating grid gives every row its own set of stars and asks a respondent to rate
 
 <Steps>
   <Step title="Open a gap on the canvas">
-    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
+    On the **Build** tab, hover between two questions and click **Add**.
   </Step>
   <Step title="Pick Matrix (Rating)">
     In **Add to survey**, type to filter and click **Matrix (Rating)**, under **Matrix**. It arrives with three rows, Item 1 to Item 3, each rated on a 5 point scale.
@@ -44,8 +44,6 @@ Select the question on the canvas and the panel beside the rail shows everything
 | **Answer order** | Rows only, because the scale is generated rather than authored. **As written**, **Shuffled** or **Reversed**. |
 | **How many each respondent sees** | Inside **Answer order**. **All of them**, or **Only some**, which draws that many rows for each respondent. Pinned rows are outside the draw and show to everyone. |
 
-Changing **Scale** changes what an answer means, so it is a decision to make before fieldwork rather than during it. A 4 on a 5 point scale is not the 4 a 10 point scale collected.
-
 {/* screenshot: The question panel for a rating grid, with the scale row and the style row. */}
 
 ## Rules you can set
@@ -58,15 +56,15 @@ Changing **Scale** changes what an answer means, so it is a decision to make bef
 | [Min rows answered](/rules/number-bounds) | A floor rather than all of them. Two of five rows clears it whichever two they rate, and the message reads "Answer at least 2 rows." |
 | [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
 
-Leave the question optional and a respondent can clear a rating by clicking the point they already chose.
+A respondent clears a rating by clicking the point they already chose, so an optional row can be un-rated and left blank.
 
 ## Logic that works with it
 
-The answer is a map, one rating per row, which no single comparison can read. So the question as a whole is offered with **is answered** and **is not answered**, and three summaries of it are offered as sources in their own right: **Lowest rating**, **Highest rating** and **Total**. Each row is offered separately as well, and the summaries and the rows alike read as numbers, with **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most** and **is between**, which is how "anything rated 2 or below" becomes one rule instead of one per row. It is not a [carry-forward](/logic/carry-forward) source, but it takes a carried list into its **Rows**, so the battery can rate whatever somebody picked a screen earlier. It cannot [drive a loop](/logic/loops). It [scores](/logic/scoring) a number per column, set once on the scale and applied to every row, and a row worded the other way round takes its own numbers with **Score this row differently**. [Piping](/logic/piping) it into later wording prints each answered row as "Row: the number they gave", in the order you wrote the rows.
+The answer is a map, one rating per row, which no single comparison can read. So the question as a whole is offered with **is answered** and **is not answered**, and three summaries of it are offered as sources in their own right: **Lowest rating**, **Highest rating** and **Total**. Each row is offered separately as well, and the summaries and the rows alike read as numbers, with **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most** and **is between**, which is how "anything rated 2 or below" becomes one rule instead of one per row. It is not a [carry-forward](/logic/carry-forward) source, but it takes a carried list into its **Rows**, so the battery can rate whatever somebody picked a screen earlier. It cannot [drive a loop](/logic/loops). It [scores](/logic/scoring) a number per column, and here the columns are the points of the scale: you type one number per point, set once and applied to every row, and a row worded the other way round takes its own numbers with **Score this row differently**. [Piping](/logic/piping) it into later wording prints each answered row as "Row: the number they gave", in the order you wrote the rows, with unanswered rows left out.
 
 ## How it shows in results
 
-Per question the default is a **Values list**, and it is the only entry in **Chart type**. **Raw data** under the card opens the answers one respondent at a time.
+Per question the default is a **Values list**, and it is the only entry in **Chart type**.
 
 In every export the question becomes one column per row, holding the rating that row collected as a number.
 

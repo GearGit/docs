@@ -14,7 +14,7 @@ Phone is a one-line question built for numbers: a country picker sits at the fro
 - You are collecting contact details from more than one country and want them in one consistent form.
 - The number is the point of the question, so a mistyped one is worth refusing on the screen.
 
-**Consider instead:** [Mobile phone](/questions/ready-made/mobile-phone) when you want the question already worded for you, [Email](/questions/text/email) when writing is the way you will follow up, [Short text](/questions/text/short-text) when the answer is a reference or an extension rather than a dialable number.
+**Consider instead:** [Mobile phone](/questions/ready-made/mobile-phone) when you want the same box with its hint fixed and no **Type** row to switch by accident, [Email](/questions/text/email) when writing is the way you will follow up, [Short text](/questions/text/short-text) when the answer is a reference or an extension rather than a dialable number.
 
 ## Add it
 
@@ -38,7 +38,7 @@ Select the question on the canvas and the panel beside the rail shows everything
 
 | Setting | What it does |
 | --- | --- |
-| **Placeholder** | The grey wording inside the empty box. Leave it empty and the field takes its own hint from the country the respondent has selected. |
+| **Placeholder** | The grey wording inside the empty box. A new question starts with "+1 (555) 000-0000". Clear the field and the box takes its hint from the country the respondent has selected. |
 
 The country picker is part of the question and is always there. A respondent can search it by country name or by dialing code, and pasting a number that starts with a plus and a dialing code moves the picker to that country on its own.
 
@@ -53,10 +53,10 @@ The country picker is part of the question and is always there. A respondent can
 | [Required](/rules/required) | They cannot move on until the box holds a number. |
 | [Min characters and Max characters](/rules/text-limits) | The fewest and the most characters the answer may run to. |
 | [Min words and Max words](/rules/text-limits) | The same bounds counted in words. A number is one word, so these are rarely what you want here. |
-| [Pattern](/rules/patterns) | Narrows the shape further. **US phone** is one of the named shapes, and you can write your own. |
+| [Pattern](/rules/patterns) | Narrows the shape further with a pattern you write against the stored international number. |
 | [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
 
-The question already checks the shape of a number for the country selected, so a [pattern](/rules/patterns) here is for narrowing that check rather than for making it.
+The question already checks that the stored number is a valid international number, so a [pattern](/rules/patterns) here is for narrowing that check rather than for making it.
 
 ## Logic that works with it
 

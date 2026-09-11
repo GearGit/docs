@@ -20,7 +20,7 @@ A checkbox grid puts your items down the left and a shared set of columns across
 
 <Steps>
   <Step title="Open a gap on the canvas">
-    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
+    On the **Build** tab, hover between two questions and click **Add**.
   </Step>
   <Step title="Pick Matrix (Checkbox)">
     In **Add to survey**, type to filter and click **Matrix (Checkbox)**, under **Matrix**. It arrives with three rows, Row 1 to Row 3, and three columns, Column 1 to Column 3.
@@ -40,7 +40,7 @@ Select the question on the canvas and the panel beside the rail shows everything
 | --- | --- |
 | Rows | The items down the left. Edited on the canvas, or in **Bulk edit** as plain text, one per line. |
 | Columns | The answers across the top, shared by every row. Edited the same two ways. |
-| **Answer order** | Two sections, **rows** and **columns**. Rows take **As written**, **Shuffled** or **Reversed**; columns take **As written** or **Reversed** only. The dialog says why: "Choose how the rows are ordered for each respondent. The scale columns are never shuffled." |
+| **Answer order** | Two sections, **rows** and **columns**. Rows take **As written**, **Shuffled** or **Reversed**; columns take **As written** or **Reversed** only, because they are the scale. |
 | **How many each respondent sees** | Inside **Answer order**, on the rows. **All of them**, or **Only some**, which draws that many rows for each respondent. Pinned rows are outside the draw and show to everyone. |
 
 {/* screenshot: The question panel for a checkbox grid, with the answer order row and the rules row. */}
@@ -59,11 +59,11 @@ There is no per-row count rule. A row takes anything from one tick to all of the
 
 ## Logic that works with it
 
-The answer is a map, one set of ticked columns per row, which no single comparison can read. So the question as a whole is offered with **is answered** and **is not answered**, and each row is offered as its own source underneath it. A row holds a list, so it reads with **includes**, **does not include**, **includes any of** and **includes none of** against the columns, and with **number chosen is**, **number chosen is at least** and **number chosen is at most** against how many columns were ticked in that row. It is not a [carry-forward](/logic/carry-forward) source, because a map of rows is not a list of things worth asking about again, but it takes a carried list into its **Rows** or its **Columns**. It cannot [drive a loop](/logic/loops) for the same reason. It [scores](/logic/scoring) a number per column: the columns are scored once and apply to every row, a tick in each scored column counts, and a row worded the other way round takes its own numbers with **Score this row differently**. [Piping](/logic/piping) it into later wording prints each answered row as "Row: the columns they ticked", in the order you wrote the rows.
+The answer is a map, one set of ticked columns per row, which no single comparison can read. So the question as a whole is offered with **is answered** and **is not answered**, and each row is offered as its own source underneath it. A row holds a list, so it reads with **includes**, **does not include**, **includes any of** and **includes none of** against the columns, and with **number chosen is**, **number chosen is at least** and **number chosen is at most** against how many columns were ticked in that row. It is not a [carry-forward](/logic/carry-forward) source, because a map of rows is not a list of things worth asking about again, but it takes a carried list into its **Rows** or its **Columns**. It cannot [drive a loop](/logic/loops) for the same reason. It [scores](/logic/scoring) a number per column: the columns are scored once and apply to every row, every ticked column that carries points counts, and a row worded the other way round takes its own numbers with **Score this row differently**. [Piping](/logic/piping) it into later wording prints each answered row as "Row: the columns they ticked", in the order you wrote the rows, with unanswered rows left out.
 
 ## How it shows in results
 
-Per question the default is a **Values list**, and it is the only entry in **Chart type**. The list shows the answers as they were given, and **Raw data** under the card opens them one respondent at a time.
+Per question the default is a **Values list**, and it is the only entry in **Chart type**. The list shows the answers as they were given.
 
 In every export the question becomes one column per row and column pair, holding 1 when that box was ticked and 0 when it was not, grouped as one multiple response set for each row.
 

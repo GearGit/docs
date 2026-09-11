@@ -38,7 +38,7 @@ Select the question on the canvas and the panel beside the rail shows everything
 
 | Setting | What it does |
 | --- | --- |
-| **24-hour clock** | Off, the hour list runs 01 to 12 with an **AM** and **PM** dropdown beside it. On, the hour list runs 00 to 23 and the AM and PM dropdown goes away. |
+| **24-hour clock** | Off, the hour list runs 01 to 12 with an **AM** and **PM** dropdown beside it. On, the hour list runs 00 to 23 and the AM and PM dropdown goes away. The stored answer is the same either way, so switching the clock later changes nothing already collected. |
 | **Minute step** | How far the minute list advances: **1**, **5**, **10**, **15** or **30**. At 15 the list is 00, 15, 30 and 45, which is four rows to scan instead of sixty. |
 | **Type** | Switches the question to another kind. The other five date and time questions are in the list. A switch that would drop something asks first. |
 
@@ -56,7 +56,7 @@ Required is the whole of it. Every time the dropdowns can produce is a real time
 
 ## Logic that works with it
 
-The answer is one time of day. Conditions read it the way they read a date: **is**, **is not**, **is after**, **is before**, **is between**, **is answered** and **is not answered**, so "is after 18:00" is a rule you can write. It cannot be a [carry-forward](/logic/carry-forward) source or target, because there is no list of answers to hand on. It can [drive a loop](/logic/loops), which gives one pass for the time they gave. It does not [score](/logic/scoring): points are typed next to an answer you wrote, and this question has no answers to write them against, so it has no **Scoring** row. [Piping](/logic/piping) it into later wording prints the clock time, as 14:30. Like any other [condition](/logic/how-logic-runs) source it has to sit on an earlier screen than the rule that reads it.
+The answer is one time of day. A rule reads whether it was given, with **is answered** and **is not answered**, which is enough to show a follow-up to the people who set a time and skip it for the people who did not. It cannot be a [carry-forward](/logic/carry-forward) source or target, because there is no list of answers to hand on. It can [drive a loop](/logic/loops), which gives one pass for the time they gave. It does not [score](/logic/scoring): points are typed next to an answer you wrote, and this question has no answers to write them against, so it has no **Scoring** row. [Piping](/logic/piping) it into later wording prints the clock time, as 14:30. Like any other [condition](/logic/how-logic-runs) source it has to sit on an earlier screen than the rule that reads it.
 
 ## How it shows in results
 

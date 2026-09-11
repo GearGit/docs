@@ -6,7 +6,7 @@ icon: "calendar-week"
 
 Date range asks for a span rather than a day: a start date and an end date, in one question and one answer. Respondents type both ends into the two fields, or open the calendar and click the first day and the last day. It is the question for a stay, a booking window, a campaign period or any answer that runs from one date to another.
 
-{/* screenshot: A date range question as a respondent sees it, a start field and an end field with a calendar between them. */}
+{/* screenshot: A date range question as a respondent sees it, a start field and an end field, with the calendar and its preset chips open beneath them. */}
 
 ## When to use it
 
@@ -28,7 +28,7 @@ Date range asks for a span rather than a day: a start date and an end date, in o
     {/* screenshot: A date range question on the builder canvas, edited in place. */}
   </Step>
   <Step title="Write the question">
-    The canvas is the real survey, so you type the question and its description straight onto it. The two fields are labeled for the respondent already, so there is no option list and no column list to write.
+    The canvas is the real survey, so you type the question and its description straight onto it. The two fields are drawn for you, start then end, so there is no option list to write.
   </Step>
 </Steps>
 
@@ -59,7 +59,7 @@ A range also checks itself: a start after its end is refused with "Range start m
 
 ## Logic that works with it
 
-The answer is one span, a start and an end kept together. Conditions read it as a date: **is**, **is not**, **is after**, **is before**, **is between**, **is answered** and **is not answered**. It cannot be a [carry-forward](/logic/carry-forward) source or target, because there is no list of answers to hand on. It can [drive a loop](/logic/loops), which gives one pass for the span they gave. It does not [score](/logic/scoring): points are typed next to an answer you wrote, and a range has no answers to write them against, so it has no **Scoring** row. [Piping](/logic/piping) it into later wording prints both ends the way a person reads a date, as 24 Aug 2026 and 30 Aug 2026 with a dash between them. Like any other [condition](/logic/how-logic-runs) source it has to sit on an earlier screen than the rule that reads it.
+The answer is one span, a start and an end kept together. Conditions read the start of it as a date, with **is after**, **is before** and **is between**, so "starts after 1 September" is a rule you can write, and they read whether the span was given at all with **is answered** and **is not answered**. It cannot be a [carry-forward](/logic/carry-forward) source or target, because there is no list of answers to hand on. It can [drive a loop](/logic/loops), which gives one pass for the span they gave. It does not [score](/logic/scoring): points are typed next to an answer you wrote, and a range has no answers to write them against, so it has no **Scoring** row. [Piping](/logic/piping) it into later wording prints both ends the way a person reads a date, as 24 Aug 2026 and 30 Aug 2026 with a dash between them. Like any other [condition](/logic/how-logic-runs) source it has to sit on an earlier screen than the rule that reads it.
 
 ## How it shows in results
 

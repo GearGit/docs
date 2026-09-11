@@ -10,11 +10,11 @@ icon: "sparkles"
 
 ## What it does
 
-The tab carries the sparkles mark, the sign that a machine is proposing rather than deciding. Before the survey is published it reads "Publish to prepare insights". Once it is, **Set up AI insights** explains itself: "Setup reads your survey structure and plans what to measure. No responses needed yet, so it's ready the moment they arrive." **Set up insights** starts that.
+The tab carries the sparkles mark, the sign that a machine is proposing rather than deciding. Before the survey is published it reads "Publish to prepare insights" with a **Go to Overview** button. Once it is, **Set up AI insights** explains itself: "Setup reads your survey structure and plans what to measure. No responses needed yet, so it's ready the moment they arrive." **Set up insights** starts that.
 
-Setup produces an **Analysis plan**: a card with **Status**, **Planned** (how many analytical questions it will measure), **Pinned to** (the published version it read), **Responses** (how many it will analyze) and **Est. cost** in credits. Below it, the questions it intends to measure are listed in full. **Generate** runs the plan.
+Setup produces an **Analysis plan** card: **Status**, **Planned** (how many analytical questions it will measure, "6 questions"), **Pinned to** (the published version it read), **Responses** (how many it will analyze) and, once responses exist, **Est. cost** in credits. Under the card, "Planned analysis of 6 questions" shows the first three with the survey questions each one draws on, and "+ 3 more planned questions" counts the rest. **Generate** runs the plan. Until there are responses it stays off and the caption reads "Generate once you have responses."
 
-The output opens with an **Executive summary** and its **Takeaways**, then **Who answered**, a short profile of the respondents. Each finding is a card typed **Strength**, **Concern**, **Opportunity** or **Observation**, with a confidence of **high**, **medium** or **low**. The key under the cards says: "Confidence = how directly the data backs the claim, not how important it is." **Why** unfolds the reasoning and the figures a card rests on. **Mentions** lists the questions it drew from.
+The output opens with an **Executive summary** and its **Takeaways**, then **Who answered**, a short profile of the respondents. Each finding is a card typed **Strength**, **Concern**, **Opportunity** or **Observation**, with a confidence of **high**, **medium** or **low**. The **Confidence key** on the rail says: "Confidence = how directly the data backs the claim, not how important it is." **Why** unfolds the reasoning and the figures a card rests on. **Mentions** lists the questions it drew from.
 
 A status chip tracks the tab through its life: **Insights: not set up**, **Setting up…**, **Ready to generate**, **Waiting for responses**, **Generating…**, **Insights ready**, **New responses, regenerate** and **Survey changed, reset**.
 
@@ -36,23 +36,23 @@ A status chip tracks the tab through its life: **Insights: not set up**, **Setti
     Start with the **Executive summary**, then open **Why** on any card whose claim you want to check against its numbers.
   </Step>
   <Step title="Regenerate as data grows">
-    When the chip reads **New responses, regenerate**, run **Generate** again to fold the new responses in.
+    When the chip reads **New responses, regenerate**, a banner counts the new responses. Click **Refetch** on it, or **Re-run** on the rail, to fold them in. Your last report stays on screen until the new one is ready.
   </Step>
 </Steps>
 
 ## Good to know
 
-**The plan is pinned to a published version.** If you change the survey and publish again, the chip reads **Survey changed, reset**, and the banner says the numbers may no longer describe the live survey. **Reset insights** re-plans against the new version. The reset dialog adds: "Your responses are never deleted, only the analysis is reset."
+**The plan is pinned to a published version.** If you change the survey and publish again, the chip reads **Survey changed, reset**, and a banner titled "Your survey changed since these insights were prepared" says the numbers may no longer describe the live survey. **Reset insights** re-plans against the new version. The reset dialog adds: "Your responses are never deleted, only the analysis is reset."
 
 **A run reads every response the survey holds.** There is no filter on this tab. **5 Analytics** narrows by outcome and response type; insights do not, so what **4 Responses** lists in full is what a report was written from.
 
-**It costs credits, and the estimate comes first.** **Est. cost** is shown on the plan before you click **Generate**, and a finished run states what it used. See [Credits](/ai/credits).
+**It costs credits, and the estimate comes first.** **Est. cost** is an estimate, shown on the plan before you click **Generate**. See [Credits](/ai/credits).
 
 **Anyone who can view the survey can run it.** Setting up and generating need no more than access to the survey.
 
 **It writes nothing into your survey.** Insights read responses and produce a report on this tab. The draft, the published version and the responses themselves are untouched.
 
-**A low confidence is a flag, not a finding.** A card marked **low** rests on thin data. Read it as a reason to collect more or to look at the raw answers, not as a conclusion.
+**A low confidence is a flag, not a finding.** The key describes **low** as thin or missing data, a flag to re-run rather than a conclusion. Read it as a reason to collect more or to look at the raw answers.
 
 ## Related
 

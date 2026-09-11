@@ -20,7 +20,7 @@ An open grid is a table of text boxes. You write the rows and the columns, and a
 
 <Steps>
   <Step title="Open a gap on the canvas">
-    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
+    On the **Build** tab, hover between two questions and click **Add**.
   </Step>
   <Step title="Pick Matrix (Open Text)">
     In **Add to survey**, type to filter and click **Matrix (Open Text)**, under **Matrix**. It arrives with three rows, Row 1 to Row 3, and three columns, Column 1 to Column 3.
@@ -59,7 +59,7 @@ There are no length limits on a cell. The character and word rules belong to the
 
 ## Logic that works with it
 
-The answer is a map of typed cells, which no single comparison can read, so the question is offered with **is answered** and **is not answered** and nothing else. Its rows are not offered as separate sources: the cells are open text with no vocabulary to compare against, and a rule that can never match is worse than no rule at all. It is not a [carry-forward](/logic/carry-forward) source, but it takes a carried list into its **Rows** or its **Columns**, which is the usual way to ask for details about whatever somebody picked a screen earlier. It cannot [drive a loop](/logic/loops), and it cannot be [scored](/logic/scoring), because there are no columns holding a fixed set of answers to put a number against. [Piping](/logic/piping) it into later wording prints each answered row as "Row: what they typed", in the order you wrote the rows, with empty rows left out.
+The answer is a map of typed cells, which no single comparison can read, so the question is offered with **is answered** and **is not answered** and nothing else. Its rows are not offered as separate sources. It is not a [carry-forward](/logic/carry-forward) source, but it takes a carried list into its **Rows** or its **Columns**, which is the usual way to ask for details about whatever somebody picked a screen earlier. It cannot [drive a loop](/logic/loops), and it cannot be [scored](/logic/scoring), because there are no columns holding a fixed set of answers to put a number against. [Piping](/logic/piping) it into later wording prints each answered row as "Row: what they typed", in the order you wrote the rows, with empty rows left out.
 
 ## How it shows in results
 

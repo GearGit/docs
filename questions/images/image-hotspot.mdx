@@ -28,7 +28,7 @@ Image hotspot puts one picture in front of a respondent and asks them to mark th
     {/* screenshot: An image hotspot question on the builder canvas, with the empty image area. */}
   </Step>
   <Step title="Choose the picture and write the question">
-    Click **Add image** on the canvas, or the **Image** row in the panel, and the media picker opens on three tabs: **Library** for what your organization already has, **Upload** for a new file, **Link** for a file that lives elsewhere. Uploading is a paid feature, so on a free plan use **Library** or **Link**. Then type the question and its description straight onto the canvas.
+    Click **Add image** on the canvas, or the **Image** row in the panel, and the media picker opens on three tabs: **Library** for what your organization already has, **Upload** for a new file, **Link** for a file that lives elsewhere. Uploads are available on a paid plan. Then type the question and its description straight onto the canvas.
   </Step>
 </Steps>
 
@@ -39,7 +39,7 @@ Select the question on the canvas and the panel beside the rail shows everything
 | Setting | What it does |
 | --- | --- |
 | **Image** | The picture respondents mark. Opens the same media picker the canvas does, and lets you **Replace** or **Remove** what is there. |
-| **Aspect ratio** | The shape the picture is drawn at: **16:9**, **16:10**, **4:3** or **1:1 (Square)**. It frames the picture on the screen, and the pins are stored against the frame respondents saw. |
+| **Aspect ratio** | The shape the picture is drawn at: **16:9**, **16:10**, **4:3** or **1:1 (Square)**. It frames the picture on the screen, and the heatmap in your results draws the pins over the picture at the same shape. |
 
 Below those the panel holds **Required**, **Validation**, and the three logic rows every question has: **Show/hide question**, **Skip from here** and **Set a variable**.
 
@@ -56,7 +56,7 @@ Below those the panel holds **Required**, **Validation**, and the three logic ro
 | [Max pins](/rules/number-bounds) | The most you accept. Until you set it, the picture takes three. |
 | [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
 
-The picture carries the count as they work, so nobody has to guess: it reads TAP TO MARK, then how many more are needed while a minimum is unmet, then how many are left, then MAX PINS REACHED once the cap is reached and further taps do nothing. A **Clear pins** button appears under the picture as soon as there is a pin, and it clears all of them, so a respondent who mismarks starts again rather than hunting for the pin to undo. There is also a control to open the picture full screen, which is where fine detail gets marked accurately, and pins can be placed there as well.
+The picture carries the count as they work, so nobody has to guess: it reads TAP TO MARK with how many more are needed while a minimum is unmet, then how many are left, then MAX PINS REACHED once the cap is reached and further taps do nothing. A **Clear pins** button appears under the picture as soon as there is a pin, and it clears all of them, so a respondent who mismarks starts again rather than hunting for the pin to undo. There is also a control to open the picture full screen, which is where fine detail gets marked accurately, and pins can be placed there as well.
 
 ## Logic that works with it
 
@@ -64,9 +64,9 @@ The answer is a set of points on a picture. Nothing in it is a word or a number,
 
 ## How it shows in results
 
-Per question the default is a **Heatmap**, which draws every respondent's pins over the same picture so the crowded places show as the warm ones. **Values list** is the other entry in **Chart type**, giving the marks one row at a time.
+Per question the default is a **Heatmap**, which draws every respondent's pins as dots over the same picture, so the crowded places stand out where the dots pile up. Clicking one dot picks out that respondent's pins and fades the rest, a caption counts the pins and the responses they came from, and the picture opens full screen for a closer look. **Values list** is the other entry in **Chart type**.
 
-In every export the question becomes one column, holding the pins that respondent placed.
+In every export the question becomes one column, holding the position of every pin that respondent placed.
 
 {/* screenshot: The image hotspot question on the Analytics tab, charted as a heatmap over the picture. */}
 

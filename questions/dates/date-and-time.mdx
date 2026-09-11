@@ -60,7 +60,7 @@ All three rules read the date half of the answer. They are checked on our server
 
 ## Logic that works with it
 
-The answer is one moment, a date carrying a time. Conditions read it as a date: **is**, **is not**, **is after**, **is before**, **is between**, **is answered** and **is not answered**. It cannot be a [carry-forward](/logic/carry-forward) source or target, because there is no list of answers to hand on. It can [drive a loop](/logic/loops), which gives one pass for the moment they gave. It does not [score](/logic/scoring): points are typed next to an answer you wrote, and this question has no answers to write them against, so it has no **Scoring** row. [Piping](/logic/piping) it into later wording prints it the way a person reads a moment, as 24 Aug 2026 14:30. Like any other [condition](/logic/how-logic-runs) source it has to sit on an earlier screen than the rule that reads it.
+The answer is one moment, a date carrying a time. Conditions compare it against a calendar day with **is after**, **is before** and **is between**, and read whether it was given with **is answered** and **is not answered**. It cannot be a [carry-forward](/logic/carry-forward) source or target, because there is no list of answers to hand on. It can [drive a loop](/logic/loops), which gives one pass for the moment they gave. It does not [score](/logic/scoring): points are typed next to an answer you wrote, and this question has no answers to write them against, so it has no **Scoring** row. [Piping](/logic/piping) it into later wording prints it the way a person reads a moment, as 24 Aug 2026 14:30. Like any other [condition](/logic/how-logic-runs) source it has to sit on an earlier screen than the rule that reads it.
 
 ## How it shows in results
 

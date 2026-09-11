@@ -4,9 +4,9 @@ description: "Answer yes or no."
 icon: "toggle-on"
 ---
 
-Yes or no puts two buttons on the screen and asks respondents to press one. Its two answers are fixed, so there is no list to write: you set the wording with **Yes label** and **No label**, and everything downstream still reads the same two answers underneath.
+Yes or no puts two answers on the screen and asks respondents to pick one. The two are fixed, so there is no list to write: you set the wording with **Yes label** and **No label**, and everything downstream still reads the same two answers underneath.
 
-{/* screenshot: A yes or no question as a respondent sees it, two buttons side by side. */}
+{/* screenshot: A yes or no question as a respondent sees it, two answers side by side. */}
 
 ## When to use it
 
@@ -38,11 +38,11 @@ Select the question on the canvas and the panel beside the rail shows everything
 
 | Setting | What it does |
 | --- | --- |
-| **Yes label** | The word on the first button. It starts as **Yes**, and "I agree", "Keep going" or "Buy it" are all ordinary things to put there. |
-| **No label** | The word on the second button, starting as **No**. |
-| **Layout** | **Horizontal** puts the two buttons side by side, **Vertical** stacks them. Stacked reads better on a phone when the wording is long. |
+| **Yes label** | The wording of the first answer. It starts as **Yes**, and "I agree", "Keep going" or "Buy it" are all ordinary things to put there. |
+| **No label** | The wording of the second answer, starting as **No**. |
+| **Layout** | **Horizontal** puts the two answers side by side, **Vertical** stacks them. Stacked reads better on a phone when the wording is long. |
 
-Rewording a button changes what respondents read and nothing else. The two answers underneath stay the same, so a rule, a chart or an export column written against **Yes** keeps working after it becomes "I agree".
+Rewording an answer changes what respondents read and nothing else. The two answers underneath stay the same, so a rule, a chart or an export column written against **Yes** keeps working after it becomes "I agree".
 
 {/* screenshot: The question panel for a yes or no question, with the two label rows and the layout row. */}
 
@@ -50,9 +50,9 @@ Rewording a button changes what respondents read and nothing else. The two answe
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | They cannot move on until they press one of the two buttons. |
+| [Required](/rules/required) | They cannot move on until they pick one of the two. |
 
-Required is the whole of it. There are two answers and one of them is either pressed or it is not, so there is no count to bound and no format to check, and a yes or no question has no **Validation** row in the panel.
+Required is the whole of it. There are two answers and one of them is either picked or it is not, so there is no count to bound and no format to check, and a yes or no question has no **Validation** row in the panel.
 
 ## Logic that works with it
 

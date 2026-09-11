@@ -4,7 +4,7 @@ description: "Ask which country or region someone is in."
 icon: "earth-americas"
 ---
 
-Country or region is a text box for where somebody is, tagged so results treat the answers as categories rather than as prose. Respondents type the name of their country or region. Results chart it as a distribution, so the top few show up as bars without any coding on your part.
+Country or region is a text box for where somebody is, tagged so results treat the answers as categories rather than as prose. Respondents type the name of their country or region. Results chart it as bars, one per answer as typed, so the top few show up without any coding on your part.
 
 {/* screenshot: A Country or region question as a respondent sees it, one box with Country / Region written in it. */}
 
@@ -14,7 +14,7 @@ Country or region is a text box for where somebody is, tagged so results treat t
 - You want a distribution by country in your results, without turning the answers into codes first.
 - You expect a handful of countries to dominate, and the long tail is worth reading rather than forcing into buckets.
 
-**Consider instead:** [Single choice](/questions/choice/single-choice) or [Dropdown](/questions/choice/dropdown) when you are fielding in a known set of markets and want everyone in one of them, [Address](/questions/ready-made/address) when you need the full postal address, [Short text](/questions/text/short-text) for a region name that is not a country.
+**Consider instead:** [Single choice](/questions/choice/single-choice) or [Dropdown](/questions/choice/dropdown) when you are fielding in a known set of markets and want everyone in one of them, [Address](/questions/ready-made/address) when you need the full postal address, [Short text](/questions/text/short-text) for a region name that is not a country, or when a word cloud is the view you want.
 
 ## Add it
 
@@ -23,7 +23,7 @@ Country or region is a text box for where somebody is, tagged so results treat t
     On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
   <Step title="Pick Country Region">
-    In **Add to survey**, type to filter and click **Country Region**, under the **Text** heading. It arrives as one box with **Country / Region** written inside it in grey, and no question wording of its own.
+    In **Add to survey**, type to filter and click **Country Region**. It arrives as one box with "Country / Region" as the hint inside it, and no question wording of its own.
 
     {/* screenshot: A Country or region question on the builder canvas, its wording typed in place. */}
   </Step>
@@ -36,7 +36,7 @@ Country or region is a text box for where somebody is, tagged so results treat t
 
 Select the question on the canvas and the panel beside the rail shows everything you can set.
 
-A Country or region question has nothing to configure. The panel opens on **Type**, which reads **Country Region** and does not open a picker, because a ready-made question has no sibling type to switch to. Under it sit **Required** and **Validation**, then the logic rows. The box is a plain one: there is no country list to pick from and no flag beside it.
+A Country or region question has nothing to configure. The panel shows **Type**, fixed at **Country Region**, then **Required** and **Validation**, then the logic rows. The box is a plain one: there is no country list to pick from and no flag beside it, and the hint inside it comes with the question type and stays as it is.
 
 {/* screenshot: The question panel for a Country or region question, with Type fixed and Required under it. */}
 
@@ -57,9 +57,11 @@ The answer is the text they typed, so conditions read it as text: **is**, **is n
 
 ## How it shows in results
 
-Per question the default is a **Bar chart**, one bar per answer given, counting the respondents who gave it. **Pie chart** and **Values list** are the other two entries in **Chart type**. This is the one ready-made text question charted as a distribution by default, because a country is a category even when it is typed.
+Per question the default is a **Bar chart**, one bar per distinct answer as typed, counting the respondents who gave it. **Pie chart** and **Values list** are the other two entries in **Chart type**. This is the one ready-made text question charted as a distribution by default, because a country is a category even when it is typed.
 
 In every export the question becomes one text column, holding the answer as it was typed.
+
+Country or region is not a contact detail, so it appears on a shared [report](/results/reports) like any other question.
 
 {/* screenshot: The Country or region question on the Analytics tab, charted as a bar chart. */}
 

@@ -1,10 +1,10 @@
 ---
 title: "Email address"
-description: "Collect an email address with the wording already written for you."
+description: "Collect an email address, checked before the respondent moves on."
 icon: "envelope"
 ---
 
-Email address collects one address and checks it as it is typed. A tick appears in the box once the address parses, and a known typo in a common domain draws a quiet "Did you mean" line under it, which the respondent can take or ignore.
+Email address collects one address and checks it when the respondent leaves the box. A tick and "Looks good." appear once the address parses, and a slip in a common domain draws a "Did you mean" line under it, with the fix one tap away. An address that does not parse is refused when they try to move on.
 
 {/* screenshot: An Email address question as a respondent sees it, the tick showing once the address parses. */}
 
@@ -14,7 +14,7 @@ Email address collects one address and checks it as it is typed. A tick appears 
 - You want the obvious typos caught before the answer is stored rather than after.
 - You want the answer held back from any report you share, without remembering to do anything about it.
 
-**Consider instead:** [Email](/questions/text/email) when the address is part of the study rather than a contact detail you are keeping, [Mobile phone](/questions/ready-made/mobile-phone) when a call or a text suits better, [Name](/questions/ready-made/name) when you want who they are as well.
+**Consider instead:** [Email](/questions/text/email) when you want to set the hint inside the box or switch the question to another text type later; it checks the address and is held back from shared reports in the same way. [Mobile phone](/questions/ready-made/mobile-phone) when a call or a text suits better, [Name](/questions/ready-made/name) when you want who they are as well.
 
 ## Add it
 
@@ -23,12 +23,12 @@ Email address collects one address and checks it as it is typed. A tick appears 
     On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
   <Step title="Pick Email Address">
-    In **Add to survey**, type to filter and click **Email Address**, under the **Text** heading. It arrives as one box with **your@email.com** written inside it in grey, and no question wording of its own.
+    In **Add to survey**, type to filter and click **Email Address**. It arrives as one box with "your@email.com" as the hint inside it, and no question wording of its own.
 
     {/* screenshot: An Email address question on the builder canvas, its wording typed in place. */}
   </Step>
   <Step title="Write the question">
-    The canvas is the real survey, so you type the question and its description straight onto it. The hint and the checking come with the question type.
+    The canvas is the real survey, so you type the question and its description straight onto it. The hint and the checking come with the question type and stay as they are.
   </Step>
 </Steps>
 
@@ -36,7 +36,7 @@ Email address collects one address and checks it as it is typed. A tick appears 
 
 Select the question on the canvas and the panel beside the rail shows everything you can set.
 
-An Email address question has nothing to configure. The panel opens on **Type**, which reads **Email Address** and does not open a picker, because a ready-made question has no sibling type to switch to. Under it sit **Required** and **Validation**, then the logic rows. The typo suggestion is a nudge and never a refusal: a respondent who means what they typed can carry on.
+An Email address question has nothing to configure. The panel shows **Type**, fixed at **Email Address**, then **Required** and **Validation**, then the logic rows. The typo suggestion is a nudge and never a refusal: a respondent who means what they typed carries on. What does stop them is an address that does not parse, with "Enter a valid email address."
 
 {/* screenshot: The question panel for an Email address question, with Type fixed and Required under it. */}
 

@@ -20,7 +20,7 @@ A slider grid gives every row a track of its own and asks a respondent to place 
 
 <Steps>
   <Step title="Open a gap on the canvas">
-    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
+    On the **Build** tab, hover between two questions and click **Add**.
   </Step>
   <Step title="Pick Matrix (Slider)">
     In **Add to survey**, type to filter and click **Matrix (Slider)**, under **Matrix**. It arrives with three rows, Row 1 to Row 3, and its two end captions already written: **Left label** is Low and **Right label** is High.
@@ -64,11 +64,11 @@ The units caption the number on screen and change nothing that is stored, so rul
 
 ## Logic that works with it
 
-The answer is a map, one number per row, which no single comparison can read. So the question as a whole is offered with **is answered** and **is not answered**, and three summaries of it are offered as sources in their own right: **Lowest rating**, **Highest rating** and **Total**. Each row is offered separately as well, and the summaries and the rows alike read as numbers, with **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most** and **is between**. It is not a [carry-forward](/logic/carry-forward) source, but it takes a carried list into its **Rows**, which is how a battery ends up asking about whatever somebody picked a screen earlier. It cannot [drive a loop](/logic/loops), and it cannot be [scored](/logic/scoring): a track is a continuum with no set of answers to put points beside. [Piping](/logic/piping) it into later wording prints each answered row as "Row: the number they set", in the order you wrote the rows.
+The answer is a map, one number per row, which no single comparison can read. So the question as a whole is offered with **is answered** and **is not answered**, and three summaries of it are offered as sources in their own right: **Lowest rating**, **Highest rating** and **Total**. Each row is offered separately as well, and the summaries and the rows alike read as numbers, with **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most** and **is between**. It is not a [carry-forward](/logic/carry-forward) source, but it takes a carried list into its **Rows**, which is how a battery ends up asking about whatever somebody picked a screen earlier. It cannot [drive a loop](/logic/loops), and it cannot be [scored](/logic/scoring): a track is a continuum with no set of answers to put points beside. [Piping](/logic/piping) it into later wording prints each answered row as "Row: the number they set", in the order you wrote the rows, with unanswered rows left out.
 
 ## How it shows in results
 
-Per question the default is a **Values list**, and it is the only entry in **Chart type**. **Raw data** under the card opens the answers one respondent at a time.
+Per question the default is a **Values list**, and it is the only entry in **Chart type**.
 
 In every export the question becomes one column per row, holding the number that row collected.
 

@@ -10,7 +10,7 @@ Opinion scale puts eleven numbered buttons in front of a respondent, 0 to 10, wi
 
 ## When to use it
 
-- You want a wide scale for a judgement that is not about recommending: value for money, ease, confidence, likelihood of returning.
+- You want a wide scale for a judgment that is not about recommending: value for money, ease, confidence, likelihood of returning.
 - You want the answer as a number you can average, threshold and branch on, rather than as a named point.
 - You are writing both ends yourself and the standard recommendation wording would be wrong.
 
@@ -41,7 +41,7 @@ Select the question on the canvas and the panel beside the rail shows everything
 | **High label** | The caption under the right end of the scale. Until you write one it reads **Extremely likely**, which is what respondents see. |
 | **Low label** | The caption under the left end. Until you write one it reads **Not at all likely**. |
 
-Those two captions are worth a minute, because the wording it starts with belongs to the recommendation question. Write both ends in your own terms and the scale reads as yours.
+The wording it starts with is the recommendation question's, and it stays until you write your own, so the two captions are part of setting the question up.
 
 The scale is fixed at eleven points, 0 to 10, and there is no control that changes it. The **Type** row at the top of the panel switches this question to [NPS](/questions/ratings/nps) and back, which is the same scale under the name your reporting uses.
 
@@ -57,7 +57,7 @@ Required is the whole of it. Every answer the scale offers is already inside its
 
 ## Logic that works with it
 
-The answer is a number, so conditions compare it as one: **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most**, **is between**, **is answered** and **is not answered**. It [scores](/logic/scoring) a number per scale point, one row per point from 0 to 10, and a point can be negative. It can [drive a loop](/logic/loops), either one pass for the answer they gave or as many passes as the number they chose. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it, because a rating is a measurement rather than a list of things worth asking about again. [Piping](/logic/piping) it into later wording prints the number they picked.
+The answer is a number, so conditions compare it as one: **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most**, **is between**, **is answered** and **is not answered**. It [scores](/logic/scoring) points per scale point, one row per point from 0 to 10, and a point can be negative. It can [drive a loop](/logic/loops), either one pass for the answer they gave or as many passes as the number they chose. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it, because a rating is a measurement rather than a list of things worth asking about again. [Piping](/logic/piping) it into later wording prints the number they picked.
 
 ## How it shows in results
 

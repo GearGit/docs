@@ -20,7 +20,7 @@ Constant sum gives respondents a budget and asks them to divide it. Each option 
 
 <Steps>
   <Step title="Open a gap on the canvas">
-    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
+    On the **Build** tab, hover between two questions and click **Add**.
   </Step>
   <Step title="Pick Constant Sum">
     In **Add to survey**, type to filter and click **Constant Sum**, under **Rank**. It arrives with two empty rows, because an allocation needs at least two items to split anything between.
@@ -39,7 +39,7 @@ Select the question on the canvas and the panel beside the rail shows everything
 | Setting | What it does |
 | --- | --- |
 | Options | The items the total is split across. Edited on the canvas, or in **Bulk edit** as plain text, one per line. |
-| **Answer order** | **As written**, **Shuffled** or **Reversed**. Shuffled draws a fresh order for each respondent, so the item at the top of your list does not collect the first and largest number. Once an order is set you can pin an item to the top or the bottom. |
+| **Answer order** | **As written**, **Shuffled** or **Reversed**. Shuffled draws a fresh order for each respondent, so the item at the top of your list does not collect the first and largest number. Once an order is set you can pin an item, and a pinned item always shows first. |
 
 There is no "Only some" here. Splitting a budget across a different set of items per respondent gives answers that cannot be compared, so the whole list goes to everyone.
 
@@ -55,11 +55,11 @@ There is no "Only some" here. Splitting a budget across a different set of items
 | [Must total](/rules/number-bounds) | The budget, 100 unless you change it. Allocations that do not add up read "Values must add up to 100." |
 | [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
 
-The question is a list of labels and number boxes, with no running total and no bar beneath it. Nothing can go below zero or above the budget, and whether the numbers add up is settled when they submit.
+The question is a list of labels and number boxes, with no running total and no bar beneath it. A number cannot go below zero, and whether the numbers add up is settled when they submit.
 
 ## Logic that works with it
 
-The answer is a number per option, which no single comparison can read at once. So the question as a whole is offered with **is answered** and **is not answered**, and three summaries of it are offered as sources in their own right: **Lowest amount**, **Highest amount** and **Total**. Each option is offered separately as well, and the summaries and the options alike read as numbers, with **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most** and **is between**, which is how "they put more than half of it on one thing" becomes a rule. It is not a [carry-forward](/logic/carry-forward) source, because a set of amounts is not a selection, but it takes a carried list into its own items, which is the usual way to split a budget across whatever somebody picked a screen earlier. It cannot [drive a loop](/logic/loops). It cannot be [scored](/logic/scoring): the answer is already a number per option, so points could only multiply a share or test a threshold, and a threshold is a condition. Put one in a named variable with **Set a variable** instead. [Piping](/logic/piping) it into later wording prints each item with the amount they gave it.
+The answer is a number per option, which no single comparison can read at once. So the question as a whole is offered with **is answered** and **is not answered**, and three summaries of it are offered as sources in their own right: **Lowest amount**, **Highest amount** and **Total**. Each option is offered separately as well, and the summaries and the options alike read as numbers, with **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most** and **is between**, which is how "they put more than half of it on one thing" becomes a rule. It is not a [carry-forward](/logic/carry-forward) source, because a set of amounts is not a selection, but it takes a carried list into its own items, which is the usual way to split a budget across whatever somebody picked a screen earlier. It cannot [drive a loop](/logic/loops). It cannot be [scored](/logic/scoring): the answer is already a number per option, and a threshold on an amount is a condition, written against the amounts themselves. [Piping](/logic/piping) it into later wording prints each item with the amount they gave it, in the order you wrote the items.
 
 ## How it shows in results
 
