@@ -184,3 +184,19 @@ html.dark #pagination a.pagination-next > div {
     z-index: 30;
   }
 }
+
+/* The theme hides the "On this page" rail below 1280 CSS px, which a zoomed browser on a
+   wide screen falls under. Keep the rail from 1120 px, with a narrower column beside it. */
+@media (min-width: 1120px) and (max-width: 1279px) {
+  #content-side-layout,
+  #table-of-contents-layout {
+    display: flex !important;
+  }
+  #table-of-contents-layout {
+    width: 13rem !important;
+    padding-left: 1.5rem !important;
+  }
+  #content-area {
+    width: calc(100% - 14rem) !important;
+  }
+}
