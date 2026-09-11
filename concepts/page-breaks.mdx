@@ -1,0 +1,57 @@
+---
+title: 'Page Breaks: Controlling What Respondents See at Once'
+sidebarTitle: 'Page Breaks'
+description: 'Learn what page breaks do in OnlineSurvey, when to use them, and how to insert them to control pacing and enable logic checks in your survey.'
+---
+
+A **page break** is a structural element that divides your survey into separate pages. When a respondent reaches a page break, they submit the answers on the current page and then see the next page. Without page breaks, all elements in a block appear on a single scrollable screen.
+
+This page explains what page breaks do, when you should use them, and how to add them in the builder.
+
+## What a Page Break Does
+
+A page break marks the boundary between two screens. Everything above the break appears on one screen; everything below appears on the next. Respondents cannot see answers on the next screen until they submit the current one, which matters both for survey pacing and for the integrity of logic checks.
+
+![A page break element shown between two question elements on the builder canvas](/images/placeholder.png)
+
+Page breaks also control when logic fires. Branching, display logic, quota checks, and screen-outs all evaluate after a respondent submits a screen. If two questions sit on the same screen with no page break between them, a branch that depends on the first question's answer cannot redirect the respondent away from the second question, because the respondent sees both at the same time.
+
+## When to Use a Page Break
+
+<Accordion title="Before any logic check">
+Place a page break after every question whose answer drives a branch, a screen-out, a quota check, or display logic on the next element. The logic needs the submitted answer to evaluate, so the page break ensures the respondent has committed their answer before the rule fires.
+</Accordion>
+
+<Accordion title="At topic transitions">
+When your survey shifts from one subject to another, for example from screener questions to the main questionnaire, a page break signals the transition to the respondent. It also keeps your results cleaner because each screen represents a coherent unit of measurement.
+</Accordion>
+
+<Accordion title="To manage cognitive load">
+Long screens with many questions increase respondent fatigue and drop-off. Breaking a dense section into shorter pages keeps the survey feeling manageable, especially on mobile devices.
+</Accordion>
+
+<Accordion title="Before a sensitive or instructions screen">
+If you display a text block with important instructions or a consent statement, place a page break after it so that respondents must scroll past it and submit the screen before continuing. This creates a clear record that they advanced past the instructions.
+</Accordion>
+
+## How to Add a Page Break
+
+1. Open your survey in the builder and navigate to the block where you want the break.
+2. Click the **Add element** button between the two elements you want to separate.
+3. Select **Page break** from the element menu.
+
+![The element menu open with Page Break highlighted](/images/placeholder.png)
+
+The page break appears as a horizontal divider on the canvas. You can drag it to a different position between elements at any time.
+
+<Tip>
+To remove a page break, hover over it on the canvas and click the delete icon that appears. Removing a page break merges the two screens into one, so review any logic that targeted those screens after you make the change.
+</Tip>
+
+## Page Breaks and Screen Numbering
+
+OnlineSurvey displays a progress indicator to respondents based on screens, not individual questions. Adding or removing page breaks changes how many screens exist in the survey, which affects the progress bar. If completion time is a concern, consider the number of screens as well as the number of questions when designing your survey.
+
+<Note>
+Page breaks are a draft-only change. You can add or remove them in your draft at any time. Once you publish a new version, the screen structure is locked for that version. Respondents who started on a previous version continue to see the old screen structure until they complete or drop off.
+</Note>

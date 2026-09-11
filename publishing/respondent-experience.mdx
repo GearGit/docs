@@ -1,0 +1,71 @@
+---
+title: 'What Respondents See When They Fill In Your Survey'
+sidebarTitle: 'Respondent Experience'
+description: 'Understand the respondent journey from opening the link to reaching an ending screen, including progress indicators, page breaks, and screen-out behaviour.'
+---
+
+Understanding what respondents experience helps you design surveys that are clear, comfortable, and easy to complete. This page walks through the full respondent journey, from opening the share link to reaching one of the three ending screens.
+
+## Opening the Survey
+
+When a respondent clicks your share link, their browser opens the survey directly. No account or login is required on their side. If you have added a password to the link, they will see a single-field prompt asking for it before the survey loads.
+
+The first thing a respondent sees after authentication (if any) is the welcome screen, provided you have set one up. The welcome screen is a full-page introduction where you can display your logo, a short description of the study, estimated completion time, and a privacy notice. A **Start** button moves them into the first question.
+
+![The welcome screen showing a logo, a two-sentence study description, and a Start button](/images/placeholder.png)
+
+<Tip>
+  A well-written welcome screen increases completion rates. Tell respondents what the survey is about, how long it takes, and how their data will be used.
+</Tip>
+
+## Answering Questions Page by Page
+
+Questions are presented one page at a time. A page contains all the questions between two page breaks. If you have not added any page breaks, the entire survey is presented as a single scrollable page.
+
+Respondents answer the questions on a page and then click **Next** to advance. Any validation errors, such as a skipped required question, appear inline as red prompts before the page advances.
+
+![A survey page showing two questions with a Next button at the bottom and a progress bar at the top](/images/placeholder.png)
+
+The survey renders identically to what you saw in the builder preview. Fonts, colors, question layouts, and answer option arrangements all match the preview exactly. Respondents see the same experience on desktop, tablet, and mobile browsers.
+
+## The Progress Indicator
+
+A progress bar runs across the top of the survey. It updates each time a respondent advances to a new page, giving them a visual sense of how far through the survey they are and how much remains.
+
+<Info>
+  The progress indicator is based on page count, not question count. A page with five questions advances the bar by the same amount as a page with one question.
+</Info>
+
+## Going Back
+
+Respondents can use the **Back** button to return to the previous page and change their answers. However, they cannot navigate back past a page break by default. Once a page has been submitted, the answers on that page are considered final.
+
+If your survey design requires respondents to revise earlier answers, consider restructuring your page breaks or contacting [support@onlinesurvey.ai](mailto:support@onlinesurvey.ai) to discuss options.
+
+<Warning>
+  Logic rules, including branching, carry-forward, and piping, run forward only. If a respondent goes back and changes an answer that drove a branch, the questions they see going forward will update, but any answers they already gave to the branched questions will be cleared.
+</Warning>
+
+## The Three Ending Screens
+
+Every respondent journey ends on one of three screens, depending on how they moved through the survey.
+
+<CardGroup cols={3}>
+  <Card title="Complete" icon="circle-check">
+    The respondent answered all required questions and reached the end of the survey. The complete screen thanks them and, if you configured a redirect URL, sends them to an external page.
+  </Card>
+  <Card title="Screened Out" icon="ban">
+    A screen-out rule was triggered by one of the respondent's answers. The screen-out message is shown instead of the remaining questions. You can customise the message for each screen-out rule.
+  </Card>
+  <Card title="Quota Full" icon="chart-pie">
+    The respondent qualified for a quota segment that has already reached its target count. They see the quota-full message and cannot proceed further. You can customise this message in the quota settings.
+  </Card>
+</CardGroup>
+
+![The three ending screens side by side: Complete, Screened Out, and Quota Full](/images/placeholder.png)
+
+## What Respondents Cannot See
+
+Respondents see only the live version of the survey. They do not see the draft, version history, logic rules, quota targets, or any part of the builder. Question internal labels and variable names are hidden from view.
+
+If a respondent closes the browser mid-survey and returns using the same link, their behaviour depends on your session settings. By default, they will start the survey from the beginning, as no login or cookie-based resumption is active.

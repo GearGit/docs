@@ -1,0 +1,55 @@
+---
+title: 'Edit or Correct a Recorded Survey Answer After Submission'
+sidebarTitle: 'Edit an Answer'
+description: 'Learn when and how to edit a recorded survey answer, how to locate the response, make the correction, and how the audit trail preserves the original value.'
+---
+
+Occasionally a recorded answer needs to be corrected after the fact. This page explains the valid reasons to edit a response, how to locate and update the specific answer, and what happens to the original value after a change is saved.
+
+## When to Edit a Recorded Answer
+
+Editing a response is appropriate in two situations. First, a data-entry error occurred, such as a telephone interviewer entering the wrong code for a verbally given answer. Second, a respondent provided their answer verbally or in a follow-up channel and the record needs to be updated to reflect what they actually said.
+
+Editing is not intended as a way to clean or recode data at scale. For recoding, use computed variables or filter your export instead.
+
+<Warning>
+  Every edit is logged in the audit trail. The original value is preserved and visible to anyone with admin access. Edits cannot be deleted. If you need to discuss a correction with your team before making it permanent, add a note in the response detail panel rather than editing the field immediately.
+</Warning>
+
+## Step 1: Find the Response in the Grid
+
+Open the **Responses** tab for your survey. Use the search bar or the column filters to locate the row that contains the answer you need to correct. If you know the respondent's unique ID or a distinctive open-ended answer they gave, searching by that text is the fastest route.
+
+![The responses grid with a search term in the search bar and one row highlighted](/images/placeholder.png)
+
+## Step 2: Open the Response Detail
+
+Click anywhere on the respondent's row to open the **Response Detail** panel. The panel slides in from the right and shows every question and recorded answer for that respondent in the order they were presented.
+
+Scroll through the detail panel until you find the specific answer you need to change.
+
+![The response detail panel open on the right, showing a list of questions and recorded answers](/images/placeholder.png)
+
+## Step 3: Edit the Field
+
+Hover over the answer you want to correct. An **Edit** icon (pencil) appears to the right of the value. Click it to put the field into edit mode.
+
+Depending on the question type, the field will become a text input, a dropdown of the available options, or a date picker. Make your correction, then click **Save** to confirm.
+
+![An answer field in edit mode with the corrected value entered and the Save button visible](/images/placeholder.png)
+
+<Note>
+  You can only edit answers to questions that the respondent actually answered. Questions that were hidden by display logic or skipped because of branching are not editable because no value was recorded in the first place.
+</Note>
+
+## Step 4: Confirm the Change
+
+After saving, the updated value appears immediately in the detail panel and in the grid. A small **Edited** badge appears next to the cell in the grid to indicate that the stored value differs from the original submission.
+
+<Tip>
+  To review all edits made to a response over time, open the response detail panel and click **View audit trail** at the top. The audit trail lists every field that was changed, the original value, the new value, the editor's name, and the timestamp of the change.
+</Tip>
+
+## Permissions Required
+
+Editing recorded answers requires the **Editor** or **Admin** role on the survey. Viewers can open the response detail panel but will not see the pencil icon.

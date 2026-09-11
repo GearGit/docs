@@ -1,0 +1,74 @@
+---
+title: 'Editing a Live Survey Without Affecting Respondents'
+sidebarTitle: 'Edit Live Survey'
+description: 'Learn how to edit a published survey without affecting current respondents, when to republish, and how version pinning keeps response data clean.'
+---
+
+Publishing a survey does not lock you out of the builder. You can edit the draft at any time, even while respondents are actively filling in the live version. This page explains how draft editing works alongside a live survey, when to republish, and what to watch out for when you make structural changes.
+
+## The Draft Is Always Editable
+
+OnlineSurvey keeps your working draft completely separate from the published snapshot. While respondents answer questions in the live version, you can freely rewrite question text, add new questions, adjust logic rules, or retheme the survey in the builder without interrupting anyone.
+
+Changes you make in the draft are saved automatically and do not appear to respondents until you publish again.
+
+![The builder canvas with a draft open for editing while a "Version 1 is live" badge appears in the toolbar](/images/placeholder.png)
+
+## Applying Changes to New Respondents
+
+When you are satisfied with your edits, click **Publish** to compile a new version. From that moment, any respondent who opens your share link will see the updated survey. Respondents who were already mid-survey stay on the version they started until they submit.
+
+This means you can iterate on your survey across multiple fieldwork waves without ever taking it offline.
+
+<Steps>
+
+  ### Make Your Edits in the Builder
+
+  Open the survey in the builder and make whatever changes you need. The question list, logic panel, and settings are all fully available regardless of whether the survey is live.
+
+  ![The builder canvas showing a question being reworded while the survey is live](/images/placeholder.png)
+
+  ### Review Changes in the Publish Panel
+
+  Click **Publish** in the top-right toolbar. The Publish panel opens and shows a summary of what has changed since the last published version: added questions, removed questions, and edited content are each flagged.
+
+  Review the summary carefully before confirming, especially if the survey is actively collecting responses.
+
+  ![The Publish panel showing a diff summary with one question edited and one new question added](/images/placeholder.png)
+
+  ### Publish the New Version
+
+  Click **Publish Now**. OnlineSurvey assigns the next version number and the updated survey goes live immediately. The version history log records the date, time, and author of the change.
+
+</Steps>
+
+## Existing Sessions Stay on the Old Version
+
+Respondents who opened the survey before you republished will complete the version they started. Their responses are recorded against that older version number. Responses collected after the new publish are recorded against the newer version.
+
+This version pinning keeps your data clean. You will never have a single response that is half on one version and half on another.
+
+<Warning>
+  Adding or removing questions between versions affects in-progress sessions. A respondent mid-survey on Version 1 will not see questions you added in Version 2, and their response record will not contain answers to those new questions. Likewise, if you remove a question and a respondent had already answered it, that answer is stored in the Version 1 response but will not appear in Version 2 exports. Plan structural changes carefully when a wave of fieldwork is still open.
+</Warning>
+
+## Safe Edits vs. Structural Changes
+
+Not all edits carry the same risk. Use the guide below to decide whether to republish immediately or wait until the current wave of responses is complete.
+
+<CardGroup cols={2}>
+  <Card title="Lower Risk" icon="check">
+    Fixing a typo in question text, reordering answer options, adjusting a theme color, or updating the welcome screen message. These changes are cosmetic and do not affect the shape of the data.
+  </Card>
+  <Card title="Higher Risk" icon="triangle-exclamation">
+    Adding a question, removing a question, changing a question type, or altering branching logic. These changes alter the data structure and can create gaps between responses collected on different versions.
+  </Card>
+</CardGroup>
+
+<Tip>
+  If you need to make structural changes while a wave is in progress, consider closing the share link first, waiting for all in-progress sessions to expire, and then republishing with the updated version. Contact [support@onlinesurvey.ai](mailto:support@onlinesurvey.ai) if you need guidance on managing a sensitive fieldwork period.
+</Tip>
+
+## Tracking Which Responses Belong to Which Version
+
+Every response in the results grid includes a version number column. You can filter the grid by version to view only responses collected on a specific snapshot. When you export data, the version number is included as a column in every export format, including CSV, Excel, and SPSS.

@@ -1,0 +1,156 @@
+---
+title: 'Survey Question Types: All 50 Types in OnlineSurvey'
+sidebarTitle: 'Question Types'
+description: 'Browse all 50 question types across six families: Closed, Scales, Grids, Ranking, Open Ends, and Dates and Times, plus special blocks.'
+---
+
+OnlineSurvey offers 50 question types organised into six families. This page describes each type so you can choose the right format for every question in your study.
+
+To add any question type, click **+ Add Question** in the builder and browse or search the picker by family or name.
+
+![The question type picker with six family tabs across the top](/images/placeholder.png)
+
+<Tabs>
+  <Tab title="Closed">
+    Closed questions present a fixed set of answer options. They are the most common question format in surveys and work well for preference, awareness, and classification questions.
+
+    | Type | What it does |
+    |---|---|
+    | **Single Choice** | Respondents pick exactly one option from a list of radio buttons. Use this for mutually exclusive choices such as "Which product do you use most?" |
+    | **Multiple Choice** | Respondents pick one or more options from a list of checkboxes. Set a minimum or maximum selection count in the validation panel. |
+    | **Dropdown** | A collapsed menu that expands on click. Useful when you have many options (countries, industries) and want to save vertical space. |
+    | **Image Tiles** | Answer options are displayed as images rather than text labels. Respondents click a tile to select it. Great for brand logo tests or visual concept tests. |
+    | **Yes / No** | A single binary choice rendered as two large buttons. Faster to answer on mobile than a full radio list. |
+    | **Ranking (closed variant)** | Presents a fixed list where respondents assign a rank to each item. See the Ranking family tab for more ranking formats. |
+
+    ![A single-choice question card as it appears on the canvas](/images/placeholder.png)
+
+    **Adding an "Other" option**
+
+    All closed question types support an optional "Other (please specify)" field. Enable it in the settings panel. You can require respondents to fill in the text box when they select "Other" using the **Require Other text** validation rule.
+
+    **Exclusive options**
+
+    You can mark any answer choice as exclusive, meaning selecting it automatically deselects all other options. This is commonly used for "None of the above" and "Prefer not to say."
+  </Tab>
+
+  <Tab title="Scales">
+    Scale questions ask respondents to rate something on a continuum. They are ideal for measuring satisfaction, sentiment, and intensity.
+
+    | Type | What it does |
+    |---|---|
+    | **Likert** | A standard agreement scale, typically 5 or 7 points, with labelled endpoints and a neutral midpoint. Fully customisable labels and point count. |
+    | **NPS (Net Promoter Score)** | A 0-to-10 scale with the standard "How likely are you to recommend..." phrasing. OnlineSurvey automatically segments responses into Promoters, Passives, and Detractors in the results view. |
+    | **Star Rating** | A visual 1-to-5 star selector. Familiar to respondents from consumer review contexts. |
+    | **Smiley / Emoji Scale** | A set of emoticon faces ranging from unhappy to happy. Works especially well for quick satisfaction pulses and mobile-first surveys. |
+    | **Opinion Scale** | A numeric scale with configurable start, end, and step values. You control the labels at each end. |
+    | **Slider (single)** | A drag handle on a continuous track. Set the minimum, maximum, and step increment. The current value is displayed above the handle. |
+    | **Slider (range)** | Two drag handles that define a lower and upper bound. Useful for budget ranges or acceptable values. |
+    | **Slider (multi-handle)** | Multiple independent handles on a single track, each labelled separately. Useful for allocating or comparing several items on the same scale. |
+    | **Semantic Differential** | Bipolar adjective pairs at each end of a scale (for example, "Modern" to "Traditional"). Respondents place their response between the two extremes. |
+
+    ![An NPS question card showing the 0-to-10 scale rendered for a respondent](/images/placeholder.png)
+
+    <Tip>
+      For NPS questions, OnlineSurvey pre-fills the standard recommended phrasing. You can edit the question text, but the 0-to-10 scale and Promoter/Passive/Detractor calculation are applied automatically.
+    </Tip>
+  </Tab>
+
+  <Tab title="Grids">
+    Grid questions display multiple items (rows) evaluated on the same set of options (columns). They are efficient when you need to rate or compare several concepts using the same scale.
+
+    | Type | What it does |
+    |---|---|
+    | **Radio Grid** | Each row has a set of radio buttons. Respondents select one answer per row. Common for attribute ratings and agreement batteries. |
+    | **Checkbox Grid** | Each row has checkboxes. Respondents can select multiple answers per row. |
+    | **Slider Grid** | Each row contains its own slider. Useful when each item needs a numeric rating on an independent track. |
+    | **Dropdown Grid** | Each cell is a dropdown menu. Saves space when columns have many options. |
+    | **Rating Grid** | A visual star or numeric rating per row, all rendered in a compact table layout. |
+    | **Open Row Grid** | Each row contains a short-text input. Use this when you need a free-text answer for each of several items. |
+
+    ![A radio grid question with four rows and five columns shown on the canvas](/images/placeholder.png)
+
+    **Row and Column Rotation**
+
+    All grid types support row randomisation and column randomisation independently. Enable either option in the settings panel to reduce order bias. You can also fix specific rows or columns at the top or bottom while randomising the rest.
+
+    <Note>
+      Grids with many rows can be long on mobile. Consider enabling the **Mobile stack** option, which breaks the grid into individual card-style questions on small screens while keeping the grid layout on desktop.
+    </Note>
+  </Tab>
+
+  <Tab title="Ranking">
+    Ranking questions ask respondents to sort or allocate values across a set of items. They reveal preferences more precisely than simple multiple-choice selection.
+
+    | Type | What it does |
+    |---|---|
+    | **Drag to Rank** | Respondents drag items into their preferred order. Clear and intuitive on both desktop and touch screens. |
+    | **Click Order** | Respondents click items one at a time to assign a rank. Each click assigns the next rank number. Good for longer lists where dragging becomes tedious. |
+    | **Constant Sum** | Respondents allocate a fixed total (for example, 100 points) across a set of items. Useful for budget allocation and priority-setting exercises. |
+    | **Paired Comparison** | Respondents see two items at a time and pick the preferred one. The question cycles through all pairs automatically. Ideal for rigorous preference measurement. |
+
+    ![A drag-to-rank question showing three items in a ranked list with drag handles](/images/placeholder.png)
+
+    <Tip>
+      Constant sum questions support a configurable total and optional per-item minimum and maximum. Set these in the validation panel to prevent respondents from allocating 0 to every item or putting everything on one option.
+    </Tip>
+  </Tab>
+
+  <Tab title="Open Ends">
+    Open-end questions collect free-text or formatted input from respondents. Use them when you need verbatim responses, contact information, or structured numeric data.
+
+    | Type | What it does |
+    |---|---|
+    | **Short Text** | A single-line text box. Ideal for names, job titles, or brief answers. Supports minimum and maximum character limits. |
+    | **Long Text** | A multi-line textarea. Use this for open feedback, suggestions, or any answer that may run to several sentences. Supports word count validation. |
+    | **Email** | A text field validated to accept only correctly formatted email addresses. |
+    | **Phone** | A field that accepts phone numbers, with optional country code picker. |
+    | **URL** | A field validated to accept only correctly formatted web addresses. |
+    | **Number** | A numeric input with optional minimum, maximum, and decimal-places validation. |
+    | **Pattern / Regex** | A text field where you supply a custom validation pattern. Use this for postal codes, product codes, or any structured string format. |
+
+    ![A long-text open-end question with the character counter visible beneath the text area](/images/placeholder.png)
+
+    <Note>
+      All open-end validation runs on the server, not just in the browser, so responses that bypass client-side checks are still caught before they enter your dataset.
+    </Note>
+  </Tab>
+
+  <Tab title="Dates and Times">
+    Date and time questions collect temporal data with a structured picker interface. They remove formatting inconsistencies that occur when respondents type dates as free text.
+
+    | Type | What it does |
+    |---|---|
+    | **Date** | A calendar picker for a single date. Supports minimum and maximum date bounds. |
+    | **Time** | A time picker in 12-hour or 24-hour format. |
+    | **Date Range** | Two calendar pickers for a start and end date. The end date is automatically constrained to be on or after the start date. |
+    | **Time Range** | Start and end time pickers. Useful for shift scheduling or availability surveys. |
+    | **Date of Birth** | A date picker combined with an automatic age calculation. Use the age screening option to screen out respondents who fall outside a target age range without revealing the cutoff to them. |
+    | **Date and Time (combined)** | A single picker that captures both a date and a time together. Useful for appointment-scheduling or event-recall surveys. |
+
+    ![A date-of-birth picker question with the age screening panel visible on the right](/images/placeholder.png)
+
+    <Tip>
+      For date bounds, you can set a relative bound (for example, "no earlier than today") rather than a fixed calendar date. This keeps screener questions accurate without needing to edit them as time passes.
+    </Tip>
+  </Tab>
+</Tabs>
+
+## Special Blocks and Question Banks
+
+Beyond the six core families, the question picker includes several additional items.
+
+<CardGroup cols={2}>
+  <Card title="Demographics Bank" icon="users">
+    A curated library of pre-written demographic questions covering age, gender, household income, education, employment status, and more. Add any demographic question in one click without writing it from scratch.
+  </Card>
+  <Card title="Image Hotspot" icon="map-pin">
+    Upload an image and define clickable zones on it. Respondents click the area of the image that matches their answer. Useful for packaging tests, UI feedback, and map-based questions.
+  </Card>
+  <Card title="Heatmap" icon="fire">
+    Similar to image hotspot, but records the exact coordinates of every click rather than mapping to predefined zones. Results are displayed as a heat overlay on the original image.
+  </Card>
+  <Card title="Content Block" icon="text">
+    Not a question but a display element. Use content blocks to add instructions, section headers, introductory text, or images between questions without collecting a response.
+  </Card>
+</CardGroup>

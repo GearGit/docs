@@ -1,0 +1,62 @@
+---
+title: 'Per-Question Analytics: Charts and Counts for Every Question'
+sidebarTitle: 'Question Analytics'
+description: 'Learn how the Results view automatically selects the right chart for each question, and how to read counts, percentages, NET scores, and segment filters.'
+---
+
+The Results view gives you an instant visual summary of every question in your survey, without any setup. This page explains how charts are chosen automatically, how to read the numbers correctly, and how to filter and export what you see.
+
+## How Chart Types Are Chosen
+
+OnlineSurvey selects the most appropriate chart for each question based on its type. You do not need to configure anything. A few common mappings:
+
+- **Single-choice questions** display as a horizontal bar chart, one bar per option.
+- **Multi-choice questions** display as a horizontal bar chart where bars can exceed 100% because respondents can select more than one option.
+- **Grid questions** display as a stacked bar chart, one row per sub-item and one segment per scale point.
+- **Scale and rating questions** display as a distribution bar with NET score callouts.
+- **Open-ended questions** display as a word cloud alongside a scrollable list of verbatim responses.
+- **Numeric questions** display as a histogram with mean, median, and standard deviation shown below.
+
+If you prefer a different chart style for a given question, click the **Chart type** icon in the top-right corner of that question's card to switch between the available options for that question type.
+
+![The Results view showing several question cards, each with its automatically selected chart type](/images/placeholder.png)
+
+## Reading Counts and Percentages
+
+Each chart shows both the raw count (number of respondents who chose that option) and the percentage. The percentage is always calculated as a share of the base, which is the number of respondents who were shown that question. It is never calculated as a percentage of the sum of counts.
+
+This distinction matters for multi-choice questions. If 80 out of 100 respondents who saw a question selected option A and 60 selected option B, the percentages shown are 80% and 60%, not 57% and 43%. The sum of percentages on a multi-choice question will therefore often exceed 100%.
+
+<Note>
+  The base count for each question is shown directly beneath the chart title. If your survey uses display logic, different questions may have different bases because not every respondent was shown every question.
+</Note>
+
+![A single-choice bar chart showing option labels, counts, and percentages based on the question base](/images/placeholder.png)
+
+## NET Scores: Top-Two Box and Bottom-Two Box
+
+For scale questions, the Results view automatically calculates NET scores. The **Top-Two Box (T2B)** score is the combined percentage of respondents who chose one of the two most positive options on the scale. The **Bottom-Two Box (B2B)** score is the combined percentage who chose one of the two most negative options.
+
+NET scores appear as callout badges above the chart. You can hover over a badge to see the individual option percentages that make up the combined score.
+
+<Tip>
+  For a five-point satisfaction scale, the T2B score is the share of respondents who answered "Satisfied" or "Very satisfied". This is the figure most stakeholders will want to see in a headline summary.
+</Tip>
+
+## Filtering Charts by Segment or Date
+
+You can apply filters to the Results view to see how a subgroup of respondents answered each question. Open the **Filter** panel at the top of the Results page and add one or more conditions.
+
+Filter conditions can be based on:
+- **A respondent's answer to another question** (for example, show results only for respondents who said they are a manager).
+- **Disposition** (for example, show only Completes).
+- **Date range** (for example, show only responses collected in the first two weeks of fieldwork).
+- **Survey version** (for example, compare version 1 and version 2 respondents side by side).
+
+When a filter is active, every chart on the page updates simultaneously to reflect only the filtered base. The base count beneath each chart title also updates.
+
+![The filter panel open at the top of the Results view with a segment condition applied and all charts updated to reflect the filtered base](/images/placeholder.png)
+
+## Topline Export
+
+To share the Results view with stakeholders who do not have access to the platform, click **Export topline** at the top of the Results page. This generates a formatted document containing every chart, its base, its counts and percentages, and any NET scores, in the state they are currently filtered. The topline export is available as a PDF or a PowerPoint file.

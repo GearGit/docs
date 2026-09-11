@@ -1,0 +1,69 @@
+---
+title: 'Published Versions: How OnlineSurvey Manages Live Surveys'
+sidebarTitle: 'Published Versions'
+description: 'Learn how OnlineSurvey compiles an immutable snapshot on publish, how respondents pin to a version, and why this matters for longitudinal research.'
+---
+
+When you publish a survey in OnlineSurvey, the platform compiles your draft into an **immutable snapshot** called a published version. That snapshot is what respondents fill. Your draft stays fully editable, so you can keep refining future changes without disturbing the live survey.
+
+This page explains how the versioning model works, what changes when you publish a new version, and why the model is especially valuable for longitudinal and tracker research.
+
+## What Happens When You Publish
+
+Publishing is a deliberate compile step. OnlineSurvey takes your current draft, locks it into a numbered version, and begins serving that version to respondents who arrive through your survey link. The draft and the live version become separate. Edits you make to the draft after publishing do not change anything respondents see until you publish again.
+
+![The publish panel showing the current version number and a Publish button](/images/placeholder.png)
+
+Each published version receives a version number. You can view the full history of versions in the survey settings panel, including when each version was published and how many sessions it collected.
+
+## Respondents Are Pinned to a Version
+
+When a respondent opens your survey link, they are assigned to the version that is live at that moment. If you publish a new version while some respondents are still in progress on the previous one, those in-progress respondents continue on the version they started. They are not moved to the new version mid-session.
+
+This means your dataset is always clean about which version produced which responses. In the results dashboard, you can filter by version to compare data across waves or to understand the impact of a survey change.
+
+![The results dashboard version filter showing two selectable version numbers](/images/placeholder.png)
+
+## Editing the Draft While Live
+
+You never have to take a survey offline to make edits. The draft is always yours to change. You can revise question wording, add new elements, adjust logic, or restructure blocks at any time, and none of those changes affect respondents on the current live version.
+
+When you are ready to roll out a change, publish the updated draft. From that moment forward, new respondents fill the new version, while anyone who started on the previous version continues on the old one.
+
+<Tip>
+Use the version history panel to annotate each version with a note about what changed, for example "Added new concept in Block 3" or "Revised NPS question wording." Those notes make it much easier to interpret version-level differences in your results later.
+</Tip>
+
+## Why This Matters for Longitudinal Research
+
+Tracker studies and multi-wave research depend on consistency. If the question wording, scale, or order changes between waves, you cannot meaningfully compare the numbers.
+
+OnlineSurvey's versioning model solves this problem directly. When you run Wave 1 of a tracker, you publish a version and collect responses against it. When you run Wave 4 many months later, you can publish that exact same version again, or keep the link pointed to the original version. Respondents in Wave 1 and Wave 4 are both pinned to the same immutable snapshot, so the data is genuinely comparable.
+
+<CardGroup cols={2}>
+  <Card title="Consistent question wording" icon="equals">
+    Because the version is immutable, the exact text, order, and scale of every question is preserved across waves.
+  </Card>
+  <Card title="Auditable history" icon="clock-rotate-left">
+    The version number recorded with every session makes it easy to reconstruct exactly what a respondent saw, even years later.
+  </Card>
+  <Card title="Safe iteration" icon="pencil">
+    You can refine the draft for future waves without any risk of altering the questions respondents are currently answering.
+  </Card>
+  <Card title="Clean version comparison" icon="code-compare">
+    If you deliberately change a question between waves, the version filter in results makes it easy to separate the two datasets and note the methodological change.
+  </Card>
+</CardGroup>
+
+## When to Publish a New Version
+
+Publish a new version when you want respondents to start seeing your latest draft changes. Common reasons include:
+
+- Correcting a typo or wording error in a question.
+- Adding a new question or block to an ongoing study.
+- Updating quota targets or logic rules.
+- Starting a new wave of a tracker with intentional changes.
+
+<Warning>
+Once a version is published and has collected responses, you cannot edit that version's content. If you need to fix an error, make the change in your draft and publish a new version. Sessions already collected on the previous version are unaffected and remain in your data.
+</Warning>

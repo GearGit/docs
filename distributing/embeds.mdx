@@ -1,0 +1,90 @@
+---
+title: 'Embedding Your Survey on a Website or Landing Page'
+sidebarTitle: 'Embeds'
+description: 'Embed your survey inline on a page or as a dialog pop-up by copying the snippet from the Distribute tab and pasting it into your site.'
+---
+
+Embedding lets you place your survey directly on a page you own, so respondents never have to leave your site. OnlineSurvey provides a short snippet of code that you copy from the Distribute tab and paste into your page's HTML. No developer configuration is required beyond that single paste. This page explains the two embed modes and how to get set up.
+
+## The Two Embed Modes
+
+OnlineSurvey supports two ways to embed a survey on your website.
+
+<CardGroup cols={2}>
+  <Card title="Inline Embed" icon="table-columns">
+    The survey appears as a fixed-height panel inside your page content, sitting between other elements like text and images. Use this mode when you want the survey to be a visible, permanent part of the page, such as on a dedicated feedback page or a post-purchase confirmation screen.
+  </Card>
+  <Card title="Dialog (Pop-up) Embed" icon="window-restore">
+    The survey opens in a centered modal overlay when a visitor triggers it, typically by clicking a button or after a time delay. Use this mode when you want to invite feedback without making it the primary focus of the page, such as an exit-intent prompt or a post-content feedback nudge.
+  </Card>
+</CardGroup>
+
+![Side-by-side comparison of an inline embed and a dialog embed on a web page](/images/placeholder.png)
+
+## Get Your Embed Snippet
+
+<Steps>
+
+  ### Open the Distribute Tab
+
+  Open your survey in the editor and click **Distribute** in the top navigation bar.
+
+  ### Go to the Embed Section
+
+  Scroll down to the **Embed** panel. You will see the two embed modes listed as tabs: **Inline** and **Dialog**.
+
+  ![The Distribute tab with the Embed panel visible and the Inline tab selected](/images/placeholder.png)
+
+  ### Choose Your Embed Mode
+
+  Click **Inline** or **Dialog** depending on which mode you want. The snippet in the panel updates to match your selection.
+
+  ### Configure the Options
+
+  For an inline embed, set the desired height of the survey panel using the height field. For a dialog embed, choose what triggers the overlay: a button click, a time delay in seconds, or scroll depth as a percentage of the page.
+
+  ![The Embed panel showing the height field for inline mode or the trigger options for dialog mode](/images/placeholder.png)
+
+  ### Copy the Snippet
+
+  Click **Copy snippet**. The code is copied to your clipboard.
+
+</Steps>
+
+## Paste the Snippet Into Your Page
+
+<Steps>
+
+  ### Open Your Page's HTML
+
+  Open the page where you want the survey to appear in your website editor, CMS, or HTML file. Most CMS platforms, including WordPress, Webflow, Squarespace, and HubSpot, have an option to insert custom HTML or embed code into a page or section.
+
+  ### Paste at the Right Location
+
+  For an **inline embed**, paste the snippet inside the body of the page, at the exact position where you want the survey panel to appear between your other content.
+
+  For a **dialog embed**, paste the snippet anywhere inside your page content area. The exact position does not matter visually, since the dialog overlays the page as a modal.
+
+  ![A CMS custom HTML block with the OnlineSurvey snippet pasted inside it](/images/placeholder.png)
+
+  ### Save and Publish Your Page
+
+  Save your changes and publish or preview the page in your CMS. The survey should appear or become triggerable straight away. If you see a blank area, check that the survey is published in OnlineSurvey and that the share link has not been password-protected or set to a future open date.
+
+</Steps>
+
+<Note>
+  The embed snippet always loads the latest published version of your survey. When you publish a new version in OnlineSurvey, the embedded survey updates automatically without any change to the snippet on your page.
+</Note>
+
+## Adjusting the Embed Settings Later
+
+You can change embed options, such as the inline height or the dialog trigger, at any time in the Distribute tab. After adjusting, copy the updated snippet and replace the one on your page. If you change only the trigger type or height, you must replace the snippet because those settings are encoded in it.
+
+<Tip>
+  If you embed the survey as a dialog on a high-traffic page, monitor your response count against your plan's monthly limit. A popular page can fill a response cap quickly. You can set a response cap in the Share Links panel to prevent overages.
+</Tip>
+
+## Embed and Password Protection
+
+If your survey is password-protected, the password prompt will appear inside the embed panel or dialog before the survey loads. This is intentional and consistent with the standalone link experience. If you do not want respondents to see a password prompt on an embedded survey, remove the password from the Share Links settings before embedding.

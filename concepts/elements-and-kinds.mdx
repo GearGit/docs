@@ -1,0 +1,73 @@
+---
+title: 'Elements and Kinds: The Building Blocks of a Survey'
+sidebarTitle: 'Elements and Kinds'
+description: 'Learn what elements and kinds are in OnlineSurvey, and how the kind you choose determines what a respondent sees and which logic tools apply.'
+---
+
+Every item you place in the survey builder is called an **element**. An element can be a question a respondent answers, a block of explanatory text, an image, a page break, or an ending screen. The **kind** of an element determines its role: what it displays, what data it collects, and how logic can act on it.
+
+Understanding elements and kinds helps you build surveys that are both well-structured and analytically clean. This page explains the main kinds available in OnlineSurvey.
+
+![The builder canvas showing a variety of element kinds in a survey](/images/placeholder.png)
+
+## Question Elements
+
+Question elements are the core of any survey. They present a prompt and collect a measurable answer. OnlineSurvey groups question kinds into six families.
+
+### Closed Questions
+
+Closed questions give respondents a fixed set of options to choose from. Single-select, multi-select, and dropdown are the most common examples. Because every answer maps to a predefined value, closed questions are easy to aggregate and chart.
+
+### Scale Questions
+
+Scale questions ask respondents to rate or evaluate something along a continuum. Net Promoter Score (NPS), Likert agreement scales, star ratings, and slider scales all belong to this family. They are well suited to benchmarking and tracking sentiment over time.
+
+### Grid Questions
+
+Grid questions display multiple items in rows and let respondents rate or select across a set of shared columns. A satisfaction grid, for example, might list five product features in rows and ask respondents to rate each one on a five-point scale. Grids compress several related questions into a compact, comparable format.
+
+### Ranking Questions
+
+Ranking questions ask respondents to order a list of items by preference, importance, or another criterion. They are useful when you need to understand relative priority rather than absolute scores.
+
+### Open-End Questions
+
+Open-end questions collect free-text answers. They capture language and nuance that a closed list cannot anticipate. OnlineSurvey's AI narration feature can surface themes and patterns from open-end responses automatically.
+
+### Date and Time Questions
+
+Date and time questions ask respondents to enter or select a specific date, time, or date range. They are commonly used in screening questions (for example, to confirm a recent purchase) or in diary-style studies.
+
+## Content and Structural Elements
+
+Not every element collects data. Content and structural elements shape the respondent's experience and the logical structure of the survey.
+
+### Text Blocks
+
+A text block displays a heading, a paragraph, or any formatted passage without asking a question. Use text blocks to introduce a new section, provide instructions, or add a consent statement before sensitive questions.
+
+### Images
+
+Image elements embed a visual, such as a product photo or a concept mock-up, directly in the survey. Respondents see the image as context before or alongside a question.
+
+### Page Breaks
+
+A page break divides the survey into separate pages so that respondents submit one page before seeing the next. Page breaks control pacing and are required before certain logic checks can fire. See [Page Breaks](/concepts/page-breaks) for a full explanation.
+
+### Endings
+
+An ending element is the final screen a respondent sees when their session closes. Every survey needs at least one ending, and you can add multiple endings to handle different outcomes such as a completion, a screen-out, or a quota-full message. See [Endings and Dispositions](/concepts/endings-and-dispositions) for details.
+
+<Tip>
+You can reorder elements at any time by dragging them on the builder canvas. Changing the order of elements in the draft does not affect responses already collected against a published version.
+</Tip>
+
+## How Kinds Affect Logic
+
+Logic tools in OnlineSurvey act on elements by their kind. Branching can route respondents based on the answer to a closed question but not to a text block, because a text block has no answer value. Scoring accumulates points from scale and closed question elements. Quotas fill against the answer options of a closed question.
+
+Choosing the right kind for each element is therefore not just a design decision. It determines which logic tools are available to you as you build.
+
+<Note>
+You can change an element's kind after you create it as long as the survey has not been published. Once a version is published and has collected responses, the elements locked in that version cannot be edited. Your draft remains fully editable.
+</Note>

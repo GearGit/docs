@@ -1,0 +1,76 @@
+---
+title: 'Export Survey Data: CSV, Excel, SPSS, and Data Dictionary'
+sidebarTitle: 'Exports'
+description: 'Export survey data as CSV, Excel, SPSS .sav, or a data dictionary. Learn format options, filters, and how as-answered labels are preserved in every file.'
+---
+
+OnlineSurvey lets you export your collected responses to four file formats so you can analyze data in your preferred tool. This page explains each format, walks through the export configuration options, and describes how the platform preserves label accuracy across all exports.
+
+## Export Formats
+
+<CardGroup cols={2}>
+  <Card title="CSV" icon="file-csv">
+    A plain comma-separated file that streams regardless of dataset size. Best for importing into any analysis tool that reads flat files. Values can be exported as labels or numeric codes.
+  </Card>
+  <Card title="Excel" icon="file-excel">
+    An .xlsx file with one or more sheets. Supports both labels and codes as the value format, and gives you a choice of loop orientation (wide or long). Useful for stakeholders who work directly in spreadsheets.
+  </Card>
+  <Card title="SPSS .sav" icon="database">
+    A native SPSS file with variable names, value labels, and multiple response sets built in. Analysts who use SPSS or compatible tools such as SAS or Stata will find the file ready to use without manual recoding.
+  </Card>
+  <Card title="Data Dictionary" icon="book">
+    A structured reference file that lists every variable, its display label, its source question, and its provenance (the survey version in which it first appeared). Use this alongside a CSV or SPSS file to document your dataset.
+  </Card>
+</CardGroup>
+
+## How to Request an Export
+
+<Steps>
+  <Step title="Open the Export Panel">
+    Go to the **Responses** tab for your survey and click **Export** in the top-right corner. The export panel slides open on the right side of the screen.
+
+    ![The Responses tab with the Export button highlighted in the top-right corner](/images/placeholder.png)
+  </Step>
+  <Step title="Choose a Format">
+    Select one of the four formats: **CSV**, **Excel**, **SPSS .sav**, or **Data Dictionary**. The options in the panel update to show only the settings relevant to your chosen format.
+  </Step>
+  <Step title="Choose a Value Format">
+    For CSV and Excel exports, choose whether values should be exported as **Labels** (the text the respondent saw, such as "Strongly agree") or **Codes** (the numeric values assigned to each option, such as 1, 2, 3). SPSS exports always include both: codes as the stored value and labels as SPSS value labels.
+
+    ![The export panel showing the value format toggle set to Labels](/images/placeholder.png)
+  </Step>
+  <Step title="Choose Loop Orientation (Excel Only)">
+    If your survey contains loop blocks, choose whether to export loop iterations **Wide** (one column per iteration per question) or **Long** (one row per iteration, with an iteration number column). Long format is generally easier to work with in pivot tables and statistical tools.
+  </Step>
+  <Step title="Apply Filters">
+    Narrow your export to a subset of responses using the same filters available in the grid:
+    - **Disposition:** include Completes, Screened Out, Quota Full, or Dropped Off responses.
+    - **Date range:** restrict to responses collected between two dates.
+    - **Version:** export responses collected against a specific published version of the survey.
+
+    Leave all filters off to export every response across all dispositions and versions.
+
+    ![The filter section of the export panel with disposition checkboxes and a date range picker](/images/placeholder.png)
+  </Step>
+  <Step title="Download the File">
+    Click **Generate export**. For small datasets the file downloads immediately. For large datasets a progress indicator appears and the file is available for download once processing is complete. You will also receive an email with a download link if the file takes more than a few seconds to generate.
+  </Step>
+</Steps>
+
+<Note>
+  Exports are not gated by plan. All plans, including Free, can export their collected responses in any available format.
+</Note>
+
+## As-Answered Labels in Exports
+
+If you edited an option label in the survey draft after responses had already been collected, the export reflects the label that was shown to each respondent at the time they answered. This is the as-answered label.
+
+For example, if option A read "Very satisfied" when respondent 001 answered but you later changed it to "Extremely satisfied", respondent 001's export row will still show "Very satisfied". This behavior applies to CSV, Excel, and SPSS exports alike, and it means your data file accurately represents what each respondent saw and chose.
+
+<Tip>
+  The data dictionary includes a **Provenance** column that records which survey version each variable originates from. If you field a survey across multiple versions with different option wordings, export the data dictionary alongside your response file to document the label history.
+</Tip>
+
+## Removed Options
+
+If an option was present in an earlier published version of your survey but was removed in a later version, responses that selected that option are still fully exported. The removed option's label and code are preserved in the export exactly as they appeared to respondents at the time, and the data dictionary flags the option as removed-in-version so you have a clear record.

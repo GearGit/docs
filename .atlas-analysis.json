@@ -1,0 +1,150 @@
+{
+  "projectType": "saas",
+  "projectName": "OnlineSurvey",
+  "projectDescription": "A research-grade survey platform for B2B teams that builds, distributes, and analyzes surveys with AI-assisted drafting, full logic tooling, and structured insight reporting.",
+  "theme": "willow",
+  "primaryColor": "#BB6440",
+  "lightColor": "#17171F",
+  "darkColor": "#cdcccc",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "getting-started/what-is-onlinesurvey",
+          "getting-started/build-your-first-survey",
+          "getting-started/publish-and-share",
+          "getting-started/read-your-first-responses"
+        ]
+      },
+      {
+        "group": "Concepts",
+        "pages": [
+          "concepts/elements-and-kinds",
+          "concepts/blocks-and-screens",
+          "concepts/page-breaks",
+          "concepts/endings-and-dispositions",
+          "concepts/published-versions",
+          "concepts/responses-and-sessions"
+        ]
+      },
+      {
+        "group": "Building Surveys",
+        "pages": [
+          "building/builder-and-editing",
+          "building/question-types",
+          "building/validation-and-required",
+          "building/themes-and-branding",
+          "building/media-library",
+          "building/collaboration",
+          "building/preview"
+        ]
+      },
+      {
+        "group": "Logic",
+        "pages": [
+          "logic/branching-and-routing",
+          "logic/screen-outs",
+          "logic/conditional-visibility",
+          "logic/looping",
+          "logic/carry-forward-and-piping",
+          "logic/variables-and-scoring",
+          "logic/randomization",
+          "logic/quotas"
+        ]
+      },
+      {
+        "group": "Publishing",
+        "pages": [
+          "publishing/publish-and-versions",
+          "publishing/editing-a-live-survey",
+          "publishing/respondent-experience"
+        ]
+      },
+      {
+        "group": "Distributing",
+        "pages": [
+          "distributing/share-links",
+          "distributing/embeds",
+          "distributing/email-campaigns",
+          "distributing/contact-lists-and-mail-merge",
+          "distributing/delivery-tracking"
+        ]
+      },
+      {
+        "group": "Responses and Data",
+        "pages": [
+          "responses/responses-grid",
+          "responses/editing-an-answer",
+          "responses/exports"
+        ]
+      },
+      {
+        "group": "Analysis",
+        "pages": [
+          "analysis/per-question-analytics",
+          "analysis/reports",
+          "analysis/ai-insights"
+        ]
+      },
+      {
+        "group": "AI",
+        "pages": [
+          "ai/generate-from-brief",
+          "ai/inline-question-editing",
+          "ai/how-credits-work"
+        ]
+      },
+      {
+        "group": "Account and Team",
+        "pages": [
+          "account/organizations-and-workspaces",
+          "account/roles-and-seats",
+          "account/plans-and-limits",
+          "account/billing"
+        ]
+      },
+      {
+        "group": "Troubleshooting",
+        "pages": [
+          "troubleshooting/common-issues",
+          "troubleshooting/response-quality",
+          "troubleshooting/contact-support"
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "AI survey generation from a plain-English brief",
+    "50 question types across 6 families (closed, scales, grids, ranking, open ends, dates)",
+    "13 logic tools: branching, screen-outs, display logic, quotas, carry-forward, loops, piping, scoring, randomization",
+    "Real-time collaborative editing with character-level merge",
+    "Immutable version-pinned published snapshots for longitudinal tracking",
+    "4 distribution channels: link/QR, email campaigns, embed, panel handoff",
+    "6 report artefacts: results, response grid, topline, narrative document, methodology, shared link",
+    "4 export formats: CSV, Excel, SPSS .sav, data dictionary",
+    "AI inline question editing with proposal/accept flow",
+    "AI narrated insights from responses",
+    "Per-question analytics with percent-of-base calculations",
+    "Quota management with crossed cells and live fill tracking",
+    "Email campaign delivery tracking (sent, opened, clicked, bounced)"
+  ],
+  "publicApiSurface": [
+    "Survey builder canvas with real-time collaboration",
+    "AI brief-to-survey generation",
+    "AI inline question editing",
+    "Logic rule editor (if-then, forward-only, first-match-wins)",
+    "Quota cell management",
+    "Publish / version snapshot",
+    "Share link configuration (password, schedule, response cap)",
+    "Email campaign creation and scheduling",
+    "Contact list upload and mail merge",
+    "Embed code generation",
+    "Responses grid with per-respondent path replay",
+    "Per-question analytics charts",
+    "Report builder and shareable report links",
+    "Export (CSV, Excel, SPSS, data dictionary)",
+    "Workspace and seat management",
+    "AI credits dashboard"
+  ]
+}

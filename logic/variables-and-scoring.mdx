@@ -1,0 +1,91 @@
+---
+title: 'Variables and Scoring: Track and Calculate Survey Values'
+sidebarTitle: 'Variables and Scoring'
+description: 'Learn how to create scoring questions, assign point values to answer options, and route respondents to different endings based on their total score.'
+---
+
+Variables and scoring let you track and calculate values as a respondent moves through your survey. A variable is a named container that accumulates a number or text value. Scoring is a specialized use of variables where you assign point values to answer options and the points add up to a total. This page focuses on scoring, using a product-fit quiz as a running example.
+
+<Info>
+  Scoring and variables are available on the **Pro plan** and above. If you are on a Free or Basic plan, you will see the Variables panel in the builder but will be prompted to upgrade before you can activate scoring rules.
+</Info>
+
+## When to Use Scoring
+
+Scoring is useful any time you want to classify a respondent based on the combination of their answers rather than any single answer alone. Common use cases include:
+
+- **Product fit quizzes:** Route prospects to different onboarding paths based on their needs.
+- **Knowledge checks:** Show respondents how many correct answers they got.
+- **Recommendation engines:** Suggest a product tier or plan based on a cumulative score.
+
+## How Scoring Works
+
+Each answer option on a scoring question has a **point value** you set. When the respondent selects that option, its points are added to the running total for the score variable. At the end of the survey (or at any point in the flow), you can check the total score against a set of **bands** and route the respondent to the appropriate ending or section.
+
+### Example: A Product Fit Quiz
+
+Imagine a three-question quiz that helps prospects identify which OnlineSurvey plan fits their needs.
+
+- **Q1, Team size:** Solo (1 pt), 2-10 people (2 pts), 11 or more (3 pts).
+- **Q2, Response volume needed:** Under 1,000 per month (1 pt), 1,000-20,000 (2 pts), More than 20,000 (3 pts).
+- **Q3, Advanced logic needed?:** No (1 pt), Yes (3 pts).
+
+The minimum possible score is 3. The maximum is 9. Based on the total, the respondent is routed to a "Free or Basic is a good fit," "Pro is a good fit," or "Let's talk Custom" ending.
+
+## Setting Up Scoring
+
+<Steps>
+  <Step title="Create a score variable">
+    In the builder, open the **Variables** panel (found in the survey-level settings or the Logic menu). Click **Add variable**, name it (for example, "FitScore"), set its type to **Number**, and set its initial value to **0**.
+
+    ![The Variables panel open with a new FitScore variable being created](/images/placeholder.png)
+  </Step>
+
+  <Step title="Enable scoring on a question">
+    Select the first question you want to contribute to the score. Open the **Logic** tab in the right-hand panel and find the **Scoring** section. Toggle scoring on and select **FitScore** as the target variable.
+
+    ![The Scoring toggle enabled on a question, with the FitScore variable selected as the target](/images/placeholder.png)
+  </Step>
+
+  <Step title="Assign point values to each option">
+    A point-value field appears next to each answer option. Enter the number of points each option should contribute to the total score. You can assign zero points to an option if it should not affect the score.
+
+    ![The answer options for Q1 with point value fields showing 1, 2, and 3 next to each option](/images/placeholder.png)
+  </Step>
+
+  <Step title="Repeat for each scoring question">
+    Repeat steps 2 and 3 for every question that should contribute to the score. All questions should point to the same **FitScore** variable so the points accumulate into one total.
+  </Step>
+
+  <Step title="Add a score-based routing rule">
+    After the last scoring question, add a branching rule. In the **If** dropdown, select the **FitScore** variable. Choose a condition such as "is less than or equal to" and enter a threshold value. In the **Then go to** dropdown, select the appropriate ending.
+
+    Add additional rules for each score band, ordering them from lowest to highest threshold. Set the **Else** destination to the highest-tier ending for respondents with the maximum score.
+
+    ![A branching rule reading: If FitScore is less than or equal to 4, go to Free or Basic ending](/images/placeholder.png)
+  </Step>
+
+  <Step title="Create the ending screens">
+    In the **Endings** section, create a separate ending for each score band. Write a tailored message for each, such as a plan recommendation or a personalized summary.
+
+    ![Three custom ending screens in the Endings panel, one for each score band](/images/placeholder.png)
+  </Step>
+
+  <Step title="Preview and test">
+    Open **Preview** and walk through the quiz choosing low-score answers to confirm you reach the correct ending. Repeat with high-score answers to verify each band routes correctly.
+  </Step>
+</Steps>
+
+## Using Variables Beyond Scoring
+
+Scoring is a specific pattern, but variables can do more. You can:
+
+- Store a respondent's open-text answer in a variable and pipe it into later questions.
+- Use a variable as a counter, incrementing it each time a condition is met.
+- Pass a variable's value to a URL parameter at the end of the survey, for integration with external systems.
+
+To increment a variable or set it to a specific value based on an answer, use the **Set variable** action inside a branching rule. The action appears in the rule editor alongside routing destinations.
+
+<Tip>
+  Give your variables short, descriptive names with no spaces (for example, "FitScore" or "AgeGroup"). Names are used in the rule editor dropdowns and in your data export column headers.
+</Tip>

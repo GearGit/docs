@@ -1,0 +1,153 @@
+---
+title: 'Validation and Required Answers in OnlineSurvey Surveys'
+sidebarTitle: 'Validation'
+description: 'Learn how to mark questions as required and apply validation rules including text limits, number bounds, pattern matching, and more.'
+---
+
+Validation rules ensure respondents give complete, correctly formatted answers before they can advance in your survey. This page explains how to mark a question as required and covers every validation type available in OnlineSurvey.
+
+## Marking a Question as Required
+
+To require an answer, open a question's settings panel and turn on the **Required** toggle. When required is on, respondents cannot move to the next page without answering that question. An inline error message appears if they try to skip it.
+
+![The settings panel with the Required toggle turned on and an error message preview shown below the question](/images/placeholder.png)
+
+<Note>
+  Required applies to the question as a whole. For grid and ranking questions, you can also require completeness at the row or item level using the additional validation rules described below.
+</Note>
+
+## Validation Rules by Question Type
+
+OnlineSurvey supports the following validation rules. You apply them in the **Validation** section of each question's settings panel.
+
+<Accordion title="Closed Questions (Single Choice, Multiple Choice, Dropdown, Image Tiles)">
+  **Required**
+  The respondent must select at least one option.
+
+  **Minimum selections**
+  The respondent must select at least a specified number of options. Available on multiple choice questions.
+
+  **Maximum selections**
+  The respondent cannot select more than a specified number of options. Available on multiple choice questions.
+
+  **Exclusive options**
+  Marking a choice as exclusive means selecting it deselects all other choices, and selecting any other choice deselects the exclusive option. Use this for "None of the above" or "Prefer not to say."
+
+  **Require Other text**
+  When the respondent selects the "Other" option, they must also fill in the accompanying text box before they can proceed.
+</Accordion>
+
+<Accordion title="Scale Questions (Likert, NPS, Star, Smiley, Opinion Scale, Semantic Differential)">
+  **Required**
+  The respondent must place a rating on the scale before advancing.
+
+  Scale questions do not support minimum or maximum value constraints beyond the scale itself, since the bounds are set when you configure the scale in the first place.
+</Accordion>
+
+<Accordion title="Slider Questions">
+  **Required**
+  The respondent must interact with the slider and set a value.
+
+  **Minimum value**
+  The respondent's selected value must be greater than or equal to a threshold you set.
+
+  **Maximum value**
+  The respondent's selected value must be less than or equal to a threshold you set.
+
+  For range sliders, both the lower and upper handle are validated individually, and the lower handle is always constrained to be at or below the upper handle automatically.
+</Accordion>
+
+<Accordion title="Grid Questions (Radio, Checkbox, Slider, Dropdown, Rating, Open Row)">
+  **Required**
+  The respondent must provide an answer in every row before advancing.
+
+  **Matrix completeness**
+  You can require that a minimum number of rows are answered, rather than all rows. Set the minimum row count in the validation panel.
+
+  **Row minimum / maximum selections** (Checkbox Grid only)
+  For each row in a checkbox grid, you can set a minimum and maximum number of columns the respondent must select.
+</Accordion>
+
+<Accordion title="Ranking Questions (Drag to Rank, Click Order)">
+  **Required**
+  The respondent must assign a rank to all items.
+
+  **Rank completeness**
+  You can require that only the top N items are ranked, leaving the rest unranked. For example, "Rank your top 3 from the list below."
+</Accordion>
+
+<Accordion title="Constant Sum">
+  **Required**
+  The respondent must enter values in all fields.
+
+  **Constant sum total**
+  The sum of all values the respondent enters must equal exactly the target total you specify (for example, 100). An error message is shown if the values do not sum to that target.
+
+  **Per-item minimum**
+  Each individual allocation must be at least a specified amount.
+
+  **Per-item maximum**
+  Each individual allocation must not exceed a specified amount.
+</Accordion>
+
+<Accordion title="Open-End Questions (Short Text, Long Text, Email, Phone, URL, Number, Pattern)">
+  **Required**
+  The respondent must enter a value before advancing.
+
+  **Minimum text length**
+  The response must contain at least a specified number of characters.
+
+  **Maximum text length**
+  The response cannot exceed a specified number of characters.
+
+  **Minimum word count**
+  The response must contain at least a specified number of words. Available on long-text questions.
+
+  **Maximum word count**
+  The response cannot exceed a specified number of words. Available on long-text questions.
+
+  **Email format**
+  Automatically applied to the Email question type. The value must match a valid email address format.
+
+  **URL format**
+  Automatically applied to the URL question type. The value must match a valid web address format.
+
+  **Number bounds**
+  For number questions, set a minimum value, a maximum value, or both.
+
+  **Decimal places**
+  For number questions, specify how many decimal places are allowed (0 for whole numbers only).
+
+  **Pattern matching**
+  For the Pattern question type, supply a validation pattern (such as a postal code format) that the response must match. If the response does not match the pattern, an error message is shown.
+</Accordion>
+
+<Accordion title="Date and Time Questions">
+  **Required**
+  The respondent must select a date or time before advancing.
+
+  **Minimum date bound**
+  The selected date must be on or after a specified date. You can use a fixed calendar date or a relative value such as "today."
+
+  **Maximum date bound**
+  The selected date must be on or before a specified date, fixed or relative.
+
+  **Age screening (Date of Birth)**
+  Automatically calculates the respondent's age from their date of birth. Set a minimum age, a maximum age, or both. Respondents who fall outside the range are routed to a screen-out ending without being shown the cutoff age.
+</Accordion>
+
+## How Validation Is Enforced
+
+Validation in OnlineSurvey runs on the server, not only in the browser. This means that even if a respondent finds a way to bypass the front-end check (for example, by using a browser extension or submitting the form programmatically), the server will reject the response until it passes all required rules.
+
+![The validation error state on a multiple-choice question asking the respondent to select at least two options](/images/placeholder.png)
+
+Error messages appear inline, directly below the question, so respondents know exactly what they need to fix. You can customise the error message text in the settings panel.
+
+<Tip>
+  Keep error messages instructive rather than just informative. For example, "Please select between 2 and 4 options" is more helpful than "Invalid selection."
+</Tip>
+
+## Validation vs. Logic
+
+Validation rules enforce answer quality on a single question. Logic rules (branching, screen-outs, display logic) control which questions or pages a respondent sees based on their answers. The two systems work together: a question can be both required and gated behind display logic. See the [Branching and Routing](/logic/branching-and-routing) section for more on how to combine them.

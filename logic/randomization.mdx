@@ -1,0 +1,97 @@
+---
+title: 'Randomization: Shuffle Questions and Answer Options'
+sidebarTitle: 'Randomization'
+description: 'Learn how to randomize question order, answer option order, and grid row order to reduce primacy and recency bias in your survey responses.'
+---
+
+Randomization reduces order bias by shuffling the sequence of questions, answer options, or grid rows so that different respondents see them in different orders. This page explains the three types of randomization available in OnlineSurvey, how the seeding works, and how to enable randomization on your questions.
+
+## Why Randomization Matters
+
+When all respondents see the same options in the same order, early items tend to receive more attention and selections than later ones. This is called order bias, or in the case of answer lists, primacy and recency effects. Randomizing the order neutralizes these effects across your sample, making your data more reliable.
+
+## Three Types of Randomization
+
+<CardGroup cols={3}>
+  <Card title="Question order" icon="shuffle">
+    Randomize the sequence of questions within a block. Each respondent sees the same questions but in a different order.
+  </Card>
+  <Card title="Option order" icon="list">
+    Randomize the order of answer choices within a single-select, multi-select, or other closed-ended question.
+  </Card>
+  <Card title="Grid row order" icon="table">
+    Randomize the order of rows in a grid (matrix) question, while keeping the column headers fixed.
+  </Card>
+</CardGroup>
+
+## How Seeding Works
+
+OnlineSurvey uses a **seeded randomization** approach. When a respondent starts the survey, a seed value is generated and stored in their session. Every shuffled list the respondent encounters is determined by that seed.
+
+This means:
+
+- Two respondents see different orders (their seeds differ).
+- If the same respondent returns to the survey and continues their session, they see the same order they saw the first time (the seed is preserved).
+- Your analysis tools can account for the order each respondent saw, because the seed is stored with the response record.
+
+<Note>
+  Seeded randomization does not guarantee that every possible order appears with exactly equal frequency across your sample, especially in small studies. In large samples (hundreds of respondents or more), the distribution of orders is effectively balanced.
+</Note>
+
+## Enabling Randomization on a Question
+
+<Steps>
+  <Step title="Select the question">
+    In the survey builder, click the question you want to randomize. Open the **Settings** tab in the right-hand panel.
+
+    ![A single-select question selected in the builder with the Settings tab open on the right](/images/placeholder.png)
+  </Step>
+
+  <Step title="Find the randomization toggle">
+    Scroll to the **Answer options** section of the Settings panel. You will see a **Randomize option order** toggle.
+
+    ![The Randomize option order toggle in the Answer options section of the Settings panel](/images/placeholder.png)
+  </Step>
+
+  <Step title="Enable randomization">
+    Toggle **Randomize option order** on. The options in the builder canvas will show a shuffle indicator to confirm randomization is active.
+
+    ![The question in the builder canvas with a shuffle icon next to the option list indicating randomization is on](/images/placeholder.png)
+  </Step>
+
+  <Step title="Pin any options that should stay fixed">
+    Some options, such as "None of the above," "Other," or "Prefer not to say," should always appear at the bottom of the list. Click the pin icon next to any option to fix it in place. Pinned options are excluded from the shuffle.
+
+    ![The None of the above option with a pin icon highlighted, keeping it at the bottom of the list](/images/placeholder.png)
+  </Step>
+
+  <Step title="Save and preview">
+    Save the survey and open **Preview** multiple times, or share the preview link with a colleague, to see different option orders and confirm that pinned options stay fixed.
+  </Step>
+</Steps>
+
+## Randomizing Question Order Within a Block
+
+<Steps>
+  <Step title="Select the block">
+    Click the block header in the builder canvas to select the block whose questions you want to shuffle.
+
+    ![A block header selected in the builder canvas with the Block settings panel open on the right](/images/placeholder.png)
+  </Step>
+
+  <Step title="Enable question randomization">
+    In the **Block settings** panel, find the **Randomize question order** toggle and turn it on.
+  </Step>
+
+  <Step title="Pin questions that must stay in place">
+    If any questions must appear at the start or end of the block (for example, an introduction or a summary question), click the pin icon on those questions to lock their position within the block.
+  </Step>
+</Steps>
+
+## Randomizing Grid Rows
+
+To randomize the row order in a grid question, select the grid, open the **Settings** tab, and enable **Randomize row order**. As with options, you can pin individual rows to keep them in a fixed position.
+
+<Tip>
+  Column headers in a grid (the scale labels or attribute labels) are never randomized. Only rows shuffle. This keeps the scale consistent and readable for respondents.
+</Tip>

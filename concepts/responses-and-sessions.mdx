@@ -1,0 +1,72 @@
+---
+title: 'Responses and Sessions: Understanding What Gets Recorded'
+sidebarTitle: 'Responses and Sessions'
+description: 'Learn how OnlineSurvey records sessions and responses, what data each captures, and how incomplete sessions still contribute to your analysis.'
+---
+
+OnlineSurvey records data at two levels: the **session** and the **response**. Understanding the difference helps you interpret your results accurately, diagnose survey quality issues, and make the most of every data point, including data from people who did not finish.
+
+This page defines both terms, explains what gets recorded in each case, and clarifies how dispositions relate to the session and response distinction.
+
+## What Is a Session?
+
+A session begins the moment a respondent opens your survey link and is created in the system. Every subsequent interaction, from the first answer to the final screen, is recorded as part of that session. A session exists whether or not the respondent finishes.
+
+Each session captures:
+
+- Every answer the respondent gave, including partial answers on screens they did not submit.
+- The path they took through the survey, including any branches that redirected them.
+- The disposition assigned when the session closed (Complete, Screened Out, Quota Full, or Dropped Off).
+- The time spent on each screen and the total session duration.
+- The version of the survey they were filling when the session opened.
+
+![The session detail view in the results dashboard showing a single respondent's path and answers](/images/placeholder.png)
+
+## What Is a Response?
+
+In OnlineSurvey, a **response** refers specifically to a session that closed with a **Complete** disposition. A response represents a respondent who passed all screening and quota checks and reached the completion ending screen. Responses form the primary dataset you use for analysis and reporting.
+
+Your plan's response limit counts completed sessions. Screened-out and quota-full sessions are tracked separately and do not count against that limit in the same way.
+
+<Note>
+You can always view screened-out and dropped-off sessions in the dashboard. They are stored and accessible but are clearly labelled by disposition so they do not mix with your completed responses unless you choose to include them.
+</Note>
+
+## Incomplete Sessions Are Still Valuable
+
+Screened-out, quota-full, and dropped-off sessions do not produce a complete response, but they still contain useful data.
+
+<Accordion title="Screened-out sessions">
+A screened-out session includes every answer the respondent gave before the screen-out rule fired. This data can be useful for reviewing your screener effectiveness, for example checking whether a quota cell is filling slowly because of low qualification rates in your sample.
+</Accordion>
+
+<Accordion title="Quota-full sessions">
+A quota-full session shows that a respondent qualified but arrived after their cell was closed. Reviewing the volume of quota-full sessions tells you how much demand exceeded your targets, which can inform sample sizing in future waves.
+</Accordion>
+
+<Accordion title="Dropped-off sessions">
+A dropped-off session is the most analytically rich of the incomplete types. It includes all answers given before the respondent left, their last screen, and the time spent. Clustering drop-offs at a specific screen is a strong signal that the question or screen design needs attention.
+</Accordion>
+
+![The results dashboard showing the disposition breakdown chart with counts for each outcome](/images/placeholder.png)
+
+## Version Recorded with Every Session
+
+Every session records the version of the survey that was live when the session opened. This means you always know exactly which question wording, logic, and structure produced each answer. When you publish a new version, new sessions are pinned to the new version, while in-progress sessions on the previous version are unaffected.
+
+This version pinning is especially important in tracker and longitudinal studies, where comparability across waves depends on respondents answering the same questions. See [Published Versions](/concepts/published-versions) for a full explanation of how versioning works.
+
+## How Sessions Relate to Your Plan Limits
+
+Your plan's response allowance is based on completed sessions. The table below summarises how each disposition is counted.
+
+| Disposition | Counts as a session | Counts toward response limit |
+|---|---|---|
+| Complete | Yes | Yes |
+| Screened Out | Yes | No |
+| Quota Full | Yes | No |
+| Dropped Off | Yes | No |
+
+<Tip>
+If you are approaching your plan's response limit, filtering your dashboard to show only completed sessions gives you the most accurate picture of where you stand. Contact support@onlinesurvey.ai if you need to discuss a limit increase or upgrade to a higher plan.
+</Tip>

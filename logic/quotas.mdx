@@ -1,0 +1,112 @@
+---
+title: 'Quotas: Cap and Monitor Responses by Audience Segment'
+sidebarTitle: 'Quotas'
+description: 'Learn how to set up quota cells to cap responses by segment, monitor fill in real time, and use crossed cells to target intersecting demographics.'
+---
+
+Quotas let you cap the number of responses you collect from specific segments of your audience. When a segment's target count is reached, new respondents who match that segment are sent to a **Quota Full** ending instead of completing the survey. This page explains how quota cells work, how to set one up, how to monitor fill, and how to create crossed cells for more precise targeting.
+
+<Info>
+  Quotas are available on the **Pro plan** and above. If you are on a Free or Basic plan, you will see the Quotas option in the builder but will be prompted to upgrade before you can activate it.
+</Info>
+
+## How Quotas Work
+
+A quota is made up of one or more **cells**. Each cell defines a target segment (for example, women aged 18 to 34) and a maximum response count (for example, 100 completions). OnlineSurvey counts responses that meet the cell's condition in real time. When the count hits the target, the cell is marked as full and any new respondent who matches is immediately routed to the Quota Full ending.
+
+Respondents are evaluated against quota cells as they answer the qualifying questions. This means a respondent can be quota-full partway through the survey, not only at the start.
+
+<Note>
+  Respondents sent to a Quota Full ending are recorded with a quota-full disposition in your data. They are separate from screened-out respondents and from completions.
+</Note>
+
+## Setting Up a Quota Cell
+
+<Steps>
+  <Step title="Open the Quotas panel">
+    In the survey builder, click **Logic** in the top navigation bar, then select **Quotas** from the menu. The Quotas panel opens, showing any existing cells and an option to add a new one.
+
+    ![The Quotas panel open in the survey builder with an Add cell button visible](/images/placeholder.png)
+  </Step>
+
+  <Step title="Add a new cell">
+    Click **Add cell**. A new row appears with fields for the cell name, the condition, and the target count.
+
+    ![A new blank quota cell row with Name, Condition, and Target fields](/images/placeholder.png)
+  </Step>
+
+  <Step title="Name the cell">
+    Give the cell a descriptive name, such as "Women 18-34." This name appears in the real-time monitoring view and in your data export.
+  </Step>
+
+  <Step title="Define the condition">
+    Click **Add condition** inside the cell. Choose the question that identifies this segment (for example, a gender question), choose the condition ("is equal to"), and select the matching value ("Woman" or "Female," depending on your option labels).
+
+    ![The condition editor inside a quota cell showing: If Gender is equal to Woman](/images/placeholder.png)
+  </Step>
+
+  <Step title="Add a second condition if needed">
+    To narrow the segment further, click **Add condition** again. For example, add a second condition for the age question: "If Age group is equal to 18-34." Choose whether **all** conditions must match (AND) or **any** condition must match (OR) using the toggle between condition rows.
+
+    ![Two conditions stacked in the quota cell with an AND toggle between them](/images/placeholder.png)
+  </Step>
+
+  <Step title="Set the target count">
+    In the **Target** field, enter the maximum number of completed responses you want from this segment. For example, enter 100.
+  </Step>
+
+  <Step title="Confirm the Quota Full ending">
+    In the **Endings** section of the builder, verify that a Quota Full ending exists. You can customize the message respondents see when they hit a full quota. If no Quota Full ending exists, OnlineSurvey will create a default one when you save the quota cell.
+
+    ![The Quota Full ending screen in the Endings panel with an editable message field](/images/placeholder.png)
+  </Step>
+
+  <Step title="Save and activate">
+    Save the survey. Quota enforcement begins as soon as the survey is published. If the survey is already live, changes to quotas take effect immediately on the published version.
+  </Step>
+</Steps>
+
+## Monitoring Fill in Real Time
+
+OnlineSurvey shows you how full each quota cell is as responses come in. To view the fill status:
+
+1. Open the survey in the builder and go to the **Quotas** panel, or
+2. Open the **Responses** tab and switch to the **Quota monitor** view.
+
+Each cell displays a progress bar showing the current count against the target. Cells that are full are highlighted so you can see at a glance which segments have been satisfied.
+
+![The Quota monitor view showing three cells with progress bars, one marked as Full](/images/placeholder.png)
+
+## Crossed Cells
+
+A crossed cell targets the intersection of two conditions at once, such as gender crossed with age group. Rather than creating separate cells for each combination, you can define a grid of cells that cover every intersection.
+
+For example, a 2x3 cross of gender (Man, Woman) by age group (18-34, 35-54, 55+) produces six cells, each with its own target count.
+
+<Steps>
+  <Step title="Open the Crossed cells tab">
+    In the Quotas panel, click **Crossed cells**. You will see a grid builder where you can define the two dimensions to cross.
+
+    ![The Crossed cells tab in the Quotas panel showing a 2x3 grid of cells](/images/placeholder.png)
+  </Step>
+
+  <Step title="Choose the two dimensions">
+    Select the first question (for example, gender) as the row dimension and the second question (for example, age group) as the column dimension. OnlineSurvey generates a cell for every combination of their options.
+  </Step>
+
+  <Step title="Set target counts per cell">
+    Enter a target count for each cell in the grid. You can use different targets for different cells. For example, you might want more respondents in the 35-54 age band than in the 55+ band.
+  </Step>
+
+  <Step title="Save">
+    Save the survey. Each cell in the cross now enforces its own cap independently. A respondent who matches one cell only counts toward that cell, not toward others.
+  </Step>
+</Steps>
+
+<Tip>
+  If you are using a panel provider to recruit respondents, share your quota targets with the provider before launching. This helps them pace their recruitment and avoids a high rate of quota-full dispositions near the end of the study.
+</Tip>
+
+<Warning>
+  Editing quota targets on a live survey takes effect immediately. Lowering a target below the current fill count will immediately cause new matching respondents to be sent to the Quota Full ending. Raising a target re-opens the cell.
+</Warning>

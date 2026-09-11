@@ -1,0 +1,84 @@
+---
+title: 'Looping: Repeat a Question Block for Each Selected Item'
+sidebarTitle: 'Looping'
+description: 'Learn how to loop a block of questions so it repeats once for each item a respondent selected in an earlier multi-select question.'
+---
+
+Looping lets you repeat a block of questions automatically, once for each item in a source list. Instead of duplicating questions for every possible item, you build the block once and tell OnlineSurvey which list to iterate over. This page explains when to use loops, how they work, and how to set one up.
+
+<Info>
+  Looping is available on the **Pro plan** and above. If you are on a Free or Basic plan, you will see the Loop option in the builder but will be prompted to upgrade before you can activate it.
+</Info>
+
+## A Practical Example
+
+Imagine you are running a brand-perception study. Early in the survey you ask: "Which of the following brands have you purchased in the last six months?" The respondent selects three brands. You then want to ask the same four rating questions about each brand they chose.
+
+Without looping, you would need to create three separate blocks and use branching to route to the right one. With looping, you create one block with four questions, point it at the multi-select answer, and OnlineSurvey repeats the block three times, once per selected brand, automatically inserting the brand name into each question via piping.
+
+## How Loop Iterations Work
+
+Each time the block repeats, OnlineSurvey inserts the current item's label into any pipe tokens you have placed in question text. The respondent sees one iteration at a time and moves through them in order. The number of iterations matches the number of items selected in the source question.
+
+The responses from each iteration are stored separately in your data, labeled by the item they correspond to.
+
+## Setting Up a Loop
+
+<Steps>
+  <Step title="Create the source question">
+    Add a multi-select (checkbox) question earlier in your survey and list the items you want to loop over. For example: "Which brands have you purchased in the last six months?" with a list of brand names.
+
+    Make a note of this question's identifier, as you will point the loop at it in a later step.
+
+    ![A multi-select question with several brand options in the builder canvas](/images/placeholder.png)
+  </Step>
+
+  <Step title="Create the loop block">
+    Add a new block below the source question. Name it something descriptive, such as "Brand Questions." Add all the questions you want to repeat inside this block.
+
+    ![A block named Brand Questions containing four rating questions](/images/placeholder.png)
+  </Step>
+
+  <Step title="Enable looping on the block">
+    Click the block header to select it. In the right-hand panel, find the **Block settings** section and click **Loop**. The loop configuration panel opens.
+
+    ![The block header selected and the Loop option highlighted in the Block settings panel](/images/placeholder.png)
+  </Step>
+
+  <Step title="Choose the source question">
+    In the **Loop source** dropdown, select the multi-select question that contains the items to iterate over. OnlineSurvey will repeat the block once for each option the respondent selected.
+
+    ![The Loop source dropdown open, with the brand multi-select question highlighted](/images/placeholder.png)
+  </Step>
+
+  <Step title="Insert the item name into questions">
+    To reference the current item within a question, type the pipe token for the loop variable into your question text. You will find the token in the **Insert variable** menu in the question text editor. For example, your question might read: "How would you rate your overall satisfaction with [Brand]?"
+
+    ![A question in the loop block with a pipe token inserted in the question text](/images/placeholder.png)
+  </Step>
+
+  <Step title="Save and preview">
+    Save the survey and open **Preview**. Select two or three items on the source question, then advance to confirm the block repeats the correct number of times and that the item name appears correctly in each iteration.
+  </Step>
+</Steps>
+
+## Tips for Working With Loops
+
+<CardGroup cols={2}>
+  <Card title="Limit iterations for survey length" icon="clock">
+    Each iteration adds questions to the respondent's experience. Consider capping the number of selectable options on your source question to keep total survey length manageable.
+  </Card>
+  <Card title="Pair with piping" icon="pipe-section">
+    Piping the current item's name into question text makes each iteration feel personalized and helps respondents remember which item they are rating.
+  </Card>
+  <Card title="Data output per iteration" icon="table">
+    In your export, each loop iteration appears as its own set of columns or rows, labeled with the item name. Review the data dictionary export to understand the column structure before analysis.
+  </Card>
+  <Card title="Fixed lists as sources" icon="list">
+    If your loop source is a fixed list (not driven by a respondent's answers), you can also point the loop at a variable that contains a predefined set of values instead of a multi-select question.
+  </Card>
+</CardGroup>
+
+<Warning>
+  Avoid nesting one loop inside another. Nested loops are not supported and will produce unexpected behavior in your survey flow.
+</Warning>
