@@ -166,8 +166,7 @@
                 "group": "Images",
                 "pages": [
                   "questions/images/overview",
-                  "questions/images/image-hotspot",
-                  "questions/images/click-heatmap"
+                  "questions/images/image-hotspot"
                 ]
               },
               {
