@@ -1,8 +1,12 @@
 /* OnlineSurvey Help Center, Claystone skin.
    Mintlify injects every .css file in the content directory on every page.
-   Selectors are the ones Mintlify documents (custom-scripts page) and are subject to change.
-   The page, sidebar and top bar share one background per theme: background.color in docs.json
-   (#F7F5F2 light, #17171F dark). Nothing here paints a surface a second color. */
+   Selectors are the ones Mintlify documents (custom-scripts page) plus the footer's own
+   markup, and are subject to change. The page, sidebar and top bar share one background
+   per theme: background.color in docs.json (#F7F5F2 light, #17171F dark). The two
+   exceptions below are deliberate: the search box is white so it reads as a field, and
+   the footer is the same dark band the marketing site and shared reports draw
+   (packages/web/site-footer in the monorepo), so every OnlineSurvey surface ends the
+   same way. */
 
 /* Sidebar group labels: small caps in Geist, a touch of tracking. */
 #sidebar .sidebar-group-header,
@@ -17,10 +21,121 @@
   --font-family-mono-custom: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
+/* The search box is a field, not a patch of page. */
+#search-bar-entry {
+  background-color: #ffffff !important;
+}
+html.dark #search-bar-entry {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+
 /* No floating "Ask a question" bar. Search is the way in; the assistant is not used. */
 #assistant-entry,
 #assistant-entry-mobile,
 #chat-assistant-sheet,
 .chat-assistant-floating-input {
   display: none !important;
+}
+
+/* ── The footer band ─────────────────────────────────────────────────────────
+   Mintlify's advanced footer, repainted as the site footer: #221E19 band, the dark
+   wordmark, mono column headings, the tagline, the entity sentence and the copyright.
+   The words are the ones packages/web/site-footer/src/copy.ts holds; keep them in step. */
+
+#footer {
+  width: 100%;
+  margin-top: 5rem;
+  background: #221e19;
+  color: #cbbfaf;
+  border-top: 0 !important;
+}
+
+/* Room between the last pagination link and the band. */
+#pagination {
+  margin-bottom: 1rem;
+}
+
+/* The mark: the light-theme logo is dark artwork, so the band shows the dark-theme one. */
+#footer img[alt="light logo"] {
+  display: none !important;
+}
+#footer img[alt="dark logo"] {
+  display: block !important;
+}
+#footer a.select-none {
+  display: block;
+}
+#footer a.select-none::after {
+  content: "Research-grade surveys, fieldwork, analysis and reporting, kept in one study.";
+  display: block;
+  margin-top: 1.5rem;
+  max-width: 320px;
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 400;
+  color: rgba(252, 250, 245, 0.7);
+}
+
+/* Column headings and links. */
+#footer p.font-semibold {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(252, 250, 245, 0.5) !important;
+}
+#footer a.text-sm.max-w-36 {
+  max-width: none;
+  font-size: 15px;
+  color: rgba(252, 250, 245, 0.86) !important;
+  transition: color 120ms;
+}
+#footer a.text-sm.max-w-36:hover {
+  color: #fcfaf5 !important;
+}
+
+/* The hairline becomes the entity line the site closes with. */
+#footer .h-px {
+  height: auto !important;
+  background: none !important;
+  border-top: 1px solid rgba(252, 250, 245, 0.14);
+  padding-top: 1.5rem;
+}
+#footer .h-px::after {
+  content: "onlinesurvey.ai is an AI-native survey platform for product, research and growth teams.";
+  display: block;
+  max-width: 640px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(252, 250, 245, 0.66);
+}
+
+/* Bottom row: the copyright, then Mintlify's credit, then the theme switch. */
+#footer div.flex.items-center.justify-between > div:first-child {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+#footer div.flex.items-center.justify-between > div:first-child::before {
+  content: "© 2026 onlinesurvey.ai";
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(252, 250, 245, 0.5);
+}
+#footer a[href*="mintlify.com"] {
+  color: rgba(252, 250, 245, 0.5) !important;
+}
+#footer a[href*="mintlify.com"]:hover {
+  color: rgba(252, 250, 245, 0.8) !important;
+}
+#footer button[data-testid^="mode-switch"] {
+  color: rgba(252, 250, 245, 0.55) !important;
+  background: transparent !important;
+}
+#footer button[data-testid^="mode-switch"].bg-gray-200,
+html.dark #footer button[data-testid^="mode-switch"].dark\:bg-gray-800 {
+  background: rgba(252, 250, 245, 0.12) !important;
+  color: #fcfaf5 !important;
 }

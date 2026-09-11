@@ -43,32 +43,94 @@
   "footer": {
     "links": [
       {
-        "header": "Help",
+        "header": "Product",
         "items": [
           {
-            "label": "Contact support",
-            "href": "/help/contact-support"
-          },
-          {
-            "label": "Common issues",
-            "href": "/help/common-issues"
-          }
-        ]
-      },
-      {
-        "header": "OnlineSurvey",
-        "items": [
-          {
-            "label": "Website",
-            "href": "https://onlinesurvey.ai"
+            "label": "Features",
+            "href": "https://onlinesurvey.ai/features"
           },
           {
             "label": "Pricing",
             "href": "https://onlinesurvey.ai/pricing"
           },
           {
-            "label": "Open the app",
-            "href": "https://app.onlinesurvey.ai"
+            "label": "Free tools",
+            "href": "https://onlinesurvey.ai/tools"
+          },
+          {
+            "label": "Blog",
+            "href": "https://onlinesurvey.ai/blog"
+          }
+        ]
+      },
+      {
+        "header": "Company",
+        "items": [
+          {
+            "label": "About",
+            "href": "https://onlinesurvey.ai/about"
+          },
+          {
+            "label": "Contact",
+            "href": "https://onlinesurvey.ai/contact"
+          }
+        ]
+      },
+      {
+        "header": "Compare",
+        "items": [
+          {
+            "label": "vs SurveyMonkey",
+            "href": "https://onlinesurvey.ai/blog/best-surveymonkey-alternative-2026"
+          },
+          {
+            "label": "vs Typeform",
+            "href": "https://onlinesurvey.ai/blog/5-typeform-alternatives-that-dont-limit-your-responses"
+          },
+          {
+            "label": "vs Qualtrics",
+            "href": "https://onlinesurvey.ai/blog/why-onlinesurvey-ai-is-the-best-qualtrics-alternative-for-2026"
+          },
+          {
+            "label": "vs Google Forms",
+            "href": "https://onlinesurvey.ai/blog/beyond-the-basics-the-best-google-forms-alternatives-for-business"
+          },
+          {
+            "label": "vs Jotform",
+            "href": "https://onlinesurvey.ai/blog/jotform-vs-onlinesurvey-ai-which-is-better-for-complex-data"
+          },
+          {
+            "label": "vs Alchemer",
+            "href": "https://onlinesurvey.ai/blog/affordable-alchemer-alternatives-for-serious-researchers"
+          }
+        ]
+      },
+      {
+        "header": "Legal",
+        "items": [
+          {
+            "label": "Privacy",
+            "href": "https://onlinesurvey.ai/legal/privacy"
+          },
+          {
+            "label": "Terms",
+            "href": "https://onlinesurvey.ai/legal/terms"
+          },
+          {
+            "label": "Acceptable use",
+            "href": "https://onlinesurvey.ai/legal/acceptable-use"
+          },
+          {
+            "label": "Refunds",
+            "href": "https://onlinesurvey.ai/legal/refunds"
+          },
+          {
+            "label": "Data processing",
+            "href": "https://onlinesurvey.ai/legal/dpa"
+          },
+          {
+            "label": "Cookies",
+            "href": "https://onlinesurvey.ai/legal/cookies"
           }
         ]
       }
