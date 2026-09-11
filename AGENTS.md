@@ -8,6 +8,7 @@ The product source of truth is the OnlineSurvey monorepo, not this repo. Never s
 - What is built and what is not: `docs/02-features.md`, sections "Built but not wired" and "Things that look like features and are not"
 - Logic semantics: `docs/04-logic.md`, `packages/engine/src/commit.ts`
 - Question kinds: `scripts/help/out/kind-facts.json` (generated from `packages/schema/src/capabilities/`; regenerate with `npx tsx scripts/help/kind-facts.mts`, never hand-edit)
+- Which of a kind's knobs the builder can actually set: a registry knob with no control in the builder is left out of a Settings table. The sheet keys differ from the page paths (`matrix_radio` is `questions/grids/radio-grid`, `slider_text` is `questions/ratings/text-slider`, `heatmap_click` is `questions/images/click-heatmap`, `content` is `questions/content/text-block`); the page title is the frontmatter title, the bold label in an Add-it step is the **Add to survey** dialog label.
 - Plans and limits: `packages/billing/core/src/pricing/seed.ts`
 - The respondent surface: `docs/06-fill.md`
 
@@ -21,6 +22,7 @@ The product source of truth is the OnlineSurvey monorepo, not this repo. Never s
 - Never "disqualify". The word is "screen out" and the outcome is "Screened out".
 - The four outcomes are always spelled: Completed, Screened out, Quota full, Quality reject.
 - Name UI controls exactly as the app does, in bold: click **Publish**. Dialog titles in bold: **Skip from here**.
+- A label keeps the app's own spelling inside the bold, even where the app is British (the theme panel says **Text colour**); the prose around it stays American (color).
 - A limit is a fact, stated plainly in a sentence. Never a `<Warning>`, never a `<Danger>`. `<Note>` and `<Tip>` at most once per page.
 - Say what the product does today. Nothing "coming soon", nothing "planned". If a control does not exist in the app, the page does not mention it.
 
@@ -60,5 +62,7 @@ When they are captured they will come from a workspace and organization named fo
 ## Content boundaries
 
 - Do not document: passwords on share links (not offered in the app), the speed trap (no control exists), saved contact-list management beyond what the add-recipients dialog offers, bounce or spam statuses from the mail provider, straight-lining detection, translation, MaxDiff, conjoint, Kano, Van Westendorp, a template gallery, save-and-resume across devices.
+- Also not documented, because the app offers no control or the feature does not reach a user: saving a contact list from the app (the **Saved lists** tab only lists what exists); the Delivered, Bounced and Marked as spam statuses (they never advance); editing a question with AI and the AI chat dock; permission groups; API keys, webhooks and connectors; a password, expiry, rotation or redaction switch on a report link; the Banner tables report; PPTX export; restoring a deleted media file; a video background; Custom CSS; theme presets; a scheduled close date; a one-response-per-person switch; a progress bar setting; per-screen backgrounds; a keyboard shortcuts list; a status page or chat widget.
+- A page exists only for something an author can do today. `logic/speed-trap`, `ai/edit-with-instructions` and `help/whats-new` were removed for that reason and come back when the product offers them.
 - Do not describe internal architecture, file paths, or code. A reader is an author or an admin, never a developer.
 - Do not quote prices or limits from memory; read the pricing seed and say which plan.
