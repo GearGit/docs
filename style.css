@@ -1,14 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Hanken+Grotesk:wght@400;500&family=Spline+Sans+Mono:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&display=swap");
 
-/* OnlineSurvey Help Center, Claystone skin.
-   Mintlify injects every .css file in the content directory on every page.
-   Selectors are the ones Mintlify documents (custom-scripts page) plus the footer's own
-   markup, and are subject to change. The page, sidebar and top bar share one background
-   per theme: background.color in docs.json (#F7F5F2 light, #17171F dark). The two
-   exceptions below are deliberate: the search box is white so it reads as a field, and
-   the footer is the same dark band the marketing site and shared reports draw
-   (packages/web/site-footer in the monorepo), so every OnlineSurvey surface ends the
-   same way. */
+/* OnlineSurvey Help Center, Claystone skin on Mintlify's maple theme.
+   Mintlify injects every .css file in the content directory on every page. Selectors are
+   the ones Mintlify documents (custom-scripts page) plus the footer's own markup, and are
+   subject to change. One background per theme comes from background.color in docs.json
+   (#F7F5F2 light, #17171F dark); the only surface painted here is the search box, which is
+   white so it reads as a field. Everything else follows the theme's own colors. */
 
 /* Sidebar group labels: small caps in Geist, a touch of tracking. */
 #sidebar .sidebar-group-header,
@@ -39,151 +36,67 @@ html.dark #search-bar-entry {
   display: none !important;
 }
 
-/* ── The footer band ─────────────────────────────────────────────────────────
-   Mintlify's advanced footer, repainted as the site footer (packages/web/site-footer in
-   the monorepo): #221E19 band, the Fraunces wordmark, Spline Sans Mono headings and
-   copyright, Hanken Grotesk links, the tagline, the entity sentence. The words are the
-   ones packages/web/site-footer/src/copy.ts holds; keep them in step. The three faces
-   are the site's, loaded from Google Fonts for the footer only. */
+/* The reading column: maple caps it at 36rem; a help page with tables wants the room. */
+#content-area {
+  max-width: 62rem !important;
+}
+@media (min-width: 1280px) {
+  #content-area {
+    width: calc(100% - 17rem) !important;
+  }
+  #table-of-contents-layout {
+    width: 15rem !important;
+    padding-left: 2rem !important;
+  }
+}
+
+/* ── The footer ──────────────────────────────────────────────────────────────
+   Minimal, and in the theme's own colors: the wordmark in the site's face, what the
+   company is, the copyright, and Mintlify's credit. The words are the ones
+   packages/web/site-footer/src/copy.ts holds in the monorepo; keep them in step. */
 
 #footer {
-  width: 100%;
-  margin-top: 5rem;
-  background: #221e19;
-  color: #cbbfaf;
-  border-top: 0 !important;
-  font-family: "Hanken Grotesk", "Geist", ui-sans-serif, system-ui, sans-serif;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-top: 2.5rem !important;
 }
-
-/* Room between the last pagination link and the band. */
-#pagination {
-  margin-bottom: 1rem;
-}
-
-/* The site's measure: 1240px, not Mintlify's 984px content cap. */
-#footer > div {
-  max-width: 1240px !important;
-  padding: clamp(72px, 9vw, 120px) 1.5rem 2.75rem !important;
-  gap: 0 !important;
-}
-
-/* Brand column beside the links, as on the site. */
-#footer div[class*="lg:min-w-48"] {
-  min-width: 320px !important;
-  max-width: 320px;
-  align-items: flex-start !important;
-}
-#footer > div > div:first-child {
-  gap: clamp(40px, 5vw, 80px) !important;
-}
-
-/* The wordmark is typographic, not the SVG: the mark cannot be inverted onto the band. */
-#footer img[alt="light logo"],
-#footer img[alt="dark logo"] {
-  display: none !important;
-}
-#footer a.select-none {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-#footer a.select-none::before {
+#footer::before {
   content: "onlinesurvey.ai";
   display: block;
   font-family: "Fraunces", Georgia, serif;
   font-variation-settings: "opsz" 72;
-  font-size: clamp(38px, 4vw, 54px);
+  font-size: 28px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.03em;
-  color: #fcfaf5;
+  color: #17171f;
 }
-#footer a.select-none::after {
-  content: "Research-grade surveys, fieldwork, analysis and reporting, kept in one study.";
-  display: block;
-  margin-top: 1.5rem;
-  max-width: 320px;
-  font-size: 15px;
-  line-height: 1.7;
-  font-weight: 400;
-  color: rgba(252, 250, 245, 0.7);
+html.dark #footer::before {
+  color: #f7f5f2;
 }
-
-/* Columns: left-aligned, four across, 14px between links. */
-#footer div[class*="md:items-center"] {
-  align-items: flex-start !important;
+#footer > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.5rem;
 }
-#footer .flex.gap-4.flex-col {
-  gap: 0 !important;
-}
-#footer p.font-semibold {
-  margin: 0 0 0.5rem !important;
-  font-family: "Spline Sans Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: rgba(252, 250, 245, 0.5) !important;
-}
-#footer a.text-sm.max-w-36 {
-  display: block;
-  margin-top: 14px;
-  max-width: none;
-  font-size: 15px;
-  line-height: 1.4;
-  color: rgba(252, 250, 245, 0.86) !important;
-  transition: color 120ms;
-}
-#footer a.text-sm.max-w-36:hover {
-  color: #fcfaf5 !important;
-}
-
-/* The hairline becomes the entity line the site closes with. */
-#footer .h-px {
-  height: auto !important;
-  margin-top: 7rem;
-  background: none !important;
-  border-top: 1px solid rgba(252, 250, 245, 0.14);
-  padding-top: 1.5rem;
-}
-#footer .h-px::after {
+#footer > div::before {
   content: "onlinesurvey.ai is an AI-native survey platform for product, research and growth teams.";
-  display: block;
-  max-width: 640px;
+  flex-basis: 100%;
   font-size: 14px;
   line-height: 1.65;
-  color: rgba(252, 250, 245, 0.66);
+  opacity: 0.75;
 }
-
-/* Bottom row: the copyright, then Mintlify's credit, then the theme switch. */
-#footer div.flex.items-center.justify-between {
-  margin-top: 1.5rem;
-  padding-top: 0.5rem;
-}
-#footer div.flex.items-center.justify-between > div:first-child {
+#footer > div > div {
   display: flex;
   align-items: baseline;
   gap: 1.5rem;
 }
-#footer div.flex.items-center.justify-between > div:first-child::before {
+#footer > div > div::before {
   content: "© 2026 onlinesurvey.ai";
-  font-family: "Spline Sans Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 11px;
   letter-spacing: 0.1em;
-  color: rgba(252, 250, 245, 0.5);
-}
-#footer a[href*="mintlify.com"] {
-  color: rgba(252, 250, 245, 0.5) !important;
-}
-#footer a[href*="mintlify.com"]:hover {
-  color: rgba(252, 250, 245, 0.8) !important;
-}
-#footer button[data-testid^="mode-switch"] {
-  color: rgba(252, 250, 245, 0.55) !important;
-  background: transparent !important;
-}
-#footer button[data-testid^="mode-switch"].bg-gray-200,
-html.dark #footer button[data-testid^="mode-switch"].dark\:bg-gray-800 {
-  background: rgba(252, 250, 245, 0.12) !important;
-  color: #fcfaf5 !important;
+  opacity: 0.6;
 }
