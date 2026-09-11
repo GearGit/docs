@@ -36,24 +36,26 @@ The product source of truth is the OnlineSurvey monorepo, not this repo. Never s
 
 Every page of a type has the same headings in the same order, so the right-hand table of contents reads the same across siblings.
 
-- Guide page: lead sentence, one `<Frame>`, `## What it does`, `## Set it up`, `## Good to know`, `## Related`.
+- Guide page: lead sentence, one screenshot placeholder, `## What it does`, `## Set it up`, `## Good to know`, `## Related`.
 - Concept page (How a survey is built): `## What it is`, `## Why it matters`, `## See it in the builder`, `## Related`.
 - Rules page: `## What it does`, `## Set it up`, `## Which questions have it`, `## Related`.
 - Logic page: `## What it does`, `## Example`, `## Set it up`, `## Works with`, `## Good to know`, `## Related`.
-- Question page: lead, `<Frame>` of the question as a respondent sees it, `## When to use it` (three bullets, then a **Consider instead:** line), `## Add it`, `## Settings`, `## Rules you can set`, `## Logic that works with it`, `## How it shows in results`, `## Related`.
+- Question page: lead, a screenshot placeholder for the question as a respondent sees it, `## When to use it` (three bullets, then a **Consider instead:** line), `## Add it`, `## Settings`, `## Rules you can set`, `## Logic that works with it`, `## How it shows in results`, `## Related`.
 - Family overview: lead, a `<CardGroup cols={3}>` of the kinds, `## Compare` table.
 
 ## Components
 
 - `<Steps>` must contain `<Step title="...">` children. Bare `###` headings inside `<Steps>` render nothing.
-- `<Frame caption="...">` around every screenshot. Image paths are `/images/<group>/<page>/<slot>.png` and the file must exist in this repo before the page references it.
+- No `<Frame>` or `<img>` in a page yet. Where a screenshot belongs, write `{/* screenshot: <caption> */}` on its own line; the caption is what the picture will carry when it is captured.
 - `<CardGroup cols={2|3}>` with `<Card title href>` for Related.
 - `<Tabs>` only for the plan comparison. `<AccordionGroup>` only on Common issues.
 - Links to other pages are root-relative: `[Quotas](/logic/quotas)`.
 
 ## Screenshots
 
-Captured from the running dev app by `scripts/dev/help-shots.mts` in the monorepo, driven by `scripts/help/shots.json`. Viewport 1440x900 at 2x, light theme, PNG. A dialog or panel is cropped with 24px of padding; a full canvas only when the page is about the canvas. The survey photographed is the logic showcase fixture, so every rule in a screenshot is a real rule.
+There are no screenshots in the pages yet. Every place one belongs is an MDX comment on its own line, `{/* screenshot: ... */}`, and the text after the colon is the caption for that shot.
+
+When they are captured they will come from a workspace and organization named for OnlineSurvey, never the dev workspace, so no placeholder name reaches a reader. The capture is driven by `scripts/dev/help-shots.mts` in the monorepo. Use the caption already written in the comment; do not reword it.
 
 ## Content boundaries
 

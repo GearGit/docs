@@ -1,35 +1,23 @@
-/*
- * Help-center theme overrides.
- *
- * The selectors below are the ones Mintlify documents for custom CSS
- * (https://mintlify.com/docs/themes/custom-css). They are part of Mintlify's
- * rendered markup rather than a public API, so they are subject to change:
- * if the sidebar or navbar stops picking these up after a Mintlify release,
- * re-check the current selector names before editing anything else.
- */
+/* OnlineSurvey Help Center, Claystone skin.
+   Mintlify injects every .css file in the content directory on every page.
+   Selectors are the ones Mintlify documents (custom-scripts page) and are subject to change.
+   The page, sidebar and top bar share one background per theme: background.color in docs.json
+   (#F7F5F2 light, #17171F dark). Nothing here paints a surface a second color. */
 
-#sidebar,
-#sidebar-content {
-  background-color: #F4F1EC;
-}
-
-#navbar {
-  border-bottom-color: #E4DED5;
-}
-
+/* Sidebar group labels: small caps in Geist, a touch of tracking. */
 #sidebar .sidebar-group-header,
 #sidebar h5 {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-size: 11px;
-  color: #6F6A63;
 }
 
+/* Geist Mono for code and shortcuts. Undocumented hook, cosmetic if it stops working. */
 :root {
   --font-family-mono-custom: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-/* The docs assistant is turned off for this site. */
+/* No floating "Ask a question" bar. Search is the way in; the assistant is not used. */
 #assistant-entry,
 #assistant-entry-mobile,
 #chat-assistant-sheet,

@@ -9,8 +9,8 @@
     "dark": "#A5563A"
   },
   "logo": {
-    "light": "https://media.brand.dev/e84668e1-d458-48e4-abde-a597af7b6082.svg",
-    "dark": "https://media.brand.dev/e84668e1-d458-48e4-abde-a597af7b6082.svg"
+    "light": "/logo/os-light.svg",
+    "dark": "/logo/os-dark.svg"
   },
   "favicon": "/favicon.svg",
   "appearance": {
