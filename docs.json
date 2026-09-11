@@ -50,8 +50,8 @@
             "href": "/help/contact-support"
           },
           {
-            "label": "What's new",
-            "href": "/help/whats-new"
+            "label": "Common issues",
+            "href": "/help/common-issues"
           }
         ]
       },
@@ -275,7 +275,6 @@
             "group": "AI",
             "pages": [
               "ai/generate-from-a-brief",
-              "ai/edit-with-instructions",
               "ai/credits"
             ]
           },
@@ -293,8 +292,7 @@
             "pages": [
               "help/common-issues",
               "help/response-quality",
-              "help/contact-support",
-              "help/whats-new"
+              "help/contact-support"
             ]
           }
         ]
