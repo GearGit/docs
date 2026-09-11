@@ -100,3 +100,87 @@ html.dark #footer::before {
   letter-spacing: 0.1em;
   opacity: 0.6;
 }
+
+/* Previous / Next: one quiet row, not a tray with a hole in it. */
+#pagination {
+  background: transparent !important;
+  padding: 0 !important;
+  gap: 0.75rem;
+}
+#pagination a.pagination-next > div {
+  background: transparent !important;
+  border: 1px solid rgba(23, 23, 31, 0.1);
+}
+html.dark #pagination a.pagination-next > div {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ── The top bar ─────────────────────────────────────────────────────────────
+   Maple draws a fixed 3rem strip over the content with the tab in it, and files the
+   navbar actions and the theme switch in the left rail. Here both move into the strip's
+   right end: Log in as a ghost button, Sign up as the one clay button, then the switch. */
+@media (min-width: 1024px) {
+  /* The rail is its own stacking layer; it has to sit above the tab strip (z-20) for the
+     two fixed pieces below to show. */
+  #sidebar {
+    z-index: 25 !important;
+  }
+  #sidebar [class*="calc(19rem-1px)"] {
+    position: fixed !important;
+    top: 0 !important;
+    right: 7rem !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: auto !important;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    z-index: 30;
+  }
+  #sidebar [class*="calc(19rem-1px)"] > div {
+    margin: 0;
+  }
+  #sidebar [class*="calc(19rem-1px)"] a {
+    display: inline-flex;
+    align-items: center;
+    height: 2rem;
+    padding: 0 0.85rem !important;
+    border-radius: 0.5rem;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    border: 1px solid transparent;
+  }
+  #sidebar [class*="calc(19rem-1px)"] a svg {
+    display: none !important;
+  }
+  #sidebar [class*="calc(19rem-1px)"] a[href*="/login"] {
+    border-color: rgba(23, 23, 31, 0.14);
+    color: inherit;
+  }
+  html.dark #sidebar [class*="calc(19rem-1px)"] a[href*="/login"] {
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+  #sidebar [class*="calc(19rem-1px)"] a[href*="/signup"] {
+    background: #bb6440 !important;
+    color: #ffffff !important;
+  }
+  #sidebar [class*="calc(19rem-1px)"] a[href*="/signup"]:hover {
+    background: #a5563a !important;
+  }
+  #sidebar [class*="calc(19rem-1px)"] a[href*="/signup"] * {
+    color: #ffffff !important;
+  }
+  #sidebar [class*="4.75rem"] {
+    position: fixed;
+    top: 0.625rem;
+    right: 1.5rem;
+    z-index: 30;
+  }
+}
