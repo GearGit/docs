@@ -4,50 +4,73 @@ description: "Give each row a rating."
 icon: "star"
 ---
 
-_To write._
+A rating grid gives every row its own set of stars and asks a respondent to rate each item on the same scale. You write the rows; the scale is a number you pick rather than a set of columns you type, so the whole battery changes length in one move.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A rating grid question as a respondent sees it, a row of stars beside each item. */}
 
 ## When to use it
 
-_To write._
+- You are rating several things on one scale: each dish on a menu, each session at a conference, each feature in a release.
+- You want the familiar star gesture rather than a row of radio buttons.
+- You want to change the length of the scale without rewriting a column for every point.
 
-**Consider instead:** _To write_
+**Consider instead:** [Radio grid](/questions/grids/radio-grid) when the scale needs words on every point, [Star rating](/questions/ratings/star-rating) when there is only one thing to rate, [Slider grid](/questions/grids/slider-grid) when the answers belong on a continuum, [Likert](/questions/ratings/likert) when the question is agreement with a single statement.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Rating grid">
-    _To write._
+  <Step title="Pick Matrix (Rating)">
+    In **Add to survey**, type to filter and click **Matrix (Rating)**, under **Matrix**. It arrives with three rows, Item 1 to Item 3, each rated on a 5 point scale.
+
+    {/* screenshot: The rating grid question on the builder canvas, edited in place. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question and the rows">
+    The canvas is the real survey, so you type on it. Click a row label to retype it, **Add row** extends the list, and the **Bulk edit** chip beside the add row takes a pasted list, one per line. The scale itself is not typed on the canvas; it comes from **Scale** in the panel.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Rows | The items down the left, one rating each. Edited on the canvas, or in **Bulk edit** as plain text, one per line. |
+| **Scale** | How many points every row is rated on: **3**, **5**, **7** or **10**. A new question starts at 5. |
+| **Style** | What the points are drawn as: **Stars**, **Hearts**, **Emoji** or **Numbers**. |
+| **Answer order** | Rows only, because the scale is generated rather than authored. **As written**, **Shuffled** or **Reversed**. |
+| **How many each respondent sees** | Inside **Answer order**. **All of them**, or **Only some**, which draws that many rows for each respondent. Pinned rows are outside the draw and show to everyone. |
+
+Changing **Scale** changes what an answer means, so it is a decision to make before fieldwork rather than during it. A 4 on a 5 point scale is not the 4 a 10 point scale collected.
+
+{/* screenshot: The question panel for a rating grid, with the scale row and the style row. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | Every row has to be rated before they can move on. |
+| [Min rows answered](/rules/number-bounds) | A floor rather than all of them. Two of five rows clears it whichever two they rate, and the message reads "Answer at least 2 rows." |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+Leave the question optional and a respondent can clear a rating by clicking the point they already chose.
 
 ## Logic that works with it
 
-_To write._
+The answer is a map, one rating per row, which no single comparison can read. So the question as a whole is offered with **is answered** and **is not answered**, and three summaries of it are offered as sources in their own right: **Lowest rating**, **Highest rating** and **Total**. Each row is offered separately as well, and the summaries and the rows alike read as numbers, with **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most** and **is between**, which is how "anything rated 2 or below" becomes one rule instead of one per row. It is not a [carry-forward](/logic/carry-forward) source, but it takes a carried list into its **Rows**, so the battery can rate whatever somebody picked a screen earlier. It cannot [drive a loop](/logic/loops). It [scores](/logic/scoring) a number per column, set once on the scale and applied to every row, and a row worded the other way round takes its own numbers with **Score this row differently**. [Piping](/logic/piping) it into later wording prints each answered row as "Row: the number they gave", in the order you wrote the rows.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Values list**, and it is the only entry in **Chart type**. **Raw data** under the card opens the answers one respondent at a time.
+
+In every export the question becomes one column per row, holding the rating that row collected as a number.
+
+{/* screenshot: The rating grid question on the Analytics tab, shown as a values list. */}
 
 ## Related
 

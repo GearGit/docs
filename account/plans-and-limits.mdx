@@ -4,21 +4,57 @@ description: "See what your plan includes and where the limits are."
 icon: "table-cells"
 ---
 
-_To write._
+Three priced plans and a Custom agreement, each limit a plain number. This page lists the limits the platform enforces and where you see them.
 
-{/* screenshot: plans and limits in the app */}
+{/* screenshot: The Compare plans drawer: Free, Basic and Pro side by side, with the current plan marked and Talk to us under the others. */}
 
 ## What it does
 
-_To write._
+| | Free | Basic | Pro |
+|---|---|---|---|
+| Price | $0 | $49 a month, or $42 a month, billed yearly | $149 a month, or $125 a month, billed yearly |
+| Responses per period | 250 | 5,000 | 20,000 |
+| Emails per period | 0 | 1,200 | 2,500 |
+| AI credits per period | 0 | 50 | 200 |
+| People | 1 | 3 | 10 |
+| Live surveys | 5 | unlimited | unlimited |
+| Media storage | Not included | 5 GB | 50 GB |
+| Remove our mark from a survey | Not included | included | included |
+| Custom end screens | Not included | included | included |
+
+The app names a paid plan with its cycle: **Basic (Monthly)**, **Basic (Yearly)**, **Pro (Monthly)**, **Pro (Yearly)**. A **Custom** agreement has its own limits. **Plan and billing** shows them as "Set in your agreement", and the way to one is **Talk to us about Enterprise**, which opens an email to us.
+
+**Responses, emails and AI credits count per billing period.** **Plan and billing** shows the period's dates over the **Usage this period** meters. When the period's responses are used up, your live surveys stop accepting new responses until the next period starts. A respondent who arrives then reads "Survey unavailable".
+
+**Every plan includes the building blocks.** More than one ending, looped blocks, quotas and scoring are on every plan, Free included. The AI features are switched on for every plan as well, but Free has no AI credits, so nothing that uses AI can run on Free.
+
+**Live surveys** are the published surveys accepting responses. On Free a sixth publish is refused. Closing or deleting a live survey frees the slot.
+
+**Media** has two limits. Storage is per organization: none on Free, 5 GB on Basic, 50 GB on Pro. Each file is capped on every plan: an image up to 10 MB, a video up to 500 MB. **Custom end screens** means your own button wording and redirects on an ending; on Free the control is locked. Seats are covered on [Roles and seats](/account/roles-and-seats).
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="See what you are on">
+    An admin opens **Plan & billing** in the sidebar. The head of **Plan and billing** reads your **Plan**, when it **Renews**, and **Responses this period** as a meter. **Usage this period** lists each metered feature as used of cap. **Included in {plan}** lists the rest.
+  </Step>
+  <Step title="Compare">
+    Click **Compare plans**. Each plan is a column with its price, and your own column reads **What you have now**. Every cell that differs from your plan carries an arrow. Where a smaller plan has fewer seats than you have people, the **People** cell says how many people lose access.
+  </Step>
+  <Step title="Change plan">
+    Under every other column, click **Talk to us**. It opens an email to us with the plan's name as the subject, and we move the organization. On Free, the same columns sit on the page itself under **Choose a plan**. **Talk to us about Enterprise** is the way to a Custom agreement. See [Billing](/account/billing).
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**A downgrade below your seat count suspends people rather than removing them.** The owner keeps a seat, then admins by join date, then members by join date. The people without a seat show **Suspended by plan** on **Members**, and **Choose who stays** points there.
+
+**A locked control in the builder says so.** The dialog is **That's a paid feature**: "Upgrading is managed by your organization's admins. Ask one of them to move your plan up, and the control unlocks for everyone in the workspace." On Free, the **Media** page reads "Media uploads are on a paid plan."
+
+**Only admins change the plan.** A member who opens **Plan and billing** sees **Admins only**: "You don't have access to this area. Ask an organization admin if you need it."
+
+**AI credits are drawn down as a run goes.** A run that finishes past your balance is settled against the next period, and a new run does not start while you are overdrawn. See [Credits](/ai/credits).
 
 ## Related
 

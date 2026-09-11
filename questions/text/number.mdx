@@ -4,50 +4,68 @@ description: "Collect a number."
 icon: "hashtag"
 ---
 
-_To write._
+Number collects one number in a box, with arrows on it that step the value up and down. Because the answer is a number rather than text, everything downstream can do arithmetic with it: a condition can compare it, a variable can hold it, and a loop can repeat that many times.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A number question as a respondent sees it, a box with stepper arrows on it. */}
 
 ## When to use it
 
-_To write._
+- You are counting something: visits, people, years, orders, hours.
+- You want to branch on how much or how many, with **is at least** or **is between** rather than a list of bands.
+- You want the answer charted as a distribution and averaged, which text cannot be.
 
-**Consider instead:** _To write_
+**Consider instead:** [Numeric slider](/questions/ratings/numeric-slider) when a track between two ends reads better than a box, [Single choice](/questions/choice/single-choice) when bands such as "1 to 5" are easier to answer than an exact count, [Constant sum](/questions/ranking/constant-sum) when several numbers have to add up to a total, [Short text](/questions/text/short-text) when the answer is a code that only looks like a number.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Number">
-    _To write._
+  <Step title="Pick Number">
+    In **Add to survey**, type to filter and click **Number**, under the **Text** heading. The question lands where the gap was, as one empty box with "0" printed inside it.
+
+    {/* screenshot: The number question on the builder canvas, edited in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    Type the question straight onto the canvas. Name the unit in the title, since "How long was the visit?" and "How many minutes was the visit?" come back as different numbers.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **Placeholder** | The grey wording inside the empty box. A new question starts with "0". Clear the field and the box shows nothing. |
+| **Step** | How much the arrows on the box move the value by. One press moves it by 1 until you set something else. |
+
+{/* screenshot: The question panel for a number question, with the placeholder and step rows and the row that opens Validation. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until the box holds a number. |
+| [Minimum and Maximum](/rules/number-bounds) | The smallest and the largest number you accept. An answer outside them reads "Must be 0 or more." or "Must be 60 or less." |
+| [Whole number only](/rules/number-bounds) | Refuses a decimal. A number of people is a whole number, and this is how you say so. |
+| [Max decimal places](/rules/number-bounds) | Caps how many digits may follow the point, for an answer in money or hours. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
 
 ## Logic that works with it
 
-_To write._
+The answer is a number, so conditions compare it as one: **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most**, **is between**, **is answered** and **is not answered**. You type the number you are comparing against. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it. It [drives a loop](/logic/loops) two ways: one pass on the number they gave, or that many passes, which is how "how many trips did you take?" turns into one block per trip. It does not [score](/logic/scoring): a number somebody types is not drawn from a set of answers you wrote, so there is nothing to put points against, and the **Scoring** row is not in the panel. To act on the number itself, set a [variable](/logic/variables) from it or read it in a condition. [Piping](/logic/piping) it into later wording prints the number they gave.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Histogram**, the answers grouped into ranges so the spread of them is visible. **Bar chart** is the other entry in **Chart type**.
+
+In every export the question becomes one numeric column, so a spreadsheet totals and averages it without any further work.
+
+{/* screenshot: The number question on the Analytics tab, charted as a histogram. */}
 
 ## Related
 

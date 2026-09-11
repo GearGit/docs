@@ -4,50 +4,70 @@ description: "Type an answer in each cell of a grid."
 icon: "table"
 ---
 
-_To write._
+An open grid is a table of text boxes. You write the rows and the columns, and a respondent types into the cells where they have something to say. Each box carries the placeholder "Type…" until they do.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: An open grid question as a respondent sees it, a text box in every cell. */}
 
 ## When to use it
 
-_To write._
+- You want the same short details collected about several things: a name and a date for each of three events, a figure for each of four quarters.
+- The answers are open, but the structure is not: you know what the columns are even though you cannot list what goes in them.
+- You would otherwise repeat the same pair of text questions for every item on a list.
 
-**Consider instead:** _To write_
+**Consider instead:** [Radio grid](/questions/grids/radio-grid) when the answers come from a fixed set, [Dropdown grid](/questions/grids/dropdown-grid) when each column has a menu you can write, [Long text](/questions/text/long-text) when one open answer is the whole question, [Loops](/logic/loops) when each item deserves a screen of its own rather than a row.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Open grid">
-    _To write._
+  <Step title="Pick Matrix (Open Text)">
+    In **Add to survey**, type to filter and click **Matrix (Open Text)**, under **Matrix**. It arrives with three rows, Row 1 to Row 3, and three columns, Column 1 to Column 3.
+
+    {/* screenshot: The open grid question on the builder canvas, edited in place. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question, the rows and the columns">
+    The canvas is the real survey, so you type on it. Click a row label or a column heading to retype it, **Add row** and **Add column** extend either axis, and the **Bulk edit** chip beside the add row opens both lists as plain text, one per line.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Rows | The items down the left. Edited on the canvas, or in **Bulk edit** as plain text, one per line. |
+| Columns | The headings across the top, one text box under each. Edited the same two ways. |
+| **Answer order** | Two sections, **rows** and **columns**. Rows take **As written**, **Shuffled** or **Reversed**; columns take **As written** or **Reversed** only. |
+| **How many each respondent sees** | Inside **Answer order**, on the rows. **All of them**, or **Only some**, which draws that many rows for each respondent. Pinned rows are outside the draw and show to everyone. |
+
+{/* screenshot: The question panel for an open grid, with the answer order row and the rules row. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | Every row has to carry text before they can move on. |
+| [Min rows answered](/rules/number-bounds) | A floor rather than all of them. Two of five rows clears it whichever two they fill in, and the message reads "Answer at least 2 rows." |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+There are no length limits on a cell. The character and word rules belong to the text questions, covered in [Text limits](/rules/text-limits).
 
 ## Logic that works with it
 
-_To write._
+The answer is a map of typed cells, which no single comparison can read, so the question is offered with **is answered** and **is not answered** and nothing else. Its rows are not offered as separate sources: the cells are open text with no vocabulary to compare against, and a rule that can never match is worse than no rule at all. It is not a [carry-forward](/logic/carry-forward) source, but it takes a carried list into its **Rows** or its **Columns**, which is the usual way to ask for details about whatever somebody picked a screen earlier. It cannot [drive a loop](/logic/loops), and it cannot be [scored](/logic/scoring), because there are no columns holding a fixed set of answers to put a number against. [Piping](/logic/piping) it into later wording prints each answered row as "Row: what they typed", in the order you wrote the rows, with empty rows left out.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Values list**, and it is the only entry in **Chart type**. Open answers are read rather than counted, and **Raw data** under the card opens them one respondent at a time.
+
+In every export the question becomes one column per row, holding the text that row collected.
+
+{/* screenshot: The open grid question on the Analytics tab, shown as a values list. */}
 
 ## Related
 

@@ -4,50 +4,66 @@ description: "Collect an email address with the wording already written for you.
 icon: "envelope"
 ---
 
-_To write._
+Email address collects one address and checks it as it is typed. A tick appears in the box once the address parses, and a known typo in a common domain draws a quiet "Did you mean" line under it, which the respondent can take or ignore.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: An Email address question as a respondent sees it, the tick showing once the address parses. */}
 
 ## When to use it
 
-_To write._
+- You are collecting an address for a follow-up, a report back, or entry into a draw.
+- You want the obvious typos caught before the answer is stored rather than after.
+- You want the answer held back from any report you share, without remembering to do anything about it.
 
-**Consider instead:** _To write_
+**Consider instead:** [Email](/questions/text/email) when the address is part of the study rather than a contact detail you are keeping, [Mobile phone](/questions/ready-made/mobile-phone) when a call or a text suits better, [Name](/questions/ready-made/name) when you want who they are as well.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Email address">
-    _To write._
+  <Step title="Pick Email Address">
+    In **Add to survey**, type to filter and click **Email Address**, under the **Text** heading. It arrives as one box with **your@email.com** written inside it in grey, and no question wording of its own.
+
+    {/* screenshot: An Email address question on the builder canvas, its wording typed in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    The canvas is the real survey, so you type the question and its description straight onto it. The hint and the checking come with the question type.
   </Step>
 </Steps>
 
 ## Settings
 
-| Setting | What it does |
-| --- | --- |
-| _To write_ | _To write_ |
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
+An Email address question has nothing to configure. The panel opens on **Type**, which reads **Email Address** and does not open a picker, because a ready-made question has no sibling type to switch to. Under it sit **Required** and **Validation**, then the logic rows. The typo suggestion is a nudge and never a refusal: a respondent who means what they typed can carry on.
+
+{/* screenshot: The question panel for an Email address question, with Type fixed and Required under it. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until the box has an address in it. |
+| [Text limits](/rules/text-limits) | **Min characters**, **Max characters**, **Min words** and **Max words**. |
+| [Pattern](/rules/patterns) | Narrows what is accepted beyond the format check the question already makes, which is how you take addresses at your own domain and nothing else. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
 
 ## Logic that works with it
 
-_To write._
+The answer is the address as text, so conditions read it as text: **is**, **is not**, **contains**, **does not contain**, **starts with**, **ends with**, **is answered** and **is not answered**. The domain is the end of the answer, so **ends with** is how you route everyone from one company down their own path. It is not a [carry-forward](/logic/carry-forward) source, and nothing carries into it, because there is no list of choices to pass along. It can [drive a loop](/logic/loops), which gives one pass for the address they gave. It [scores](/logic/scoring) against an answer key, the accepted answers you type in the **Scoring** dialog. [Piping](/logic/piping) it into later wording prints the address back to them, which is how a last screen confirms where the results will go.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Values list**, the answers themselves with a count beside each. **Word cloud** is the other entry in **Chart type**. An address is unique per respondent, which is why a list of values is the useful view and a distribution is not.
+
+In every export the question becomes one text column, holding the address as it was typed.
+
+Email addresses never appear on a shared [report](/results/reports). Along with names, phone numbers and postal addresses they are held back on every link, with no setting to change.
+
+{/* screenshot: The Email address question on the Analytics tab, shown as a values list. */}
 
 ## Related
 

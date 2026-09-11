@@ -4,21 +4,55 @@ description: "Ask for a written summary of what your responses say."
 icon: "sparkles"
 ---
 
-_To write._
+**AI Insights** reads every response your survey holds and writes up what they say: an executive summary, a list of takeaways, and one card per finding with the numbers behind it.
 
-{/* screenshot: ai insights in the app */}
+{/* screenshot: The AI Insights tab after a run: the executive summary above the finding cards, with the status chip reading Insights ready. */}
 
 ## What it does
 
-_To write._
+The tab carries the sparkles mark, the sign that a machine is proposing rather than deciding. Before the survey is published it reads "Publish to prepare insights". Once it is, **Set up AI insights** explains itself: "Setup reads your survey structure and plans what to measure. No responses needed yet, so it's ready the moment they arrive." **Set up insights** starts that.
+
+Setup produces an **Analysis plan**: a card with **Status**, **Planned** (how many analytical questions it will measure), **Pinned to** (the published version it read), **Responses** (how many it will analyze) and **Est. cost** in credits. Below it, the questions it intends to measure are listed in full. **Generate** runs the plan.
+
+The output opens with an **Executive summary** and its **Takeaways**, then **Who answered**, a short profile of the respondents. Each finding is a card typed **Strength**, **Concern**, **Opportunity** or **Observation**, with a confidence of **high**, **medium** or **low**. The key under the cards says: "Confidence = how directly the data backs the claim, not how important it is." **Why** unfolds the reasoning and the figures a card rests on. **Mentions** lists the questions it drew from.
+
+A status chip tracks the tab through its life: **Insights: not set up**, **Setting up…**, **Ready to generate**, **Waiting for responses**, **Generating…**, **Insights ready**, **New responses, regenerate** and **Survey changed, reset**.
+
+**Reset insights** clears the plan and the report so you can set up again on the current published version.
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Publish the survey">
+    Insights read the published version. Publish first; see [Publish and versions](/share/publish-and-versions).
+  </Step>
+  <Step title="Set up the plan">
+    Open **AI Insights** and click **Set up insights**. This reads the structure only, so you can do it before anyone has answered.
+  </Step>
+  <Step title="Generate when responses are in">
+    Read the **Est. cost** on the **Analysis plan**, then click **Generate**. The chip reads **Generating…** while it runs.
+  </Step>
+  <Step title="Read the findings">
+    Start with the **Executive summary**, then open **Why** on any card whose claim you want to check against its numbers.
+  </Step>
+  <Step title="Regenerate as data grows">
+    When the chip reads **New responses, regenerate**, run **Generate** again to fold the new responses in.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**The plan is pinned to a published version.** If you change the survey and publish again, the chip reads **Survey changed, reset**, and the banner says the numbers may no longer describe the live survey. **Reset insights** re-plans against the new version. The reset dialog adds: "Your responses are never deleted, only the analysis is reset."
+
+**A run reads every response the survey holds.** There is no filter on this tab. **5 Analytics** narrows by outcome and response type; insights do not, so what **4 Responses** lists in full is what a report was written from.
+
+**It costs credits, and the estimate comes first.** **Est. cost** is shown on the plan before you click **Generate**, and a finished run states what it used. See [Credits](/ai/credits).
+
+**Anyone who can view the survey can run it.** Setting up and generating need no more than access to the survey.
+
+**It writes nothing into your survey.** Insights read responses and produce a report on this tab. The draft, the published version and the responses themselves are untouched.
+
+**A low confidence is a flag, not a finding.** A card marked **low** rests on thin data. Read it as a reason to collect more or to look at the raw answers, not as a conclusion.
 
 ## Related
 

@@ -4,50 +4,70 @@ description: "Split a fixed total across several options."
 icon: "chart-pie"
 ---
 
-_To write._
+Constant sum gives respondents a budget and asks them to divide it. Each option carries a number box, and the numbers have to add up to the total you set. Because giving more to one option means taking it from another, you get the size of the gaps between the items and not only their order.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A constant sum question as a respondent sees it, a number box beside each option. */}
 
 ## When to use it
 
-_To write._
+- The trade-off is the point: how you would split a budget, where the hours of a week go, what share of the decision each factor carried.
+- You want to know how much more one option is worth than another, which a ranking cannot tell you.
+- The answers are naturally shares: percentages, points out of a hundred, money.
 
-**Consider instead:** _To write_
+**Consider instead:** [Drag to rank](/questions/ranking/drag-to-rank) when order alone answers the question and arithmetic is more than you need, [Slider grid](/questions/grids/slider-grid) when each item gets an independent number with no budget to share, [Multiple choice](/questions/choice/multiple-choice) when picking the items is enough, [Number](/questions/text/number) when there is one figure to collect.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Constant sum">
-    _To write._
+  <Step title="Pick Constant Sum">
+    In **Add to survey**, type to filter and click **Constant Sum**, under **Rank**. It arrives with two empty rows, because an allocation needs at least two items to split anything between.
+
+    {/* screenshot: The constant sum question on the builder canvas, edited in place. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question and the items">
+    The canvas is the real survey, so you type the question and the items straight onto it. **Add row** adds another item, and the **Bulk edit** chip beside it takes a pasted list, one per line. Say what the budget is in the question wording, since the number boxes carry no caption of their own.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Options | The items the total is split across. Edited on the canvas, or in **Bulk edit** as plain text, one per line. |
+| **Answer order** | **As written**, **Shuffled** or **Reversed**. Shuffled draws a fresh order for each respondent, so the item at the top of your list does not collect the first and largest number. Once an order is set you can pin an item to the top or the bottom. |
+
+There is no "Only some" here. Splitting a budget across a different set of items per respondent gives answers that cannot be compared, so the whole list goes to everyone.
+
+{/* screenshot: The question panel for a constant sum, with the answer order row and the rules row. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on with the question untouched. |
+| [Must total](/rules/number-bounds) | The budget, 100 unless you change it. Allocations that do not add up read "Values must add up to 100." |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+The question is a list of labels and number boxes, with no running total and no bar beneath it. Nothing can go below zero or above the budget, and whether the numbers add up is settled when they submit.
 
 ## Logic that works with it
 
-_To write._
+The answer is a number per option, which no single comparison can read at once. So the question as a whole is offered with **is answered** and **is not answered**, and three summaries of it are offered as sources in their own right: **Lowest amount**, **Highest amount** and **Total**. Each option is offered separately as well, and the summaries and the options alike read as numbers, with **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most** and **is between**, which is how "they put more than half of it on one thing" becomes a rule. It is not a [carry-forward](/logic/carry-forward) source, because a set of amounts is not a selection, but it takes a carried list into its own items, which is the usual way to split a budget across whatever somebody picked a screen earlier. It cannot [drive a loop](/logic/loops). It cannot be [scored](/logic/scoring): the answer is already a number per option, so points could only multiply a share or test a threshold, and a threshold is a condition. Put one in a named variable with **Set a variable** instead. [Piping](/logic/piping) it into later wording prints each item with the amount they gave it.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, one bar per item, totalling the amounts everybody allocated to it. **Pie chart** and **Values list** are the other two entries in **Chart type**.
+
+In every export the question becomes one column per item, holding the amount that respondent put on it.
+
+{/* screenshot: The constant sum question on the Analytics tab, charted as a bar chart. */}
 
 ## Related
 

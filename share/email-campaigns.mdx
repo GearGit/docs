@@ -4,21 +4,58 @@ description: "Send your survey by email and follow what happens to it."
 icon: "envelope"
 ---
 
-_To write._
+A campaign sends your survey to a list of people by email, each with their own link, so every response is attributed to the person who gave it.
 
-{/* screenshot: email campaigns in the app */}
+{/* screenshot: The New campaign composer: name, To with Browse contacts, From, Subject, the message, and Send now. */}
 
 ## What it does
 
-_To write._
+**New campaign** on **3 Distribute** expands a composer in place. Its rows are:
+
+- **Campaign name**, placeholder "Name this campaign…", marked **Visible only to your team**.
+- **To**, where you type addresses or click **Browse contacts** to open the **Add recipients** dialog. See [Recipients and contact lists](/share/contact-lists).
+- **From**, "Your name or team (optional)".
+- **Subject**, and the message beneath it. The toolbar has **Bold**, **Italic**, **Bulleted list** and a link, plus a **Format** menu with **Underline**, **Heading** and **Numbered list**. **Variable** inserts a merge field: the recipient's name or email, the survey link, or any extra column from a CSV you uploaded.
+
+**Preview** opens the email as one **Sample recipient** would receive it, with the variables filled in. **Discard** throws the draft away.
+
+**Send now** asks first: "Send “Spring wave” now?" and "12 recipients get this email straight away. An email cannot be recalled once it has gone." The menu beside it offers **Schedule for later…**, which swaps in a date and time, a **Schedule** button, and a note that it sends automatically at the chosen time, in your time zone. **Send now instead** goes back. A saved campaign reopened for editing has **Save changes**.
+
+If the survey is not yet published, a banner reads "This survey is in draft." with "Publish it to send." and a **Publish survey** button.
+
+Once campaigns exist, Distribute lists them under **Campaigns** with the columns **Campaign**, **Channel**, **Status**, **Sent**, **Delivered**, **Opened**, **Start rate** and **Responses**. A status is one of **Draft**, **Scheduled**, **Sending**, **Sent**, **Partly sent**, **Failed** or **Cancelled**. The actions menu on a row has **Send now**, **Edit**, **Cancel send** for a scheduled campaign, and delete.
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Publish first">
+    A campaign sends the published survey. See [Publish and versions](/share/publish-and-versions).
+  </Step>
+  <Step title="Start a campaign">
+    On **3 Distribute**, click **New campaign** and give it a name your team will recognize.
+  </Step>
+  <Step title="Add recipients">
+    Type addresses into **To**, or click **Browse contacts** and add them manually, paste a list, or upload a CSV. Finish with **Add to campaign**.
+  </Step>
+  <Step title="Write the email">
+    Set **From** and **Subject**, then write the message. Use **Variable** to greet people by name and to place the survey link.
+  </Step>
+  <Step title="Preview, then send">
+    Click **Preview** to read it as a recipient. Then click **Send now** and confirm, or choose **Schedule for later…**, pick a time, and click **Schedule**.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**Each recipient gets a personal link.** A response that comes through it is attributed to that recipient, and the campaign's counts and **Where responses came from** on Distribute are built from those attributions. See [Delivery tracking](/share/delivery-tracking).
+
+**Emails come out of a plan allowance.** Free includes no emails. Basic includes 1,200 per period and Pro includes 2,500. When the allowance is used up, a send stops with "Email quota reached for your plan." See [Plans and limits](/account/plans-and-limits).
+
+**Every email carries an unsubscribe link.** The footer reads "Don’t want these emails? Unsubscribe." Someone who unsubscribes is left out of every future campaign across your organization, whichever survey it belongs to.
+
+**A scheduled campaign can be cancelled until it sends.** **Cancel send** on the row stops it. A sent email cannot be recalled.
+
+**Deleting a campaign keeps its responses.** The confirmation says: "This removes the campaign and its delivery tracking. Responses already attributed to it stay in your data."
 
 ## Related
 

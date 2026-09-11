@@ -1,53 +1,73 @@
 ---
 title: "Image single select"
-description: "Pick one image from a set you upload."
+description: "Pick one picture from a set of tiles you choose."
 icon: "image"
 ---
 
-_To write._
+Image single select lays the options out as picture tiles and takes one of them. Use it when the thing being chosen is easier to recognize than to describe: a pack design, a layout, a logo, a color.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: An image single select question as a respondent sees it, a grid of picture tiles with one selected. */}
 
 ## When to use it
 
-_To write._
+- You are testing creative work, and what people see is the question.
+- The options are visual and naming them would prime the answer: "the blue one" is already a judgment.
+- Your respondents are choosing between things they recognize on sight, such as brands or packaging.
 
-**Consider instead:** _To write_
+**Consider instead:** [Image multi select](/questions/choice/image-multi-select) when more than one picture can be chosen, [Single choice](/questions/choice/single-choice) when words describe the options perfectly well and load faster, [Image hotspot](/questions/images/image-hotspot) when the answer is a place on one picture rather than a choice between several, [Drag to rank](/questions/ranking/drag-to-rank) when the order they would put them in is the answer.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Image single select">
-    _To write._
+  <Step title="Pick Image Single Select">
+    In **Add to survey**, type to filter and click **Image Single Select**, under the **Choice** heading. The question lands where the gap was, with one empty tile whose picture slot reads **Add image**.
+
+    {/* screenshot: The image single select question on the builder canvas, one tile filled and one empty. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question and fill the tiles">
+    Type the question straight onto the canvas. Click **Add image** on a tile and the media picker opens on three tabs: **Library**, what your organization has already uploaded; **Upload**, which adds a new file on a paid plan; and **Link**, which takes the address of a picture already on the web. Confirm with **Use image**. The caption under the tile is typed in place, **Add tile** appends another, and **Crop this picture** sets **How the picture fills its tile**, **Cover** or **Contain**, and the **Focus point** that must stay in frame.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Options | The tiles they pick from, each one a picture and a caption. Edited on the canvas, or in **Bulk edit** as plain text, one caption per line. A line you leave alone keeps its image. |
+| **Columns** | How many tiles sit in a row: **2**, **3** or **4**. Fewer columns means bigger pictures. |
+| **Aspect ratio** | The shape every tile is drawn at: **4/3**, **1/1** or **16/9**. Pictures of different shapes are cropped to it, which is what **Crop this picture** adjusts. |
+| **Show labels** | Whether the caption shows under each tile. Turn it off when the picture is the whole question and a word under it would lead the answer. |
+| **"Other" with a text box** | Adds an **Other** option with a text box beside it. It always shows last. |
+| **"None of these" option** | Adds an option that stands for none of the rest. It always shows last. |
+| **Answer order** | **As written**, **Shuffled** or **Reversed**. Shuffle is worth reaching for here, because the tile in the top left is picked more often than it deserves. |
+| **How many each respondent sees** | Inside the **Answer order** dialog. **All of them**, or **Only some**, which draws that many tiles for each respondent. |
+
+{/* screenshot: The question panel for an image single select, with the columns, aspect ratio and show labels rows. */}
 
 ## Rules you can set
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they pick a tile. If they pick **Other**, the box beside it has to be filled in too. |
+
+Required is the whole of it. One tile is either chosen or it is not, so this question has no **Validation** row in the panel.
 
 ## Logic that works with it
 
-_To write._
+The answer is the one tile they picked, stored as the option itself rather than as its caption or its picture, so changing either one later never moves a rule that points at it. Conditions read it with **is**, **is not**, **is one of**, **is not one of**, **is answered** and **is not answered**, and you pick the tile from a list of the captions you wrote. It is a [carry-forward](/logic/carry-forward) source, so a later question can offer the tile they chose, the ones they left, or all of them, and it takes a carried list into its own tiles in the same way. It can [drive a loop](/logic/loops), repeating a block once for the tile they picked, once per tile they left, or once per tile in the set. It [scores](/logic/scoring) points per option. [Piping](/logic/piping) it into later wording prints the caption, so give a tile a caption even when you hide it.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, one bar per tile, counting the respondents who picked it. **Pie chart** and **Values list** are the other two entries in **Chart type**. The chart reads by caption, which is the other reason to write one.
+
+In every export the question becomes one coded column: a number for the tile they picked, with its caption attached.
+
+{/* screenshot: The image single select question on the Analytics tab, charted as a bar chart by caption. */}
 
 ## Related
 

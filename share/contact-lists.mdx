@@ -4,21 +4,55 @@ description: "Build the list of people a campaign goes to."
 icon: "address-book"
 ---
 
-_To write._
+Recipients are added to each campaign through one dialog, four ways: from a saved list, by typing them in, by pasting addresses, or by uploading a CSV.
 
-{/* screenshot: recipients and contact lists in the app */}
+{/* screenshot: The Add recipients dialog on the Add manually tab, one row filled in, "1 valid contact" in the footer. */}
 
 ## What it does
 
-_To write._
+In the campaign composer, click **Browse contacts** beside **To**. The **Add recipients** dialog opens with the line "Pick from your saved lists, add manually, paste a list, or upload a CSV." and four tabs.
+
+**Saved lists** shows lists already in your organization. **Search lists…** filters them, **Select all visible** ticks every list showing, and **Clear** unticks them. The count of lists and contacts you have picked sits in the footer. For a new organization this tab is empty.
+
+**Add manually** is a table with **Email**, **First name** and **Last name** columns. **Add row** adds another line and **Remove row** takes one away. The hint reads "Enter recipients one per row. Email is required; first and last name are optional." The footer keeps a live count, "1 valid contact", "12 valid contacts".
+
+**Paste emails** takes a block of text. "Paste a list of emails, one per line or comma-separated. We’ll deduplicate and skip invalid addresses." The footer counts how many will be added.
+
+**Upload CSV** takes a file. "Drop a CSV here or click to browse", and "The first row is the column headers, and one of them must be email." **Download template CSV** gives you a file with the right headers to fill in. Any extra column you include becomes a merge field the campaign can insert with **Variable**.
+
+**Add to campaign** puts the picked contacts into **To**. **Cancel** closes without adding anyone.
+
+Recipients are added to each campaign. The **Saved lists** tab shows lists already in your organization; the other three ways build the list for this campaign.
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Open the dialog">
+    In **New campaign**, click **Browse contacts**.
+  </Step>
+  <Step title="Type a few people in">
+    On **Add manually**, fill **Email** for each person, and **First name** and **Last name** if you have them. Click **Add row** for more.
+  </Step>
+  <Step title="Or paste a list">
+    On **Paste emails**, paste the addresses. Duplicates are dropped and anything that is not an address is skipped before the count is shown.
+  </Step>
+  <Step title="Or upload a spreadsheet">
+    On **Upload CSV**, click **Download template CSV**, fill it in, and drop it on the tab. Keep a column named email; add columns like company or city if you want to merge them into the message.
+  </Step>
+  <Step title="Add them">
+    Click **Add to campaign**. Each recipient appears as a chip in **To**, and you can remove any of them before sending.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**Names drive the greeting.** **Variable** in the composer offers the recipient's name and email, so a first name typed here becomes "Hi Maya," in the email.
+
+**Duplicates within a campaign are removed.** Paste the same address twice, or add someone who is already in **To**, and the campaign sends to them once.
+
+**Unsubscribed people stay out.** Someone who has unsubscribed from an earlier campaign is not emailed again, whichever way you add them.
+
+**Recipients are not saved until you send or schedule.** Closing the composer with **Discard** drops the list along with the draft.
 
 ## Related
 

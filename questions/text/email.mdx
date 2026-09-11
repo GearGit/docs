@@ -4,50 +4,69 @@ description: "Collect an email address."
 icon: "at"
 ---
 
-_To write._
+Email is a one-line question that checks what it collects: an answer that is not an email address is refused on the screen. Use it wherever you need a real address back, for a follow-up study, a prize draw or a panel record.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: An email question as a respondent sees it, one line with an address in it. */}
 
 ## When to use it
 
-_To write._
+- You are asking for an address you intend to use, and a typo would cost you the respondent.
+- You want a way to recognize the same person across studies without asking them for a name.
+- You are running a prize draw or a follow-up and the address is the point of the question.
 
-**Consider instead:** _To write_
+**Consider instead:** [Email address](/questions/ready-made/email-address) when you want the question already worded for you, [Short text](/questions/text/short-text) when the answer only looks like an address and does not have to be one, [Phone](/questions/text/phone) when you will be calling rather than writing.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Email">
-    _To write._
+  <Step title="Pick Email">
+    In **Add to survey**, type to filter and click **Email**, under the **Text** heading. The question lands where the gap was, as one empty box with "your@email.com" printed inside it.
+
+    {/* screenshot: The email question on the builder canvas, edited in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    Type the question straight onto the canvas. Say what you will do with the address in the description, because people answer this one on trust, and the sentence under the title is where they look for it.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **Placeholder** | The grey wording inside the empty box. A new question starts with "your@email.com". Clear the field and the box shows nothing. |
+
+{/* screenshot: The question panel for an email question, with the placeholder row and the row that opens Validation. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until the box holds an address. |
+| [Min characters and Max characters](/rules/text-limits) | The fewest and the most characters the answer may run to. |
+| [Min words and Max words](/rules/text-limits) | The same bounds counted in words. An address is one word, so these are rarely what you want here. |
+| [Pattern](/rules/patterns) | Narrows the shape further, which is how you accept addresses at one domain and nothing else. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+The question already checks that the answer is an address, on our servers as well as in the browser, so a [pattern](/rules/patterns) here is for narrowing that check rather than for making it.
 
 ## Logic that works with it
 
-_To write._
+The answer is the address they typed, so conditions read it as text: **is**, **is not**, **contains**, **does not contain**, **starts with**, **ends with**, **is answered** and **is not answered**. **contains** is the useful one, since "@ourcompany.com" in the value is how you tell staff from everybody else. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it. It can [drive a loop](/logic/loops), which gives one pass, on the address they gave. It [scores](/logic/scoring) through an answer key, which is rarely what an address question is for. [Piping](/logic/piping) it into later wording prints the address back, which is worth doing on an ending so they can check it before they leave.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Values list**, one row per answer, which is how a question with a different answer every time reads. **Word cloud** is the other entry in **Chart type**.
+
+In every export the question becomes one text column, holding the address in full.
+
+{/* screenshot: The email question on the Analytics tab, listed value by value. */}
 
 ## Related
 

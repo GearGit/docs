@@ -4,50 +4,67 @@ description: "Pick a start time and an end time."
 icon: "hourglass-half"
 ---
 
-_To write._
+Time range asks for a window inside a day: a **Start time** and an **End time**, side by side, each with its own hour and minute dropdowns. It opens at 09:00 and 17:00 and the answer is stored once they set it. The two ends stay together as one answer, so a later screen can read the whole window at once.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A time range question as a respondent sees it, a start time and an end time side by side. */}
 
 ## When to use it
 
-_To write._
+- The answer is a window: opening hours, a shift, availability, a delivery slot.
+- You want both ends kept as one answer rather than as two questions to reconcile afterward.
+- You would otherwise have to check by hand that the second time is later than the first.
 
-**Consider instead:** _To write_
+**Consider instead:** [Time](/questions/dates/time) when one moment in the day is the whole answer, [Date range](/questions/dates/date-range) when the span runs across days, [Multiple choice](/questions/choice/multiple-choice) when fixed windows you name yourself are easier to answer and easier to chart.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Time range">
-    _To write._
+  <Step title="Pick Time Range">
+    In **Add to survey**, type to filter and click **Time Range**, under the **Date & Time** heading. The question lands where the gap was, already showing both pickers and with no content to clear out first.
+
+    {/* screenshot: A time range question on the builder canvas, edited in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    The canvas is the real survey, so you type the question and its description straight onto it. The two ends are labeled **Start time** and **End time** for the respondent already, so there is no option list to write.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set. Both display settings apply to both ends, so the window is always read on one clock.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **24-hour clock** | Off, each end reads 01 to 12 with an **AM** and **PM** dropdown beside it. On, the hour lists run 00 to 23 and the AM and PM dropdowns go away. |
+| **Minute step** | How far the minute lists advance: **1**, **5**, **10**, **15** or **30**. At 30 a window can only start and end on the hour or the half hour, which is usually what an availability question wants. |
+| **Type** | Switches the question to another kind. The other five date and time questions are in the list. A switch that would drop something asks first. |
+
+Below those the panel holds **Required** and the three logic rows every question has: **Show/hide question**, **Skip from here** and **Set a variable**.
+
+{/* screenshot: The question panel for a time range, with the 24-hour clock and minute step rows. */}
 
 ## Rules you can set
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until both ends are set. |
+
+Required is the whole of it, and a time range has no **Validation** row in the panel: every time the dropdowns can produce is a real time of day, and there is no calendar to bound. One check runs whatever you do. A start later than its end is refused with "Range start must not be after its end.", so the window that reaches your results always runs forward.
 
 ## Logic that works with it
 
-_To write._
+The answer is one window, a start and an end kept together. Conditions read it the way they read a date: **is**, **is not**, **is after**, **is before**, **is between**, **is answered** and **is not answered**. It cannot be a [carry-forward](/logic/carry-forward) source or target, because there is no list of answers to hand on. It can [drive a loop](/logic/loops), which gives one pass for the window they gave. It does not [score](/logic/scoring): points are typed next to an answer you wrote, and this question has no answers to write them against, so it has no **Scoring** row. [Piping](/logic/piping) it into later wording prints both ends as clock times, as 09:00 and 17:00 with a dash between them. Like any other [condition](/logic/how-logic-runs) source it has to sit on an earlier screen than the rule that reads it.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Timeline**, which for times of day is one bar per hour, labeled 09:00, 10:00 and so on, in clock order rather than in size order. Only the hours that appear in the answers are drawn. **Bar chart** and **Values list** are the other two entries in **Chart type**.
+
+In every export the question becomes one column, holding the start and the end of the window together.
+
+{/* screenshot: The time range question on the Analytics tab, charted hour by hour. */}
 
 ## Related
 

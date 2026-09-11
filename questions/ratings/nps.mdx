@@ -4,50 +4,66 @@ description: "Rate how likely you are to recommend something, from 0 to 10."
 icon: "gauge"
 ---
 
-_To write._
+NPS is the standard recommendation question: eleven numbered buttons from 0 to 10, with a caption at each end. The range is fixed, which is the point of it, because a score only means something next to other scores collected the same way.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: An NPS question as a respondent sees it, eleven buttons from 0 to 10 with a caption at each end. */}
 
 ## When to use it
 
-_To write._
+- You are tracking recommendation over time and want a number your last wave can be compared against.
+- You want one headline figure for a whole study, reported the way the rest of your field reports it.
+- You want to follow the rating with a reason, using the number they gave to decide which question to ask next.
 
-**Consider instead:** _To write_
+**Consider instead:** [Opinion scale](/questions/ratings/opinion-scale) for the same 0 to 10 scale without the recommendation framing, [Star rating](/questions/ratings/star-rating) when you want 3, 5, 7 or 10 points instead, [Likert](/questions/ratings/likert) when the answer is agreement with a statement, [Smiley rating](/questions/ratings/smiley-rating) when you are after a feeling rather than a figure.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose NPS">
-    _To write._
+  <Step title="Pick NPS">
+    In **Add to survey**, type to filter and click **NPS**, under **Rating**. The question lands where the gap was with the full 0 to 10 scale drawn and both end captions already reading **Not at all likely** and **Extremely likely**.
   </Step>
   <Step title="Write the question">
-    _To write._
+    Type the question on the canvas. The wording is yours, so ask about whatever you are measuring recommendation of.
+
+    {/* screenshot: The NPS question on the builder canvas, edited in place. */}
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **High label** | The caption under the right end of the scale. Left alone it reads **Extremely likely**, which is what respondents see. |
+| **Low label** | The caption under the left end. Left alone it reads **Not at all likely**. |
+
+That is the whole panel for display. The scale itself is fixed at eleven points, 0 to 10, and there is no control that changes it. If you want a different length, use [Star rating](/questions/ratings/star-rating), [Smiley rating](/questions/ratings/smiley-rating) or [Likert](/questions/ratings/likert) instead.
+
+{/* screenshot: The question panel for an NPS, with the high and low label rows. */}
 
 ## Rules you can set
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they pick a number. |
+
+Required is the whole of it. Every answer the scale can give is already inside its range, so there is nothing left to bound and the panel has no **Validation** row.
 
 ## Logic that works with it
 
-_To write._
+The answer is a number, so conditions compare it as one: **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most**, **is between**, **is answered** and **is not answered**. That is how you build the usual follow-ups, one question for **is at most** 6 and another for **is at least** 9. It [scores](/logic/scoring) a number per scale point, with a row for every point from 0 to 10, and a point can be negative. It can [drive a loop](/logic/loops), either one pass for the answer they gave or as many passes as the number they chose. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it, because a rating is a measurement rather than a list of things. [Piping](/logic/piping) it into later wording prints the number they picked.
 
 ## How it shows in results
 
-_To write._
+Per question the default is an **NPS gauge**: a dial carrying the score, from minus 100 to plus 100, with the three groups named under it as **Detractors** for 0 to 6, **Passives** for 7 and 8, and **Promoters** for 9 and 10. The score is the share of promoters less the share of detractors. **Bar chart** is the other entry in **Chart type**, and it shows how the score was earned, one bar per point from 0 to 10.
+
+In every export the question becomes one column holding the number that respondent picked.
+
+{/* screenshot: The NPS question on the Analytics tab, charted as an NPS gauge with the three groups beneath it. */}
 
 ## Related
 

@@ -4,21 +4,57 @@ description: "Build a report and share it with people outside the app."
 icon: "file-lines"
 ---
 
-_To write._
+**6 Reports** is where results become something you can hand over: a document you write around your charts, or a set of tables generated from the published survey, shared by a link.
 
-{/* screenshot: reports in the app */}
+{/* screenshot: A report document in the editor, with the Add a block menu open beside a question section. */}
 
 ## What it does
 
-_To write._
+The tab is titled **Reports**, "Curated, shareable reports over your survey's results." Until you have a report, the picker sits on the page itself; once you have one, **New report** opens it. The picker has two groups. Under **A document you write** is **Report document**, "Charts and findings you curate by hand." Under **Generated from your results** are **Topline** ("Every question as a table."), **Methodology** ("Field dates, dispositions, completion."), **Data dictionary** ("Every variable with its codes.") and **Questionnaire as fielded** ("Exactly what respondents were asked."). **Create** on a row makes it. A generated report needs a published survey: "Publish the survey first. This report is generated from a published version."
+
+A report document is edited in place. Name it in **Report title**. **Add a block** offers **Question**, **Heading**, **Text**, **Big numbers**, **Quote**, **Map** and **Divider**; **Find a question…** searches your questions and your variables. Each question section carries a finding line you can rewrite, a **Chart form** control, **Bar order** (**Scale order** or **Time order**, **Most chosen**, **A to Z**), **Chart each row** on a grid question, **Move up**, **Move down**, **Hide** or **Show**, and **Remove**. The corner reads **Saving…** while a change writes and **Not saved** if it fails. Silence means saved.
+
+**Filters** decides whose responses the report counts: **Responses** (**Live**, **Test**, **Preview**), **Completeness** (**All**, **Completed**, **Partial**, **Screened out**), **Date range**, and **Geography** by **Countries** and **Cities**. **Apply filters** commits the set and **Reset** returns to the defaults.
+
+A report has its own publish step. Until you click **Publish** it reads "Not published yet. Your edits stay private until you publish." Afterwards it reads "Published. Readers are seeing your latest version." and the button becomes **Publish changes**. Edit again and it reads "You have changes that are not published yet."
+
+**Share** opens **Share report**. **General access** is **Restricted**, "Only people with access to this survey can open the link.", or **Anyone with the link**, "Anyone on the internet with this link can view." A public link is marked **Viewer**, view-only. **Copy link** copies the one address. On the list, each report is badged **Public**, **Restricted** or **Private**, and its menu offers **Edit**, **View** once a link exists, **Share**, **Duplicate** and **Delete**.
+
+**Settings** opens **Report settings**. **Content** holds **Show raw data in this report** and **Show executive summary**. **Branding** says "Custom logo and removing branding are available on a paid plan." **Privacy** says "A shared link always hides contact details. There is no switch for it."
+
+**Download** offers **Print / save as PDF** and **Export as Excel (.xlsx)**.
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Create the report">
+    Click **6 Reports**. Choose **Report document** to write one, or a generated type for tables, and click **Create**.
+  </Step>
+  <Step title="Build the document">
+    Use **Add a block** to place questions, headings and text, or click **+ Add to report** on a chart in **5 Analytics**. Rewrite each finding line in your own words.
+  </Step>
+  <Step title="Choose whose responses count">
+    Open **Filters**, set **Responses** to **Live** and a **Date range** if you need one, and click **Apply filters**.
+  </Step>
+  <Step title="Publish it">
+    Click **Publish**. Every later edit stays private until you click **Publish changes**.
+  </Step>
+  <Step title="Share the link">
+    Click **Share**, pick **Restricted** or **Anyone with the link**, and **Copy link**.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**A shared report shows the numbers as of its last publish.** New responses do not move it until you click **Publish changes**. Readers see a note such as "12 responses arrived after this was published." with the date the figures are from.
+
+**Percentages are of the people asked.** Each section states its base under the chart.
+
+**A Restricted link asks the reader to sign in.** Someone signed in without access to the survey sees "You don't have access to this report". Tightening a public link to **Restricted** keeps the same address, so a link already sent still works for the right people.
+
+**Contact details never appear on a shared report.** Names, emails, phones and addresses are held back on every link, with no setting to change.
+
+**Deleting a report kills its link.** The dialog says "Deleting a report also revokes any active public link." A reader who follows it afterwards sees "This link has been revoked".
 
 ## Related
 

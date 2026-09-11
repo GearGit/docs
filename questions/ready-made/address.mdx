@@ -4,50 +4,66 @@ description: "Collect a postal address."
 icon: "house"
 ---
 
-_To write._
+Address is a text box for a postal address, tagged so the rest of the platform knows what is in it. A respondent types the address the way they would write it on an envelope. You get the answer as plain text, kept off every shared report.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: An Address question as a respondent sees it, one box with Enter address written in it. */}
 
 ## When to use it
 
-_To write._
+- You are posting something out: an incentive, a sample, a printed copy of the findings.
+- You want the answer held back from any report you share, without remembering to do anything about it.
+- You want the address in one place rather than spread across boxes a respondent has to tab between.
 
-**Consider instead:** _To write_
+**Consider instead:** [Country or region](/questions/ready-made/country-or-region) when where somebody lives is all you need, [Long text](/questions/text/long-text) when the answer is prose rather than an address, [Short text](/questions/text/short-text) for a single part of an address such as a postal code, where a [pattern](/rules/patterns) can check the shape.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Address">
-    _To write._
+  <Step title="Pick Address">
+    In **Add to survey**, type to filter and click **Address**, under the **Text** heading. It arrives as one box with **Enter address…** written inside it in grey, and no question wording of its own.
+
+    {/* screenshot: An Address question on the builder canvas, its wording typed in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    The canvas is the real survey, so you type the question and its description straight onto it. Say in the description which parts you want, such as street, city and postal code, because the box takes them all together.
   </Step>
 </Steps>
 
 ## Settings
 
-| Setting | What it does |
-| --- | --- |
-| _To write_ | _To write_ |
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
+An Address question has nothing to configure. The panel opens on **Type**, which reads **Address** and does not open a picker, because a ready-made question has no sibling type to switch to. Under it sit **Required** and **Validation**, then the logic rows. Everything a respondent reads, the question and its description, is typed on the canvas.
+
+{/* screenshot: The question panel for an Address question, with Type fixed and Required under it. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until the box has something in it. |
+| [Text limits](/rules/text-limits) | **Min characters**, **Max characters**, **Min words** and **Max words**. A minimum length is one way to ask for more than a street name. |
+| [Pattern](/rules/patterns) | Accepts the answer only when it matches a shape you pick, or one you write yourself. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. Write one that covers the whole address, because a question has one message rather than one per rule. |
 
 ## Logic that works with it
 
-_To write._
+The answer is the text they typed, so conditions read it as text: **is**, **is not**, **contains**, **does not contain**, **starts with**, **ends with**, **is answered** and **is not answered**. **contains** is the practical one here, since an address has no fixed shape to compare whole. It is not a [carry-forward](/logic/carry-forward) source, and nothing carries into it, because there is no list of choices to pass along. It can [drive a loop](/logic/loops), which gives one pass for the address they gave. It [scores](/logic/scoring) against an answer key, the accepted answers you type in the **Scoring** dialog. [Piping](/logic/piping) it into later wording prints the address back to them, which is how a confirmation screen shows where a parcel is going.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Values list**, the answers themselves with a count beside each. **Word cloud** is the other entry in **Chart type**. An address is close to unique per respondent, which is why a list of values is the useful view and a distribution is not.
+
+In every export the question becomes one text column, holding the address as it was typed.
+
+Addresses never appear on a shared [report](/results/reports). Along with names, emails and phone numbers they are held back on every link, with no setting to change.
+
+{/* screenshot: The Address question on the Analytics tab, shown as a values list. */}
 
 ## Related
 

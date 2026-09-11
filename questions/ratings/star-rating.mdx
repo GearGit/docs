@@ -4,50 +4,70 @@ description: "Rate something by picking a number of stars."
 icon: "star"
 ---
 
-_To write._
+Star rating is the familiar row of stars: a respondent clicks the one that matches their verdict and everything up to it fills in. It is the most flexible rating in the family, with a scale of 3, 5, 7 or 10 points and four different things the points can be drawn as.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A star rating question as a respondent sees it, five stars with the first three filled in. */}
 
 ## When to use it
 
-_To write._
+- You are asking respondents to judge quality: a product, a delivery, a session, a piece of support.
+- Your audience already rates things in stars elsewhere, so the control needs no explaining.
+- You want a specific scale length, whether that is a tight 3 or a wide 10.
 
-**Consider instead:** _To write_
+**Consider instead:** [Smiley rating](/questions/ratings/smiley-rating) when you are after feeling rather than quality, [Thumbs up or down](/questions/ratings/thumbs-up-down) when two answers are enough, [Opinion scale](/questions/ratings/opinion-scale) when you want a numbered 0 to 10 scale with captions at the ends, [Likert](/questions/ratings/likert) when the points should be words.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Star rating">
-    _To write._
+  <Step title="Pick Star Rating">
+    In **Add to survey**, type to filter and click **Star Rating**, under **Rating**. The question lands where the gap was with five stars already drawn and no end captions.
   </Step>
   <Step title="Write the question">
-    _To write._
+    Type the question on the canvas, then set the scale, the style and the two captions in the panel beside it.
+
+    {/* screenshot: The star rating question on the builder canvas, edited in place. */}
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **Scale** | How many points the row holds: **3**, **5**, **7** or **10**. It arrives on 5. |
+| **Style** | What a point is drawn as: **Stars**, **Hearts**, **Emoji** or **Numbers**. Stars, hearts and numbers fill up to the point picked; emoji highlights only the face they chose. |
+| **High label** | A caption for the top end of the scale. On a scale of 5 or fewer it sits under the last point; on 7 or 10 it sits at the end of the row. |
+| **Low label** | A caption for the bottom end, opposite the high one. |
+
+Both captions start empty, so a question with nothing typed into them shows the row and no words.
+
+{/* screenshot: The question panel for a star rating, with the scale, style and end label rows. */}
 
 ## Rules you can set
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they pick a point. |
+
+Required is the whole of it. Every answer the scale offers is already inside its range, so there is nothing left to bound and the panel has no **Validation** row. Left optional, a respondent can clear the answer by clicking the point they already picked.
 
 ## Logic that works with it
 
-_To write._
+The answer is a number, counting from 1 at the low end, so conditions compare it as one: **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most**, **is between**, **is answered** and **is not answered**. A "4 or 5 out of 5" follow-up is one condition, **is at least** 4. It [scores](/logic/scoring) a number per scale point, one row per point, and a point can be negative, so a low rating can cost marks. It can [drive a loop](/logic/loops), either one pass for the answer they gave or as many passes as the number they chose. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it, because a rating is a measurement rather than a list of things worth asking about again. [Piping](/logic/piping) it into later wording prints the number they picked.
+
+The answer is the number, not the shape, so switching **Style** changes nothing about what is stored or what your conditions read.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, one bar per point, counting the respondents who picked it. **Histogram** and **Pie chart** are the other two entries in **Chart type**.
+
+In every export the question becomes one column holding the number that respondent picked.
+
+{/* screenshot: The star rating question on the Analytics tab, charted as one bar per point. */}
 
 ## Related
 

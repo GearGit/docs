@@ -1,24 +1,49 @@
 ---
 title: "Delivery tracking"
-description: "See which emails were delivered, opened, and answered."
+description: "See which emails were sent, opened, clicked, and answered."
 icon: "truck-fast"
 ---
 
-_To write._
+Every campaign reports how far each email got: sent, opened, clicked, answered. You read it as a funnel for the whole campaign and as a journey for each recipient.
 
-{/* screenshot: delivery tracking in the app */}
+{/* screenshot: A campaign's page: the funnel tiles above the Recipients and their journey table. */}
 
 ## What it does
 
-_To write._
+**3 Distribute** opens with **Delivery across all campaigns**: **Total sent**, **Open rate**, **Click rate**, **Responses** and **Response rate**, followed by a **Sends over time** chart with **Sent** and **Responses** as its two series. **Where responses came from** attributes responses to each campaign and to each tagged link, with untagged traffic as **Direct / untagged**.
+
+Click a campaign to open its own page. **This campaign's funnel** shows **Sent** ("of 120 recipients"), **Open rate**, **Click rate** and **Response rate**.
+
+**Recipients and their journey** is the table beneath it, with **Recipient**, **Status**, **Journey** and **Last activity**. A recipient's **Status** is one of **Queued**, **Sent**, **Opened**, **Clicked**, **Unsubscribed** or **Failed**, and a green **Responded** badge marks anyone whose response has arrived. **Journey** is a row of dots that fills in as the email is sent, opened, clicked and answered. **Search recipients…** and the status tabs narrow the table.
+
+**Activity** on a row opens a drawer with the recipient's timeline, event by event with its time. From there, **Open response** jumps to the response they gave, **Copy email** copies their address, and **Remove from lists** stops them being emailed in future campaigns: "maya@example.com won’t be emailed in future campaigns."
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Send a campaign">
+    Tracking starts when a campaign goes out. See [Email campaigns](/share/email-campaigns).
+  </Step>
+  <Step title="Read the funnel">
+    On **3 Distribute**, open the campaign. The tiles under **This campaign's funnel** tell you how many were sent and what share opened, clicked and responded.
+  </Step>
+  <Step title="Find one person">
+    Type into **Search recipients…** or pick a status tab. Their row shows the **Status**, the **Journey** dots and when they last did anything.
+  </Step>
+  <Step title="Open the timeline">
+    Click **Activity** on the row. Each event is listed with its time. Click **Open response** to read what they answered.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**Opens and clicks are reported by the recipient's mail client.** An open is recorded when the client loads the tracking image in the email, and a click when the recipient follows the survey link. A mail client that blocks images reports no open, so opens are under-counted; a click or a response still counts, and each implies the steps before it.
+
+**Failed means we could not send.** It is our side that could not hand the email over. Correct the address or try again with a new campaign.
+
+**A response is attributed once.** Each recipient's link is theirs alone, so the **Responses** count and **Where responses came from** never double-count a person who opens the email twice.
+
+**Tracking goes with the campaign.** Deleting a campaign removes its tracking, while the responses attributed to it stay in your data. See [Responses and sessions](/survey/responses-and-sessions).
 
 ## Related
 

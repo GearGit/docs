@@ -4,50 +4,66 @@ description: "Collect a mobile number."
 icon: "mobile-screen"
 ---
 
-_To write._
+Mobile phone collects a number with a country picker beside the box. The respondent chooses their country, or keeps the one already showing, and types the rest. What you store is the full international number, whatever grouping they saw while typing.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A Mobile phone question as a respondent sees it, the country picker beside the number. */}
 
 ## When to use it
 
-_To write._
+- You need a number you can call or text after the study, for a recruitment screener or a callback.
+- Your respondents are in more than one country and you want the dialing code handled for you.
+- You want the number stored in one shape, so a list of them is usable without cleaning it first.
 
-**Consider instead:** _To write_
+**Consider instead:** [Phone](/questions/text/phone) when the number is not a contact detail you are keeping, [Email address](/questions/ready-made/email-address) when a written reply suits better, [Short text](/questions/text/short-text) for an extension, a reference or anything else that is not a phone number.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Mobile phone">
-    _To write._
+  <Step title="Pick Mobile Phone">
+    In **Add to survey**, type to filter and click **Mobile Phone**, under the **Text** heading. It arrives as a country picker and a box, with **+1 (555) 000-0000** written inside it in grey.
+
+    {/* screenshot: A Mobile phone question on the builder canvas, its wording typed in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    The canvas is the real survey, so you type the question and its description straight onto it. The picker and the hint come with the question type.
   </Step>
 </Steps>
 
 ## Settings
 
-| Setting | What it does |
-| --- | --- |
-| _To write_ | _To write_ |
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
+A Mobile phone question has nothing to configure. The panel opens on **Type**, which reads **Mobile Phone** and does not open a picker, because a ready-made question has no sibling type to switch to. Under it sit **Required** and **Validation**, then the logic rows. The country list is searchable for the respondent, and the digits regroup as they type, following the country they picked.
+
+{/* screenshot: The question panel for a Mobile phone question, with Type fixed and Required under it. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until the box has a number in it. |
+| [Text limits](/rules/text-limits) | **Min characters**, **Max characters**, **Min words** and **Max words**, counted over the answer as it is stored. |
+| [Pattern](/rules/patterns) | Accepts the answer only when it matches a shape you pick, such as **US phone**. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
 
 ## Logic that works with it
 
-_To write._
+The answer is the number as text, in its full international form, so conditions read it as text: **is**, **is not**, **contains**, **does not contain**, **starts with**, **ends with**, **is answered** and **is not answered**. A dialing code is the front of the answer, so **starts with** is how you branch on where somebody is. It is not a [carry-forward](/logic/carry-forward) source, and nothing carries into it, because there is no list of choices to pass along. It can [drive a loop](/logic/loops), which gives one pass for the number they gave. It [scores](/logic/scoring) against an answer key, the accepted answers you type in the **Scoring** dialog. [Piping](/logic/piping) it into later wording prints the number back to them, which is how a confirmation screen reads it out before they finish.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Values list**, the answers themselves with a count beside each. **Word cloud** is the other entry in **Chart type**. A phone number is unique per respondent, which is why a list of values is the useful view and a distribution is not.
+
+In every export the question becomes one text column, holding the full number.
+
+Phone numbers never appear on a shared [report](/results/reports). Along with names, emails and addresses they are held back on every link, with no setting to change.
+
+{/* screenshot: The Mobile phone question on the Analytics tab, shown as a values list. */}
 
 ## Related
 

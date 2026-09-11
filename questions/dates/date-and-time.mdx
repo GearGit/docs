@@ -4,50 +4,71 @@ description: "Pick a date and a time together."
 icon: "calendar-clock"
 ---
 
-_To write._
+Date and time asks for one moment: a calendar day and a clock time, joined by the word "at" and kept as a single answer. Respondents type or click the day in the date field, then set the hour and the minute in the two dropdowns beside it. Use it where the day alone would not tell you what you need to know.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A date and time question as a respondent sees it, a date field, the word at, and hour and minute dropdowns. */}
 
 ## When to use it
 
-_To write._
+- The hour is part of the event: an appointment, a shift, a delivery slot, an incident.
+- You are collecting a booking that needs both halves to be actionable on its own.
+- You want one answer to pipe into a later screen as a full moment rather than two fragments.
 
-**Consider instead:** _To write_
+**Consider instead:** [Date](/questions/dates/date) when the day is the whole answer, [Time](/questions/dates/time) when the day is already known, [Date range](/questions/dates/date-range) when the answer is a span of days, [Time range](/questions/dates/time-range) when it is a window inside one day.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Date and time">
-    _To write._
+  <Step title="Pick Date Time">
+    In **Add to survey**, type to filter and click **Date Time**, under the **Date & Time** heading. The question lands where the gap was with an empty date field and the time showing 09:00 until it is set.
+
+    {/* screenshot: A date and time question on the builder canvas, edited in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    The canvas is the real survey, so you type the question and its description straight onto it. Both halves of the field are drawn for you, so there is no option list to write.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **24-hour clock** | Off, the time reads 09:00 with an **AM** and **PM** dropdown beside it. On, the hour list runs 00 to 23 and the AM and PM dropdown goes away. |
+| **Type** | Switches the question to another kind. The other five date and time questions are in the list. A switch that would drop something asks first. |
+
+Below those the panel holds **Required**, **Validation**, and the three logic rows every question has: **Show/hide question**, **Skip from here** and **Set a variable**. The minute dropdown runs one minute at a time here. Rounding it to a quarter of an hour is a setting on [Time](/questions/dates/time) and [Time range](/questions/dates/time-range).
+
+{/* screenshot: The question panel for a date and time, with the 24-hour clock row. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. The calendar rules are behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they give a moment. Both halves make the answer: a day with no time set is not yet an answer. |
+| [Earliest and Latest](/rules/number-bounds) | The first and last day you accept, typed as YYYY-MM-DD. |
+| [Allowed dates](/rules/number-bounds) | **Any date**, **Future only** or **Past only**, judged against the day the respondent answers. Today itself counts as neither past nor future. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+All three rules read the date half of the answer. They are checked on our servers when the screen is submitted, and the message names the bound that was missed: "Must be on or after 2026-01-01." or "Choose a date in the future."
 
 ## Logic that works with it
 
-_To write._
+The answer is one moment, a date carrying a time. Conditions read it as a date: **is**, **is not**, **is after**, **is before**, **is between**, **is answered** and **is not answered**. It cannot be a [carry-forward](/logic/carry-forward) source or target, because there is no list of answers to hand on. It can [drive a loop](/logic/loops), which gives one pass for the moment they gave. It does not [score](/logic/scoring): points are typed next to an answer you wrote, and this question has no answers to write them against, so it has no **Scoring** row. [Piping](/logic/piping) it into later wording prints it the way a person reads a moment, as 24 Aug 2026 14:30. Like any other [condition](/logic/how-logic-runs) source it has to sit on an earlier screen than the rule that reads it.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Timeline**, which puts the answers in date order rather than in size order. It groups by day while they sit inside about six weeks, by month over a longer fieldwork period, and by year once they span more than about eighteen months. **Bar chart** and **Values list** are the other two entries in **Chart type**.
+
+In every export the question becomes one column, holding the day and the time together.
+
+{/* screenshot: The date and time question on the Analytics tab, charted as a timeline. */}
 
 ## Related
 

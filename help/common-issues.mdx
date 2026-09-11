@@ -4,17 +4,29 @@ description: "Fix the problems that come up most often."
 icon: "circle-question"
 ---
 
-_To write._
+The questions we hear most, with what the app is telling you and what to do next. If yours is not here, [contact support](/help/contact-support).
 
 <AccordionGroup>
   <Accordion title="My survey will not publish">
-    _To write._
+    Nothing you built can stop a publish. Two things can. The first is a problem on our side: the publish page reads "Something on our side is stopping this. See the details below", and the details say "This one is on us. The builder can't create or undo this state. Send it to support with the survey link and we'll clear it." Do that, and we clear it. The second is the Free plan's limit of 5 live surveys: a sixth publish is refused. Close or delete a live survey, or move up a plan. See [Plans and limits](/account/plans-and-limits).
   </Accordion>
   <Accordion title="A respondent says they cannot submit">
-    _To write._
+    The screen tells them why. A [required](/rules/required) question or a [selection count](/rules/selection-counts) they have not met shows its message under the question, and a **Custom error** you wrote replaces the wording. A closed survey shows "Survey closed", and one at its response limit shows "Survey full". A respondent whose group is already full lands on your Quota full ending; see [Quotas](/logic/quotas). A respondent who left the tab open a long time can reload it, and the survey continues where they were.
   </Accordion>
   <Accordion title="My logic did not fire">
-    _To write._
+    Four things to check. A condition reads a screen the respondent has already seen, never the screen it sits on and never a later one; see [How logic runs](/logic/how-logic-runs). A skipped screen never runs its exit rules. A rule pointing at an option you deleted never matches. And preview runs your draft while respondents run the published version, so a rule added after publishing needs a republish. To see why one person saw or skipped a screen, open their row in [Responses](/results/responses-grid): the Response Journey marks each screen shown or skipped, with the reason.
+  </Accordion>
+  <Accordion title="I cannot sign in">
+    "Invalid email or password." means one of the two is wrong; **Forgot password?** sends a reset link that lasts about an hour. "Too many sign-in attempts. Wait a minute and try again." lifts on its own. "This account has been disabled. Contact support if that looks wrong." needs us. With Google, "We could not reach Google. Check your connection, or use your email instead." is a connection problem, and "This Google account is not on the invite list for this workspace yet." means an admin has to invite that address first. A reset link that reads "This reset link is invalid or has expired. Request a new one." needs a fresh one, and so does a verification link that reads "Verification links last 24 hours. Send a fresh one to finish."
+  </Accordion>
+  <Accordion title="My invite link does not work">
+    "This invite is for a different email address." and "Sign out and use the invited email to accept." both mean you are signed in as someone else: click **Sign out and switch account**. "This invite has expired." and "This invite link isn’t valid. It may have been revoked. Ask the organization admin for a new one." both mean the link is spent. An admin sends another from **Members**, with **Resend** on the pending invite or a new **Invite people**. See [Roles and seats](/account/roles-and-seats).
+  </Accordion>
+  <Accordion title="A control says it is a paid feature">
+    The dialog is **That's a paid feature**: "Upgrading is managed by your organization's admins. Ask one of them to move your plan up, and the control unlocks for everyone in the workspace." On Free, the **Media** page reads "Media uploads are on a paid plan." An admin changes the plan from **Plan and billing**; see [Plans and limits](/account/plans-and-limits).
+  </Accordion>
+  <Accordion title="The page says something went wrong">
+    **Something went wrong** reads "An unexpected error interrupted this page. Retrying usually fixes it; if it persists, contact support." Click **Try again** first. **You're offline** reads "We can't reach the server. Check your connection, and we'll keep retrying automatically." If the first message keeps coming back, send us the page you were on and what you clicked; see [Contact support](/help/contact-support).
   </Accordion>
 </AccordionGroup>
 

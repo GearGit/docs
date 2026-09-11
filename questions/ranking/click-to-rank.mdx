@@ -4,50 +4,66 @@ description: "Put options in order by clicking them one at a time."
 icon: "list-ol"
 ---
 
-_To write._
+Click to rank asks the same question as drag to rank with a different gesture. The list stays where it is and respondents tap the items in the order they want them, first choice first. Each tap stamps the next number onto the item, and tapping a stamped item takes it back out and renumbers the rest.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A click to rank question as a respondent sees it, the tapped items carrying their position numbers. */}
 
 ## When to use it
 
-_To write._
+- You want relative order rather than a score, and the list is long enough that dragging it would be tedious.
+- Most respondents are on a phone, where a tap is a surer gesture than a drag.
+- The natural way to answer is "my first choice is this, then this", building the order forward rather than rearranging a list.
 
-**Consider instead:** _To write_
+**Consider instead:** [Drag to rank](/questions/ranking/drag-to-rank) when rearranging a short list is the clearer picture, [Constant sum](/questions/ranking/constant-sum) when you want the size of the gaps and not only the order, [Multiple choice](/questions/choice/multiple-choice) when picking a few is enough, [Single choice](/questions/choice/single-choice) when only the first choice matters.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Click to rank">
-    _To write._
+  <Step title="Pick Rank Click">
+    In **Add to survey**, type to filter and click **Rank Click**, under **Rank**. It arrives with two empty items, because ranking needs at least two to mean anything.
+
+    {/* screenshot: The click to rank question on the builder canvas, edited in place. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question and the items">
+    The canvas is the real survey, so you type the question and the items straight onto it. **Add option** adds another row, and the **Bulk edit** chip beside it takes a pasted list, one per line. On the canvas the items are shown as a plain list, the same way a drag to rank is edited.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Options | The items they put in order. Edited on the canvas, or in **Bulk edit** as plain text, one per line. |
+| **Answer order** | The order the items are listed in before anybody taps: **As written**, **Shuffled** or **Reversed**. Shuffled draws a fresh order for each respondent, which keeps the top of your list from becoming everybody's first choice. Once an order is set you can pin an item to the top or the bottom. |
+
+There is no "Only some" here. Ranking a different set of items per respondent gives answers that cannot be compared, so the whole list goes to everyone. A list built by [carry-forward](/logic/carry-forward) is the way to ask about a shorter set.
+
+{/* screenshot: The question panel for a click to rank, with the answer order row and the rules row. */}
 
 ## Rules you can set
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | Every item has to be placed. The message reads "Please rank all options." |
+
+Required is the whole of it. An order is either complete or it is not, so a ranking question has no **Validation** row in the panel and nothing else to constrain. Left optional, a respondent can tap two items out of six and move on, and those two are the answer.
 
 ## Logic that works with it
 
-_To write._
+The answer is the items in the order they tapped them, stored as the options themselves rather than as their wording, so renaming one never moves a rule that points at it. Conditions read it as a set rather than as an order: **includes**, **does not include**, **includes any of**, **includes none of**, **is answered** and **is not answered**, plus **number chosen is**, **number chosen is at least** and **number chosen is at most** for how many they tapped. That count is the useful one here, because a partial ranking is a real answer. A position is not something a [condition](/logic/how-logic-runs) can compare against. It is a [carry-forward](/logic/carry-forward) source, so a later question can offer the items they ranked, the ones they left, or all of them, and it takes a carried list into its own items the same way. It can [drive a loop](/logic/loops), repeating a block once per item they ranked, once per item they left, or once per item on the list, and it can set the number of passes from how many they tapped. It cannot be [scored](/logic/scoring): an order has nothing to put a number against that the order does not already say. [Piping](/logic/piping) it into later wording prints the items in the order they tapped them, separated by commas.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, one bar per item. Every position counts toward the bar, not only first place: an item earns more for being placed high, and the totals are added up across respondents, so the tallest bar is the most preferred item overall. **Pie chart** and **Values list** are the other two entries in **Chart type**.
+
+In every export the question becomes one column per item, holding the position that respondent gave it, counting from 1.
+
+{/* screenshot: The click to rank question on the Analytics tab, charted as a bar chart. */}
 
 ## Related
 

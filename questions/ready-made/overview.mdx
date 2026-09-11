@@ -5,7 +5,7 @@ description: "Choose between the ready-made questions and see how they compare."
 icon: "id-card"
 ---
 
-Choose between the ready-made questions and see how they compare.
+A ready-made question is an ordinary question that arrives with its answers written. Four of them hand respondents a list you did not have to draft: [Gender](/questions/ready-made/gender), [Age group](/questions/ready-made/age-group), [Education level](/questions/ready-made/education-level) and [Marital status](/questions/ready-made/marital-status) behave exactly like [Single choice](/questions/choice/single-choice), options and all. The other six are typed: [Name](/questions/ready-made/name), [Mobile phone](/questions/ready-made/mobile-phone), [Email address](/questions/ready-made/email-address), [Occupation](/questions/ready-made/occupation), [Country or region](/questions/ready-made/country-or-region) and [Address](/questions/ready-made/address) behave like [Short text](/questions/text/short-text), with the same [text limits](/rules/text-limits) and [patterns](/rules/patterns) behind **Validation**. So the question that decides is the one you would ask anyway: pick from a list, or type.
 
 <CardGroup cols={3}>
   <Card title="Name" icon="user" href="/questions/ready-made/name" />
@@ -20,17 +20,37 @@ Choose between the ready-made questions and see how they compare.
   <Card title="Address" icon="house" href="/questions/ready-made/address" />
 </CardGroup>
 
+{/* screenshot: The ready-made questions in the Add to survey dialog, under the Text and Choice headings. */}
+
 ## Compare
 
 | | Answers with | Can be required | Drives a loop | Scorable |
 | --- | --- | --- | --- | --- |
-| [Name](/questions/ready-made/name) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Gender](/questions/ready-made/gender) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Age group](/questions/ready-made/age-group) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Mobile phone](/questions/ready-made/mobile-phone) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Email address](/questions/ready-made/email-address) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Education level](/questions/ready-made/education-level) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Marital status](/questions/ready-made/marital-status) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Occupation](/questions/ready-made/occupation) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Country or region](/questions/ready-made/country-or-region) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Address](/questions/ready-made/address) | _To write_ | _To write_ | _To write_ | _To write_ |
+| [Name](/questions/ready-made/name) | Typed text | Yes | Yes | An answer key |
+| [Gender](/questions/ready-made/gender) | One option, of five written | Yes | Yes | Points per option |
+| [Age group](/questions/ready-made/age-group) | One option, of seven written | Yes | Yes | Points per option |
+| [Mobile phone](/questions/ready-made/mobile-phone) | Typed text, in international form | Yes | Yes | An answer key |
+| [Email address](/questions/ready-made/email-address) | Typed text | Yes | Yes | An answer key |
+| [Education level](/questions/ready-made/education-level) | One option, of seven written | Yes | Yes | Points per option |
+| [Marital status](/questions/ready-made/marital-status) | One option, of six written | Yes | Yes | Points per option |
+| [Occupation](/questions/ready-made/occupation) | Typed text | Yes | Yes | An answer key |
+| [Country or region](/questions/ready-made/country-or-region) | Typed text | Yes | Yes | An answer key |
+| [Address](/questions/ready-made/address) | Typed text | Yes | Yes | An answer key |
+
+## What the ready-made ones add
+
+**The starter content is yours from the moment it lands.** The options are ordinary options, edited on the canvas, reordered, added to, removed and bulk edited like any other list. The question wording itself is not written for you: you type that, as on every question.
+
+**Contact details stay off a shared report.** Answers to [Name](/questions/ready-made/name), [Mobile phone](/questions/ready-made/mobile-phone), [Email address](/questions/ready-made/email-address) and [Address](/questions/ready-made/address) are held back on every [report](/results/reports) link, with no setting to change. The other six appear like any other question.
+
+**Results already know what they are looking at.** [Occupation](/questions/ready-made/occupation) opens as a word cloud, [Country or region](/questions/ready-made/country-or-region) as a bar chart, [Age group](/questions/ready-made/age-group) offers a histogram, and the contact details open as a values list rather than as a distribution nobody would read.
+
+**The type is fixed.** The panel's **Type** row reads the name of the question and does not open a picker, so a ready-made question is not switched into another kind. Pick the plain question instead when you want that freedom.
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Choice questions" icon="list-check" href="/questions/choice/overview" />
+  <Card title="Text questions" icon="font" href="/questions/text/overview" />
+  <Card title="Required" icon="asterisk" href="/rules/required" />
+</CardGroup>

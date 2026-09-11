@@ -4,21 +4,46 @@ description: "Change a survey that people are already answering."
 icon: "pen-ruler"
 ---
 
-_To write._
+A live survey is still yours to edit. Respondents keep answering the published version while you change the draft, and nothing reaches them until you republish.
 
-{/* screenshot: editing a live survey in the app */}
+{/* screenshot: The Publish tab with the edits banner: "4 edits since you published." above the Republish button. */}
 
 ## What it does
 
-_To write._
+Every survey exists twice: the draft you edit in **1 Build**, and the published version respondents answer. Editing the draft changes nothing for respondents. Add a question, reword an option, tighten a rule, restyle the theme: the live survey is untouched until you click **Republish** on **2 Publish**.
+
+The builder keeps score for you. A question that differs from the live version carries a change badge on the canvas. The Publish tab counts the edits in a banner, "4 edits since you published.", and **See what changed** breaks them into **Added**, **Changed** and **Removed**. The step in the lifecycle strip reads **Publish** while an update is owed and **Published** once the live version matches the draft.
+
+When you republish, the next version number goes live. Someone who opened the survey before that moment finishes the version they started, with the questions and wording they saw at the beginning. Someone who opens the link afterwards gets the new version. See [Published versions](/survey/published-versions).
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Edit the draft">
+    Open **1 Build** and make your changes. The toolbar reads "All changes saved" as you go. Respondents notice none of it yet.
+  </Step>
+  <Step title="Test the change">
+    Click **Preview** to walk the draft yourself, or **Generate test responses** on **4 Responses** to fill it with data that covers every path. See [Preview](/design/preview).
+  </Step>
+  <Step title="Review what moved">
+    On **2 Publish**, read the banner and click **See what changed**. Each entry is a question, a rule, a theme change or a setting.
+  </Step>
+  <Step title="Republish">
+    Click **Republish**, then **Publish as v2** in the **Publish update?** dialog. The dialog states: "Your unpublished changes go live and become v2. Responses already collected stay attached to their versions."
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**Collected answers keep their wording.** Rename an option and new respondents see the new label, while every answer already given keeps the label as it was shown at the time. A response is a record of what the person saw, and publishing never rewrites it.
+
+**Deleting an answered option keeps the data readable.** Delete an option some respondents have picked and publish. The new version carries it forward as retired: nobody is offered it again, and the responses that used it still mean what they meant. You get the deletion you asked for, and your results stay whole.
+
+**Export names and codes survive an update.** A question's export variable name and its numeric codes are allocated at publish and carried into the next version. Adding an option later never renumbers the ones before it, so exports from different waves line up. See [Exports](/results/exports).
+
+**Restore is an undo for the draft, not for the live survey.** Under **Version history** on **Settings**, **Restore** on an older version copies it over your draft after checkpointing what you had. The live version stays as it is until you publish the restored draft.
+
+**In-progress sessions are never interrupted.** Republishing, closing and reopening all leave anyone mid-survey on the version they began. See [Responses and sessions](/survey/responses-and-sessions).
 
 ## Related
 

@@ -4,50 +4,72 @@ description: "Collect a date of birth, ready to turn into an age."
 icon: "cake-candles"
 ---
 
-_To write._
+Date of birth asks for a birth date and hands you an age with it. Respondents type the day into a field of month, day and year boxes or pick it from the calendar, and the survey works out how old they are on the day they answer.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A date of birth question as a respondent sees it, a typed field with a calendar beside it. */}
 
 ## When to use it
 
-_To write._
+- You are screening on age and need the number to stay right as fieldwork runs on for weeks.
+- You need the exact age rather than a band, for a quota, a cut in analysis or an eligibility rule.
+- You want to ask once and read it two ways, as a birth date and as an age in years.
 
-**Consider instead:** _To write_
+**Consider instead:** [Age group](/questions/ready-made/age-group) when a band is enough, [Date](/questions/dates/date) for any calendar date that is not a birth date, [Number](/questions/text/number) when you are content to ask for the age itself and accept that it ages.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Date of birth">
-    _To write._
+  <Step title="Pick Date of Birth">
+    In **Add to survey**, type to filter and click **Date of Birth**, under the **Date & Time** heading. The question lands where the gap was with an empty field and no content to clear out first.
+
+    {/* screenshot: A date of birth question on the builder canvas, edited in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    The canvas is the real survey, so you type the question and its description straight onto it. There is no option list here: the field is the answer.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set. Date of birth has no display settings of its own. The wording is typed on the canvas and the ages it accepts are a rule.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **Type** | Switches the question to another kind. The other five date and time questions are in the list. A switch that would drop something asks first. |
+
+Below **Type** the panel holds **Required**, **Validation**, and the three logic rows every question has: **Show/hide question**, **Skip from here** and **Set a variable**.
+
+{/* screenshot: The question panel for a date of birth, with the type row, Required and Validation. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. The ages are behind **Validation**, one row below it, under the caption **age**.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they give a birth date. |
+| [Minimum age](/rules/number-bounds) | The youngest you accept. Someone younger reads "You must be 18 years or older." |
+| [Maximum age](/rules/number-bounds) | The oldest you accept. Someone older reads "Age must be 100 or under." |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+Both ages are worked out on the day the respondent answers, so an 18 and over screener stays right for the whole fieldwork period. That is why this question takes ages rather than calendar dates: **Earliest**, **Latest** and **Allowed dates** belong to [Date](/questions/dates/date), and a birth-date cutoff typed as a calendar day is correct the week you write it and wrong from the next birthday on. The calendar shows the rule as well as enforcing it, so days that would make the respondent too young or too old cannot be clicked.
+
+Refusing an answer is not the same as screening someone out. A **Minimum age** stops them moving on and asks them to correct the field. To end the survey for anyone under a certain age, write a rule and send them to an ending: see [Screen-outs](/logic/screen-outs).
 
 ## Logic that works with it
 
-_To write._
+This question offers two sources to a rule, not one. The birth date itself compares as a date, with **is**, **is not**, **is after**, **is before**, **is between**, **is answered** and **is not answered**. Beside it the question appears a second time as **age in years**, which compares as a number, with **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most** and **is between**. Reach for the age row whenever you mean "under 18" or "50 and over": that number is worked out fresh for each respondent, so the rule cannot go stale. It cannot be a [carry-forward](/logic/carry-forward) source or target, because there is no list of answers to hand on. It can [drive a loop](/logic/loops), which gives one pass for the date they gave. It does not [score](/logic/scoring), so it has no **Scoring** row. [Piping](/logic/piping) it prints the birth date as 24 Aug 1990. Like any other [condition](/logic/how-logic-runs) source it sits on an earlier screen than the rule that reads it, which for a screener means the screen before the one it protects.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Timeline**, which puts the birth dates in date order rather than in size order, grouped by year once they span more than about eighteen months, which they usually do. **Bar chart** and **Values list** are the other two entries in **Chart type**.
+
+In every export the question becomes one column, holding the birth date that was given.
+
+{/* screenshot: The date of birth question on the Analytics tab, charted along a timeline. */}
 
 ## Related
 

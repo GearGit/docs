@@ -4,54 +4,76 @@ description: "Click the part of an image that answers the question."
 icon: "location-dot"
 ---
 
-_To write._
+Image hotspot puts one picture in front of a respondent and asks them to mark the part of it that answers the question. Every tap drops a numbered pin where they touched, so the answer is a position on the image rather than a word. Use it when you want to know where somebody looked, clicked or objected, and naming the places in advance would give the answer away.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: An image hotspot question as a respondent sees it, with numbered pins on the picture. */}
 
 ## When to use it
 
-_To write._
+- You are testing a design, a pack or a page and want the spot that drew attention, or the spot that lost it.
+- The parts have no agreed names: a diagram, a map, a shelf, a room, a garment.
+- Naming the options in a list would prompt the answer, and you want the respondent to find it themselves.
 
-**Consider instead:** _To write_
+**Consider instead:** [Image single select](/questions/choice/image-single-select) when whole pictures are the options and one wins, [Image multi select](/questions/choice/image-multi-select) when several can, [Single choice](/questions/choice/single-choice) when the parts can be named in words and you want them counted cleanly.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Image hotspot">
-    _To write._
+  <Step title="Pick Image Hotspot">
+    In **Add to survey**, type to filter and click **Image Hotspot**, under the **Media** heading. The question lands where the gap was with an empty picture area that reads **Add image**.
+
+    {/* screenshot: An image hotspot question on the builder canvas, with the empty image area. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Choose the picture and write the question">
+    Click **Add image** on the canvas, or the **Image** row in the panel, and the media picker opens on three tabs: **Library** for what your organization already has, **Upload** for a new file, **Link** for a file that lives elsewhere. Uploading is a paid feature, so on a free plan use **Library** or **Link**. Then type the question and its description straight onto the canvas.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **Image** | The picture respondents mark. Opens the same media picker the canvas does, and lets you **Replace** or **Remove** what is there. |
+| **Aspect ratio** | The shape the picture is drawn at: **16:9**, **16:10**, **4:3** or **1:1 (Square)**. It frames the picture on the screen, and the pins are stored against the frame respondents saw. |
+
+Below those the panel holds **Required**, **Validation**, and the three logic rows every question has: **Show/hide question**, **Skip from here** and **Set a variable**.
+
+{/* screenshot: The question panel for an image hotspot, with the image row and the aspect ratio row. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. The pin counts are behind **Validation**, one row below it, under the caption **pins**.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they place at least one pin. |
+| [Min pins](/rules/number-bounds) | The fewest marks you accept. Short of it, the answer reads "Place at least 3 pins." |
+| [Max pins](/rules/number-bounds) | The most you accept. Until you set it, the picture takes three. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+The picture carries the count as they work, so nobody has to guess: it reads TAP TO MARK, then how many more are needed while a minimum is unmet, then how many are left, then MAX PINS REACHED once the cap is reached and further taps do nothing. A **Clear pins** button appears under the picture as soon as there is a pin, and it clears all of them, so a respondent who mismarks starts again rather than hunting for the pin to undo. There is also a control to open the picture full screen, which is where fine detail gets marked accurately, and pins can be placed there as well.
 
 ## Logic that works with it
 
-_To write._
+The answer is a set of points on a picture. Nothing in it is a word or a number, so conditions read whether it was answered and nothing more: **is answered** and **is not answered**. That is still enough to show a follow-up question to the people who marked something, or to skip ahead for the people who did not. It cannot be a [carry-forward](/logic/carry-forward) source or target, because it holds no list of answers to hand on, and it cannot [drive a loop](/logic/loops) for the same reason. It does not [score](/logic/scoring): points are typed next to an answer you wrote, and a position on an image is not one, so this question has no **Scoring** row. Where a pin lands is a result to read rather than a [condition](/logic/how-logic-runs) to branch on, so plan to analyze it rather than route on it.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Heatmap**, which draws every respondent's pins over the same picture so the crowded places show as the warm ones. **Values list** is the other entry in **Chart type**, giving the marks one row at a time.
+
+In every export the question becomes one column, holding the pins that respondent placed.
+
+{/* screenshot: The image hotspot question on the Analytics tab, charted as a heatmap over the picture. */}
 
 ## Related
 
 <CardGroup cols={3}>
   <Card title="Image questions" icon="image" href="/questions/images/overview" />
-  <Card title="Click heatmap" icon="fire" href="/questions/images/click-heatmap" />
+  <Card title="Image single select" icon="image" href="/questions/choice/image-single-select" />
+  <Card title="Media library" icon="photo-film" href="/design/media-library" />
 </CardGroup>

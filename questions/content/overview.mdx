@@ -5,7 +5,7 @@ description: "Add text, images, video, and consent to a screen without asking a 
 icon: "align-left"
 ---
 
-Add text, images, video, and consent to a screen without asking a question.
+A content block is something you put on a screen that asks the respondent for nothing. Four of them go anywhere in the survey: a [Text block](/questions/content/text-block) and [Instructions](/questions/content/instructions) for formatted words, an [Image banner](/questions/content/image-banner) for a picture, and [Video](/questions/content/video) for a clip that plays where it sits. [Consent](/questions/content/consent) is the exception on both counts. It asks for one thing, a tick, and it lives only on the welcome screen.
 
 <CardGroup cols={3}>
   <Card title="Text block" icon="paragraph" href="/questions/content/text-block" />
@@ -15,12 +15,32 @@ Add text, images, video, and consent to a screen without asking a question.
   <Card title="Consent" icon="file-signature" href="/questions/content/consent" />
 </CardGroup>
 
+{/* screenshot: The Content group in the Add to survey dialog, holding Content, Image, Video and Instructional. */}
+
 ## Compare
 
-| | Answers with | Can be required | Drives a loop | Scorable |
-| --- | --- | --- | --- | --- |
-| [Text block](/questions/content/text-block) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Image banner](/questions/content/image-banner) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Video](/questions/content/video) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Instructions](/questions/content/instructions) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Consent](/questions/content/consent) | _To write_ | _To write_ | _To write_ | _To write_ |
+| | What it puts on the screen | Takes an answer | Can be required |
+| --- | --- | --- | --- |
+| [Text block](/questions/content/text-block) | Formatted text, with headings, lists, links, images and dividers | No | No |
+| [Image banner](/questions/content/image-banner) | One picture, at the size and shape you set | No | No |
+| [Video](/questions/content/video) | One video, playing on the screen | No | No |
+| [Instructions](/questions/content/instructions) | Formatted text, from the same editor as a text block | No | No |
+| [Consent](/questions/content/consent) | A checkbox and the sentence beside it | Yes, a tick | Always, and there is no toggle |
+
+## Where they go
+
+The first four are added the way every question is: hover a gap on the canvas, click **Add**, and pick them out of the **Content** group in **Add to survey**. They land inside a block, on a question screen, in the order you put them.
+
+The welcome screen and every end screen are different. Each one already carries a text area of its own, the same editor a text block uses, so there is nothing to add there and no gap to open. You click the words and type. Those screens take no image banner, no video and no instructions.
+
+Consent is the one thing you add to the welcome screen, from the **Add consent** button on the consent strip. There is at most one in a survey, and it cannot be moved into the body.
+
+None of the four silent blocks holds an answer, so none of them reaches your results, an export, or the list of sources a rule can read. What they change is what a screen says, not what it collects. They do take up room on the screen they sit on, so a long one is often a reason to add a [page break](/survey/page-breaks).
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Blocks and screens" icon="layer-group" href="/survey/blocks-and-screens" />
+  <Card title="Media library" icon="photo-film" href="/design/media-library" />
+  <Card title="Piping" icon="code" href="/logic/piping" />
+</CardGroup>

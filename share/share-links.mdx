@@ -4,21 +4,49 @@ description: "Get a link or a QR code and send it out."
 icon: "link"
 ---
 
-_To write._
+The respondent link is the survey's address. Copy it, print it as a QR code, or tag it so you can tell one channel's responses from another's.
 
-{/* screenshot: share links and qr codes in the app */}
+{/* screenshot: The Share card on the Publish tab: the respondent link, the QR code, and Download PNG. */}
 
 ## What it does
 
-_To write._
+The **Share** card on **2 Publish** holds the raw link. **Copy link** puts it on your clipboard and **Open** opens it in a new tab. Before the first publish the link is listed as "inactive until published". Beside it is a QR code for the same address with **Download PNG** beneath it.
+
+**3 Distribute** has the link again under **Shareable link**, "Tag a link for a channel, and attribution is automatic." A **Link** / **QR code** toggle switches between the two forms. **Add a source tag**, placeholder "e.g. newsletter", appends the tag to the link; the caption reads "Tags responses with ?c= for attribution." The QR code carries the tag too, and its caption says "Point a phone camera here to open the survey." A note at the foot of the page points back: "Prefer the raw, untagged link? It is on the Published tab".
+
+Every response that arrives through a tagged link is counted under that tag in **Where responses came from** on the Distribute tab. Responses from the untagged link appear as **Direct / untagged**.
+
+Before you publish, the Distribute tab reads "Publish the survey first, then choose how to reach your audience." The link starts working the moment the first version is published.
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Publish">
+    A link only works for a published survey. See [Publish and versions](/share/publish-and-versions).
+  </Step>
+  <Step title="Copy the raw link">
+    On **2 Publish**, click **Copy link** in the **Share** card. Paste it wherever you want to send people.
+  </Step>
+  <Step title="Tag a link per channel">
+    On **3 Distribute**, type a tag under **Add a source tag**, "newsletter" for one, "website" for another, and copy each tagged link. Use one tag per place you post it.
+  </Step>
+  <Step title="Print a QR code">
+    Switch to **QR code**, then click **Download PNG**. The image is the link, tagged if you typed a tag, ready for a poster or a receipt.
+  </Step>
+  <Step title="Read the attribution">
+    As responses come in, **Where responses came from** on Distribute shows the count under each tag, with untagged traffic as **Direct / untagged**.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**Links and QR codes are built in your browser and not stored.** There is no list of links you have created and no per-link counter. A tag exists as soon as you type it, and a response carries whichever tag was on the link that brought it.
+
+**Who can answer is set in two places.** **Close survey** stops new responses, and **Total responses** closes the survey once the cap is reached. Beyond those two, anyone with the link can respond.
+
+**An email campaign attributes by recipient.** Each recipient of a campaign gets their own link, so a response is attributed to the person, not to a tag. See [Email campaigns](/share/email-campaigns).
+
+**The survey can live inside your own page too.** The **Embed** section of the **Share** card gives you an inline frame or a popup button. See [Embeds](/share/embeds).
 
 ## Related
 

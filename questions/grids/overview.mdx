@@ -5,7 +5,7 @@ description: "Choose between the grid questions and see how they compare."
 icon: "table-cells"
 ---
 
-Choose between the grid questions and see how they compare.
+A grid asks the same thing about several items at once. The items are the **rows**, the answer runs across the **columns**, and every row is answered with the same instrument. What decides which grid you want is what one cell has to hold. One column picked per row is a [Radio grid](/questions/grids/radio-grid); any number of columns per row is a [Checkbox grid](/questions/grids/checkbox-grid); a typed answer in every cell is an [Open grid](/questions/grids/open-grid); a menu of its own in every column is a [Dropdown grid](/questions/grids/dropdown-grid). Two of the six have no column axis at all: a [Slider grid](/questions/grids/slider-grid) gives each row a track, and a [Rating grid](/questions/grids/rating-grid) gives each row a set of stars whose length you pick as a number.
 
 <CardGroup cols={3}>
   <Card title="Radio grid" icon="table-list" href="/questions/grids/radio-grid" />
@@ -16,13 +16,31 @@ Choose between the grid questions and see how they compare.
   <Card title="Rating grid" icon="star" href="/questions/grids/rating-grid" />
 </CardGroup>
 
+{/* screenshot: The six grid questions in the Add to survey dialog, under the Matrix heading. */}
+
 ## Compare
 
 | | Answers with | Can be required | Drives a loop | Scorable |
 | --- | --- | --- | --- | --- |
-| [Radio grid](/questions/grids/radio-grid) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Checkbox grid](/questions/grids/checkbox-grid) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Open grid](/questions/grids/open-grid) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Slider grid](/questions/grids/slider-grid) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Dropdown grid](/questions/grids/dropdown-grid) | _To write_ | _To write_ | _To write_ | _To write_ |
-| [Rating grid](/questions/grids/rating-grid) | _To write_ | _To write_ | _To write_ | _To write_ |
+| [Radio grid](/questions/grids/radio-grid) | One column per row | Yes | No | A number per column |
+| [Checkbox grid](/questions/grids/checkbox-grid) | Any number of columns per row | Yes | No | A number per column |
+| [Open grid](/questions/grids/open-grid) | Typed text in each cell | Yes | No | No |
+| [Slider grid](/questions/grids/slider-grid) | A number per row | Yes | No | No |
+| [Dropdown grid](/questions/grids/dropdown-grid) | One choice per cell, from that column's menu | Yes | No | A number per column |
+| [Rating grid](/questions/grids/rating-grid) | A rating per row | Yes | No | A number per column |
+
+None of the six drives a [loop](/logic/loops), and none is a [carry-forward](/logic/carry-forward) source: a grid answers with a map of rows rather than with a list of things worth asking about again. Every one of them takes a carried list the other way, into its **Rows** or, where it has a column axis you write, into its **Columns**.
+
+## Required, and the row floor
+
+**Required** on a grid means every row. A respondent who fills in four rows of five has not answered the question, and a [Dropdown grid](/questions/grids/dropdown-grid) counts every cell rather than every row.
+
+When you want some of the battery rather than all of it, leave **Required** off and set **Min rows answered** under **Validation** instead. It is a floor: two of five rows clears it whichever two they pick. The message reads "Answer at least 2 rows." The floor never asks for more rows than the respondent was shown, so a grid shortened by [carry-forward](/logic/carry-forward) or by a subset draw stays answerable. See [Number bounds](/rules/number-bounds).
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Randomization" icon="shuffle" href="/logic/randomization" />
+  <Card title="Carry-forward" icon="arrow-right-arrow-left" href="/logic/carry-forward" />
+  <Card title="Scoring" icon="medal" href="/logic/scoring" />
+</CardGroup>

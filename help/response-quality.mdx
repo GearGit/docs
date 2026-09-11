@@ -4,21 +4,49 @@ description: "Spot and remove answers you should not count."
 icon: "filter"
 ---
 
-_To write._
+Some responses should not be in your numbers: a respondent who raced through, a test run of your own, a row you have looked at and do not trust. The platform gives you one outcome, two marks and a set of filters to keep them apart from the rest.
 
-{/* screenshot: response quality in the app */}
+{/* screenshot: The Responses grid with a Speeder badge on one row and the Filters popover open on Response type. */}
 
 ## What it does
 
-_To write._
+**Quality reject is an outcome.** An ending tagged **Quality reject** is where logic sends a respondent whose answers you will not keep in the count. The response is stored with every answer, but it uses none of your plan's responses, does not count toward your survey's response limit, and fills no quota cell. To the respondent it looks like any other ending. See [Endings](/survey/endings).
+
+**Speeder is a badge the platform sets.** In the grid, a row answered faster than the survey's minimum page time carries a **Speeder** badge, described as "Flagged by the speed trap, answered faster than the survey's minimum page time". There is no setting behind it. It is the platform telling you which rows to look at.
+
+**Flag is a mark you set.** Open a response and click **Flag**, "Flag this response for review". The button reads **Flagged** until you remove it. It is a note for your own review.
+
+**Filters keep cohorts apart.** **Response type** separates **Live**, **Test** and **Preview** responses, so your own test runs and preview sessions never mix with real ones. **Response status** narrows the grid to one outcome, such as **Completed** or **Quality reject**, or to the sessions still **Partial** or **In progress**.
+
+**Rules keep answers well formed.** [Required](/rules/required), [selection counts](/rules/selection-counts), [text limits](/rules/text-limits) and [patterns](/rules/patterns) refuse a malformed answer on the screen, before it reaches you.
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Write a Quality reject ending">
+    In the rail, open **Endings**. Click **Add an end screen**, then **Pick an outcome** and choose **Quality reject**. Give it a **Name** and write what these respondents read.
+  </Step>
+  <Step title="Send people to it">
+    In **Skip from here** on a question, or **When this block ends** on a block, add the condition that marks a response as one you will not count. Set the destination to **End at** your Quality reject ending. See [Branching](/logic/branching).
+  </Step>
+  <Step title="Review the grid">
+    Open **4 Responses**. Look for the **Speeder** badge, then click a row's ID to open its Response Journey: every screen in order, the time spent on each, and the answers as given. Click **Flag** on the ones you want to come back to.
+  </Step>
+  <Step title="Filter before you read the numbers">
+    Click **Filters**. Under **Response type**, keep **Live** and clear **Test** and **Preview**. Under **Response status**, pick the outcome you want to read. **5 Analytics** has the same **Response type** filter. **Export** offers **Apply the filter shown above** and writes one response type per file.
+  </Step>
+  <Step title="Delete what should not be there">
+    Tick rows in the grid and click **Delete**. The dialog reads: "They’re hidden from analytics and can be restored."
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**A quality reject is not a screen-out.** A screened-out respondent never qualified. A quality reject did qualify, and you are setting the response aside anyway. Keeping the two outcomes apart is what keeps your incidence rate honest, so do not send speeders to a Screened out ending.
+
+**Test responses cost nothing.** **Generate test responses** builds a set that "Covers every path in your survey once." Test and preview responses touch no counter: not your plan, not your response limit, not a quota cell.
+
+**Editing an answer is a correction, not a removal.** Changing a cell in the grid updates what analytics reads and leaves the respondent's own submission intact. The dialog says so: "This updates analytics only. The respondent’s original submission is preserved." See [Editing an answer](/results/editing-an-answer).
 
 ## Related
 

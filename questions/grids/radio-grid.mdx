@@ -4,50 +4,70 @@ description: "Pick one column for each row."
 icon: "table-list"
 ---
 
-_To write._
+A radio grid puts your statements down the left and one shared scale across the top, and a respondent picks a single column in every row. You write both axes, so one battery asks the same question about as many things as you like and the answers line up beside each other.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A radio grid question as a respondent sees it, one row per statement and one shared set of columns. */}
 
 ## When to use it
 
-_To write._
+- You are asking the same question about several things at once: satisfaction with five parts of a service, agreement with six statements.
+- You want the answers on one shared scale so they can be read side by side.
+- You want to set the points on the scale once and have them count on every row.
 
-**Consider instead:** _To write_
+**Consider instead:** [Likert](/questions/ratings/likert) when there is only one statement, [Checkbox grid](/questions/grids/checkbox-grid) when a row can take more than one column, [Rating grid](/questions/grids/rating-grid) when the scale is stars rather than words, [Dropdown grid](/questions/grids/dropdown-grid) when each column needs a menu of its own.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Radio grid">
-    _To write._
+  <Step title="Pick Matrix (Radio)">
+    In **Add to survey**, type to filter and click **Matrix (Radio)**, under **Matrix**. It arrives with three rows, Row 1 to Row 3, and three columns, Column 1 to Column 3.
+
+    {/* screenshot: The radio grid question on the builder canvas, edited in place. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question, the rows and the columns">
+    The canvas is the real survey, so you type on it. Click a row label or a column heading to retype it, **Add row** and **Add column** extend either axis, and the **Bulk edit** chip beside the add row opens both lists as plain text, one per line.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Rows | The statements down the left. Edited on the canvas, or in **Bulk edit** as plain text, one per line. |
+| Columns | The scale across the top, shared by every row. Edited the same two ways. |
+| **Answer order** | Two sections, **rows** and **columns**. Rows take **As written**, **Shuffled** or **Reversed**; columns take **As written** or **Reversed** only. The dialog says why: "Choose how the rows are ordered for each respondent. The scale columns are never shuffled." |
+| **How many each respondent sees** | Inside **Answer order**, on the rows. **All of them**, or **Only some**, which draws that many rows for each respondent. Pinned rows are outside the draw and show to everyone. |
+
+{/* screenshot: The question panel for a radio grid, with the answer order row and the rules row. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | Every row has to be answered before they can move on. |
+| [Min rows answered](/rules/number-bounds) | A floor rather than all of them. Two of five rows clears it whichever two they pick, and the message reads "Answer at least 2 rows." |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+The floor is never higher than the number of rows a respondent was shown, so a grid shortened by carry-forward or by a subset draw stays answerable.
 
 ## Logic that works with it
 
-_To write._
+The answer is a map, one column per row, which no single comparison can read. So the question as a whole is offered with **is answered** and **is not answered**, and each row is offered as its own source underneath it, compared against the columns with **is**, **is not**, **is one of**, **is not one of**, **is answered** and **is not answered**. It is not a [carry-forward](/logic/carry-forward) source, because a map of rows is not a list of things worth asking about again, but it takes a carried list into its **Rows** or its **Columns**. It cannot [drive a loop](/logic/loops) for the same reason. It [scores](/logic/scoring) a number per column: the scale is scored once and applies to every row, and a row worded the other way round takes its own numbers with **Score this row differently**. [Piping](/logic/piping) it into later wording prints each answered row as "Row: answer", in the order you wrote the rows, with unanswered rows left out.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Values list**, and it is the only entry in **Chart type**. The list shows the answers as they were given, and **Raw data** under the card opens them one respondent at a time.
+
+In every export the question becomes one coded column per row, and all the rows share one code pool, because they share one set of columns.
+
+{/* screenshot: The radio grid question on the Analytics tab, shown as a values list. */}
 
 ## Related
 

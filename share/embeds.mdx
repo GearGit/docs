@@ -4,21 +4,62 @@ description: "Put your survey inside your own web page."
 icon: "code"
 ---
 
-_To write._
+An embed puts the survey on your own site, either inside the page or behind a button that opens it in a small window.
 
-{/* screenshot: embeds in the app */}
+{/* screenshot: The Embed section of the Share card, with Inline (iframe) selected and the snippet ready to copy. */}
 
 ## What it does
 
-_To write._
+On **2 Publish**, the **Share** card has an **Embed** section with two shapes and a **Copy snippet** button.
+
+**Inline (iframe)** is a frame you paste into your page. It fills the full width of whatever holds it, stands 700 pixels tall, has rounded corners and no border, and is titled "Survey" for screen readers. The respondent fills the survey without leaving your page.
+
+```html
+<iframe
+  src="https://s.onlinesurvey.ai/your-survey"
+  width="100%" height="700"
+  frameborder="0" style="border:0;border-radius:14px"
+  title="Survey">
+</iframe>
+```
+
+**Popup button** is a button labeled "Take the survey". Clicking it opens the survey in a new window 560 pixels wide and 760 tall.
+
+```html
+<button onclick="window.open('https://s.onlinesurvey.ai/your-survey',
+  'survey', 'width=560,height=760')">
+  Take the survey
+</button>
+```
+
+Either way the respondent answers the same published survey, on your theme, with your logo and your endings, and the response lands in your results as an ordinary response. Nothing about it is marked as embedded.
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Publish the survey">
+    A snippet points at the respondent link, and that link only works once the survey is published. See [Publish and versions](/share/publish-and-versions).
+  </Step>
+  <Step title="Pick the shape">
+    On **2 Publish**, find **Embed** in the **Share** card and choose **Inline (iframe)** or **Popup button**.
+  </Step>
+  <Step title="Copy the snippet">
+    Click **Copy snippet**. The code already carries your survey's address.
+  </Step>
+  <Step title="Paste it into your page">
+    Add the snippet to the HTML of the page where the survey belongs. It works in any page that lets you paste HTML.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**Resize the frame by editing the numbers.** Change `width="100%"` to a fixed width, or `height="700"` to a taller value if your survey has long screens. The popup's `width=560,height=760` works the same way.
+
+**Change the button's wording by editing the text.** "Take the survey" is plain text inside the button, and you can replace it with anything.
+
+**Republishing updates the embed.** The snippet points at the survey, not at a version. Publish an update and the frame shows the new version to the next person who opens it, while anyone part way through finishes the version they started.
+
+**The snippet is the whole embed.** There is no script to load, no styling to configure, and no events for your page to listen to. The survey inside the frame behaves exactly as it does at its own address; see [What respondents see](/share/what-respondents-see).
 
 ## Related
 

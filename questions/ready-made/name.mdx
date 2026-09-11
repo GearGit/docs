@@ -4,50 +4,66 @@ description: "Collect a person's name."
 icon: "user"
 ---
 
-_To write._
+Name is a single text box for a person's name, tagged so the rest of the platform knows what is in it. A respondent types their name and moves on. You get the answer as plain text, kept off every shared report, and a question that arrives set up rather than blank.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A Name question as a respondent sees it, one box with Full name written in it. */}
 
 ## When to use it
 
-_To write._
+- You are collecting a contact detail alongside the study, for a follow-up, a callback or a prize draw.
+- You want the answer held back from any report you share, without remembering to do anything about it.
+- You want the box to say what it wants before anyone types, so you get a full name rather than a first name.
 
-**Consider instead:** _To write_
+**Consider instead:** [Short text](/questions/text/short-text) when the typed answer is not a person's name, [Email address](/questions/ready-made/email-address) and [Mobile phone](/questions/ready-made/mobile-phone) for the other two contact details, [Occupation](/questions/ready-made/occupation) when you want what someone does rather than who they are.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Name">
-    _To write._
+  <Step title="Pick Name">
+    In **Add to survey**, type to filter and click **Name**, under the **Text** heading. It arrives as one box with **Full name** written inside it in grey, and no question wording of its own.
+
+    {/* screenshot: A Name question on the builder canvas, its wording typed in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    The canvas is the real survey, so you type the question and its description straight onto it. The hint inside the box comes with the question type and stays as it is.
   </Step>
 </Steps>
 
 ## Settings
 
-| Setting | What it does |
-| --- | --- |
-| _To write_ | _To write_ |
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
+A Name question has nothing to configure. The panel opens on **Type**, which reads **Name** and does not open a picker, because a ready-made question has no sibling type to switch to. Under it sit **Required** and **Validation**, then the logic rows. Everything a respondent reads, the question and its description, is typed on the canvas.
+
+{/* screenshot: The question panel for a Name question, with Type fixed and Required under it. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until the box has something in it. |
+| [Text limits](/rules/text-limits) | **Min characters**, **Max characters**, **Min words** and **Max words**. A minimum of two words is one way to ask for a first name and a last name. |
+| [Pattern](/rules/patterns) | Accepts the answer only when it matches a shape you pick, such as **Letters only**. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
 
 ## Logic that works with it
 
-_To write._
+The answer is the text they typed, so conditions read it as text: **is**, **is not**, **contains**, **does not contain**, **starts with**, **ends with**, **is answered** and **is not answered**. It is not a [carry-forward](/logic/carry-forward) source, and nothing carries into it, because there is no list of choices to pass along. It can [drive a loop](/logic/loops), which gives one pass for the name they gave. It [scores](/logic/scoring) against an answer key, the accepted answers you type in the **Scoring** dialog, compared without regard to capitals or spaces at the ends. [Piping](/logic/piping) it into later wording prints the name back to them, which is what makes a later screen read "Thanks, Priya".
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Values list**, the answers themselves with a count beside each. **Word cloud** is the other entry in **Chart type**. A name is close to unique per respondent, which is why a list of values is the useful view and a distribution is not.
+
+In every export the question becomes one text column, holding the name as it was typed.
+
+Names never appear on a shared [report](/results/reports). Along with emails, phone numbers and addresses they are held back on every link, with no setting to change.
+
+{/* screenshot: The Name question on the Analytics tab, shown as a values list. */}
 
 ## Related
 

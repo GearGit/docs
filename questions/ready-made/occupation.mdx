@@ -4,50 +4,66 @@ description: "Ask what someone does for work."
 icon: "briefcase"
 ---
 
-_To write._
+Occupation is a text box for a job, in the respondent's own words. Nobody has to find themselves in a list you wrote, which is what makes it the honest way to ask. You get free text, charted as a word cloud so the common jobs stand out without you coding anything first.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: An Occupation question as a respondent sees it, one box with Enter occupation written in it. */}
 
 ## When to use it
 
-_To write._
+- You want what people actually call their job, not the nearest thing on a list of categories.
+- You are profiling a sample and job titles vary too widely to write out.
+- You plan to read the answers and group them yourself afterward.
 
-**Consider instead:** _To write_
+**Consider instead:** [Short text](/questions/text/short-text) when the answer is not a job, [Single choice](/questions/choice/single-choice) when you have a fixed list of roles and want everyone in one of them, [Education level](/questions/ready-made/education-level) for the other standard profiling question with a written list behind it.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Occupation">
-    _To write._
+  <Step title="Pick Occupation">
+    In **Add to survey**, type to filter and click **Occupation**, under the **Text** heading. It arrives as one box with **Enter occupation…** written inside it in grey, and no question wording of its own.
+
+    {/* screenshot: An Occupation question on the builder canvas, its wording typed in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    The canvas is the real survey, so you type the question and its description straight onto it. A description such as "Your job title, or what you spend most of your working day on" is what keeps the answers comparable.
   </Step>
 </Steps>
 
 ## Settings
 
-| Setting | What it does |
-| --- | --- |
-| _To write_ | _To write_ |
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
+An Occupation question has nothing to configure. The panel opens on **Type**, which reads **Occupation** and does not open a picker, because a ready-made question has no sibling type to switch to. Under it sit **Required** and **Validation**, then the logic rows. Everything a respondent reads, the question and its description, is typed on the canvas.
+
+{/* screenshot: The question panel for an Occupation question, with Type fixed and Required under it. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until the box has something in it. |
+| [Text limits](/rules/text-limits) | **Min characters**, **Max characters**, **Min words** and **Max words**. A maximum of a few words keeps a job title from turning into a paragraph. |
+| [Pattern](/rules/patterns) | Accepts the answer only when it matches a shape you pick, such as **Letters only**. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
 
 ## Logic that works with it
 
-_To write._
+The answer is the text they typed, so conditions read it as text: **is**, **is not**, **contains**, **does not contain**, **starts with**, **ends with**, **is answered** and **is not answered**. **contains** is the one that earns its keep, since "nurse" catches a staff nurse and a nurse practitioner alike. It is not a [carry-forward](/logic/carry-forward) source, and nothing carries into it, because there is no list of choices to pass along. It can [drive a loop](/logic/loops), which gives one pass for the job they named. It [scores](/logic/scoring) against an answer key, the accepted answers you type in the **Scoring** dialog, compared without regard to capitals or spaces at the ends. [Piping](/logic/piping) it into later wording prints the job back to them in the words they used.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Word cloud**, sized by how often a word comes up across the answers. **Values list** and **Bar chart** are the other two entries in **Chart type**, and the list is where you go to read the answers one by one.
+
+In every export the question becomes one text column, holding the answer as it was typed.
+
+Occupation is not a contact detail, so unlike [Name](/questions/ready-made/name) or [Email address](/questions/ready-made/email-address) it appears on a shared [report](/results/reports) like any other question.
+
+{/* screenshot: The Occupation question on the Analytics tab, charted as a word cloud. */}
 
 ## Related
 

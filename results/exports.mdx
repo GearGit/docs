@@ -4,21 +4,64 @@ description: "Download your data as CSV, Excel, or SPSS."
 icon: "file-export"
 ---
 
-_To write._
+**Export** downloads every response that matches your filter as CSV, Excel or SPSS, laid out the way an analysis package expects.
 
-{/* screenshot: exports in the app */}
+{/* screenshot: The Export responses dialog with SPSS (.sav) and Numeric codes selected. */}
 
 ## What it does
 
-_To write._
+Click **Export** on **4 Responses**. The **Export responses** dialog opens by saying that it downloads the whole filtered dataset from the server, not only the page on screen. Every choice in it is about shape, not content.
+
+**Format** is **CSV**, **Excel (.xlsx)** or **SPSS (.sav)**.
+
+**Answer values** is **Labels (as respondents saw them)** or **Numeric codes**. The hint reads "Codes are the frozen numeric values that SPSS and Q expect."
+
+**Multi-select questions** is **One 1/0 column per choice** or **One combined column**. The hint reads "One column per choice is what most analysis packages want."
+
+**Looped questions** is **Wide (columns)** or **Long (rows)**. "Wide adds a column per iteration; long adds a row per iteration."
+
+**Header rows** is **One row (variable names)** or **Three rows (name, question, import key)**.
+
+Four checkboxes finish it: **Include timing (started, completed, duration)**, **Include location and device**, **Include seconds spent per question**, and **Apply the filter shown above**, which carries the grid's **Response status** into the file. A note says the search box does not apply to exports. A second line reads "Exports Live responses only, one cohort per file." A file holds one response type: the one the grid is showing, or **Live** when the grid shows a mix.
+
+**Download** starts the file. A large export says "This one is large, so we're preparing it in the background. The download will start when it is ready."
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Filter the grid first">
+    On **4 Responses**, set **Filters** to the outcome you want in the file and to a single **Response type**. The export carries that status and holds that one type.
+  </Step>
+  <Step title="Open the dialog">
+    Click **Export**.
+  </Step>
+  <Step title="Choose the shape">
+    Pick a **Format**. For SPSS or Q, choose **Numeric codes**. For a spreadsheet you will read yourself, keep **Labels (as respondents saw them)** and **One row (variable names)**.
+  </Step>
+  <Step title="Download">
+    Click **Download**. A toast such as "48 responses exported" confirms the row count.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**Variable names and codes are fixed at publish.** Each published version carries its names and codes forward from the one before, so an option added mid-field does not renumber the codes already in your data, and a tracker's monthly files stack.
+
+**A composite question is one column per part.** A grid, a contact block, a ranking or a constant sum gives one column per row, slot or option rather than one cell holding everything.
+
+**Labels are never shortened in CSV or Excel.** SPSS caps a text value at 255 characters. When that bites, a message names the shortened columns and points you to CSV or Excel for the full text.
+
+**Nothing is refused for size.** A very large export runs in the background and downloads when ready. An Excel file that would pass Excel's column limit arrives as CSV instead.
+
+**Scores and variables export as columns**, next to the questions.
+
+**A drop-off exports with no answers.** Answers are written when a respondent reaches an ending, so a **Partial** or **In progress** row carries its session data and empty answer cells. See [Responses and sessions](/survey/responses-and-sessions).
+
+**The survey must be published.** Before that, **Download** answers "Publish the survey before exporting its data."
+
+**Exporting is a permission of its own.** Without it the dialog says "You don't have permission to export responses. Ask an org admin." See [Roles and seats](/account/roles-and-seats).
+
+The codebook for the file, every variable with its codes, is the **Data dictionary** report on **6 Reports**, not an export option. See [Reports](/results/reports).
 
 ## Related
 

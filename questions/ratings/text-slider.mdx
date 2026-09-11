@@ -4,50 +4,65 @@ description: "Slide to a labeled point on a scale."
 icon: "sliders"
 ---
 
-_To write._
+Text slider is a track with named stops on it. A respondent drags the handle and it snaps to one of the stops you wrote, with the name of the stop they are on shown under the track and the two ends named at either side.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A text slider question as a respondent sees it, the handle on a named stop with the end stops labeled. */}
 
 ## When to use it
 
-_To write._
+- The answers are a scale in words rather than in numbers: Never to Always, Low to High, Too little to Too much.
+- You want the feel of a slider without asking anybody to settle on a figure.
+- You want a compact scale on a phone, where a row of options would wrap and a slider does not.
 
-**Consider instead:** _To write_
+**Consider instead:** [Numeric slider](/questions/ratings/numeric-slider) when the answer really is a number and you want to average it, [Likert](/questions/ratings/likert) when the points should be listed so respondents can read them all at once, [Star rating](/questions/ratings/star-rating) when the scale is a judgement of quality, [Single choice](/questions/choice/single-choice) when the answers are not a scale at all.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Text slider">
-    _To write._
+  <Step title="Pick Slider Text">
+    In **Add to survey**, type to filter and click **Slider Text**, under **Rating**. It arrives with three stops already written: Low, Medium, High.
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question and the stops">
+    Type the question on the canvas. The stops are edited in the panel, under **slider stops**, where you can reword them, add more or take one away.
+
+    {/* screenshot: The text slider question on the builder canvas, edited in place. */}
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Slider stops | The named positions on the track, under the **slider stops** section. **Add stop** puts another one in, **Remove stop** takes one out and **Drag to reorder** moves one along the track. The panel states the geometry: "First stop is the left end, last is the right end. Middle stops space out automatically." |
+
+There is nothing else to set. The stops are the whole of the question, and their order is the scale, so write them from one end to the other.
+
+{/* screenshot: The question panel for a text slider, with the slider stops editor. */}
 
 ## Rules you can set
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they move the handle to a stop. |
+
+Required is the whole of it. A stop is either chosen or it is not, so this question has no **Validation** row in the panel and nothing else to constrain.
 
 ## Logic that works with it
 
-_To write._
+The answer is the stop they landed on, stored as that stop rather than as its position, so rewording a stop never moves a rule that points at it and reordering the track never re-reads answers already collected. Conditions compare it by name and you pick the stop from a list of the ones you wrote: **is**, **is not**, **is one of**, **is not one of**, **is answered** and **is not answered**. It can [drive a loop](/logic/loops), giving one pass for the stop they chose. It does not score: a stop is a word rather than a number, so the panel has no **Scoring** row. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it, because a scale is a measurement rather than a list of things worth asking about again. It is never shuffled, for the same reason the stops have an order in the first place. [Piping](/logic/piping) it into later wording prints the stop they landed on, in the words they read.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, one bar per stop, counting the respondents who landed on it. **Histogram** and **Pie chart** are the other two entries in **Chart type**.
+
+In every export the question becomes one column, holding a code for the stop they chose with your wording attached to it. Each answer keeps the wording it was shown, so rewording a stop later never rewrites the answers already given.
+
+{/* screenshot: The text slider question on the Analytics tab, charted as one bar per stop. */}
 
 ## Related
 

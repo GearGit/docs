@@ -4,21 +4,51 @@ description: "Publish your survey and see what each published version holds."
 icon: "circle-check"
 ---
 
-_To write._
+Publishing freezes a numbered copy of your survey and opens the link. This page is the how-to: publishing, republishing, closing, and reading the version history. The idea behind versions is on [Published versions](/survey/published-versions).
 
-{/* screenshot: publish and versions in the app */}
+{/* screenshot: The Publish tab of a live survey: the heading, the Share card, the Survey settings card, and the version footer. */}
 
 ## What it does
 
-_To write._
+**2 Publish** on the lifecycle strip has three states, each with its own heading.
+
+- **Publish your survey**, "Publishing opens your link to respondents." The button is **Publish now** and the respondent link is marked "inactive until published".
+- **Your survey is live**, "Anyone with the link can respond." The actions are **Preview as respondent**, **Close survey**, and, once you have edited, **Republish**.
+- **Survey closed**, "The link now shows your closed screen." The action is **Reopen survey**.
+
+When the draft has changed since the live version, a banner counts the difference, "3 edits since you published." with the reminder "Respondents won’t see them until you republish." **See what changed** lists each edit.
+
+The **Share** card holds the link, the QR code and the embed snippets; see [Share links and QR codes](/share/share-links) and [Embeds](/share/embeds). The **Survey settings** card summarizes **Availability**, **Response limit** and **Quotas**, each with **Edit**, and **Edit in survey settings** at the foot. The footer reads "Version 1, published 9/11/2026" with a **History** link.
 
 ## Set it up
 
-_To write._
+<Steps>
+  <Step title="Publish the first time">
+    Click **Publish now**. The **Publish survey?** dialog says "This publishes version 1." and offers **Set up AI insights on publish**, which plans an analysis as soon as responses arrive; see [AI insights](/results/ai-insights). Confirm with **Publish as v1**.
+  </Step>
+  <Step title="Publish an update">
+    Edit the draft, then click **Republish**. The **Publish update?** dialog shows what moved as **Added**, **Changed** and **Removed** chips and states "Your unpublished changes go live and become v2. Responses already collected stay attached to their versions." Confirm with **Publish as v2**.
+  </Step>
+  <Step title="Cap the responses">
+    On **Settings**, set **Total responses**. "Automatically close the survey once this many responses are collected." Leave it blank for no limit.
+  </Step>
+  <Step title="Close, and reopen">
+    Click **Close survey** on the Publish tab or on **Settings**. "Closing stops new responses; in-progress sessions finish. You can reopen at any time." **Reopen survey** puts the same version back live.
+  </Step>
+  <Step title="Read the history">
+    Click **History**, or **Version history** on **Settings**. Under **Versions**, each entry lists the date and its **Added:**, **Removed:** and **Changed:** counts. **Activity** lists who did what.
+  </Step>
+</Steps>
 
 ## Good to know
 
-_To write._
+**The button re-arms only for changes a respondent would see.** A new question, an edited option, a rule, the theme or a setting they feel turns **Published** back into **Publish**. Renaming the survey or editing your internal notes does not.
+
+**A respondent finishes the version they started.** Publishing an update never changes a survey underneath someone part way through. New arrivals get the new version.
+
+**Restore copies an old version over your draft.** In **Version history**, **Restore** on any version asks "Restore v1?" and explains: "Your current draft is checkpointed first, then replaced with this version's content." Nothing changes for respondents until you publish again.
+
+**Only a fault on our side can stop a publish.** How you built the survey never blocks it. If the platform itself has produced something it cannot serve, the page says "Can't publish. 1 problem on our side, and we're on it." and the dialog adds "These are on us. The builder can't create or undo them, so they need our help to clear." Contact support in that case; see [Contact support](/help/contact-support).
 
 ## Related
 

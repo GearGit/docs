@@ -4,50 +4,70 @@ description: "Pick a start date and an end date."
 icon: "calendar-week"
 ---
 
-_To write._
+Date range asks for a span rather than a day: a start date and an end date, in one question and one answer. Respondents type both ends into the two fields, or open the calendar and click the first day and the last day. It is the question for a stay, a booking window, a campaign period or any answer that runs from one date to another.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A date range question as a respondent sees it, a start field and an end field with a calendar between them. */}
 
 ## When to use it
 
-_To write._
+- The answer has two ends that belong together: a trip, a tenancy, a course, a contract.
+- You want the span kept as one answer, so a later screen can pipe both dates in one go.
+- You would otherwise ask two date questions and have to check by hand that the second is later.
 
-**Consider instead:** _To write_
+**Consider instead:** [Date](/questions/dates/date) when one day is the whole answer, [Time range](/questions/dates/time-range) when the span sits inside a single day, [Date and time](/questions/dates/date-and-time) when what you want is one moment rather than a period, [Number](/questions/text/number) when the count of days is what you are really after.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Date range">
-    _To write._
+  <Step title="Pick Date Range">
+    In **Add to survey**, type to filter and click **Date Range**, under the **Date & Time** heading. The question lands where the gap was with both fields empty and no content to clear out first.
+
+    {/* screenshot: A date range question on the builder canvas, edited in place. */}
   </Step>
   <Step title="Write the question">
-    _To write._
+    The canvas is the real survey, so you type the question and its description straight onto it. The two fields are labeled for the respondent already, so there is no option list and no column list to write.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set. A date range has no display settings of its own. The wording is typed on the canvas and everything else it carries is a rule.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **Type** | Switches the question to another kind. The other five date and time questions are in the list, so a range can become a single date or a date and time without being rebuilt. A switch that would drop something asks first. |
+
+Below **Type** the panel holds **Required**, **Validation**, and the three logic rows every question has: **Show/hide question**, **Skip from here** and **Set a variable**.
+
+{/* screenshot: The question panel for a date range, with the type row, Required and Validation. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. The calendar rules are behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until both ends are filled in. |
+| [Earliest and Latest](/rules/number-bounds) | The first and last day the span may touch, typed as YYYY-MM-DD. **Earliest** is judged against the start, **Latest** against the end. |
+| [Allowed dates](/rules/number-bounds) | **Any date**, **Future only** or **Past only**, judged against the day the respondent answers. A future-only range has to start after today, a past-only range has to finish before it. |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
+
+A range also checks itself: a start after its end is refused with "Range start must not be after its end.", whatever else you have set. The calendar shows the bounds instead of only enforcing them. Days outside them cannot be clicked, and the shortcut chips in the calendar popover, **Today**, **Yesterday**, **This week**, **Last 7 days**, **This month** and **Last 30 days**, are only offered while they land inside what you accept.
 
 ## Logic that works with it
 
-_To write._
+The answer is one span, a start and an end kept together. Conditions read it as a date: **is**, **is not**, **is after**, **is before**, **is between**, **is answered** and **is not answered**. It cannot be a [carry-forward](/logic/carry-forward) source or target, because there is no list of answers to hand on. It can [drive a loop](/logic/loops), which gives one pass for the span they gave. It does not [score](/logic/scoring): points are typed next to an answer you wrote, and a range has no answers to write them against, so it has no **Scoring** row. [Piping](/logic/piping) it into later wording prints both ends the way a person reads a date, as 24 Aug 2026 and 30 Aug 2026 with a dash between them. Like any other [condition](/logic/how-logic-runs) source it has to sit on an earlier screen than the rule that reads it.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, counting the spans that were given. **Pie chart** and **Values list** are the other two entries in **Chart type**. A range is not laid out on a timeline the way a single date is, because a span covers days rather than falling on one.
+
+In every export the question becomes one column, holding the start and the end of the span together.
+
+{/* screenshot: The date range question on the Analytics tab, charted as a bar chart. */}
 
 ## Related
 

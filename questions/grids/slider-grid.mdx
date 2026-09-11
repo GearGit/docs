@@ -4,50 +4,75 @@ description: "Set a slider for each row."
 icon: "sliders"
 ---
 
-_To write._
+A slider grid gives every row a track of its own and asks a respondent to place a number on each one. There is no column axis: the scale is the track, and its two ends are captioned in your words.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A slider grid question as a respondent sees it, one track per row with captions at both ends. */}
 
 ## When to use it
 
-_To write._
+- You want a fine-grained number for each of several items rather than a handful of scale points: how much of your week each activity takes, how strongly each factor weighs.
+- The answers belong on a continuum and rounding them to five boxes would throw away the difference you are after.
+- You want the answers in a unit people recognize, such as a currency or a percentage.
 
-**Consider instead:** _To write_
+**Consider instead:** [Rating grid](/questions/grids/rating-grid) when a short scale of stars is enough, [Radio grid](/questions/grids/radio-grid) when the scale is words rather than numbers, [Numeric slider](/questions/ratings/numeric-slider) when there is only one item, [Constant sum](/questions/ranking/constant-sum) when the numbers have to add up to a fixed total.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Slider grid">
-    _To write._
+  <Step title="Pick Matrix (Slider)">
+    In **Add to survey**, type to filter and click **Matrix (Slider)**, under **Matrix**. It arrives with three rows, Row 1 to Row 3, and its two end captions already written: **Left label** is Low and **Right label** is High.
+
+    {/* screenshot: The slider grid question on the builder canvas, edited in place. */}
   </Step>
-  <Step title="Write the question">
-    _To write._
+  <Step title="Write the question and the rows">
+    The canvas is the real survey, so you type on it. Click a row label to retype it, **Add row** extends the list, and the **Bulk edit** chip beside the add row takes a pasted list, one per line.
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| Rows | The items down the left, one track each. Edited on the canvas, or in **Bulk edit** as plain text, one per line. |
+| **Step** | How far the handle jumps. 1 by default, so the answers are whole numbers. |
+| **Left label** | The caption at the low end of every track. Set to Low when the question arrives. |
+| **Right label** | The caption at the high end of every track. Set to High when the question arrives. |
+| **Unit before** | Text printed in front of the number, such as a currency symbol. |
+| **Unit after** | Text printed after the number, such as a unit of weight. |
+| **Answer order** | Rows only, because there is no column axis. **As written**, **Shuffled** or **Reversed**. |
+| **How many each respondent sees** | Inside **Answer order**. **All of them**, or **Only some**, which draws that many rows for each respondent. Pinned rows are outside the draw and show to everyone. |
+
+The units caption the number on screen and change nothing that is stored, so rules, charts and exports all read the bare number.
+
+{/* screenshot: The question panel for a slider grid, with the step, the end labels and the unit rows. */}
 
 ## Rules you can set
 
+**Required** is a toggle in the panel. Everything else is behind **Validation**, one row below it.
+
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | Every row has to be set before they can move on. |
+| [Minimum and Maximum](/rules/number-bounds) | The two ends of every track. Without them the tracks run from 0 to 100. |
+| [Min rows answered](/rules/number-bounds) | A floor rather than all of them. Two of five rows clears it whichever two they set, and the message reads "Answer at least 2 rows." |
+| [Custom error](/rules/custom-messages) | One sentence that replaces the standard wording when any rule on this question stops them. |
 
 ## Logic that works with it
 
-_To write._
+The answer is a map, one number per row, which no single comparison can read. So the question as a whole is offered with **is answered** and **is not answered**, and three summaries of it are offered as sources in their own right: **Lowest rating**, **Highest rating** and **Total**. Each row is offered separately as well, and the summaries and the rows alike read as numbers, with **is**, **is not**, **is more than**, **is at least**, **is less than**, **is at most** and **is between**. It is not a [carry-forward](/logic/carry-forward) source, but it takes a carried list into its **Rows**, which is how a battery ends up asking about whatever somebody picked a screen earlier. It cannot [drive a loop](/logic/loops), and it cannot be [scored](/logic/scoring): a track is a continuum with no set of answers to put points beside. [Piping](/logic/piping) it into later wording prints each answered row as "Row: the number they set", in the order you wrote the rows.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Values list**, and it is the only entry in **Chart type**. **Raw data** under the card opens the answers one respondent at a time.
+
+In every export the question becomes one column per row, holding the number that row collected.
+
+{/* screenshot: The slider grid question on the Analytics tab, shown as a values list. */}
 
 ## Related
 

@@ -4,50 +4,66 @@ description: "Answer with a thumb up or a thumb down."
 icon: "thumbs-up"
 ---
 
-_To write._
+Thumbs up or down asks for a reaction and offers two ways to give it: a thumb down and a thumb up, side by side. It is the shortest rating there is, and the answer comes back as one of those two things, which is what makes it easy to chart and easy to branch on.
 
-{/* screenshot or short video: the question as a respondent sees it */}
+{/* screenshot: A thumbs up or down question as a respondent sees it, the two thumbs side by side under the question. */}
 
 ## When to use it
 
-_To write._
+- You want a reaction to one thing and a scale would be more than the moment deserves: an article, a suggestion, a search result.
+- You are asking the same tiny question over and over, once per item in a [loop](/logic/loops), and every extra point costs you answers.
+- You want a clean split to branch on afterward, with nobody parked in the middle.
 
-**Consider instead:** _To write_
+**Consider instead:** [Smiley rating](/questions/ratings/smiley-rating) when you want degrees of feeling rather than a verdict, [Star rating](/questions/ratings/star-rating) when quality is the thing being judged, [Yes or no](/questions/choice/yes-or-no) when the answer is a fact rather than a reaction, [NPS](/questions/ratings/nps) when you want a score you can compare against other studies.
 
 ## Add it
 
 <Steps>
-  <Step title="Add a question">
-    _To write._
+  <Step title="Open a gap on the canvas">
+    On the **Build** tab, hover between two questions and click **Add**. A gap sits above the first question, between every pair, and after the last one.
   </Step>
-  <Step title="Choose Thumbs up or down">
-    _To write._
+  <Step title="Pick Thumbs Up / Down">
+    In **Add to survey**, type to filter and click **Thumbs Up / Down**, under **Rating**. The question lands where the gap was, with the two thumbs already drawn. There is no list to write and no scale length to choose.
   </Step>
   <Step title="Write the question">
-    _To write._
+    Type the question on the canvas, which is the real survey rather than a form about it. Add a description under it if the reaction needs framing.
+
+    {/* screenshot: The thumbs up or down question on the builder canvas, edited in place. */}
   </Step>
 </Steps>
 
 ## Settings
 
+Select the question on the canvas and the panel beside the rail shows everything you can set.
+
 | Setting | What it does |
 | --- | --- |
-| _To write_ | _To write_ |
+| **High label** | A caption for the thumb up. Because the strip is only two items wide, the caption sits under the thumb it belongs to rather than at the end of a row. |
+| **Low label** | A caption for the thumb down, under the other thumb. |
+
+Both start empty, so a question with nothing typed into them shows two thumbs and no words. Fill in one and the other stays blank, which is worth knowing if you want only one end named.
+
+{/* screenshot: The question panel for a thumbs up or down, with the high and low label rows. */}
 
 ## Rules you can set
 
 | Rule | What it does |
 | --- | --- |
-| [Required](/rules/required) | _To write_ |
-| _To write_ | _To write_ |
+| [Required](/rules/required) | They cannot move on until they pick one of the two. |
+
+Required is the whole of it. There is nothing to measure the length or the range of, so this question has no **Validation** row in the panel and no dialog behind it. Left optional, a respondent can also clear the answer by clicking the thumb they already picked.
 
 ## Logic that works with it
 
-_To write._
+The answer is one of two fixed answers rather than a number, so conditions read it as a pick and the value control offers the two by name: **is**, **is not**, **is one of**, **is not one of**, **is answered** and **is not answered**. It [scores](/logic/scoring) a number per scale point, one for the thumb down and one for the thumb up, and a point can be negative, so a thumb down can cost marks. It can [drive a loop](/logic/loops), giving one pass for the answer they gave. It is not a [carry-forward](/logic/carry-forward) source and nothing carries into it, because two fixed answers are a measurement rather than a list of things worth asking about again. [Piping](/logic/piping) it into later wording prints the answer they gave.
 
 ## How it shows in results
 
-_To write._
+Per question the default is a **Bar chart**, one bar per answer, counting the respondents who picked it. **Histogram** and **Pie chart** are the other two entries in **Chart type**.
+
+In every export the question becomes one column holding the answer that respondent gave.
+
+{/* screenshot: The thumbs up or down question on the Analytics tab, charted as two bars. */}
 
 ## Related
 
