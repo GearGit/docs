@@ -2,9 +2,8 @@
 #
 # Same policy as onlinesurvey.ai: search engines and AI answer engines may index and
 # cite these pages (search=yes, ai-input=yes); collecting them to train models is
-# declined (ai-train=no). Retrieval and search crawlers (ClaudeBot, OAI-SearchBot,
-# PerplexityBot, Applebot-Extended, Google-Extended, Amazonbot) are deliberately not
-# blocked: a cited answer is welcome, being training data is not.
+# declined (ai-train=no). This file also overrides Mintlify's default, which declares
+# ai-train=yes.
 
 User-agent: *
 Content-Signal: search=yes, ai-input=yes, ai-train=no
@@ -13,8 +12,61 @@ Allow: /_next/image
 Disallow: /_next/
 Disallow: /cdn-cgi/
 
-# Training crawlers.
+# ── Answering is welcome; being training data is not. ────────────────────────
+#
+# Those are DIFFERENT crawlers, and the two halves of the signal above only mean
+# something if each one is named on the right side. A named group REPLACES the `*`
+# group for that crawler, so the allowed group below restates the signal and the
+# disallows rather than inheriting them.
+#
+# ALLOWED — retrieval and search, the crawlers a citation depends on:
+#   OAI-SearchBot      ChatGPT's search index
+#   ChatGPT-User       a page fetched because a person asked for it
+#   Claude-SearchBot   Anthropic's search index
+#   Claude-User        a page fetched because a person asked for it
+#   PerplexityBot      Perplexity's index
+#   Applebot           Siri and Spotlight
+#   Amazonbot          Alexa
+#
+# REFUSED — training:
+#   GPTBot             OpenAI model training
+#   ClaudeBot          Anthropic model training
+#   Applebot-Extended  the Apple Intelligence training opt-out token
+#   CCBot              Common Crawl, which is a training corpus
+#   Bytespider         ByteDance
+#   meta-externalagent Meta
+#
+# ClaudeBot and Applebot-Extended sat on the WRONG side of that list until 2026-09-11:
+# this file allowed them while declaring ai-train=no, because each was taken for its
+# vendor's retrieval crawler. It is not. Anthropic retrieves with Claude-SearchBot and
+# Claude-User; Apple retrieves with Applebot. All of them honour robots.txt
+# independently, which is the whole reason the split is expressible.
+#
+# Google-Extended is the one deliberate exception, and it is left unlisted on purpose.
+# It gates Gemini grounding and training TOGETHER with no way to separate them, and it
+# has no bearing on Google Search or AI Overviews (both read plain Googlebot) — so
+# blocking it would forfeit a citation surface to make a point.
+
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Applebot
+User-agent: Amazonbot
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+Allow: /_next/image
+Disallow: /_next/
+Disallow: /cdn-cgi/
+
 User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Applebot-Extended
 Disallow: /
 
 User-agent: CCBot

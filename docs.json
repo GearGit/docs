@@ -36,6 +36,10 @@
   "navbar": {
     "links": [
       {
+        "label": "onlinesurvey.ai",
+        "href": "https://onlinesurvey.ai"
+      },
+      {
         "label": "Log in",
         "href": "https://app.onlinesurvey.ai/login"
       }
